@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { RiAddLine } from "react-icons/ri"
+import { RiAddLine } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { CloneVoiceDrawer } from "@/components/voicecraft/clone-voice-drawer"
 

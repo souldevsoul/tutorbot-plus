@@ -4,23 +4,23 @@ import { Suspense } from "react"
 import { useSearchParams } from "next/navigation"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { RiErrorWarningLine, RiArrowLeftLine } from "react-icons/ri"
+import { AlertTriangle, ArrowLeft } from "lucide-react"
 
 const errorMessages: Record<string, string> = {
-  Configuration: "There is a problem with the server configuration.",
-  AccessDenied: "You do not have permission to sign in.",
+  Configuration: "There is a problem with the server configuration. Please try again later.",
+  AccessDenied: "You do not have permission to access this learning resource.",
   Verification: "The verification link has expired or has already been used.",
   OAuthSignin: "Error in constructing an authorization URL.",
-  OAuthCallback: "Error in handling the response from the OAuth provider.",
-  OAuthCreateAccount: "Could not create OAuth provider user in the database.",
-  EmailCreateAccount: "Could not create email provider user in the database.",
-  Callback: "Error in the OAuth callback handler route.",
+  OAuthCallback: "Error in handling the response from the authentication provider.",
+  OAuthCreateAccount: "Could not create your account. Please try a different sign-in method.",
+  EmailCreateAccount: "Could not create your account. This email may already be registered.",
+  Callback: "Error in the authentication process.",
   OAuthAccountNotLinked:
-    "The email is already associated with another account.",
-  EmailSignin: "The email could not be sent.",
-  CredentialsSignin: "Sign in failed. Check the details you provided are correct.",
-  SessionRequired: "Please sign in to access this page.",
-  Default: "An error occurred during authentication.",
+    "This email is already associated with another account. Please sign in using your original method.",
+  EmailSignin: "The verification email could not be sent. Please try again.",
+  CredentialsSignin: "Sign in failed. Please check your email and password are correct.",
+  SessionRequired: "Please sign in to access your learning dashboard.",
+  Default: "An error occurred during authentication. Please try again.",
 }
 
 function ErrorContent() {
@@ -34,20 +34,20 @@ function ErrorContent() {
         {/* Logo/Brand */}
         <div className="text-center mb-8">
           <Link href="/">
-            <h1 className="text-4xl font-black uppercase">
-              VOICE<span className="text-green-500">CRAFT</span>
+            <h1 className="text-4xl font-black">
+              TutorBot <span className="text-green-500">Plus</span>
             </h1>
           </Link>
         </div>
 
         {/* Error Card */}
-        <div className="bg-white border-4 border-red-500 brutalist-shadow p-8">
+        <div className="bg-white border-2 border-red-500 shadow-xl p-8">
           <div className="text-center">
             <div className="w-16 h-16 bg-red-500 flex items-center justify-center mx-auto mb-6">
-              <RiErrorWarningLine className="w-10 h-10 text-white" />
+              <AlertTriangle className="w-10 h-10 text-white" />
             </div>
 
-            <h2 className="text-2xl font-black uppercase mb-4">
+            <h2 className="text-2xl font-black mb-4">
               Authentication Error
             </h2>
 
@@ -55,17 +55,17 @@ function ErrorContent() {
 
             <div className="space-y-4">
               <Button
-                className="w-full h-12 gap-3 bg-black text-green-500 hover:bg-gray-900 border-4 border-black font-bold uppercase"
+                className="w-full h-12 gap-3 bg-black text-green-500 hover:bg-gray-900 border-2 border-black font-bold"
                 onClick={() => (window.location.href = "/auth/signin")}
               >
-                <RiArrowLeftLine className="w-5 h-5" />
+                <ArrowLeft className="w-5 h-5" />
                 Try Again
               </Button>
 
               <Link href="/">
                 <Button
                   variant="secondary"
-                  className="w-full h-12 gap-3 bg-white text-black hover:bg-gray-100 border-4 border-black font-bold uppercase"
+                  className="w-full h-12 gap-3 bg-white text-black hover:bg-gray-100 border-2 border-black font-bold"
                 >
                   Back to Home
                 </Button>
@@ -98,9 +98,9 @@ export default function AuthErrorPage() {
         <div className="min-h-screen bg-white flex items-center justify-center">
           <div className="text-center">
             <div className="w-16 h-16 bg-black flex items-center justify-center mx-auto mb-4">
-              <RiErrorWarningLine className="w-10 h-10 text-green-500 animate-pulse" />
+              <AlertTriangle className="w-10 h-10 text-green-500 animate-pulse" />
             </div>
-            <p className="text-gray-600 font-bold uppercase">Loading...</p>
+            <p className="text-gray-600 font-bold">Loading...</p>
           </div>
         </div>
       }

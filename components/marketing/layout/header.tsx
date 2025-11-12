@@ -4,8 +4,7 @@ import * as React from "react"
 import { Container } from "@/components/ui/container"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
-import { Menu, X } from "lucide-react"
-import { RiMic2Fill } from "react-icons/ri"
+import { Menu, X, GraduationCap } from "lucide-react"
 
 export interface NavLink {
   label: string
@@ -27,7 +26,7 @@ export interface HeaderProps extends React.HTMLAttributes<HTMLElement> {
 const Header = React.forwardRef<HTMLElement, HeaderProps>(
   ({
     logo,
-    logoText = "VoiceCraft",
+    logoText = "TutorBot Plus",
     navLinks = [],
     ctaButton,
     transparent = false,
@@ -47,7 +46,7 @@ const Header = React.forwardRef<HTMLElement, HeaderProps>(
 
     const headerBg = transparent && !scrolled
       ? "bg-transparent"
-      : "bg-white border-b-4 border-black"
+      : "bg-white/95 backdrop-blur-sm border-b-2 border-blue-200 shadow-sm"
 
     return (
       <header
@@ -65,10 +64,10 @@ const Header = React.forwardRef<HTMLElement, HeaderProps>(
             <a href="/" className="flex items-center gap-3">
               {logo || (
                 <>
-                  <div className="w-12 h-12 bg-black border-4 border-black flex items-center justify-center brutalist-shadow-yellow">
-                    <RiMic2Fill className="w-7 h-7 text-green-500" />
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-green-600 rounded-xl flex items-center justify-center shadow-lg">
+                    <GraduationCap className="w-7 h-7 text-white" />
                   </div>
-                  <span className="text-xl font-bold uppercase tracking-tight">{logoText}</span>
+                  <span className="text-xl font-bold tracking-tight text-blue-900">{logoText}</span>
                 </>
               )}
             </a>
@@ -79,7 +78,7 @@ const Header = React.forwardRef<HTMLElement, HeaderProps>(
                 <a
                   key={index}
                   href={link.href}
-                  className="text-sm font-bold uppercase tracking-wider hover:text-green-500 transition-colors"
+                  className="text-sm font-semibold tracking-wide hover:text-blue-600 transition-colors text-gray-700"
                 >
                   {link.label}
                 </a>
@@ -91,7 +90,7 @@ const Header = React.forwardRef<HTMLElement, HeaderProps>(
               {ctaButton && (
                 <button
                   onClick={ctaButton.onClick}
-                  className="bg-green-500 text-black hover:bg-yellow-300 border-4 border-black font-bold uppercase px-6 py-2 transition-colors"
+                  className="bg-gradient-to-r from-blue-600 to-green-600 text-white hover:shadow-lg border-2 border-blue-600 rounded-xl font-bold px-6 py-2 transition-all shadow-md"
                 >
                   {ctaButton.href ? (
                     <a href={ctaButton.href}>{ctaButton.text}</a>
@@ -118,13 +117,13 @@ const Header = React.forwardRef<HTMLElement, HeaderProps>(
 
           {/* Mobile Menu */}
           {mobileMenuOpen && (
-            <div className="md:hidden border-t-4 border-black py-4">
+            <div className="md:hidden border-t-2 border-blue-200 py-4 bg-white rounded-b-2xl shadow-lg">
               <div className="flex flex-col gap-4">
                 {navLinks.map((link, index) => (
                   <a
                     key={index}
                     href={link.href}
-                    className="text-sm font-bold uppercase tracking-wider hover:text-green-500 transition-colors py-2"
+                    className="text-sm font-semibold tracking-wide hover:text-blue-600 transition-colors py-2 text-gray-700"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {link.label}
@@ -132,7 +131,7 @@ const Header = React.forwardRef<HTMLElement, HeaderProps>(
                 ))}
                 {ctaButton && (
                   <button
-                    className="bg-green-500 text-black hover:bg-yellow-300 border-4 border-black font-bold uppercase px-6 py-3 transition-colors w-full"
+                    className="bg-gradient-to-r from-blue-600 to-green-600 text-white hover:shadow-lg border-2 border-blue-600 rounded-xl font-bold px-6 py-3 transition-all w-full"
                     onClick={() => {
                       ctaButton.onClick?.()
                       setMobileMenuOpen(false)

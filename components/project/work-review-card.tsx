@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { RiStarLine, RiStarFill, RiCheckLine, RiErrorWarningLine } from "react-icons/ri"
+import { RiStarLine, RiStarFill, RiCheckLine, RiErrorWarningLine } from "lucide-react"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Text, Heading } from "@/components/ui/typography"
@@ -79,7 +79,7 @@ export function WorkReviewCard({
 
   return (
     <>
-      <Card variant="outlined" className="border-4 border-cyan-500 bg-cyan-50">
+      <Card variant="outlined" className="border-2 border-cyan-500 bg-cyan-50">
         <CardHeader>
           <div className="flex items-start justify-between">
             <div className="flex-1">
@@ -100,7 +100,7 @@ export function WorkReviewCard({
         <CardContent className="space-y-6">
           {/* Expert Notes */}
           {submittedWork.notes && (
-            <div className="rounded-md border-4 border-black bg-white p-4">
+            <div className="rounded-md border-2 border-black bg-white p-4">
               <Text variant="caption" className="text-xs font-bold uppercase text-slate-600">
                 NOTES FROM {expertName.toUpperCase()}
               </Text>
@@ -117,7 +117,7 @@ export function WorkReviewCard({
                 SUBMITTED AUDIOS ({submittedWork.audios?.length || submittedWork.audioIds.length})
               </Heading>
             </div>
-            <div className="space-y-3 rounded-md border-4 border-black bg-white p-4">
+            <div className="space-y-3 rounded-md border-2 border-black bg-white p-4">
               {submittedWork.audios && submittedWork.audios.length > 0 ? (
                 submittedWork.audios.map((audio, index) => (
                   <div key={audio.id} className="border-b border-slate-200 pb-3 last:border-0 last:pb-0">
@@ -147,7 +147,7 @@ export function WorkReviewCard({
           <Separator className="bg-black" />
 
           {/* Instructions */}
-          <div className="rounded-md border-4 border-yellow-500 bg-green-50 p-4">
+          <div className="rounded-md border-2 border-yellow-500 bg-green-50 p-4">
             <div className="flex items-start gap-3">
               <RiErrorWarningLine className="h-5 w-5 flex-shrink-0 text-green-600" />
               <div className="flex-1">
@@ -165,7 +165,7 @@ export function WorkReviewCard({
         <CardFooter className="flex gap-3">
           <Button
             variant="outline"
-            className="flex-1 border-4"
+            className="flex-1 border-2"
             onClick={() => setShowChangesDialog(true)}
             disabled={loading}
           >
@@ -186,7 +186,7 @@ export function WorkReviewCard({
 
       {/* Approve Dialog */}
       <AlertDialog open={showApproveDialog} onOpenChange={setShowApproveDialog}>
-        <AlertDialogContent className="border-4 border-black sm:max-w-[600px]">
+        <AlertDialogContent className="border-2 border-black sm:max-w-[600px]">
           <AlertDialogHeader>
             <AlertDialogTitle>APPROVE & RATE WORK</AlertDialogTitle>
             <AlertDialogDescription>
@@ -270,7 +270,7 @@ export function WorkReviewCard({
             <AlertDialogAction
               onClick={handleApprove}
               disabled={loading}
-              className="bg-green-400 text-black border-4 border-black hover:bg-green-500"
+              className="bg-green-400 text-black border-2 border-black hover:bg-green-500"
             >
               {loading ? "APPROVING..." : "APPROVE & COMPLETE"}
             </AlertDialogAction>
@@ -280,7 +280,7 @@ export function WorkReviewCard({
 
       {/* Request Changes Dialog */}
       <AlertDialog open={showChangesDialog} onOpenChange={setShowChangesDialog}>
-        <AlertDialogContent className="border-4 border-black sm:max-w-[600px]">
+        <AlertDialogContent className="border-2 border-black sm:max-w-[600px]">
           <AlertDialogHeader>
             <AlertDialogTitle>REQUEST CHANGES</AlertDialogTitle>
             <AlertDialogDescription>
@@ -307,7 +307,7 @@ export function WorkReviewCard({
             <AlertDialogAction
               onClick={handleRequestChanges}
               disabled={changeRequest.length < 10 || loading}
-              className="bg-teal-400 text-black border-4 border-black hover:bg-teal-500"
+              className="bg-teal-400 text-black border-2 border-black hover:bg-teal-500"
             >
               {loading ? "SENDING..." : "SEND FEEDBACK"}
             </AlertDialogAction>

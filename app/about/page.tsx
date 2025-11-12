@@ -5,66 +5,66 @@ import { Button } from "@/components/ui/button"
 import { Header } from "@/components/marketing/layout/header"
 import { Footer } from "@/components/marketing/layout/footer"
 import {
-  RiSparklingLine,
-  RiHeartLine,
-  RiLightbulbLine,
-  RiRocketLine,
-  RiShieldCheckLine,
-  RiGlobalLine,
-  RiTeamLine,
-  RiCodeLine,
-  RiMicLine,
-  RiFlashlightLine,
-  RiArrowRightLine,
-  RiCheckDoubleLine,
-} from "react-icons/ri"
+  Sparkles,
+  Heart,
+  Lightbulb,
+  Rocket,
+  ShieldCheck,
+  Globe,
+  Users,
+  Code,
+  BookOpen,
+  Zap,
+  ArrowRight,
+  CheckCheck,
+} from "lucide-react"
 
 export default function AboutPage() {
   const values = [
     {
-      icon: RiLightbulbLine,
+      icon: Lightbulb,
       title: "Innovation First",
-      description: "We leverage the most advanced AI models to push the boundaries of what's possible with voice synthesis. Always testing, always improving.",
+      description: "We leverage the most advanced AI models to push the boundaries of what's possible with personalized education. Always testing, always improving.",
     },
     {
-      icon: RiShieldCheckLine,
+      icon: ShieldCheck,
       title: "Privacy & Security",
       description: "Your data is yours. End-to-end encryption, GDPR compliance, and SOC 2 certification are standard, not optional.",
     },
     {
-      icon: RiHeartLine,
+      icon: Heart,
       title: "User-Centric",
-      description: "Built by creators, for creators. Every feature is designed with real user needs in mind, from hobbyists to enterprise teams.",
+      description: "Built by learners, for learners. Every feature is designed with real user needs in mind, from students to lifelong learners.",
     },
     {
-      icon: RiGlobalLine,
+      icon: Globe,
       title: "Accessible to All",
-      description: "Professional voice technology should be accessible to everyone. That's why we offer a free tier and transparent pricing.",
+      description: "Quality education should be accessible to everyone. That's why we offer a free tier and transparent pricing.",
     },
   ]
 
   const technology = [
     {
-      icon: RiSparklingLine,
-      name: "Kokoro-82M",
-      description: "The world's most popular voice synthesis model with 56.7M+ production runs. Based on StyleTTS2 with 82M parameters.",
-      stats: "56.7M+ Runs",
+      icon: Sparkles,
+      name: "GPT-4 Turbo",
+      description: "The world's most advanced language model powering personalized learning experiences with deep subject knowledge.",
+      stats: "Multi-Subject",
     },
     {
-      icon: RiMicLine,
-      name: "Minimax AI",
-      description: "Cutting-edge voice cloning and synthesis technology supporting 50+ languages with natural emotion control.",
+      icon: BookOpen,
+      name: "Claude AI",
+      description: "Cutting-edge AI tutoring technology providing clear, patient explanations with natural conversation flow.",
       stats: "50+ Languages",
     },
     {
-      icon: RiFlashlightLine,
-      name: "XTTS-v2",
-      description: "Advanced multilingual voice cloning supporting 17 languages with one-shot cloning capabilities.",
-      stats: "4.4M+ Runs",
+      icon: Zap,
+      name: "Adaptive Learning",
+      description: "Advanced algorithms that adapt to your learning pace and style, optimizing retention and understanding.",
+      stats: "Personalized",
     },
     {
-      icon: RiCodeLine,
-      name: "Replicate Platform",
+      icon: Code,
+      name: "Cloud Infrastructure",
       description: "Enterprise-grade infrastructure for running AI models at scale with guaranteed uptime and performance.",
       stats: "99.9% Uptime",
     },
@@ -73,23 +73,23 @@ export default function AboutPage() {
   const milestones = [
     {
       year: "2024",
-      title: "VoiceCraft Founded",
-      description: "Started with a mission to democratize professional voice synthesis technology.",
+      title: "TutorBot Plus Founded",
+      description: "Started with a mission to democratize personalized education through AI technology.",
     },
     {
       year: "2024",
       title: "Beta Launch",
-      description: "Launched private beta with 100 creators testing Kokoro-82M integration.",
+      description: "Launched private beta with 100 students testing AI tutoring integration.",
     },
     {
       year: "2024",
-      title: "Voice Cloning Added",
-      description: "Integrated Minimax voice cloning technology, enabling custom voice creation.",
+      title: "Adaptive Learning Added",
+      description: "Integrated adaptive learning technology, enabling personalized course creation.",
     },
     {
       year: "2025",
       title: "Public Launch",
-      description: "Opened to the public with free tier, serving thousands of users worldwide.",
+      description: "Opened to the public with free tier, serving thousands of learners worldwide.",
     },
   ]
 
@@ -97,7 +97,7 @@ export default function AboutPage() {
     <main className="min-h-screen bg-white">
       {/* Header */}
       <Header
-        logoText="VoiceCraft"
+        logoText="TutorBot Plus"
         navLinks={[
           { label: "Features", href: "/features" },
           { label: "Pricing", href: "/pricing" },
@@ -110,18 +110,18 @@ export default function AboutPage() {
       />
 
       {/* Hero Section */}
-      <section className="py-20 border-b-8 border-black">
+      <section className="py-20 border-b-2 border-blue-200">
         <Container maxWidth="xl">
           <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-3 px-6 py-3 bg-green-500 border-4 border-black mb-8">
-              <RiSparklingLine className="w-6 h-6" />
-              <span className="text-sm font-bold uppercase tracking-wider">About Us</span>
+            <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-br from-blue-50 via-green-50 to-teal-50 border-2 border-blue-200 rounded-2xl mb-8 shadow-xl">
+              <Sparkles className="w-6 h-6 text-blue-600" />
+              <span className="text-sm font-bold tracking-wider text-blue-900">About Us</span>
             </div>
-            <h1 className="text-6xl md:text-7xl font-bold uppercase mb-6 leading-tight">
-              MAKING VOICE AI ACCESSIBLE TO EVERYONE
+            <h1 className="text-6xl md:text-7xl font-bold mb-6 leading-tight bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">
+              Making AI Education Accessible to Everyone
             </h1>
             <p className="text-xl text-gray-700 mb-8">
-              We're building the future of voice synthesis. Professional-quality voices powered by the world's most trusted AI models.
+              We're building the future of personalized learning. Professional-quality education powered by the world's most trusted AI models.
             </p>
           </div>
         </Container>
@@ -132,36 +132,36 @@ export default function AboutPage() {
         <Container maxWidth="xl">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-4xl md:text-5xl font-bold uppercase mb-6">
-                OUR MISSION
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-blue-900">
+                Our Mission
               </h2>
               <p className="text-xl text-gray-700 mb-6 leading-relaxed">
-                Voice technology has the power to transform how we create content, communicate, and connect with audiences. But for too long, professional voice synthesis has been out of reach for most creators and businesses.
+                Education has the power to transform lives, but for too long, personalized tutoring has been out of reach for most learners. Quality education should be accessible to everyone.
               </p>
               <p className="text-xl text-gray-700 mb-6 leading-relaxed">
-                We built VoiceCraft to change that. By leveraging the world's most popular and battle-tested AI models, we're making studio-quality voice synthesis accessible to everyone—from solo creators to enterprise teams.
+                We built TutorBot Plus to change that. By leveraging the world's most advanced AI models, we're making expert-quality tutoring accessible to everyone—from students to lifelong learners.
               </p>
               <p className="text-xl text-gray-700 leading-relaxed">
-                Our platform is powered by <span className="font-bold">Kokoro-82M</span> (56.7M+ production runs), <span className="font-bold">Minimax AI</span> (50+ languages), and <span className="font-bold">XTTS-v2</span> (multilingual cloning). These aren't experimental models—they're proven at massive scale.
+                Our platform is powered by <span className="font-bold">GPT-4 Turbo</span> (multi-subject expertise), <span className="font-bold">Claude AI</span> (50+ languages), and <span className="font-bold">Adaptive Learning</span> (personalized paths). These aren't experimental models—they're proven at massive scale.
               </p>
             </div>
-            <div className="bg-black p-8 border-4 border-black brutalist-shadow-yellow">
+            <div className="bg-gradient-to-br from-blue-50 via-green-50 to-teal-50 p-8 border-2 border-blue-200 rounded-2xl shadow-xl">
               <div className="space-y-8">
                 <div>
-                  <div className="text-6xl font-bold text-green-500 mb-2">56.7M+</div>
-                  <div className="text-sm font-bold text-white uppercase">Voice Generations</div>
+                  <div className="text-6xl font-bold text-blue-600 mb-2">10K+</div>
+                  <div className="text-sm font-bold text-blue-900">Lessons Generated</div>
                 </div>
                 <div>
-                  <div className="text-6xl font-bold text-green-500 mb-2">50+</div>
-                  <div className="text-sm font-bold text-white uppercase">Languages Supported</div>
+                  <div className="text-6xl font-bold text-green-600 mb-2">50+</div>
+                  <div className="text-sm font-bold text-green-900">Subjects Available</div>
                 </div>
                 <div>
-                  <div className="text-6xl font-bold text-green-500 mb-2">300+</div>
-                  <div className="text-sm font-bold text-white uppercase">Voice Profiles</div>
+                  <div className="text-6xl font-bold text-teal-600 mb-2">1000+</div>
+                  <div className="text-sm font-bold text-teal-900">Active Learners</div>
                 </div>
                 <div>
-                  <div className="text-6xl font-bold text-green-500 mb-2">99.9%</div>
-                  <div className="text-sm font-bold text-white uppercase">Platform Uptime</div>
+                  <div className="text-6xl font-bold text-amber-600 mb-2">99.9%</div>
+                  <div className="text-sm font-bold text-amber-900">Platform Uptime</div>
                 </div>
               </div>
             </div>
@@ -170,13 +170,13 @@ export default function AboutPage() {
       </section>
 
       {/* Values Section */}
-      <section className="py-24 bg-green-500 border-y-8 border-black">
+      <section className="py-24 bg-gradient-to-br from-green-50 via-blue-50 to-cyan-50 border-y-2 border-green-200">
         <Container maxWidth="xl">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold uppercase mb-4">
-              OUR VALUES
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-green-900">
+              Our Values
             </h2>
-            <p className="text-xl text-gray-900 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
               The principles that guide everything we build
             </p>
           </div>
@@ -187,12 +187,12 @@ export default function AboutPage() {
               return (
                 <div
                   key={index}
-                  className="p-8 bg-white border-4 border-black brutalist-shadow"
+                  className="p-8 bg-white border-2 border-green-200 rounded-2xl shadow-xl"
                 >
-                  <div className="w-16 h-16 bg-black flex items-center justify-center mb-6">
-                    <Icon className="w-8 h-8 text-green-500" />
+                  <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center mb-6">
+                    <Icon className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold uppercase mb-4">{value.title}</h3>
+                  <h3 className="text-2xl font-bold mb-4 text-green-900">{value.title}</h3>
                   <p className="text-gray-700 leading-relaxed">{value.description}</p>
                 </div>
               )
@@ -205,41 +205,43 @@ export default function AboutPage() {
       <section className="py-24">
         <Container maxWidth="xl">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold uppercase mb-4">
-              POWERED BY THE BEST
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-blue-900">
+              Powered by the Best
             </h2>
             <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-              We use only the most proven and popular AI models in production
+              We use only the most proven and advanced AI models in education
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
             {technology.map((tech, index) => {
               const Icon = tech.icon
-              const bgColors = ["bg-white", "bg-black"]
-              const textColors = ["text-black", "text-green-500"]
-              const descColors = ["text-gray-700", "text-white"]
-              const colorIndex = index % 2
+              const gradients = [
+                "from-blue-50 to-cyan-50",
+                "from-green-50 to-emerald-50",
+                "from-teal-50 to-blue-50",
+                "from-cyan-50 to-green-50"
+              ]
+              const iconColors = ["text-blue-600", "text-green-600", "text-teal-600", "text-cyan-600"]
+              const badgeColors = ["bg-blue-600", "bg-green-600", "bg-teal-600", "bg-cyan-600"]
 
               return (
                 <div
                   key={index}
-                  className={`p-8 ${bgColors[colorIndex]} border-4 border-black ${
-                    colorIndex === 1 ? "brutalist-shadow-yellow" : "brutalist-shadow"
-                  }`}
+                  className={`p-8 bg-gradient-to-br ${gradients[index]} border-2 border-blue-200 rounded-2xl shadow-xl`}
                 >
-                  <div className={`w-16 h-16 ${colorIndex === 1 ? "bg-green-500" : "bg-black"} flex items-center justify-center mb-6`}>
-                    <Icon className={`w-8 h-8 ${colorIndex === 1 ? "text-black" : "text-green-500"}`} />
+                  <div className={`w-16 h-16 ${badgeColors[index]} rounded-xl flex items-center justify-center mb-6`}>
+                    <Icon className={`w-8 h-8 text-white`} />
                   </div>
                   <div className="flex justify-between items-start mb-4">
-                    <h3 className={`text-2xl font-bold uppercase ${textColors[colorIndex]}`}>
+                    <h3 className={`text-2xl font-bold ${iconColors[index]}`}>
                       {tech.name}
                     </h3>
-                    <span className={`text-sm font-bold uppercase ${colorIndex === 1 ? "text-green-500" : "text-black"} px-3 py-1 ${colorIndex === 1 ? "bg-black" : "bg-green-500"} border-2 border-black`}>
+                    <span className={`text-sm font-bold text-white px-3 py-1 ${badgeColors[index]} rounded-lg`}>
                       {tech.stats}
                     </span>
                   </div>
-                  <p className={`${descColors[colorIndex]} leading-relaxed`}>{tech.description}</p>
+                  <p className="text-gray-700 leading-relaxed">{tech.description}</p>
                 </div>
               )
             })}
@@ -248,14 +250,14 @@ export default function AboutPage() {
       </section>
 
       {/* Timeline Section */}
-      <section className="py-24 bg-black border-y-8 border-yellow-400">
+      <section className="py-24 bg-gradient-to-br from-blue-900 via-teal-900 to-emerald-900 border-y-2 border-blue-400">
         <Container maxWidth="xl">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold uppercase mb-4 text-green-500">
-              OUR JOURNEY
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
+              Our Journey
             </h2>
-            <p className="text-xl text-white max-w-3xl mx-auto">
-              From idea to platform serving thousands of users
+            <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+              From idea to platform serving thousands of learners
             </p>
           </div>
 
@@ -265,11 +267,11 @@ export default function AboutPage() {
                 key={index}
                 className="flex gap-6"
               >
-                <div className="flex-shrink-0 w-24 h-24 bg-green-500 border-4 border-yellow-400 flex items-center justify-center">
-                  <span className="text-2xl font-bold text-black">{milestone.year}</span>
+                <div className="flex-shrink-0 w-24 h-24 bg-gradient-to-br from-blue-500 to-teal-500 border-2 border-blue-300 rounded-xl flex items-center justify-center shadow-xl">
+                  <span className="text-2xl font-bold text-white">{milestone.year}</span>
                 </div>
-                <div className="flex-1 p-6 bg-white border-4 border-white brutalist-shadow-yellow">
-                  <h3 className="text-xl font-bold uppercase mb-2">{milestone.title}</h3>
+                <div className="flex-1 p-6 bg-white border-2 border-blue-200 rounded-2xl shadow-xl">
+                  <h3 className="text-xl font-bold mb-2 text-blue-900">{milestone.title}</h3>
                   <p className="text-gray-700">{milestone.description}</p>
                 </div>
               </div>
@@ -282,76 +284,76 @@ export default function AboutPage() {
       <section className="py-24">
         <Container maxWidth="xl">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold uppercase mb-8 text-center">
-              WHY CHOOSE VOICECRAFT?
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center text-blue-900">
+              Why Choose TutorBot Plus?
             </h2>
 
             <div className="space-y-6">
-              <div className="p-6 bg-white border-4 border-black brutalist-shadow">
+              <div className="p-6 bg-white border-2 border-blue-200 rounded-2xl shadow-xl">
                 <div className="flex items-start gap-4">
-                  <RiCheckDoubleLine className="w-8 h-8 flex-shrink-0 text-black" />
+                  <CheckCheck className="w-8 h-8 flex-shrink-0 text-blue-600" />
                   <div>
-                    <h3 className="text-xl font-bold uppercase mb-2">
-                      PROVEN AT SCALE
+                    <h3 className="text-xl font-bold mb-2 text-blue-900">
+                      Proven Effectiveness
                     </h3>
                     <p className="text-gray-700">
-                      Our primary model (Kokoro-82M) has over 56.7 million production runs. This isn't experimental technology—it's battle-tested at massive scale.
+                      Our AI tutors have helped thousands of students improve their understanding and grades. This isn't experimental—it's proven at scale.
                     </p>
                   </div>
                 </div>
               </div>
 
-              <div className="p-6 bg-black text-white border-4 border-black brutalist-shadow-yellow">
+              <div className="p-6 bg-gradient-to-br from-green-50 to-emerald-50 border-2 border-green-200 rounded-2xl shadow-xl">
                 <div className="flex items-start gap-4">
-                  <RiCheckDoubleLine className="w-8 h-8 flex-shrink-0 text-green-500" />
+                  <CheckCheck className="w-8 h-8 flex-shrink-0 text-green-600" />
                   <div>
-                    <h3 className="text-xl font-bold uppercase mb-2 text-green-500">
-                      TRANSPARENT PRICING
-                    </h3>
-                    <p className="text-white">
-                      No hidden fees, no surprises. We show you exactly what you're paying for based on real API costs. Start free, scale as you grow.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="p-6 bg-white border-4 border-black brutalist-shadow">
-                <div className="flex items-start gap-4">
-                  <RiCheckDoubleLine className="w-8 h-8 flex-shrink-0 text-black" />
-                  <div>
-                    <h3 className="text-xl font-bold uppercase mb-2">
-                      ENTERPRISE SECURITY
+                    <h3 className="text-xl font-bold mb-2 text-green-900">
+                      Transparent Pricing
                     </h3>
                     <p className="text-gray-700">
-                      End-to-end encryption, GDPR compliance, SOC 2 Type II certification. Your voice data is protected with enterprise-grade security standards.
+                      No hidden fees, no surprises. We show you exactly what you're paying for. Start free, scale as you grow.
                     </p>
                   </div>
                 </div>
               </div>
 
-              <div className="p-6 bg-green-500 border-4 border-black brutalist-shadow">
+              <div className="p-6 bg-white border-2 border-teal-200 rounded-2xl shadow-xl">
                 <div className="flex items-start gap-4">
-                  <RiCheckDoubleLine className="w-8 h-8 flex-shrink-0 text-black" />
+                  <CheckCheck className="w-8 h-8 flex-shrink-0 text-teal-600" />
                   <div>
-                    <h3 className="text-xl font-bold uppercase mb-2">
-                      BEST-IN-CLASS SUPPORT
+                    <h3 className="text-xl font-bold mb-2 text-teal-900">
+                      Enterprise Security
                     </h3>
-                    <p className="text-gray-900">
-                      Real humans ready to help. From email support on free plans to dedicated account managers for enterprise customers.
+                    <p className="text-gray-700">
+                      End-to-end encryption, GDPR compliance, SOC 2 Type II certification. Your learning data is protected with enterprise-grade security standards.
                     </p>
                   </div>
                 </div>
               </div>
 
-              <div className="p-6 bg-black text-white border-4 border-black brutalist-shadow-yellow">
+              <div className="p-6 bg-gradient-to-br from-cyan-50 to-blue-50 border-2 border-cyan-200 rounded-2xl shadow-xl">
                 <div className="flex items-start gap-4">
-                  <RiCheckDoubleLine className="w-8 h-8 flex-shrink-0 text-green-500" />
+                  <CheckCheck className="w-8 h-8 flex-shrink-0 text-cyan-600" />
                   <div>
-                    <h3 className="text-xl font-bold uppercase mb-2 text-green-500">
-                      CONSTANTLY IMPROVING
+                    <h3 className="text-xl font-bold mb-2 text-cyan-900">
+                      Best-in-Class Support
                     </h3>
-                    <p className="text-white">
-                      We're always adding new models, features, and capabilities. Beta access to cutting-edge models for Pro and Enterprise users.
+                    <p className="text-gray-700">
+                      Real humans ready to help. From email support on free plans to dedicated account managers for premium users.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="p-6 bg-gradient-to-br from-amber-50 to-orange-50 border-2 border-amber-200 rounded-2xl shadow-xl">
+                <div className="flex items-start gap-4">
+                  <CheckCheck className="w-8 h-8 flex-shrink-0 text-amber-600" />
+                  <div>
+                    <h3 className="text-xl font-bold mb-2 text-amber-900">
+                      Constantly Improving
+                    </h3>
+                    <p className="text-gray-700">
+                      We're always adding new subjects, features, and capabilities. Beta access to cutting-edge features for Pro users.
                     </p>
                   </div>
                 </div>
@@ -362,45 +364,45 @@ export default function AboutPage() {
       </section>
 
       {/* Team Section */}
-      <section className="py-24 bg-gray-50 border-y-8 border-black">
+      <section className="py-24 bg-gradient-to-br from-gray-50 to-blue-50 border-y-2 border-blue-200">
         <Container maxWidth="xl">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold uppercase mb-4">
-              BUILT BY CREATORS, FOR CREATORS
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-blue-900">
+              Built by Learners, for Learners
             </h2>
             <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-              Our team combines expertise in AI, audio engineering, and product design to build the best voice synthesis platform.
+              Our team combines expertise in AI, education, and product design to build the best personalized learning platform.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="p-6 bg-white border-4 border-black brutalist-shadow text-center">
-              <div className="w-24 h-24 bg-black border-4 border-black mx-auto mb-4 flex items-center justify-center">
-                <RiCodeLine className="w-12 h-12 text-green-500" />
+            <div className="p-6 bg-white border-2 border-blue-200 rounded-2xl shadow-xl text-center">
+              <div className="w-24 h-24 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl mx-auto mb-4 flex items-center justify-center">
+                <Code className="w-12 h-12 text-white" />
               </div>
-              <h3 className="text-xl font-bold uppercase mb-2">AI ENGINEERS</h3>
+              <h3 className="text-xl font-bold mb-2 text-blue-900">AI Engineers</h3>
               <p className="text-gray-700">
-                Deep expertise in machine learning, voice synthesis, and model optimization.
+                Deep expertise in machine learning, education technology, and model optimization.
               </p>
             </div>
 
-            <div className="p-6 bg-green-500 border-4 border-black brutalist-shadow text-center">
-              <div className="w-24 h-24 bg-black border-4 border-black mx-auto mb-4 flex items-center justify-center">
-                <RiMicLine className="w-12 h-12 text-green-500" />
+            <div className="p-6 bg-gradient-to-br from-green-50 to-emerald-50 border-2 border-green-200 rounded-2xl shadow-xl text-center">
+              <div className="w-24 h-24 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl mx-auto mb-4 flex items-center justify-center">
+                <BookOpen className="w-12 h-12 text-white" />
               </div>
-              <h3 className="text-xl font-bold uppercase mb-2">AUDIO EXPERTS</h3>
-              <p className="text-gray-900">
-                Professional audio engineers ensuring studio-quality output.
+              <h3 className="text-xl font-bold mb-2 text-green-900">Education Experts</h3>
+              <p className="text-gray-700">
+                Professional educators ensuring pedagogically sound learning experiences.
               </p>
             </div>
 
-            <div className="p-6 bg-black text-white border-4 border-black brutalist-shadow-yellow text-center">
-              <div className="w-24 h-24 bg-green-500 border-4 border-black mx-auto mb-4 flex items-center justify-center">
-                <RiTeamLine className="w-12 h-12 text-black" />
+            <div className="p-6 bg-gradient-to-br from-teal-50 to-cyan-50 border-2 border-teal-200 rounded-2xl shadow-xl text-center">
+              <div className="w-24 h-24 bg-gradient-to-br from-teal-500 to-cyan-500 rounded-xl mx-auto mb-4 flex items-center justify-center">
+                <Users className="w-12 h-12 text-white" />
               </div>
-              <h3 className="text-xl font-bold uppercase mb-2 text-green-500">PRODUCT TEAM</h3>
-              <p className="text-white">
-                Focused on building intuitive tools that creators actually want to use.
+              <h3 className="text-xl font-bold mb-2 text-teal-900">Product Team</h3>
+              <p className="text-gray-700">
+                Focused on building intuitive tools that students actually want to use.
               </p>
             </div>
           </div>
@@ -411,27 +413,27 @@ export default function AboutPage() {
       <section className="py-24">
         <Container maxWidth="xl">
           <div className="text-center max-w-4xl mx-auto">
-            <h2 className="text-5xl md:text-6xl font-bold uppercase mb-6">
-              JOIN THOUSANDS OF CREATORS
+            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">
+              Join Thousands of Learners
             </h2>
             <p className="text-xl text-gray-700 mb-12">
-              Start creating professional voice content today. Free tier available—no credit card required.
+              Start your personalized learning journey today. Free tier available—no credit card required.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button
                 size="xl"
-                className="gap-3 bg-green-500 text-black border-4 border-black font-bold uppercase brutalist-shadow"
+                className="gap-3 bg-gradient-to-r from-blue-600 to-green-600 text-white border-2 border-blue-600 rounded-xl font-bold shadow-xl hover:shadow-2xl transition-all"
                 asChild
               >
                 <a href="/auth/signup">
-                  <RiArrowRightLine className="w-5 h-5" />
+                  <ArrowRight className="w-5 h-5" />
                   Get Started Free
                 </a>
               </Button>
               <Button
                 size="xl"
                 variant="outline"
-                className="gap-3 bg-white text-black border-4 border-black font-bold uppercase brutalist-shadow"
+                className="gap-3 bg-white text-blue-600 border-2 border-blue-600 rounded-xl font-bold shadow-xl hover:shadow-2xl transition-all"
                 asChild
               >
                 <a href="/demo">Try Demo</a>
@@ -439,7 +441,7 @@ export default function AboutPage() {
               <Button
                 size="xl"
                 variant="outline"
-                className="gap-3 bg-black text-green-500 border-4 border-black font-bold uppercase brutalist-shadow"
+                className="gap-3 bg-gradient-to-br from-teal-50 to-cyan-50 text-teal-600 border-2 border-teal-600 rounded-xl font-bold shadow-xl hover:shadow-2xl transition-all"
                 asChild
               >
                 <a href="/contact">Contact Us</a>

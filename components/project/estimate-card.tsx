@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { RiMoneyDollarCircleLine, RiTimeLine, RiCheckLine, RiCloseLine, RiAlertLine } from "react-icons/ri"
+import { RiMoneyDollarCircleLine, RiTimeLine, RiCheckLine, RiCloseLine, RiAlertLine } from "lucide-react"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Text, Heading } from "@/components/ui/typography"
@@ -86,11 +86,11 @@ export function EstimateCard({
   if (status === "pending") {
     return (
       <>
-        <Card variant="outlined" className="border-4 border-black">
+        <Card variant="outlined" className="border-2 border-black">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <RiMoneyDollarCircleLine className="h-6 w-6 text-green-500" />
-              AI ESTIMATION
+              AI Estimation
             </CardTitle>
             <CardDescription>
               Get an instant cost and time estimate for your project
@@ -111,16 +111,16 @@ export function EstimateCard({
               disabled={loading}
             >
               <RiMoneyDollarCircleLine className="mr-2 h-4 w-4" />
-              GET ESTIMATE
+              Get Estimate
             </Button>
           </CardFooter>
         </Card>
 
         {/* Request Dialog */}
         <AlertDialog open={showRequestDialog} onOpenChange={setShowRequestDialog}>
-          <AlertDialogContent className="border-4 border-black sm:max-w-[600px]">
+          <AlertDialogContent className="border-2 border-black sm:max-w-[600px]">
             <AlertDialogHeader>
-              <AlertDialogTitle>DESCRIBE YOUR PROJECT</AlertDialogTitle>
+              <AlertDialogTitle>Describe Your Project</AlertDialogTitle>
               <AlertDialogDescription>
                 Provide detailed requirements for accurate estimation (minimum 10 characters)
               </AlertDialogDescription>
@@ -139,14 +139,14 @@ export function EstimateCard({
             </div>
             <AlertDialogFooter>
               <AlertDialogCancel className="border-2 border-black">
-                CANCEL
+                Cancel
               </AlertDialogCancel>
               <AlertDialogAction
                 onClick={handleGetEstimate}
                 disabled={requestText.length < 10 || requestText.length > 5000 || loading}
-                className="bg-green-500 text-black border-4 border-black hover:bg-green-500"
+                className="bg-green-500 text-black border-2 border-black hover:bg-green-500"
               >
-                {loading ? "ESTIMATING..." : "GET ESTIMATE"}
+                {loading ? "Estimating..." : "Get Estimate"}
               </AlertDialogAction>
             </AlertDialogFooter>
           </AlertDialogContent>
@@ -159,11 +159,11 @@ export function EstimateCard({
   if (status === "waiting" && estimate) {
     return (
       <>
-        <Card variant="gradient" className="border-4 border-black">
+        <Card variant="gradient" className="border-2 border-black">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <RiMoneyDollarCircleLine className="h-6 w-6" />
-              ESTIMATE READY
+              Estimate Ready
             </CardTitle>
             <CardDescription className="text-black/80">
               Review the AI-generated estimate for your project
@@ -172,9 +172,9 @@ export function EstimateCard({
           <CardContent className="space-y-6">
             {/* Cost & Duration */}
             <div className="grid grid-cols-2 gap-4">
-              <div className="rounded-md border-4 border-black bg-white p-4">
+              <div className="rounded-md border-2 border-black bg-white p-4">
                 <Text variant="caption" className="text-xs font-bold uppercase text-slate-600">
-                  ESTIMATED COST
+                  Estimated Cost
                 </Text>
                 <div className="mt-2 flex items-baseline gap-2">
                   <Heading variant="h2" className="text-3xl font-bold">
@@ -185,9 +185,9 @@ export function EstimateCard({
                   </Text>
                 </div>
               </div>
-              <div className="rounded-md border-4 border-black bg-white p-4">
+              <div className="rounded-md border-2 border-black bg-white p-4">
                 <Text variant="caption" className="text-xs font-bold uppercase text-slate-600">
-                  ESTIMATED DURATION
+                  Estimated Duration
                 </Text>
                 <div className="mt-2 flex items-baseline gap-2">
                   <Heading variant="h2" className="text-3xl font-bold">
@@ -206,9 +206,9 @@ export function EstimateCard({
                 <Separator className="bg-black" />
                 <div>
                   <Heading variant="h3" className="mb-3 text-sm font-bold uppercase">
-                    COST BREAKDOWN
+                    Cost Breakdown
                   </Heading>
-                  <div className="space-y-2 rounded-md border-4 border-black bg-white p-4">
+                  <div className="space-y-2 rounded-md border-2 border-black bg-white p-4">
                     {Object.entries(estimate.breakdown).map(([key, value]) => (
                       value !== undefined && (
                         <div key={key} className="flex items-center justify-between">
@@ -232,9 +232,9 @@ export function EstimateCard({
                 <Separator className="bg-black" />
                 <div>
                   <Heading variant="h3" className="mb-3 text-sm font-bold uppercase">
-                    ASSUMPTIONS
+                    Assumptions
                   </Heading>
-                  <ul className="space-y-2 rounded-md border-4 border-black bg-white p-4">
+                  <ul className="space-y-2 rounded-md border-2 border-black bg-white p-4">
                     {estimate.assumptions.map((assumption, index) => (
                       <li key={index} className="flex items-start gap-2">
                         <RiCheckLine className="h-4 w-4 flex-shrink-0 text-green-600" />
@@ -252,12 +252,12 @@ export function EstimateCard({
             {!hasEnoughCredits && (
               <>
                 <Separator className="bg-black" />
-                <div className="rounded-md border-4 border-red-500 bg-red-50 p-4">
+                <div className="rounded-md border-2 border-red-500 bg-red-50 p-4">
                   <div className="flex items-start gap-3">
                     <RiAlertLine className="h-5 w-5 flex-shrink-0 text-red-600" />
                     <div className="flex-1">
                       <Heading variant="h3" className="text-sm font-bold text-red-900">
-                        INSUFFICIENT CREDITS
+                        Insufficient Credits
                       </Heading>
                       <Text variant="body" className="mt-1 text-sm text-red-800">
                         You need {creditsNeeded.toLocaleString()} credits but only have{" "}
@@ -266,7 +266,7 @@ export function EstimateCard({
                         Shortfall: {shortfall.toLocaleString()} credits (${(shortfall / 100).toFixed(2)})
                       </Text>
                       <Button variant="primary" size="sm" className="mt-3">
-                        ADD CREDITS
+                        Add Credits
                       </Button>
                     </div>
                   </div>
@@ -277,12 +277,12 @@ export function EstimateCard({
           <CardFooter className="flex gap-3">
             <Button
               variant="outline"
-              className="flex-1 border-4"
+              className="flex-1 border-2"
               onClick={() => setShowRejectDialog(true)}
               disabled={loading}
             >
               <RiCloseLine className="mr-2 h-4 w-4" />
-              REJECT
+              Reject
             </Button>
             <Button
               variant="primary"
@@ -291,16 +291,16 @@ export function EstimateCard({
               disabled={!hasEnoughCredits || loading}
             >
               <RiCheckLine className="mr-2 h-4 w-4" />
-              {loading ? "ACCEPTING..." : "ACCEPT & RESERVE CREDITS"}
+              {loading ? "Accepting..." : "Accept & Reserve Credits"}
             </Button>
           </CardFooter>
         </Card>
 
         {/* Reject Dialog */}
         <AlertDialog open={showRejectDialog} onOpenChange={setShowRejectDialog}>
-          <AlertDialogContent className="border-4 border-black">
+          <AlertDialogContent className="border-2 border-black">
             <AlertDialogHeader>
-              <AlertDialogTitle>REJECT ESTIMATE</AlertDialogTitle>
+              <AlertDialogTitle>Reject Estimate</AlertDialogTitle>
               <AlertDialogDescription>
                 This will return the project to draft status. You can provide a reason (optional).
               </AlertDialogDescription>
@@ -316,13 +316,13 @@ export function EstimateCard({
             </div>
             <AlertDialogFooter>
               <AlertDialogCancel className="border-2 border-black">
-                CANCEL
+                Cancel
               </AlertDialogCancel>
               <AlertDialogAction
                 onClick={handleRejectEstimate}
-                className="bg-red-400 text-black border-4 border-black hover:bg-red-500"
+                className="bg-red-400 text-black border-2 border-black hover:bg-red-500"
               >
-                REJECT ESTIMATE
+                Reject Estimate
               </AlertDialogAction>
             </AlertDialogFooter>
           </AlertDialogContent>
@@ -334,11 +334,11 @@ export function EstimateCard({
   // Accepted: Show confirmed estimate
   if (status === "accepted" && estimate) {
     return (
-      <Card variant="outlined" className="border-4 border-green-500 bg-green-50">
+      <Card variant="outlined" className="border-2 border-green-500 bg-green-50">
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-green-900">
             <RiCheckLine className="h-6 w-6 text-green-600" />
-            ESTIMATE ACCEPTED
+            Estimate Accepted
           </CardTitle>
           <CardDescription className="text-green-800">
             Credits reserved • Waiting for expert assignment
@@ -348,7 +348,7 @@ export function EstimateCard({
           <div className="grid grid-cols-2 gap-4">
             <div>
               <Text variant="caption" className="text-xs font-bold uppercase text-green-700">
-                COST
+                Cost
               </Text>
               <Heading variant="h3" className="font-bold text-green-900">
                 ${estimate.estimatedCost.toFixed(2)}
@@ -356,7 +356,7 @@ export function EstimateCard({
             </div>
             <div>
               <Text variant="caption" className="text-xs font-bold uppercase text-green-700">
-                DURATION
+                Duration
               </Text>
               <Heading variant="h3" className="font-bold text-green-900">
                 {estimate.estimatedDuration}h
@@ -365,7 +365,7 @@ export function EstimateCard({
           </div>
           <div className="rounded-md border-2 border-green-600 bg-white p-3">
             <Text variant="caption" className="text-xs font-bold uppercase text-green-700">
-              CREDITS RESERVED
+              Credits Reserved
             </Text>
             <Text variant="body" className="mt-1 font-bold text-green-900">
               {creditsNeeded.toLocaleString()} credits

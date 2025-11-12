@@ -1,6 +1,6 @@
 "use client"
 
-import { RiCoinsLine, RiAlertLine, RiArrowRightLine, RiHistoryLine } from "react-icons/ri"
+import { RiCoinsLine, RiAlertLine, RiArrowRightLine, RiHistoryLine } from "lucide-react"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Text, Heading } from "@/components/ui/typography"
@@ -36,16 +36,16 @@ export function CreditBalanceCard({
   // Compact version for sidebar/header
   if (compact) {
     return (
-      <Card variant="outlined" className={`border-4 ${isCritical ? "border-red-500" : isLow ? "border-orange-500" : "border-black"}`}>
+      <Card variant="outlined" className={`border-2 ${isCritical ? "border-red-500" : isLow ? "border-orange-500" : "border-black"}`}>
         <CardContent className="p-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className={`rounded-md border-4 border-black p-2 ${isCritical ? "bg-red-100" : isLow ? "bg-orange-100" : "bg-yellow-100"}`}>
+              <div className={`rounded-md border-2 border-black p-2 ${isCritical ? "bg-red-100" : isLow ? "bg-orange-100" : "bg-yellow-100"}`}>
                 <RiCoinsLine className={`h-5 w-5 ${isCritical ? "text-red-600" : isLow ? "text-teal-600" : "text-green-600"}`} />
               </div>
               <div>
                 <Text variant="caption" className="text-xs font-bold uppercase text-slate-600">
-                  CREDIT BALANCE
+                  Credit Balance
                 </Text>
                 <Heading variant="h3" className="font-bold">
                   ${dollars.toFixed(2)}
@@ -57,7 +57,7 @@ export function CreditBalanceCard({
             </div>
             {(isLow || isCritical) && (
               <Badge variant={isCritical ? "danger" : "warning"} className="text-xs">
-                {isCritical ? "CRITICAL" : "LOW"}
+                {isCritical ? "Critical" : "Low"}
               </Badge>
             )}
           </div>
@@ -69,7 +69,7 @@ export function CreditBalanceCard({
               onClick={onAddCredits}
             >
               <RiCoinsLine className="mr-2 h-4 w-4" />
-              ADD CREDITS
+              Add Credits
             </Button>
           )}
         </CardContent>
@@ -81,12 +81,12 @@ export function CreditBalanceCard({
   return (
     <Card
       variant={isCritical ? "outlined" : "gradient"}
-      className={`border-4 ${isCritical ? "border-red-500 bg-red-50" : isLow ? "border-orange-500" : "border-black"}`}
+      className={`border-2 ${isCritical ? "border-red-500 bg-red-50" : isLow ? "border-orange-500" : "border-black"}`}
     >
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
           <RiCoinsLine className="h-6 w-6" />
-          CREDIT BALANCE
+          Credit Balance
         </CardTitle>
         <CardDescription className={isCritical ? "text-red-900" : isLow ? "text-orange-900" : "text-black/80"}>
           Your available credits for project reservations
@@ -94,9 +94,9 @@ export function CreditBalanceCard({
       </CardHeader>
       <CardContent className="space-y-6">
         {/* Balance Display */}
-        <div className="rounded-md border-4 border-black bg-white p-6 text-center">
+        <div className="rounded-md border-2 border-black bg-white p-6 text-center">
           <Text variant="caption" className="text-xs font-bold uppercase text-slate-600">
-            AVAILABLE BALANCE
+            Available Balance
           </Text>
           <Heading variant="h1" className="mt-2 text-5xl font-bold">
             ${dollars.toFixed(2)}
@@ -108,12 +108,12 @@ export function CreditBalanceCard({
 
         {/* Warning */}
         {(isLow || isCritical) && (
-          <div className={`rounded-md border-4 p-4 ${isCritical ? "border-red-500 bg-red-100" : "border-orange-500 bg-orange-100"}`}>
+          <div className={`rounded-md border-2 p-4 ${isCritical ? "border-red-500 bg-red-100" : "border-orange-500 bg-orange-100"}`}>
             <div className="flex items-start gap-3">
               <RiAlertLine className={`h-5 w-5 flex-shrink-0 ${isCritical ? "text-red-600" : "text-teal-600"}`} />
               <div className="flex-1">
                 <Heading variant="h3" className={`text-sm font-bold ${isCritical ? "text-red-900" : "text-orange-900"}`}>
-                  {isCritical ? "CRITICAL BALANCE" : "LOW BALANCE"}
+                  {isCritical ? "Critical Balance" : "Low Balance"}
                 </Heading>
                 <Text variant="body" className={`mt-1 text-sm ${isCritical ? "text-red-800" : "text-orange-800"}`}>
                   {isCritical
@@ -132,7 +132,7 @@ export function CreditBalanceCard({
             <div>
               <div className="mb-3 flex items-center justify-between">
                 <Heading variant="h3" className="text-sm font-bold uppercase">
-                  RECENT TRANSACTIONS
+                  Recent Transactions
                 </Heading>
                 {onViewTransactions && (
                   <Button
@@ -140,12 +140,12 @@ export function CreditBalanceCard({
                     size="sm"
                     onClick={onViewTransactions}
                   >
-                    VIEW ALL
+                    View All
                     <RiArrowRightLine className="ml-2 h-3 w-3" />
                   </Button>
                 )}
               </div>
-              <div className="space-y-2 rounded-md border-4 border-black bg-white p-4">
+              <div className="space-y-2 rounded-md border-2 border-black bg-white p-4">
                 {recentTransactions.slice(0, 5).map((transaction) => (
                   <div key={transaction.id} className="flex items-center justify-between border-b border-slate-200 pb-2 last:border-0 last:pb-0">
                     <div className="flex-1">
@@ -174,13 +174,13 @@ export function CreditBalanceCard({
         {onAddCredits && (
           <Button variant="primary" className="flex-1" onClick={onAddCredits}>
             <RiCoinsLine className="mr-2 h-4 w-4" />
-            ADD CREDITS
+            Add Credits
           </Button>
         )}
         {onViewTransactions && (
-          <Button variant="outline" className="flex-1 border-4" onClick={onViewTransactions}>
+          <Button variant="outline" className="flex-1 border-2" onClick={onViewTransactions}>
             <RiHistoryLine className="mr-2 h-4 w-4" />
-            VIEW HISTORY
+            View History
           </Button>
         )}
       </CardFooter>

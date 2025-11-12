@@ -40,7 +40,7 @@ export async function POST(request: NextRequest) {
             currency: 'usd',
             product_data: {
               name: `${credits} Credits`,
-              description: 'VoiceCraft AI Credits - Never expires',
+              description: 'TutorBot Plus AI Credits - Never expires',
               images: [], // You can add product images here
             },
             unit_amount: Math.round(price * 100), // Convert to cents

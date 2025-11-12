@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { RiRefund2Line, RiErrorWarningLine } from "react-icons/ri"
+import { RiRefund2Line, RiErrorWarningLine } from "lucide-react"
 import {
   AlertDialog,
   AlertDialogAction,
@@ -60,18 +60,18 @@ export function RefundDialog({
         {trigger || (
           <Button variant="outline" size="sm" className="border-2 border-red-500 text-red-600 hover:bg-red-50">
             <RiRefund2Line className="mr-2 h-4 w-4" />
-            REFUND PROJECT
+            Refund Project
           </Button>
         )}
       </AlertDialogTrigger>
-      <AlertDialogContent className="border-4 border-red-500 sm:max-w-[600px]">
+      <AlertDialogContent className="border-2 border-red-500 sm:max-w-[600px]">
         <AlertDialogHeader>
           <div className="flex items-center gap-3">
-            <div className="rounded-md border-4 border-red-500 bg-red-100 p-2">
+            <div className="rounded-md border-2 border-red-500 bg-red-100 p-2">
               <RiRefund2Line className="h-6 w-6 text-red-600" />
             </div>
             <div>
-              <AlertDialogTitle className="text-red-900">REFUND PROJECT</AlertDialogTitle>
+              <AlertDialogTitle className="text-red-900">Refund Project</AlertDialogTitle>
               <AlertDialogDescription className="text-red-800">
                 This action will cancel the project and refund credits to the client
               </AlertDialogDescription>
@@ -81,7 +81,7 @@ export function RefundDialog({
 
         <div className="space-y-6 py-4">
           {/* Warning */}
-          <div className="rounded-md border-4 border-yellow-500 bg-green-50 p-4">
+          <div className="rounded-md border-2 border-yellow-500 bg-green-50 p-4">
             <div className="flex items-start gap-3">
               <RiErrorWarningLine className="h-5 w-5 flex-shrink-0 text-green-600" />
               <div>
@@ -99,7 +99,7 @@ export function RefundDialog({
           <div className="space-y-3">
             <div className="rounded-md border-2 border-black bg-slate-50 p-4">
               <Text variant="caption" className="text-xs font-bold uppercase text-slate-600">
-                PROJECT
+                Project
               </Text>
               <Text variant="body" className="mt-1 font-bold">
                 {projectName}
@@ -108,7 +108,7 @@ export function RefundDialog({
 
             <div className="rounded-md border-2 border-black bg-slate-50 p-4">
               <Text variant="caption" className="text-xs font-bold uppercase text-slate-600">
-                CLIENT
+                Client
               </Text>
               <Text variant="body" className="mt-1 font-bold">
                 {clientName}
@@ -117,14 +117,14 @@ export function RefundDialog({
 
             <div className="rounded-md border-2 border-black bg-green-50 p-4">
               <Text variant="caption" className="text-xs font-bold uppercase text-green-900">
-                REFUND AMOUNT
+                Refund Amount
               </Text>
               <div className="mt-2 flex items-baseline gap-2">
                 <Text variant="body" className="text-2xl font-bold text-green-900">
                   ${refundAmount.toFixed(2)}
                 </Text>
                 <Badge variant="success" className="text-xs">
-                  {reservedCredits.toLocaleString()} CREDITS
+                  {reservedCredits.toLocaleString()} Credits
                 </Badge>
               </div>
             </div>
@@ -135,7 +135,7 @@ export function RefundDialog({
           {/* Reason */}
           <div>
             <Text variant="caption" className="text-xs font-bold uppercase text-slate-600">
-              REASON FOR REFUND (REQUIRED)
+              Reason for Refund (Required)
             </Text>
             <Textarea
               placeholder="Provide a detailed explanation for why this project is being refunded. This will be recorded in the system logs and shown to the client."
@@ -150,7 +150,7 @@ export function RefundDialog({
               </Text>
               {reason.length >= 20 && (
                 <Badge variant="success" className="text-xs">
-                  VALID
+                  Valid
                 </Badge>
               )}
             </div>
@@ -158,13 +158,13 @@ export function RefundDialog({
         </div>
 
         <AlertDialogFooter>
-          <AlertDialogCancel className="border-2 border-black">CANCEL</AlertDialogCancel>
+          <AlertDialogCancel className="border-2 border-black">Cancel</AlertDialogCancel>
           <AlertDialogAction
             onClick={handleRefund}
             disabled={reason.length < 20 || loading}
-            className="bg-red-500 text-white border-4 border-black hover:bg-red-600"
+            className="bg-red-500 text-white border-2 border-black hover:bg-red-600"
           >
-            {loading ? "PROCESSING REFUND..." : "CONFIRM REFUND"}
+            {loading ? "Processing Refund..." : "Confirm Refund"}
           </AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>

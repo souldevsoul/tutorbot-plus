@@ -3,7 +3,7 @@
 import { Container } from "@/components/ui/container"
 import { Header } from "@/components/marketing/layout/header"
 import { Footer } from "@/components/marketing/layout/footer"
-import { RiCloseLine, RiTimeLine, RiCheckLine, RiAlertLine } from "react-icons/ri"
+import { X, Clock, Check, AlertTriangle } from "lucide-react"
 
 export default function CancellationPolicyPage() {
   const lastUpdated = "November 8, 2025"
@@ -11,7 +11,7 @@ export default function CancellationPolicyPage() {
   return (
     <main className="min-h-screen bg-white">
       <Header
-        logoText="VoiceCraft"
+        logoText="TutorBot Plus"
         navLinks={[
           { label: "Features", href: "/features" },
           { label: "Pricing", href: "/pricing" },
@@ -26,17 +26,17 @@ export default function CancellationPolicyPage() {
       <section className="py-20 border-b-8 border-black">
         <Container maxWidth="xl">
           <div className="max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-3 px-6 py-3 bg-green-500 border-4 border-black mb-8">
-              <RiCloseLine className="w-6 h-6" />
-              <span className="text-sm font-bold uppercase tracking-wider">Cancellation Policy</span>
+            <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-blue-600 to-green-600 border-2 border-black mb-8">
+              <X className="w-6 h-6 text-white" />
+              <span className="text-sm font-bold tracking-wider text-white">Cancellation Policy</span>
             </div>
-            <h1 className="text-6xl md:text-7xl font-bold uppercase mb-6 leading-tight">
-              CANCELLATION POLICY
+            <h1 className="text-6xl md:text-7xl font-bold mb-6 leading-tight">
+              Cancellation Policy
             </h1>
             <p className="text-xl text-gray-700 mb-6">
-              You can cancel your VoiceCraft subscription at any time. No questions asked, no hassle.
+              You can cancel your TutorBot Plus subscription at any time. No questions asked, no hassle.
             </p>
-            <p className="text-sm font-bold uppercase text-gray-900">
+            <p className="text-sm font-bold text-gray-900">
               Last Updated: {lastUpdated}
             </p>
           </div>
@@ -49,19 +49,19 @@ export default function CancellationPolicyPage() {
             {/* How to Cancel */}
             <div>
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 bg-black border-4 border-black flex items-center justify-center">
-                  <RiCloseLine className="w-6 h-6 text-green-500" />
+                <div className="w-12 h-12 bg-blue-600 border-2 border-black flex items-center justify-center">
+                  <X className="w-6 h-6 text-white" />
                 </div>
-                <h2 className="text-3xl font-bold uppercase">1. How to Cancel</h2>
+                <h2 className="text-3xl font-bold">1. How to Cancel</h2>
               </div>
 
               <div className="space-y-4">
-                <div className="p-6 bg-white border-4 border-black brutalist-shadow">
-                  <h3 className="text-lg font-bold uppercase mb-3">Cancel Through Dashboard</h3>
+                <div className="p-6 bg-white border-2 border-black shadow-xl">
+                  <h3 className="text-lg font-bold mb-3">Cancel Through Dashboard</h3>
                   <ol className="space-y-3 text-gray-700">
                     <li className="flex items-start gap-3">
                       <span className="font-bold text-black">1.</span>
-                      <span>Log in to your VoiceCraft account</span>
+                      <span>Log in to your TutorBot Plus account</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <span className="font-bold text-black">2.</span>
@@ -78,8 +78,8 @@ export default function CancellationPolicyPage() {
                   </ol>
                 </div>
 
-                <div className="p-6 bg-green-50 border-4 border-black">
-                  <h3 className="text-lg font-bold uppercase mb-3">Cancel Via Email</h3>
+                <div className="p-6 bg-green-50 border-2 border-black">
+                  <h3 className="text-lg font-bold mb-3">Cancel Via Email</h3>
                   <p className="text-gray-700 leading-relaxed mb-3">
                     Alternatively, send an email to{" "}
                     <a href="mailto:support@tutorbot.plus" className="font-bold underline hover:no-underline">
@@ -108,33 +108,33 @@ export default function CancellationPolicyPage() {
             {/* What Happens */}
             <div>
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 bg-black border-4 border-black flex items-center justify-center">
-                  <RiTimeLine className="w-6 h-6 text-green-500" />
+                <div className="w-12 h-12 bg-blue-600 border-2 border-black flex items-center justify-center">
+                  <Clock className="w-6 h-6 text-white" />
                 </div>
-                <h2 className="text-3xl font-bold uppercase">2. What Happens After Cancellation</h2>
+                <h2 className="text-3xl font-bold">2. What Happens After Cancellation</h2>
               </div>
 
               <div className="space-y-4">
-                <div className="p-6 bg-white border-4 border-black brutalist-shadow">
-                  <h3 className="text-lg font-bold uppercase mb-3">Immediate Effects</h3>
+                <div className="p-6 bg-white border-2 border-black shadow-xl">
+                  <h3 className="text-lg font-bold mb-3">Immediate Effects</h3>
                   <ul className="space-y-3 text-gray-700">
                     <li className="flex items-start gap-2">
-                      <RiCheckLine className="w-5 h-5 text-black flex-shrink-0 mt-0.5" />
+                      <Check className="w-5 h-5 text-black flex-shrink-0 mt-0.5" />
                       <span>Your subscription is marked for cancellation</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <RiCheckLine className="w-5 h-5 text-black flex-shrink-0 mt-0.5" />
+                      <Check className="w-5 h-5 text-black flex-shrink-0 mt-0.5" />
                       <span>You will not be charged again</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <RiCheckLine className="w-5 h-5 text-black flex-shrink-0 mt-0.5" />
+                      <Check className="w-5 h-5 text-black flex-shrink-0 mt-0.5" />
                       <span>You receive a cancellation confirmation email</span>
                     </li>
                   </ul>
                 </div>
 
-                <div className="p-6 bg-green-50 border-4 border-black">
-                  <h3 className="text-lg font-bold uppercase mb-3">Access Retention</h3>
+                <div className="p-6 bg-green-50 border-2 border-black">
+                  <h3 className="text-lg font-bold mb-3">Access Retention</h3>
                   <p className="text-gray-700 leading-relaxed mb-3">
                     <span className="font-bold">You keep full access</span> to all features until the end of your current billing period.
                   </p>
@@ -143,28 +143,28 @@ export default function CancellationPolicyPage() {
                   </p>
                 </div>
 
-                <div className="p-6 bg-black text-white border-4 border-black brutalist-shadow-yellow">
-                  <h3 className="text-lg font-bold uppercase mb-3 text-green-500">After Billing Period Ends</h3>
+                <div className="p-6 bg-gradient-to-r from-blue-600 to-green-600 text-white border-2 border-black shadow-xl">
+                  <h3 className="text-lg font-bold mb-3">After Billing Period Ends</h3>
                   <ul className="space-y-3">
                     <li className="flex items-start gap-2">
-                      <span className="text-green-500 font-bold">•</span>
+                      <span className="font-bold">•</span>
                       <span>Your account downgrades to Free tier</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-green-500 font-bold">•</span>
+                      <span className="font-bold">•</span>
                       <span>Pro features are disabled</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-green-500 font-bold">•</span>
+                      <span className="font-bold">•</span>
                       <span>Character limits reset to Free tier limits</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-green-500 font-bold">•</span>
-                      <span>Voice clones remain accessible (up to Free tier limit)</span>
+                      <span className="font-bold">•</span>
+                      <span>Course data remain accessible (up to Free tier limit)</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-green-500 font-bold">•</span>
-                      <span>Historical generated audio is deleted after 30 days</span>
+                      <span className="font-bold">•</span>
+                      <span>Historical generated learning materials are deleted after 30 days</span>
                     </li>
                   </ul>
                 </div>
@@ -174,36 +174,36 @@ export default function CancellationPolicyPage() {
             {/* Specific Scenarios */}
             <div>
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 bg-black border-4 border-black flex items-center justify-center">
-                  <RiAlertLine className="w-6 h-6 text-green-500" />
+                <div className="w-12 h-12 bg-blue-600 border-2 border-black flex items-center justify-center">
+                  <AlertTriangle className="w-6 h-6 text-white" />
                 </div>
-                <h2 className="text-3xl font-bold uppercase">3. Cancellation Scenarios</h2>
+                <h2 className="text-3xl font-bold">3. Cancellation Scenarios</h2>
               </div>
 
               <div className="space-y-4">
-                <div className="p-6 bg-white border-4 border-black brutalist-shadow">
-                  <h3 className="text-lg font-bold uppercase mb-3">Free Trial Cancellation</h3>
+                <div className="p-6 bg-white border-2 border-black shadow-xl">
+                  <h3 className="text-lg font-bold mb-3">Free Trial Cancellation</h3>
                   <p className="text-gray-700 leading-relaxed">
                     Cancel anytime during your 14-day free trial without being charged. No payment information is required to cancel a trial.
                   </p>
                 </div>
 
-                <div className="p-6 bg-green-50 border-4 border-black">
-                  <h3 className="text-lg font-bold uppercase mb-3">Monthly Subscription</h3>
+                <div className="p-6 bg-green-50 border-2 border-black">
+                  <h3 className="text-lg font-bold mb-3">Monthly Subscription</h3>
                   <p className="text-gray-700 leading-relaxed">
                     Cancel anytime. You keep access until the end of your current month. No refund for unused portion of the month (see Refund Policy for exceptions).
                   </p>
                 </div>
 
-                <div className="p-6 bg-white border-4 border-black brutalist-shadow">
-                  <h3 className="text-lg font-bold uppercase mb-3">Annual Subscription</h3>
+                <div className="p-6 bg-white border-2 border-black shadow-xl">
+                  <h3 className="text-lg font-bold mb-3">Annual Subscription</h3>
                   <p className="text-gray-700 leading-relaxed">
                     Cancel anytime. You keep access until the end of your annual term. No refund for unused months (see Refund Policy for eligible circumstances).
                   </p>
                 </div>
 
-                <div className="p-6 bg-green-50 border-4 border-black">
-                  <h3 className="text-lg font-bold uppercase mb-3">Enterprise Plans</h3>
+                <div className="p-6 bg-green-50 border-2 border-black">
+                  <h3 className="text-lg font-bold mb-3">Enterprise Plans</h3>
                   <p className="text-gray-700 leading-relaxed">
                     Enterprise customers should refer to their specific contract terms. Contact your account manager or email support@tutorbot.plus for cancellation procedures.
                   </p>
@@ -213,35 +213,35 @@ export default function CancellationPolicyPage() {
 
             {/* Reactivation */}
             <div>
-              <div className="p-8 bg-green-500 border-4 border-black brutalist-shadow">
-                <h2 className="text-2xl font-bold uppercase mb-4">REACTIVATING YOUR SUBSCRIPTION</h2>
+              <div className="p-8 bg-green-500 border-2 border-black shadow-xl">
+                <h2 className="text-2xl font-bold mb-4">Reactivating Your Subscription</h2>
                 <p className="text-gray-900 leading-relaxed mb-4">
                   Changed your mind? You can reactivate your subscription at any time before your billing period ends by visiting Settings → Subscription → Reactivate.
                 </p>
                 <p className="text-gray-900 leading-relaxed">
-                  After your billing period ends, you can start a new subscription at any time. Your voice clones and account data are retained for 90 days after cancellation.
+                  After your billing period ends, you can start a new subscription at any time. Your course data and account data are retained for 90 days after cancellation.
                 </p>
               </div>
             </div>
 
             {/* Data Retention */}
             <div>
-              <div className="p-6 bg-black text-white border-4 border-black brutalist-shadow-yellow">
-                <h2 className="text-2xl font-bold uppercase mb-4 text-green-500">
-                  DATA RETENTION AFTER CANCELLATION
+              <div className="p-6 bg-gradient-to-r from-blue-600 to-green-600 text-white border-2 border-black shadow-xl">
+                <h2 className="text-2xl font-bold mb-4">
+                  Data Retention After Cancellation
                 </h2>
                 <div className="space-y-3">
                   <p className="leading-relaxed">
-                    <span className="font-bold text-green-500">Account Data:</span> Retained for 90 days, then deleted if subscription not renewed
+                    <span className="font-bold">Account Data:</span> Retained for 90 days, then deleted if subscription not renewed
                   </p>
                   <p className="leading-relaxed">
-                    <span className="font-bold text-green-500">Voice Clones:</span> Retained for 90 days, accessible if you resubscribe
+                    <span className="font-bold">Course Data:</span> Retained for 90 days, accessible if you resubscribe
                   </p>
                   <p className="leading-relaxed">
-                    <span className="font-bold text-green-500">Generated Audio:</span> Automatically deleted 30 days after cancellation
+                    <span className="font-bold">Generated Learning Materials:</span> Automatically deleted 30 days after cancellation
                   </p>
                   <p className="leading-relaxed">
-                    <span className="font-bold text-green-500">Billing History:</span> Retained for 7 years for legal/tax compliance
+                    <span className="font-bold">Billing History:</span> Retained for 7 years for legal/tax compliance
                   </p>
                 </div>
               </div>
@@ -249,8 +249,8 @@ export default function CancellationPolicyPage() {
 
             {/* Contact */}
             <div>
-              <div className="p-8 bg-white border-4 border-black brutalist-shadow text-center">
-                <h2 className="text-2xl font-bold uppercase mb-4">NEED HELP?</h2>
+              <div className="p-8 bg-white border-2 border-black shadow-xl text-center">
+                <h2 className="text-2xl font-bold mb-4">Need Help?</h2>
                 <p className="text-gray-700 mb-6">
                   Before canceling, let us know if there's anything we can do to improve your experience.
                 </p>

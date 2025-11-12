@@ -1,17 +1,17 @@
 import { createTheme, MantineColorsTuple } from '@mantine/core';
 
-// VoiceCraft Brand Colors - Brutalist Black/White/Yellow
-const primaryYellow: MantineColorsTuple = [
-  '#fef9c3',
-  '#fef08a',
-  '#fde047',
-  '#facc15',
-  '#eab308', // Main brand color
-  '#ca8a04',
-  '#a16207',
-  '#854d0e',
-  '#713f12',
-  '#422006',
+// TutorBot Plus Brand Colors - Modern Educational Blue/Green
+const primaryBlue: MantineColorsTuple = [
+  '#eff6ff',
+  '#dbeafe',
+  '#bfdbfe',
+  '#93c5fd',
+  '#3b82f6', // Main brand color
+  '#2563eb',
+  '#1d4ed8',
+  '#1e40af',
+  '#1e3a8a',
+  '#172554',
 ];
 
 const secondaryBlack: MantineColorsTuple = [
@@ -28,12 +28,12 @@ const secondaryBlack: MantineColorsTuple = [
 ];
 
 export const mantineTheme = createTheme({
-  /** Primary color - Yellow */
-  primaryColor: 'yellow',
+  /** Primary color - Blue */
+  primaryColor: 'blue',
 
   /** Colors */
   colors: {
-    yellow: primaryYellow,
+    blue: primaryBlue,
     dark: secondaryBlack,
   },
 
@@ -71,13 +71,13 @@ export const mantineTheme = createTheme({
     xl: '1.5rem',    // 24px
   },
 
-  /** Shadows - Brutalist */
+  /** Shadows - Modern Soft */
   shadows: {
-    xs: '0 1px 2px 0 rgba(0, 0, 0, 0.1)',
-    sm: '0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 2px 0 rgba(0, 0, 0, 0.12)',
-    md: '0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.12)',
-    lg: '0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.1)',
-    xl: '0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.08)',
+    xs: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
+    sm: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
+    md: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+    lg: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+    xl: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
   },
 
   /** Component defaults */
@@ -122,8 +122,8 @@ export const mantineTheme = createTheme({
   focusRing: 'auto',
   activeClassName: 'mantine-active',
   defaultGradient: {
-    from: 'yellow',
-    to: 'yellow.6',
+    from: 'blue',
+    to: 'blue.6',
     deg: 135,
   },
 });

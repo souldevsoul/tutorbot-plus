@@ -3,7 +3,7 @@
 import { Container } from "@/components/ui/container"
 import { Header } from "@/components/marketing/layout/header"
 import { Footer } from "@/components/marketing/layout/footer"
-import { RiRefundLine, RiTimeLine, RiCheckLine, RiMailLine } from "react-icons/ri"
+import { DollarSign, Clock, Check, Mail } from "lucide-react"
 
 export default function RefundPolicyPage() {
   const lastUpdated = "November 8, 2025"
@@ -11,7 +11,7 @@ export default function RefundPolicyPage() {
   return (
     <main className="min-h-screen bg-white">
       <Header
-        logoText="VoiceCraft"
+        logoText="TutorBot Plus"
         navLinks={[
           { label: "Features", href: "/features" },
           { label: "Pricing", href: "/pricing" },
@@ -27,17 +27,17 @@ export default function RefundPolicyPage() {
       <section className="py-20 border-b-8 border-black">
         <Container maxWidth="xl">
           <div className="max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-3 px-6 py-3 bg-green-500 border-4 border-black mb-8">
-              <RiRefundLine className="w-6 h-6" />
-              <span className="text-sm font-bold uppercase tracking-wider">Refund Policy</span>
+            <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-blue-600 to-green-600 border-2 border-black mb-8">
+              <DollarSign className="w-6 h-6 text-white" />
+              <span className="text-sm font-bold tracking-wider text-white">Refund Policy</span>
             </div>
-            <h1 className="text-6xl md:text-7xl font-bold uppercase mb-6 leading-tight">
-              REFUND & RETURN POLICY
+            <h1 className="text-6xl md:text-7xl font-bold mb-6 leading-tight">
+              Refund & Return Policy
             </h1>
             <p className="text-xl text-gray-700 mb-6">
-              Our commitment to customer satisfaction. Understand our refund and return policy for VoiceCraft services.
+              Our commitment to customer satisfaction. Understand our refund and return policy for TutorBot Plus services.
             </p>
-            <p className="text-sm font-bold uppercase text-gray-900">
+            <p className="text-sm font-bold text-gray-900">
               Last Updated: {lastUpdated}
             </p>
           </div>
@@ -51,25 +51,25 @@ export default function RefundPolicyPage() {
             {/* General Policy */}
             <div>
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 bg-black border-4 border-black flex items-center justify-center">
-                  <RiRefundLine className="w-6 h-6 text-green-500" />
+                <div className="w-12 h-12 bg-blue-600 border-2 border-black flex items-center justify-center">
+                  <DollarSign className="w-6 h-6 text-white" />
                 </div>
-                <h2 className="text-3xl font-bold uppercase">1. General Refund Policy</h2>
+                <h2 className="text-3xl font-bold">1. General Refund Policy</h2>
               </div>
 
               <div className="space-y-4">
-                <div className="p-6 bg-white border-4 border-black brutalist-shadow">
-                  <h3 className="text-lg font-bold uppercase mb-3">Digital Service</h3>
+                <div className="p-6 bg-white border-2 border-black shadow-xl">
+                  <h3 className="text-lg font-bold mb-3">Digital Service</h3>
                   <p className="text-gray-700 leading-relaxed mb-4">
-                    VoiceCraft is a digital service platform. Once voice generation or voice cloning services are rendered, they cannot be "returned" in the traditional sense as they are immediately consumed digital services.
+                    TutorBot Plus is a digital service platform. Once learning generation or AI tutoring services are rendered, they cannot be "returned" in the traditional sense as they are immediately consumed digital services.
                   </p>
                   <p className="text-gray-700 leading-relaxed">
                     However, we stand behind the quality of our service and offer refunds under specific circumstances outlined below.
                   </p>
                 </div>
 
-                <div className="p-6 bg-green-50 border-4 border-black">
-                  <h3 className="text-lg font-bold uppercase mb-3">14-Day Free Trial</h3>
+                <div className="p-6 bg-green-50 border-2 border-black">
+                  <h3 className="text-lg font-bold mb-3">14-Day Free Trial</h3>
                   <p className="text-gray-700 leading-relaxed">
                     All Pro plan subscriptions include a 14-day free trial. You can cancel at any time during this trial period without being charged. No refund is necessary as no payment has been processed.
                   </p>
@@ -80,15 +80,15 @@ export default function RefundPolicyPage() {
             {/* Eligible Refunds */}
             <div>
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 bg-black border-4 border-black flex items-center justify-center">
-                  <RiCheckLine className="w-6 h-6 text-green-500" />
+                <div className="w-12 h-12 bg-blue-600 border-2 border-black flex items-center justify-center">
+                  <Check className="w-6 h-6 text-white" />
                 </div>
-                <h2 className="text-3xl font-bold uppercase">2. Eligible for Refund</h2>
+                <h2 className="text-3xl font-bold">2. Eligible for Refund</h2>
               </div>
 
               <div className="space-y-4">
-                <div className="p-6 bg-white border-4 border-black brutalist-shadow">
-                  <h3 className="text-lg font-bold uppercase mb-3">Technical Issues</h3>
+                <div className="p-6 bg-white border-2 border-black shadow-xl">
+                  <h3 className="text-lg font-bold mb-3">Technical Issues</h3>
                   <p className="text-gray-700 leading-relaxed mb-3">
                     You are eligible for a full refund if:
                   </p>
@@ -103,7 +103,7 @@ export default function RefundPolicyPage() {
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-black font-bold">•</span>
-                      Voice generation consistently failed to produce output
+                      Learning content generation consistently failed to produce output
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-black font-bold">•</span>
@@ -112,8 +112,8 @@ export default function RefundPolicyPage() {
                   </ul>
                 </div>
 
-                <div className="p-6 bg-green-50 border-4 border-black">
-                  <h3 className="text-lg font-bold uppercase mb-3">Billing Errors</h3>
+                <div className="p-6 bg-green-50 border-2 border-black">
+                  <h3 className="text-lg font-bold mb-3">Billing Errors</h3>
                   <p className="text-gray-700 leading-relaxed mb-3">
                     You are eligible for a refund if:
                   </p>
@@ -133,8 +133,8 @@ export default function RefundPolicyPage() {
                   </ul>
                 </div>
 
-                <div className="p-6 bg-white border-4 border-black brutalist-shadow">
-                  <h3 className="text-lg font-bold uppercase mb-3">First-Time Subscription</h3>
+                <div className="p-6 bg-white border-2 border-black shadow-xl">
+                  <h3 className="text-lg font-bold mb-3">First-Time Subscription</h3>
                   <p className="text-gray-700 leading-relaxed">
                     For first-time paid subscribers who are not satisfied with the service, you may request a refund within 7 days of your first charge. This one-time courtesy refund is available once per customer.
                   </p>
@@ -145,37 +145,37 @@ export default function RefundPolicyPage() {
             {/* Not Eligible */}
             <div>
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 bg-black border-4 border-black flex items-center justify-center">
-                  <RiTimeLine className="w-6 h-6 text-green-500" />
+                <div className="w-12 h-12 bg-blue-600 border-2 border-black flex items-center justify-center">
+                  <Clock className="w-6 h-6 text-white" />
                 </div>
-                <h2 className="text-3xl font-bold uppercase">3. Not Eligible for Refund</h2>
+                <h2 className="text-3xl font-bold">3. Not Eligible for Refund</h2>
               </div>
 
-              <div className="p-6 bg-black text-white border-4 border-black brutalist-shadow-yellow">
-                <h3 className="text-lg font-bold uppercase mb-4 text-green-500">The Following Are NOT Eligible:</h3>
+              <div className="p-6 bg-gradient-to-r from-blue-600 to-green-600 text-white border-2 border-black shadow-xl">
+                <h3 className="text-lg font-bold mb-4">The Following Are Not Eligible:</h3>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-2">
-                    <span className="text-green-500 font-bold">•</span>
+                    <span className="font-bold">•</span>
                     <span>Change of mind after using the service</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-green-500 font-bold">•</span>
-                    <span>Dissatisfaction with AI-generated voice quality (subjective opinion)</span>
+                    <span className="font-bold">•</span>
+                    <span>Dissatisfaction with AI-generated learning quality (subjective opinion)</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-green-500 font-bold">•</span>
+                    <span className="font-bold">•</span>
                     <span>Already used character credits (partial refunds not available)</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-green-500 font-bold">•</span>
+                    <span className="font-bold">•</span>
                     <span>Cancellation after the refund eligibility period has passed</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-green-500 font-bold">•</span>
+                    <span className="font-bold">•</span>
                     <span>Violation of our Terms of Service resulting in account termination</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-green-500 font-bold">•</span>
+                    <span className="font-bold">•</span>
                     <span>Third-party API costs incurred (we pass through costs from Replicate)</span>
                   </li>
                 </ul>
@@ -185,15 +185,15 @@ export default function RefundPolicyPage() {
             {/* Refund Process */}
             <div>
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 bg-black border-4 border-black flex items-center justify-center">
-                  <RiMailLine className="w-6 h-6 text-green-500" />
+                <div className="w-12 h-12 bg-blue-600 border-2 border-black flex items-center justify-center">
+                  <Mail className="w-6 h-6 text-white" />
                 </div>
-                <h2 className="text-3xl font-bold uppercase">4. How to Request a Refund</h2>
+                <h2 className="text-3xl font-bold">4. How to Request a Refund</h2>
               </div>
 
               <div className="space-y-4">
-                <div className="p-6 bg-white border-4 border-black brutalist-shadow">
-                  <h3 className="text-lg font-bold uppercase mb-3">Step 1: Contact Support</h3>
+                <div className="p-6 bg-white border-2 border-black shadow-xl">
+                  <h3 className="text-lg font-bold mb-3">Step 1: Contact Support</h3>
                   <p className="text-gray-700 leading-relaxed mb-3">
                     Email our support team at{" "}
                     <a href="mailto:support@tutorbot.plus" className="font-bold underline hover:no-underline">
@@ -206,15 +206,15 @@ export default function RefundPolicyPage() {
                   </p>
                 </div>
 
-                <div className="p-6 bg-green-50 border-4 border-black">
-                  <h3 className="text-lg font-bold uppercase mb-3">Step 2: Review Process</h3>
+                <div className="p-6 bg-green-50 border-2 border-black">
+                  <h3 className="text-lg font-bold mb-3">Step 2: Review Process</h3>
                   <p className="text-gray-700 leading-relaxed">
                     Our team will review your request within 2-3 business days. We may contact you for additional information or to attempt to resolve any technical issues.
                   </p>
                 </div>
 
-                <div className="p-6 bg-white border-4 border-black brutalist-shadow">
-                  <h3 className="text-lg font-bold uppercase mb-3">Step 3: Decision & Processing</h3>
+                <div className="p-6 bg-white border-2 border-black shadow-xl">
+                  <h3 className="text-lg font-bold mb-3">Step 3: Decision & Processing</h3>
                   <p className="text-gray-700 leading-relaxed mb-3">
                     If approved, refunds are processed within 5-7 business days. Refunds are issued to the original payment method.
                   </p>
@@ -227,8 +227,8 @@ export default function RefundPolicyPage() {
 
             {/* Cancellation */}
             <div>
-              <div className="p-8 bg-green-500 border-4 border-black brutalist-shadow">
-                <h2 className="text-2xl font-bold uppercase mb-4">CANCELLATION VS. REFUND</h2>
+              <div className="p-8 bg-green-500 border-2 border-black shadow-xl">
+                <h2 className="text-2xl font-bold mb-4">Cancellation vs. Refund</h2>
                 <p className="text-gray-900 leading-relaxed mb-4">
                   <span className="font-bold">Cancellation:</span> You can cancel your subscription at any time through your account settings. You will retain access until the end of your current billing period, but no refund will be issued for the remaining time.
                 </p>
@@ -240,11 +240,11 @@ export default function RefundPolicyPage() {
 
             {/* Enterprise */}
             <div>
-              <div className="p-6 bg-black text-white border-4 border-black brutalist-shadow-yellow">
-                <h2 className="text-2xl font-bold uppercase mb-4 text-green-500">
-                  ENTERPRISE CUSTOMERS
+              <div className="p-6 bg-gradient-to-r from-blue-600 to-green-600 text-white border-2 border-black shadow-xl">
+                <h2 className="text-2xl font-bold mb-4">
+                  Enterprise Customers
                 </h2>
-                <p className="text-white leading-relaxed">
+                <p className="leading-relaxed">
                   Enterprise customers with custom contracts should refer to their specific Service Level Agreement (SLA) for refund terms. Enterprise refund policies may differ from standard plans.
                 </p>
               </div>
@@ -252,8 +252,8 @@ export default function RefundPolicyPage() {
 
             {/* Contact */}
             <div>
-              <div className="p-8 bg-white border-4 border-black brutalist-shadow text-center">
-                <h2 className="text-2xl font-bold uppercase mb-4">QUESTIONS?</h2>
+              <div className="p-8 bg-white border-2 border-black shadow-xl text-center">
+                <h2 className="text-2xl font-bold mb-4">Questions?</h2>
                 <p className="text-gray-700 mb-6">
                   If you have questions about our refund policy, please contact us:
                 </p>

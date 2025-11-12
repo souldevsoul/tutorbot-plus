@@ -3,7 +3,7 @@
 import * as React from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { RiMic2Fill, RiUserLine, RiLogoutBoxLine, RiCoinLine } from "react-icons/ri"
+import { RiMic2Fill, RiUserLine, RiLogoutBoxLine, RiCoinLine } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
@@ -30,7 +30,7 @@ export function AppHeader({ user }: AppHeaderProps) {
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-          <div className="w-12 h-12 bg-black border-4 border-black flex items-center justify-center brutalist-shadow-yellow">
+          <div className="w-12 h-12 bg-black border-2 border-black flex items-center justify-center shadow-xl-yellow">
             <RiMic2Fill className="w-7 h-7 text-green-500" />
           </div>
           <span className="text-xl font-bold uppercase tracking-tight">VOICECRAFT</span>
@@ -46,13 +46,13 @@ export function AppHeader({ user }: AppHeaderProps) {
               <Button
                 variant="outline"
                 size="md"
-                className="border-4 border-black font-bold uppercase hover:bg-green-50"
+                className="border-2 border-black font-bold uppercase hover:bg-green-50"
               >
                 <RiUserLine className="mr-2 h-4 w-4" />
                 {user.name || "User"}
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="w-64 border-4 border-black">
+            <DropdownMenuContent align="end" className="w-64 border-2 border-black">
               <DropdownMenuLabel className="font-bold uppercase">
                 {user.name || "User"}
               </DropdownMenuLabel>
@@ -95,7 +95,7 @@ export function AppHeader({ user }: AppHeaderProps) {
         ) : (
           <Button
             size="md"
-            className="bg-green-500 text-black hover:bg-yellow-300 border-4 border-black font-bold uppercase"
+            className="bg-green-500 text-black hover:bg-yellow-300 border-2 border-black font-bold uppercase"
             asChild
           >
             <Link href="/dashboard">Get Started</Link>

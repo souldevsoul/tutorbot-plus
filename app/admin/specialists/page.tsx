@@ -2,7 +2,7 @@
 
 import { Text, Heading } from "@/components/ui/typography"
 import { Card, CardContent } from "@/components/ui/card"
-import { RiTeamLine } from "react-icons/ri"
+import { Team } from "lucide-react"
 
 export default function AdminSpecialistsPage() {
   return (
@@ -11,7 +11,7 @@ export default function AdminSpecialistsPage() {
       <div className="flex items-center justify-between space-y-2">
         <div>
           <Heading variant="h2" className="text-3xl font-bold uppercase tracking-tight">
-            SPECIALIST MANAGEMENT
+            Specialist Management
           </Heading>
           <Text variant="body" className="text-slate-600">
             Approve and manage audio experts
@@ -20,11 +20,11 @@ export default function AdminSpecialistsPage() {
       </div>
 
       {/* Placeholder */}
-      <Card variant="outlined" className="border-4 border-dashed border-black">
+      <Card variant="outlined" className="border-2 border-dashed border-black">
         <CardContent className="flex flex-col items-center justify-center py-12">
-          <RiTeamLine className="h-16 w-16 text-slate-400" />
+          <Team className="h-16 w-16 text-slate-400" />
           <Heading variant="h3" className="mt-4 font-bold uppercase text-slate-900">
-            SPECIALIST MANAGEMENT - COMING SOON
+            Specialist Management - Coming Soon
           </Heading>
           <Text variant="body" className="mt-2 text-center text-slate-600">
             Specialist management interface will be implemented here.

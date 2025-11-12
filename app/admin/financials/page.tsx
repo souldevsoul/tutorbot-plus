@@ -2,7 +2,7 @@
 
 import { Text, Heading } from "@/components/ui/typography"
 import { Card, CardContent } from "@/components/ui/card"
-import { RiMoneyDollarCircleLine } from "react-icons/ri"
+import { MoneyDollarCircle } from "lucide-react"
 
 export default function AdminFinancialsPage() {
   return (
@@ -11,7 +11,7 @@ export default function AdminFinancialsPage() {
       <div className="flex items-center justify-between space-y-2">
         <div>
           <Heading variant="h2" className="text-3xl font-bold uppercase tracking-tight">
-            FINANCIAL MANAGEMENT
+            Financial Management
           </Heading>
           <Text variant="body" className="text-slate-600">
             View revenue, transactions, and financial reports
@@ -20,11 +20,11 @@ export default function AdminFinancialsPage() {
       </div>
 
       {/* Placeholder */}
-      <Card variant="outlined" className="border-4 border-dashed border-black">
+      <Card variant="outlined" className="border-2 border-dashed border-black">
         <CardContent className="flex flex-col items-center justify-center py-12">
-          <RiMoneyDollarCircleLine className="h-16 w-16 text-slate-400" />
+          <MoneyDollarCircle className="h-16 w-16 text-slate-400" />
           <Heading variant="h3" className="mt-4 font-bold uppercase text-slate-900">
-            FINANCIAL MANAGEMENT - COMING SOON
+            Financial Management - Coming Soon
           </Heading>
           <Text variant="body" className="mt-2 text-center text-slate-600">
             Financial dashboard will be implemented here.

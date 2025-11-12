@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { RiRefreshLine, RiErrorWarningLine } from "react-icons/ri"
+import { RiRefreshLine, RiErrorWarningLine } from "lucide-react"
 import {
   AlertDialog,
   AlertDialogAction,
@@ -61,18 +61,18 @@ export function ReEstimateDialog({
         {trigger || (
           <Button variant="outline" size="sm" className="border-2 border-blue-500 text-blue-600 hover:bg-blue-50">
             <RiRefreshLine className="mr-2 h-4 w-4" />
-            RE-ESTIMATE
+            Re-estimate
           </Button>
         )}
       </AlertDialogTrigger>
-      <AlertDialogContent className="border-4 border-blue-500 sm:max-w-[600px]">
+      <AlertDialogContent className="border-2 border-blue-500 sm:max-w-[600px]">
         <AlertDialogHeader>
           <div className="flex items-center gap-3">
-            <div className="rounded-md border-4 border-blue-500 bg-blue-100 p-2">
+            <div className="rounded-md border-2 border-blue-500 bg-blue-100 p-2">
               <RiRefreshLine className="h-6 w-6 text-blue-600" />
             </div>
             <div>
-              <AlertDialogTitle className="text-blue-900">RE-ESTIMATE PROJECT</AlertDialogTitle>
+              <AlertDialogTitle className="text-blue-900">Re-estimate Project</AlertDialogTitle>
               <AlertDialogDescription className="text-blue-800">
                 Generate a new AI estimate for this project
               </AlertDialogDescription>
@@ -82,7 +82,7 @@ export function ReEstimateDialog({
 
         <div className="space-y-6 py-4">
           {/* Info */}
-          <div className="rounded-md border-4 border-yellow-500 bg-green-50 p-4">
+          <div className="rounded-md border-2 border-yellow-500 bg-green-50 p-4">
             <div className="flex items-start gap-3">
               <RiErrorWarningLine className="h-5 w-5 flex-shrink-0 text-green-600" />
               <div>
@@ -101,7 +101,7 @@ export function ReEstimateDialog({
           <div className="space-y-3">
             <div className="rounded-md border-2 border-black bg-slate-50 p-4">
               <Text variant="caption" className="text-xs font-bold uppercase text-slate-600">
-                PROJECT
+                Project
               </Text>
               <Text variant="body" className="mt-1 font-bold">
                 {projectName}
@@ -110,7 +110,7 @@ export function ReEstimateDialog({
 
             <div className="rounded-md border-2 border-black bg-slate-50 p-4">
               <Text variant="caption" className="text-xs font-bold uppercase text-slate-600">
-                CLIENT
+                Client
               </Text>
               <Text variant="body" className="mt-1 font-bold">
                 {clientName}
@@ -120,7 +120,7 @@ export function ReEstimateDialog({
             {currentEstimate && (
               <div className="rounded-md border-2 border-black bg-slate-50 p-4">
                 <Text variant="caption" className="text-xs font-bold uppercase text-slate-600">
-                  CURRENT ESTIMATE
+                  Current Estimate
                 </Text>
                 <div className="mt-2 flex items-center gap-4">
                   <div>
@@ -150,7 +150,7 @@ export function ReEstimateDialog({
           {/* Reason */}
           <div>
             <Text variant="caption" className="text-xs font-bold uppercase text-slate-600">
-              REASON FOR RE-ESTIMATION (REQUIRED)
+              Reason for Re-estimation (Required)
             </Text>
             <Textarea
               placeholder="Explain why this project needs to be re-estimated. For example: scope changed, initial estimate was incorrect, client requested modifications, etc."
@@ -165,7 +165,7 @@ export function ReEstimateDialog({
               </Text>
               {reason.length >= 20 && (
                 <Badge variant="success" className="text-xs">
-                  VALID
+                  Valid
                 </Badge>
               )}
             </div>
@@ -173,13 +173,13 @@ export function ReEstimateDialog({
         </div>
 
         <AlertDialogFooter>
-          <AlertDialogCancel className="border-2 border-black">CANCEL</AlertDialogCancel>
+          <AlertDialogCancel className="border-2 border-black">Cancel</AlertDialogCancel>
           <AlertDialogAction
             onClick={handleReEstimate}
             disabled={reason.length < 20 || loading}
-            className="bg-blue-500 text-white border-4 border-black hover:bg-blue-600"
+            className="bg-blue-500 text-white border-2 border-black hover:bg-blue-600"
           >
-            {loading ? "GENERATING NEW ESTIMATE..." : "CONFIRM RE-ESTIMATE"}
+            {loading ? "Generating New Estimate..." : "Confirm Re-estimate"}
           </AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>

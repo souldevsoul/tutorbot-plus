@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { RiFolder3Line, RiCheckboxCircleLine, RiMoneyDollarCircleLine, RiStarFill } from "react-icons/ri"
+import { RiFolder3Line, CheckboxCircle, MoneyDollarCircle, RiStarFill } from "lucide-react"
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 import { Text, Heading } from "@/components/ui/typography"
 import { Button } from "@/components/ui/button"
@@ -94,7 +94,7 @@ export default function SpecialistDashboard() {
       <div className="flex items-center justify-between space-y-2">
         <div>
           <Heading as="h1" className="text-2xl font-bold uppercase tracking-tight">
-            SPECIALIST DASHBOARD
+            Specialist Dashboard
           </Heading>
           <Text variant="body" className="text-slate-600">
             Manage your assigned projects and track earnings
@@ -102,17 +102,17 @@ export default function SpecialistDashboard() {
         </div>
         <Button variant="primary" onClick={() => window.location.href = "/specialist/projects"}>
           <RiFolder3Line className="mr-2 h-4 w-4" />
-          VIEW ALL PROJECTS
+          View All Projects
         </Button>
       </div>
 
       {/* Stats Grid */}
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         {/* Active Projects */}
-        <Card variant="outlined" className="border-4 border-blue-500 bg-blue-50">
+        <Card variant="outlined" className="border-2 border-blue-500 bg-blue-50">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-bold uppercase text-blue-900">
-              ACTIVE PROJECTS
+              Active Projects
             </CardTitle>
             <RiFolder3Line className="h-6 w-6 text-blue-600" />
           </CardHeader>
@@ -127,12 +127,12 @@ export default function SpecialistDashboard() {
         </Card>
 
         {/* Completed Projects */}
-        <Card variant="outlined" className="border-4 border-green-500 bg-green-50">
+        <Card variant="outlined" className="border-2 border-green-500 bg-green-50">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-bold uppercase text-green-900">
-              COMPLETED
+              Completed
             </CardTitle>
-            <RiCheckboxCircleLine className="h-6 w-6 text-green-600" />
+            <CheckboxCircle className="h-6 w-6 text-green-600" />
           </CardHeader>
           <CardContent>
             <Heading as="h2" className="text-3xl font-bold text-green-900">
@@ -145,12 +145,12 @@ export default function SpecialistDashboard() {
         </Card>
 
         {/* Total Earnings */}
-        <Card variant="outlined" className="border-4 border-yellow-500 bg-green-50">
+        <Card variant="outlined" className="border-2 border-yellow-500 bg-green-50">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-bold uppercase text-green-900">
-              TOTAL EARNINGS
+              Total Earnings
             </CardTitle>
-            <RiMoneyDollarCircleLine className="h-6 w-6 text-green-600" />
+            <MoneyDollarCircle className="h-6 w-6 text-green-600" />
           </CardHeader>
           <CardContent>
             <Heading as="h2" className="text-3xl font-bold text-green-900">
@@ -163,10 +163,10 @@ export default function SpecialistDashboard() {
         </Card>
 
         {/* Rating */}
-        <Card variant="outlined" className="border-4 border-purple-500 bg-blue-50">
+        <Card variant="outlined" className="border-2 border-purple-500 bg-blue-50">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-bold uppercase text-blue-900">
-              RATING
+              Rating
             </CardTitle>
             <RiStarFill className="h-6 w-6 text-blue-600" />
           </CardHeader>
@@ -190,7 +190,7 @@ export default function SpecialistDashboard() {
       <div className="space-y-4">
         <div className="flex items-center justify-between">
           <Heading variant="h3" className="text-xl font-bold uppercase">
-            RECENT PROJECTS
+            Recent Projects
           </Heading>
           <Button
             variant="outline"
@@ -198,7 +198,7 @@ export default function SpecialistDashboard() {
             className="border-2"
             onClick={() => window.location.href = "/specialist/projects"}
           >
-            VIEW ALL
+            View All
           </Button>
         </div>
 
@@ -213,11 +213,11 @@ export default function SpecialistDashboard() {
             ))}
           </div>
         ) : (
-          <Card variant="outlined" className="border-4 border-dashed border-black">
+          <Card variant="outlined" className="border-2 border-dashed border-black">
             <CardContent className="flex flex-col items-center justify-center py-12">
               <RiFolder3Line className="h-16 w-16 text-slate-400" />
               <Heading as="h3" className="mt-4 text-xl font-bold uppercase text-slate-900">
-                NO ACTIVE PROJECTS
+                No Active Projects
               </Heading>
               <Text variant="body" className="mt-2 text-center text-slate-600">
                 You don't have any assigned projects at the moment.

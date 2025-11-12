@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { RiSearchLine, RiFilterLine, RiEyeLine, RiMore2Line } from "react-icons/ri"
+import { RiSearchLine, RiFilterLine, RiEyeLine, RiMore2Line } from "lucide-react"
 import {
   Table,
   TableBody,
@@ -83,13 +83,13 @@ export function ProjectDataTable({
   const getPriorityBadge = (priority: string) => {
     switch (priority) {
       case "urgent":
-        return <Badge variant="danger" className="text-xs">URGENT</Badge>
+        return <Badge variant="danger" className="text-xs">Urgent</Badge>
       case "high":
-        return <Badge variant="warning" className="text-xs">HIGH</Badge>
+        return <Badge variant="warning" className="text-xs">High</Badge>
       case "medium":
-        return <Badge variant="primary" className="text-xs">MEDIUM</Badge>
+        return <Badge variant="primary" className="text-xs">Medium</Badge>
       case "low":
-        return <Badge variant="outline" className="text-xs">LOW</Badge>
+        return <Badge variant="outline" className="text-xs">Low</Badge>
       default:
         return null
     }
@@ -143,7 +143,7 @@ export function ProjectDataTable({
       </div>
 
       {/* Table */}
-      <div className="rounded-md border-4 border-black bg-white">
+      <div className="rounded-md border-2 border-black bg-white">
         <Table>
           <TableHeader>
             <TableRow className="border-b-2 border-black bg-slate-100">
@@ -190,7 +190,7 @@ export function ProjectDataTable({
                       </Text>
                     ) : (
                       <Badge variant="outline" className="text-xs">
-                        UNASSIGNED
+                        Unassigned
                       </Badge>
                     )}
                   </TableCell>
@@ -325,7 +325,7 @@ export function ProjectDataTable({
               setPriorityFilter("all")
             }}
           >
-            CLEAR FILTERS
+            Clear Filters
           </Button>
         )}
       </div>

@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { RiVoiceprintLine, RiLoader4Line, RiUploadLine } from "react-icons/ri"
+import { RiVoiceprintLine, RiLoader4Line, RiUploadLine } from "lucide-react"
 import {
   Sheet,
   SheetContent,

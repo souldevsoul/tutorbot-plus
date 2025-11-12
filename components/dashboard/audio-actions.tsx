@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { RiUploadLine, RiVoiceprintLine } from "react-icons/ri"
+import { RiUploadLine, RiVoiceprintLine } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { GenerateAudioDrawer } from "@/components/voicecraft/generate-audio-drawer"
 

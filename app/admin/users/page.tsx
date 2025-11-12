@@ -2,7 +2,7 @@
 
 import { Text, Heading } from "@/components/ui/typography"
 import { Card, CardContent } from "@/components/ui/card"
-import { RiUserLine } from "react-icons/ri"
+import { User } from "lucide-react"
 
 export default function AdminUsersPage() {
   return (
@@ -11,7 +11,7 @@ export default function AdminUsersPage() {
       <div className="flex items-center justify-between space-y-2">
         <div>
           <Heading variant="h2" className="text-3xl font-bold uppercase tracking-tight">
-            USER MANAGEMENT
+            User Management
           </Heading>
           <Text variant="body" className="text-slate-600">
             Manage users and their credits
@@ -20,11 +20,11 @@ export default function AdminUsersPage() {
       </div>
 
       {/* Placeholder */}
-      <Card variant="outlined" className="border-4 border-dashed border-black">
+      <Card variant="outlined" className="border-2 border-dashed border-black">
         <CardContent className="flex flex-col items-center justify-center py-12">
-          <RiUserLine className="h-16 w-16 text-slate-400" />
+          <User className="h-16 w-16 text-slate-400" />
           <Heading variant="h3" className="mt-4 font-bold uppercase text-slate-900">
-            USER MANAGEMENT - COMING SOON
+            User Management - Coming Soon
           </Heading>
           <Text variant="body" className="mt-2 text-center text-slate-600">
             User management interface with credit management will be implemented here.

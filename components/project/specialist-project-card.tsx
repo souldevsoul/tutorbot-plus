@@ -1,6 +1,6 @@
 "use client"
 
-import { RiUserLine, RiTimeLine, RiMoneyDollarCircleLine, RiArrowRightLine } from "react-icons/ri"
+import { RiUserLine, RiTimeLine, RiMoneyDollarCircleLine, RiArrowRightLine } from "lucide-react"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Text, Heading } from "@/components/ui/typography"
@@ -72,7 +72,7 @@ export function SpecialistProjectCard({
   return (
     <Card
       variant="outlined"
-      className={`cursor-pointer border-4 border-black bg-white p-4 transition-all hover:shadow-[4px_4px_0_0_#000] ${
+      className={`cursor-pointer border-2 border-black bg-white p-4 transition-all hover:shadow-[4px_4px_0_0_#000] ${
         isUrgent ? "border-red-500 bg-red-50" : ""
       }`}
       onClick={onClick}

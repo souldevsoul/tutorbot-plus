@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import { Text, Heading } from "@/components/ui/typography"
 import { Button } from "@/components/ui/button"
-import { RiRefreshLine, RiDownload2Line } from "react-icons/ri"
+import { Refresh, RiDownload2Line } from "lucide-react"
 import { ProjectDataTable, type ProjectTableRow } from "@/components/project"
 
 export default function AdminProjectsPage() {
@@ -141,7 +141,7 @@ export default function AdminProjectsPage() {
       <div className="flex items-center justify-between space-y-2">
         <div>
           <Heading variant="h2" className="text-3xl font-bold uppercase tracking-tight">
-            PROJECT MANAGEMENT
+            Project Management
           </Heading>
           <Text variant="body" className="text-slate-600">
             View and manage all platform projects
@@ -155,8 +155,8 @@ export default function AdminProjectsPage() {
             onClick={fetchProjects}
             disabled={loading}
           >
-            <RiRefreshLine className="mr-2 h-4 w-4" />
-            REFRESH
+            <Refresh className="mr-2 h-4 w-4" />
+            Refresh
           </Button>
           <Button
             variant="outline"
@@ -165,7 +165,7 @@ export default function AdminProjectsPage() {
             onClick={handleExportData}
           >
             <RiDownload2Line className="mr-2 h-4 w-4" />
-            EXPORT CSV
+            Export CSV
           </Button>
         </div>
       </div>

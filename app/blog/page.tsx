@@ -5,111 +5,111 @@ import { Button } from "@/components/ui/button"
 import { Header } from "@/components/marketing/layout/header"
 import { Footer } from "@/components/marketing/layout/footer"
 import {
-  RiArticleLine,
-  RiCalendarLine,
-  RiTimeLine,
-  RiArrowRightLine,
-  RiFireLine,
-  RiLightbulbLine,
-  RiCodeLine,
-  RiMicLine,
-} from "react-icons/ri"
+  BookOpen,
+  Calendar,
+  Clock,
+  ArrowRight,
+  TrendingUp,
+  Lightbulb,
+  Code,
+  GraduationCap,
+} from "lucide-react"
 
 export default function BlogPage() {
   const categories = [
     { name: "All Posts", slug: "all", count: 24 },
-    { name: "Product Updates", slug: "updates", count: 8 },
-    { name: "Tutorials", slug: "tutorials", count: 10 },
-    { name: "Use Cases", slug: "use-cases", count: 6 },
+    { name: "Learning Tips", slug: "tips", count: 8 },
+    { name: "Study Guides", slug: "guides", count: 10 },
+    { name: "Success Stories", slug: "stories", count: 6 },
   ]
 
   const featuredPost = {
-    title: "Kokoro-82M: Why 56M+ Runs Makes It the Most Trusted Voice Model",
-    excerpt: "Deep dive into the world's most popular voice synthesis model and why battle-tested technology matters for production applications.",
-    category: "Product Updates",
+    title: "How AI-Powered Tutoring Helped 10,000+ Students Improve Their Grades",
+    excerpt: "Discover how personalized learning with AI tutors is transforming education and helping students achieve their academic goals faster.",
+    category: "Success Stories",
     date: "Nov 8, 2025",
     readTime: "8 min read",
-    author: "VoiceCraft Team",
+    author: "TutorBot Plus Team",
     image: "featured",
   }
 
   const blogPosts = [
     {
-      title: "Getting Started with Voice Cloning: A Complete Guide",
-      excerpt: "Learn how to create custom voice profiles using Minimax technology. From audio preparation to training optimization.",
-      category: "Tutorials",
+      title: "Getting Started with AI Tutoring: A Complete Guide",
+      excerpt: "Learn how to create personalized learning paths using AI technology. From setting goals to tracking your progress.",
+      category: "Study Guides",
       date: "Nov 5, 2025",
       readTime: "12 min read",
       author: "Sarah Chen",
       tag: "Beginner",
     },
     {
-      title: "10 Creative Ways to Use AI Voice Synthesis",
-      excerpt: "Discover innovative applications of voice AI: from audiobook narration to podcast production and e-learning content.",
-      category: "Use Cases",
+      title: "10 Effective Study Techniques with AI Support",
+      excerpt: "Discover proven study methods enhanced by AI: from spaced repetition to interactive quizzes and adaptive learning.",
+      category: "Learning Tips",
       date: "Nov 3, 2025",
       readTime: "6 min read",
       author: "Marcus Johnson",
       tag: "Popular",
     },
     {
-      title: "Emotion Control in Voice AI: Technical Deep Dive",
-      excerpt: "How emotion parameters work in Minimax models and best practices for natural-sounding emotional delivery.",
-      category: "Tutorials",
+      title: "Mastering Math with Personalized AI Tutoring",
+      excerpt: "How adaptive learning algorithms tailor math instruction to your pace and style, leading to better understanding.",
+      category: "Study Guides",
       date: "Nov 1, 2025",
       readTime: "10 min read",
       author: "Dr. Emily Rodriguez",
       tag: "Technical",
     },
     {
-      title: "Comparing Voice Models: Kokoro vs Minimax vs XTTS",
-      excerpt: "A comprehensive comparison of the top three voice synthesis models: features, quality, speed, and pricing.",
-      category: "Product Updates",
+      title: "Comparing AI Tutoring Platforms: What Makes TutorBot Plus Stand Out",
+      excerpt: "A comprehensive comparison of top AI tutoring platforms: features, effectiveness, pricing, and learning outcomes.",
+      category: "Learning Tips",
       date: "Oct 28, 2025",
       readTime: "15 min read",
-      author: "VoiceCraft Team",
+      author: "TutorBot Plus Team",
       tag: "Popular",
     },
     {
-      title: "How Podcasters Are Using Voice AI to Scale Production",
-      excerpt: "Case study: How independent podcasters use voice synthesis to create intro/outro content and multilingual versions.",
-      category: "Use Cases",
+      title: "How Students Are Using AI to Improve Test Scores",
+      excerpt: "Case study: How high school students improved their SAT scores by 200+ points using personalized AI tutoring.",
+      category: "Success Stories",
       date: "Oct 25, 2025",
       readTime: "7 min read",
       author: "Alex Turner",
       tag: "Case Study",
     },
     {
-      title: "Voice AI API Integration: Best Practices",
-      excerpt: "Essential tips for integrating voice synthesis into your application: rate limiting, error handling, and caching strategies.",
-      category: "Tutorials",
+      title: "Effective Time Management for Online Learning",
+      excerpt: "Essential tips for balancing studies with AI tutoring: scheduling, goal setting, and staying motivated.",
+      category: "Learning Tips",
       date: "Oct 22, 2025",
       readTime: "11 min read",
-      author: "Dev Team",
+      author: "Study Success Team",
       tag: "Technical",
     },
     {
-      title: "The Future of Multilingual Voice Content",
-      excerpt: "How AI voice technology is breaking language barriers and enabling creators to reach global audiences.",
-      category: "Product Updates",
+      title: "The Future of Personalized Education",
+      excerpt: "How AI technology is revolutionizing education and making quality tutoring accessible to every student.",
+      category: "Learning Tips",
       date: "Oct 19, 2025",
       readTime: "8 min read",
       author: "Sarah Chen",
       tag: "Trending",
     },
     {
-      title: "Optimizing Audio Quality: Pro Tips",
-      excerpt: "Advanced techniques for getting the best audio output: pitch adjustment, speed control, and format selection.",
-      category: "Tutorials",
+      title: "Optimizing Your Learning Path: Pro Tips",
+      excerpt: "Advanced strategies for maximizing retention: active recall, interleaved practice, and progress tracking.",
+      category: "Study Guides",
       date: "Oct 16, 2025",
       readTime: "9 min read",
       author: "Marcus Johnson",
       tag: "Pro Tips",
     },
     {
-      title: "Voice AI for E-Learning: A Teacher's Perspective",
-      excerpt: "How educators are using voice synthesis to create engaging, accessible, and scalable learning content.",
-      category: "Use Cases",
+      title: "AI Tutoring for Special Needs: An Educator's Perspective",
+      excerpt: "How AI-powered personalized instruction is creating more inclusive and accessible learning experiences.",
+      category: "Success Stories",
       date: "Oct 13, 2025",
       readTime: "6 min read",
       author: "Jennifer Liu",
@@ -121,7 +121,7 @@ export default function BlogPage() {
     <main className="min-h-screen bg-white">
       {/* Header */}
       <Header
-        logoText="VoiceCraft"
+        logoText="TutorBot Plus"
         navLinks={[
           { label: "Features", href: "/features" },
           { label: "Pricing", href: "/pricing" },
@@ -137,15 +137,15 @@ export default function BlogPage() {
       <section className="py-20 border-b-8 border-black">
         <Container maxWidth="xl">
           <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-3 px-6 py-3 bg-green-500 border-4 border-black mb-8">
-              <RiArticleLine className="w-6 h-6" />
-              <span className="text-sm font-bold uppercase tracking-wider">Blog</span>
+            <div className="inline-flex items-center gap-3 px-6 py-3 bg-green-500 border-2 border-black mb-8">
+              <BookOpen className="w-6 h-6" />
+              <span className="text-sm font-bold tracking-wider">Blog</span>
             </div>
-            <h1 className="text-6xl md:text-7xl font-bold uppercase mb-6 leading-tight">
-              VOICE AI INSIGHTS & UPDATES
+            <h1 className="text-6xl md:text-7xl font-bold mb-6 leading-tight">
+              Learning Insights & Success Stories
             </h1>
             <p className="text-xl text-gray-700">
-              Tutorials, use cases, product updates, and everything you need to master voice synthesis
+              Study guides, learning tips, success stories, and everything you need to master your subjects
             </p>
           </div>
         </Container>
@@ -158,7 +158,7 @@ export default function BlogPage() {
             {categories.map((category, index) => (
               <button
                 key={index}
-                className={`px-6 py-3 font-bold uppercase text-sm border-4 ${
+                className={`px-6 py-3 font-bold uppercase text-sm border-2 ${
                   index === 0
                     ? "bg-green-500 text-black border-yellow-400"
                     : "bg-transparent text-white border-white hover:bg-white hover:text-black"
@@ -176,23 +176,23 @@ export default function BlogPage() {
       <section className="py-16 bg-gray-50">
         <Container maxWidth="xl">
           <div className="mb-6 flex items-center gap-3">
-            <RiFireLine className="w-6 h-6" />
-            <h2 className="text-2xl font-bold uppercase">Featured Post</h2>
+            <TrendingUp className="w-6 h-6" />
+            <h2 className="text-2xl font-bold">Featured Post</h2>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 bg-black border-4 border-black brutalist-shadow-yellow p-8">
-            <div className="bg-green-500 border-4 border-black aspect-video flex items-center justify-center">
-              <RiMicLine className="w-24 h-24 text-black" />
+          <div className="grid md:grid-cols-2 gap-8 bg-black border-2 border-black shadow-xl-yellow p-8">
+            <div className="bg-green-500 border-2 border-black aspect-video flex items-center justify-center">
+              <GraduationCap className="w-24 h-24 text-black" />
             </div>
 
             <div className="flex flex-col justify-center text-white">
-              <div className="inline-flex items-center gap-2 text-green-500 text-xs font-bold uppercase mb-3">
+              <div className="inline-flex items-center gap-2 text-green-500 text-xs font-bold mb-3">
                 <span className="px-3 py-1 bg-green-500 text-black border-2 border-yellow-400">
                   {featuredPost.category}
                 </span>
               </div>
 
-              <h3 className="text-3xl font-bold uppercase mb-4 leading-tight text-green-500">
+              <h3 className="text-3xl font-bold mb-4 leading-tight text-green-500">
                 {featuredPost.title}
               </h3>
 
@@ -202,21 +202,21 @@ export default function BlogPage() {
 
               <div className="flex flex-wrap items-center gap-4 text-sm text-gray-300 mb-6">
                 <div className="flex items-center gap-2">
-                  <RiCalendarLine className="w-4 h-4" />
+                  <Calendar className="w-4 h-4" />
                   {featuredPost.date}
                 </div>
                 <div className="flex items-center gap-2">
-                  <RiTimeLine className="w-4 h-4" />
+                  <Clock className="w-4 h-4" />
                   {featuredPost.readTime}
                 </div>
               </div>
 
               <Button
                 size="lg"
-                className="bg-green-500 text-black border-4 border-yellow-400 font-bold uppercase w-fit"
+                className="bg-green-500 text-black border-2 border-yellow-400 font-bold w-fit"
               >
                 Read Article
-                <RiArrowRightLine className="w-5 h-5 ml-2" />
+                <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
             </div>
           </div>
@@ -227,11 +227,11 @@ export default function BlogPage() {
       <section className="py-24">
         <Container maxWidth="xl">
           <div className="mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold uppercase mb-4">
-              LATEST ARTICLES
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Latest Articles
             </h2>
             <p className="text-xl text-gray-700">
-              Stay updated with the latest in voice AI technology
+              Stay updated with the latest learning strategies and success stories
             </p>
           </div>
 
@@ -244,18 +244,18 @@ export default function BlogPage() {
               const colorIndex = index % 3
 
               const tagIcons: { [key: string]: any } = {
-                Popular: RiFireLine,
-                Technical: RiCodeLine,
-                Beginner: RiLightbulbLine,
+                Popular: TrendingUp,
+                Technical: Code,
+                Beginner: Lightbulb,
               }
 
-              const TagIcon = tagIcons[post.tag] || RiArticleLine
+              const TagIcon = tagIcons[post.tag] || BookOpen
 
               return (
                 <div
                   key={index}
-                  className={`${bgColors[colorIndex]} border-4 border-black ${
-                    colorIndex === 1 ? "brutalist-shadow-yellow" : "brutalist-shadow"
+                  className={`${bgColors[colorIndex]} border-2 border-black ${
+                    colorIndex === 1 ? "shadow-xl-yellow" : "shadow-xl"
                   } overflow-hidden flex flex-col`}
                 >
                   {/* Image Placeholder */}
@@ -264,7 +264,7 @@ export default function BlogPage() {
                       colorIndex === 1 ? "bg-green-500" : colorIndex === 2 ? "bg-black" : "bg-gray-200"
                     } border-b-4 border-black flex items-center justify-center`}
                   >
-                    <RiArticleLine
+                    <BookOpen
                       className={`w-16 h-16 ${
                         colorIndex === 1 ? "text-black" : colorIndex === 2 ? "text-green-500" : "text-gray-400"
                       }`}
@@ -275,7 +275,7 @@ export default function BlogPage() {
                     {/* Category & Tag */}
                     <div className="flex items-center justify-between mb-3">
                       <span
-                        className={`text-xs font-bold uppercase px-3 py-1 ${
+                        className={`text-xs font-bold px-3 py-1 ${
                           colorIndex === 1
                             ? "bg-green-500 text-black"
                             : colorIndex === 2
@@ -292,7 +292,7 @@ export default function BlogPage() {
                           }`}
                         />
                         <span
-                          className={`text-xs font-bold uppercase ${metaColors[colorIndex]}`}
+                          className={`text-xs font-bold ${metaColors[colorIndex]}`}
                         >
                           {post.tag}
                         </span>
@@ -301,7 +301,7 @@ export default function BlogPage() {
 
                     {/* Title */}
                     <h3
-                      className={`text-xl font-bold uppercase mb-3 leading-tight ${textColors[colorIndex]}`}
+                      className={`text-xl font-bold mb-3 leading-tight ${textColors[colorIndex]}`}
                     >
                       {post.title}
                     </h3>
@@ -314,18 +314,18 @@ export default function BlogPage() {
                     {/* Meta */}
                     <div className={`flex items-center gap-4 text-xs ${metaColors[colorIndex]} mb-4`}>
                       <div className="flex items-center gap-1">
-                        <RiCalendarLine className="w-4 h-4" />
+                        <Calendar className="w-4 h-4" />
                         {post.date}
                       </div>
                       <div className="flex items-center gap-1">
-                        <RiTimeLine className="w-4 h-4" />
+                        <Clock className="w-4 h-4" />
                         {post.readTime}
                       </div>
                     </div>
 
                     {/* Read More */}
                     <button
-                      className={`w-full py-3 font-bold uppercase text-sm border-4 ${
+                      className={`w-full py-3 font-bold text-sm border-2 ${
                         colorIndex === 1
                           ? "bg-green-500 text-black border-yellow-400 hover:bg-yellow-300"
                           : colorIndex === 2
@@ -346,10 +346,10 @@ export default function BlogPage() {
             <Button
               size="xl"
               variant="outline"
-              className="gap-3 bg-white text-black border-4 border-black font-bold uppercase brutalist-shadow"
+              className="gap-3 bg-white text-black border-2 border-black font-bold shadow-xl"
             >
               Load More Articles
-              <RiArrowRightLine className="w-5 h-5" />
+              <ArrowRight className="w-5 h-5" />
             </Button>
           </div>
         </Container>
@@ -359,25 +359,25 @@ export default function BlogPage() {
       <section className="py-24 bg-black border-y-8 border-yellow-400">
         <Container maxWidth="xl">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold uppercase mb-6 text-green-500">
-              STAY UPDATED
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-green-500">
+              Stay Updated
             </h2>
             <p className="text-xl text-white mb-8">
-              Get the latest voice AI insights, tutorials, and product updates delivered to your inbox
+              Get the latest learning tips, study guides, and success stories delivered to your inbox
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 max-w-2xl mx-auto">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-6 py-4 border-4 border-white font-medium text-lg focus:outline-none focus:ring-4 focus:ring-yellow-400"
+                className="flex-1 px-6 py-4 border-2 border-white font-medium text-lg focus:outline-none focus:ring-4 focus:ring-yellow-400"
               />
               <Button
                 size="lg"
-                className="bg-green-500 text-black border-4 border-yellow-400 font-bold uppercase px-8 whitespace-nowrap"
+                className="bg-green-500 text-black border-2 border-yellow-400 font-bold px-8 whitespace-nowrap"
               >
                 Subscribe
-                <RiArrowRightLine className="w-5 h-5 ml-2" />
+                <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
             </div>
 

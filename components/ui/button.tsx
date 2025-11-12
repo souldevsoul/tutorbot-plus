@@ -116,7 +116,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           "inline-flex items-center justify-center gap-2 font-bold transition-all duration-200",
           "hover:scale-[1.02] active:scale-[0.98]",
           "focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-yellow-400 focus-visible:ring-offset-2",
-          variant === 'primary' && "bg-green-500 text-black border-4 border-black uppercase",
+          variant === 'primary' && "bg-green-500 text-black border-2 border-black uppercase",
           className,
           (children as any).props.className
         ),

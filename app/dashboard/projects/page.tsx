@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { RiAddLine, RiDraggable } from "react-icons/ri"
+import { RiAddLine, RiDraggable } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Text, Heading } from "@/components/ui/typography"
@@ -23,7 +23,7 @@ import {
   type EstimateData,
   type SubmittedWork,
 } from "@/components/project"
-import { AudioPlayer } from "@/components/voicecraft/audio-player"
+import { LessonPlayer } from "@/components/voicecraft/audio-player"
 
 type Project = {
   id: string
@@ -45,7 +45,7 @@ type Project = {
   feedback: string | null
   expertName: string | null
   expertRating: number | null
-  projectAudios?: {
+  projectLessons?: {
     id: string
     audio: {
       id: string
@@ -137,7 +137,7 @@ export default function ProjectsPage() {
         actualCost: project.actualCost,
         estimationData: project.estimationData,
         priority: project.priority,
-        audioCount: project._count?.projectAudios || 0,
+        audioCount: project._count?.projectLessons || 0,
         deadline: project.deadline,
         assignedAt: project.assignedAt,
         submittedAt: project.submittedAt,
@@ -146,7 +146,7 @@ export default function ProjectsPage() {
         feedback: project.feedback,
         expertName: project.expert?.user?.name || null,
         expertRating: project.expert?.rating || null,
-        projectAudios: project.projectAudios,
+        projectLessons: project.projectLessons,
       }))
 
       setProjects(mappedProjects)
@@ -367,7 +367,7 @@ export default function ProjectsPage() {
                   <Card
                     key={project.id}
                     variant="outlined"
-                    className="cursor-pointer border-4 border-black bg-white p-4 transition-all hover:shadow-[4px_4px_0_0_#000]"
+                    className="cursor-pointer border-2 border-black bg-white p-4 transition-all hover:shadow-[4px_4px_0_0_#000]"
                     onClick={() => setSelectedProject(project)}
                   >
                     <div className="space-y-3">
@@ -386,7 +386,7 @@ export default function ProjectsPage() {
 
                       <div className="flex items-center justify-between text-xs">
                         <Text variant="caption" className="text-slate-600">
-                          {project.audioCount} audios
+                          {project.audioCount} lessons
                         </Text>
                         {project.estimatedCost && (
                           <Text variant="caption" className="font-bold text-slate-900">
@@ -454,8 +454,8 @@ export default function ProjectsPage() {
                   <WorkReviewCard
                     projectId={selectedProject.id}
                     submittedWork={{
-                      audioIds: selectedProject.estimationData?.submittedAudioIds || [],
-                      audios: selectedProject.projectAudios?.map(pa => pa.audio),
+                      audioIds: selectedProject.estimationData?.submittedLessonIds || [],
+                      lessons: selectedProject.projectLessons?.map(pa => pa.audio),
                       notes: selectedProject.estimationData?.submissionNotes,
                       submittedAt: selectedProject.submittedAt,
                     } as SubmittedWork}
@@ -469,29 +469,29 @@ export default function ProjectsPage() {
 
                 <Separator />
 
-                {/* Audios Section */}
+                {/* Lessons Section */}
                 <div>
                   <div className="flex items-center justify-between mb-3">
                     <Heading as="h3" className="text-lg font-bold uppercase">
-                      Project Audios ({selectedProject.audioCount})
+                      Project Lessons ({selectedProject.audioCount})
                     </Heading>
                   </div>
-                  <div className="space-y-3 rounded-md border-4 border-black bg-white p-4">
-                    {selectedProject.projectAudios && selectedProject.projectAudios.length > 0 ? (
-                      selectedProject.projectAudios.map((pa, index) => (
+                  <div className="space-y-3 rounded-md border-2 border-black bg-white p-4">
+                    {selectedProject.projectLessons && selectedProject.projectLessons.length > 0 ? (
+                      selectedProject.projectLessons.map((pa, index) => (
                         <div key={pa.id} className="border-b border-slate-200 pb-3 last:border-0 last:pb-0">
                           <div className="mb-2 flex items-center justify-between">
                             <Text variant="body" className="font-bold text-sm">
                               {index + 1}. {pa.audio.filename}
                             </Text>
                           </div>
-                          <AudioPlayer audioUrl={pa.audio.audioUrl} />
+                          <LessonPlayer audioUrl={pa.audio.audioUrl} />
                         </div>
                       ))
                     ) : (
                       <div className="rounded-md border-2 border-dashed border-black bg-slate-50 p-6 text-center">
                         <Text variant="caption" className="text-xs text-slate-400">
-                          No audios in this project yet
+                          No lessons in this project yet
                         </Text>
                       </div>
                     )}

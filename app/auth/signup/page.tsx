@@ -8,12 +8,12 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import {
-  RiArrowRightLine,
-  RiLockLine,
-  RiMailLine,
-  RiUserLine,
-  RiCheckLine,
-} from "react-icons/ri"
+  ArrowRight,
+  Lock,
+  Mail,
+  User,
+  CheckCircle,
+} from "lucide-react"
 
 function SignUpForm() {
   const router = useRouter()
@@ -107,12 +107,12 @@ function SignUpForm() {
     return (
       <div className="min-h-screen bg-white flex items-center justify-center px-6 py-12">
         <div className="w-full max-w-md">
-          <div className="bg-green-500 border-4 border-black brutalist-shadow p-8 text-center">
+          <div className="bg-green-500 border-2 border-black shadow-xl p-8 text-center">
             <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-4">
-              <RiCheckLine className="w-10 h-10 text-green-500" />
+              <CheckCircle className="w-10 h-10 text-green-500" />
             </div>
-            <h2 className="text-3xl font-black uppercase mb-4">
-              Welcome to VoiceCraft!
+            <h2 className="text-3xl font-black mb-4">
+              Welcome to TutorBot Plus!
             </h2>
             <p className="text-lg mb-6">
               Your account has been created successfully. You received{" "}
@@ -131,39 +131,40 @@ function SignUpForm() {
         {/* Logo/Brand */}
         <div className="text-center mb-8">
           <Link href="/">
-            <h1 className="text-4xl font-black uppercase">
-              VOICE<span className="text-green-500">CRAFT</span>
+            <h1 className="text-4xl font-black">
+              TutorBot <span className="text-green-500">Plus</span>
             </h1>
           </Link>
-          <p className="text-gray-600 mt-2">Create your account</p>
+          <p className="text-xl text-gray-700 mt-2 font-semibold">Join TutorBot Plus Today</p>
+          <p className="text-gray-600 mt-1">Start your personalized learning journey with AI-powered tutoring</p>
         </div>
 
         {/* Selected Plan Badge */}
         {selectedPlan === 'pro' && (
-          <div className="bg-green-500 border-4 border-black brutalist-shadow p-4 mb-6 text-center">
-            <p className="font-bold uppercase text-sm mb-1">Selected Plan</p>
-            <p className="text-2xl font-black uppercase">PRO - 14-DAY FREE TRIAL</p>
-            <p className="text-xs mt-1">No credit card required • Cancel anytime</p>
+          <div className="bg-green-500 border-2 border-black shadow-xl p-4 mb-6 text-center">
+            <p className="font-bold text-sm mb-1">Selected Plan</p>
+            <p className="text-2xl font-black">Pro - 14-Day Free Trial</p>
+            <p className="text-xs mt-1">No credit card required · Cancel anytime</p>
           </div>
         )}
 
         {/* Sign Up Form */}
-        <div className="bg-white border-4 border-black brutalist-shadow p-8">
+        <div className="bg-white border-2 border-black shadow-xl p-8">
           <form onSubmit={handleSubmit} className="space-y-6">
             {error && (
-              <div className="bg-red-100 border-4 border-red-500 p-4">
-                <p className="text-red-700 font-bold uppercase text-sm">
+              <div className="bg-red-100 border-2 border-red-500 p-4">
+                <p className="text-red-700 font-bold text-sm">
                   {error}
                 </p>
               </div>
             )}
 
             <div className="space-y-2">
-              <Label htmlFor="name" className="font-bold uppercase text-sm">
+              <Label htmlFor="name" className="font-bold text-sm">
                 Full Name
               </Label>
               <div className="relative">
-                <RiUserLine className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5" />
+                <User className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5" />
                 <Input
                   id="name"
                   type="text"
@@ -171,18 +172,18 @@ function SignUpForm() {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   required
-                  className="pl-12 border-4 border-black h-14 text-lg"
+                  className="pl-12 border-2 border-black h-14 text-lg"
                   disabled={isLoading}
                 />
               </div>
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="email" className="font-bold uppercase text-sm">
+              <Label htmlFor="email" className="font-bold text-sm">
                 Email Address
               </Label>
               <div className="relative">
-                <RiMailLine className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5" />
+                <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5" />
                 <Input
                   id="email"
                   type="email"
@@ -190,18 +191,18 @@ function SignUpForm() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="pl-12 border-4 border-black h-14 text-lg"
+                  className="pl-12 border-2 border-black h-14 text-lg"
                   disabled={isLoading}
                 />
               </div>
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="password" className="font-bold uppercase text-sm">
+              <Label htmlFor="password" className="font-bold text-sm">
                 Password
               </Label>
               <div className="relative">
-                <RiLockLine className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5" />
+                <Lock className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5" />
                 <Input
                   id="password"
                   type="password"
@@ -210,7 +211,7 @@ function SignUpForm() {
                   onChange={(e) => setPassword(e.target.value)}
                   required
                   minLength={6}
-                  className="pl-12 border-4 border-black h-14 text-lg"
+                  className="pl-12 border-2 border-black h-14 text-lg"
                   disabled={isLoading}
                 />
               </div>
@@ -222,12 +223,12 @@ function SignUpForm() {
             <div className="space-y-2">
               <Label
                 htmlFor="confirmPassword"
-                className="font-bold uppercase text-sm"
+                className="font-bold text-sm"
               >
                 Confirm Password
               </Label>
               <div className="relative">
-                <RiLockLine className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5" />
+                <Lock className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5" />
                 <Input
                   id="confirmPassword"
                   type="password"
@@ -235,26 +236,26 @@ function SignUpForm() {
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
                   required
-                  className="pl-12 border-4 border-black h-14 text-lg"
+                  className="pl-12 border-2 border-black h-14 text-lg"
                   disabled={isLoading}
                 />
               </div>
             </div>
 
             {/* Welcome Bonus Info */}
-            <div className="bg-green-50 border-4 border-yellow-400 p-4">
+            <div className="bg-green-50 border-2 border-yellow-400 p-4">
               <p className="text-sm font-bold text-center">
-                🎁 Get <span className="text-green-600">1000 FREE CREDITS</span> ($10) when you sign up!
+                Get <span className="text-green-600">1000 Free Credits</span> ($10) when you sign up!
               </p>
             </div>
 
             <Button
               type="submit"
-              className="w-full h-14 text-lg gap-3 bg-black text-green-500 hover:bg-gray-900 border-4 border-black font-bold uppercase brutalist-shadow"
+              className="w-full h-14 text-lg gap-3 bg-black text-green-500 hover:bg-gray-900 border-2 border-black font-bold shadow-xl"
               disabled={isLoading}
             >
               {isLoading ? "Creating Account..." : "Create Account"}
-              <RiArrowRightLine className="w-5 h-5" />
+              <ArrowRight className="w-5 h-5" />
             </Button>
           </form>
 
@@ -264,7 +265,7 @@ function SignUpForm() {
               <div className="w-full border-t-4 border-black"></div>
             </div>
             <div className="relative flex justify-center">
-              <span className="bg-white px-4 text-sm font-bold uppercase">
+              <span className="bg-white px-4 text-sm font-bold">
                 Or
               </span>
             </div>
@@ -316,9 +317,9 @@ export default function SignUpPage() {
         <div className="min-h-screen bg-white flex items-center justify-center">
           <div className="text-center">
             <div className="w-16 h-16 bg-black flex items-center justify-center mx-auto mb-4 animate-pulse">
-              <RiUserLine className="w-10 h-10 text-green-500" />
+              <User className="w-10 h-10 text-green-500" />
             </div>
-            <p className="text-gray-600 font-bold uppercase">Loading...</p>
+            <p className="text-gray-600 font-bold">Loading...</p>
           </div>
         </div>
       }

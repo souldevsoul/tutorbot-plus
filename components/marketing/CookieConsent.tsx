@@ -87,7 +87,7 @@ export function CookieConsent() {
       {/* Cookie Banner */}
       <div className="fixed bottom-0 left-0 right-0 z-50 p-4 animate-in slide-in-from-bottom duration-500">
         <div className="max-w-7xl mx-auto">
-          <div className="bg-white border-8 border-black brutalist-shadow">
+          <div className="bg-white border-8 border-black shadow-xl">
             {showSettings ? (
               // Settings View
               <div className="p-8">
@@ -109,7 +109,7 @@ export function CookieConsent() {
 
                 <div className="space-y-4 mb-6">
                   {/* Necessary Cookies */}
-                  <div className="flex items-start gap-4 p-4 border-4 border-black bg-green-50">
+                  <div className="flex items-start gap-4 p-4 border-2 border-black bg-green-50">
                     <input
                       type="checkbox"
                       checked={true}
@@ -125,7 +125,7 @@ export function CookieConsent() {
                   </div>
 
                   {/* Analytics Cookies */}
-                  <div className="flex items-start gap-4 p-4 border-4 border-black bg-white">
+                  <div className="flex items-start gap-4 p-4 border-2 border-black bg-white">
                     <input
                       type="checkbox"
                       checked={preferences.analytics}
@@ -141,7 +141,7 @@ export function CookieConsent() {
                   </div>
 
                   {/* Marketing Cookies */}
-                  <div className="flex items-start gap-4 p-4 border-4 border-black bg-white">
+                  <div className="flex items-start gap-4 p-4 border-2 border-black bg-white">
                     <input
                       type="checkbox"
                       checked={preferences.marketing}
@@ -160,7 +160,7 @@ export function CookieConsent() {
                 <div className="flex flex-wrap gap-4">
                   <Button
                     onClick={handleSavePreferences}
-                    className="gap-2 bg-black text-green-500 hover:bg-gray-900 border-4 border-black font-bold uppercase brutalist-shadow"
+                    className="gap-2 bg-black text-green-500 hover:bg-gray-900 border-2 border-black font-bold uppercase shadow-xl"
                   >
                     <RiCheckLine className="w-5 h-5" />
                     Save Preferences
@@ -168,7 +168,7 @@ export function CookieConsent() {
                   <Button
                     onClick={() => setShowSettings(false)}
                     variant="outline"
-                    className="border-4 border-black font-bold uppercase"
+                    className="border-2 border-black font-bold uppercase"
                   >
                     Cancel
                   </Button>
@@ -180,7 +180,7 @@ export function CookieConsent() {
                 <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
                   {/* Icon */}
                   <div className="flex-shrink-0">
-                    <div className="w-16 h-16 bg-green-500 border-4 border-black flex items-center justify-center">
+                    <div className="w-16 h-16 bg-green-500 border-2 border-black flex items-center justify-center">
                       <span className="text-4xl">🍪</span>
                     </div>
                   </div>
@@ -204,7 +204,7 @@ export function CookieConsent() {
                     <Button
                       onClick={handleAcceptAll}
                       size="lg"
-                      className="gap-2 bg-black text-green-500 hover:bg-gray-900 border-4 border-black font-bold uppercase brutalist-shadow whitespace-nowrap"
+                      className="gap-2 bg-black text-green-500 hover:bg-gray-900 border-2 border-black font-bold uppercase shadow-xl whitespace-nowrap"
                     >
                       <RiCheckLine className="w-5 h-5" />
                       Accept All
@@ -213,7 +213,7 @@ export function CookieConsent() {
                       onClick={() => setShowSettings(true)}
                       size="lg"
                       variant="outline"
-                      className="gap-2 border-4 border-black font-bold uppercase whitespace-nowrap"
+                      className="gap-2 border-2 border-black font-bold uppercase whitespace-nowrap"
                     >
                       <RiSettingsLine className="w-5 h-5" />
                       Settings
@@ -222,7 +222,7 @@ export function CookieConsent() {
                       onClick={handleRejectAll}
                       size="lg"
                       variant="outline"
-                      className="border-4 border-black font-bold uppercase whitespace-nowrap"
+                      className="border-2 border-black font-bold uppercase whitespace-nowrap"
                     >
                       Reject All
                     </Button>

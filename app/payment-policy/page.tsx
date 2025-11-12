@@ -3,8 +3,7 @@
 import { Container } from "@/components/ui/container"
 import { Header } from "@/components/marketing/layout/header"
 import { Footer } from "@/components/marketing/layout/footer"
-import { RiSecurePaymentLine, RiMoneyDollarCircleLine, RiShieldCheckLine, RiAlertLine } from "react-icons/ri"
-import { SiVisa, SiMastercard, SiApplepay, SiGooglepay } from "react-icons/si"
+import { CreditCard, DollarSign, ShieldCheck, AlertTriangle } from "lucide-react"
 
 export default function PaymentPolicyPage() {
   const lastUpdated = "November 8, 2025"
@@ -12,7 +11,7 @@ export default function PaymentPolicyPage() {
   return (
     <main className="min-h-screen bg-white">
       <Header
-        logoText="VoiceCraft"
+        logoText="TutorBot Plus"
         navLinks={[
           { label: "Features", href: "/features" },
           { label: "Pricing", href: "/pricing" },
@@ -27,17 +26,17 @@ export default function PaymentPolicyPage() {
       <section className="py-20 border-b-8 border-black">
         <Container maxWidth="xl">
           <div className="max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-3 px-6 py-3 bg-green-500 border-4 border-black mb-8">
-              <RiSecurePaymentLine className="w-6 h-6" />
-              <span className="text-sm font-bold uppercase tracking-wider">Payment Policy</span>
+            <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-blue-600 to-green-600 border-2 border-black mb-8">
+              <CreditCard className="w-6 h-6 text-white" />
+              <span className="text-sm font-bold tracking-wider text-white">Payment Policy</span>
             </div>
-            <h1 className="text-6xl md:text-7xl font-bold uppercase mb-6 leading-tight">
-              PAYMENT POLICY
+            <h1 className="text-6xl md:text-7xl font-bold mb-6 leading-tight">
+              Payment Policy
             </h1>
             <p className="text-xl text-gray-700 mb-6">
-              Secure, transparent, and compliant payment processing. Understand how payments work on VoiceCraft.
+              Secure, transparent, and compliant payment processing. Understand how payments work on TutorBot Plus.
             </p>
-            <p className="text-sm font-bold uppercase text-gray-900">
+            <p className="text-sm font-bold text-gray-900">
               Last Updated: {lastUpdated}
             </p>
           </div>
@@ -50,27 +49,27 @@ export default function PaymentPolicyPage() {
             {/* Payment Methods */}
             <div>
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 bg-black border-4 border-black flex items-center justify-center">
-                  <RiSecurePaymentLine className="w-6 h-6 text-green-500" />
+                <div className="w-12 h-12 bg-blue-600 border-2 border-black flex items-center justify-center">
+                  <CreditCard className="w-6 h-6 text-white" />
                 </div>
-                <h2 className="text-3xl font-bold uppercase">1. Accepted Payment Methods</h2>
+                <h2 className="text-3xl font-bold">1. Accepted Payment Methods</h2>
               </div>
 
               <div className="space-y-4">
-                <div className="p-6 bg-white border-4 border-black brutalist-shadow">
-                  <h3 className="text-lg font-bold uppercase mb-4">Credit & Debit Cards</h3>
+                <div className="p-6 bg-white border-2 border-black shadow-xl">
+                  <h3 className="text-lg font-bold mb-4">Credit & Debit Cards</h3>
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-4">
                     <div className="bg-white p-3 border-2 border-black flex items-center justify-center">
-                      <SiVisa className="w-16 h-12 text-[#1A1F71]" />
+                      <CreditCard className="w-12 h-12 text-blue-600" />
                     </div>
                     <div className="bg-white p-3 border-2 border-black flex items-center justify-center">
-                      <SiMastercard className="w-16 h-12" />
+                      <CreditCard className="w-12 h-12 text-gray-700" />
                     </div>
                     <div className="bg-white p-3 border-2 border-black flex items-center justify-center">
-                      <SiApplepay className="w-16 h-12 text-black" />
+                      <CreditCard className="w-12 h-12 text-black" />
                     </div>
                     <div className="bg-white p-3 border-2 border-black flex items-center justify-center">
-                      <SiGooglepay className="w-16 h-12" />
+                      <CreditCard className="w-12 h-12 text-green-600" />
                     </div>
                   </div>
                   <p className="text-gray-700 leading-relaxed">
@@ -78,10 +77,10 @@ export default function PaymentPolicyPage() {
                   </p>
                 </div>
 
-                <div className="p-6 bg-green-50 border-4 border-black">
-                  <h3 className="text-lg font-bold uppercase mb-3">Payment Processor</h3>
+                <div className="p-6 bg-green-50 border-2 border-black">
+                  <h3 className="text-lg font-bold mb-3">Payment Processor</h3>
                   <p className="text-gray-700 leading-relaxed">
-                    All payments are processed securely through Stripe, a PCI DSS Level 1 compliant payment processor. VoiceCraft does not store your complete credit card information on our servers.
+                    All payments are processed securely through Stripe, a PCI DSS Level 1 compliant payment processor. TutorBot Plus does not store your complete credit card information on our servers.
                   </p>
                 </div>
               </div>
@@ -90,15 +89,15 @@ export default function PaymentPolicyPage() {
             {/* Billing */}
             <div>
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 bg-black border-4 border-black flex items-center justify-center">
-                  <RiMoneyDollarCircleLine className="w-6 h-6 text-green-500" />
+                <div className="w-12 h-12 bg-blue-600 border-2 border-black flex items-center justify-center">
+                  <DollarSign className="w-6 h-6 text-white" />
                 </div>
-                <h2 className="text-3xl font-bold uppercase">2. Billing & Charges</h2>
+                <h2 className="text-3xl font-bold">2. Billing & Charges</h2>
               </div>
 
               <div className="space-y-4">
-                <div className="p-6 bg-white border-4 border-black brutalist-shadow">
-                  <h3 className="text-lg font-bold uppercase mb-3">Subscription Billing</h3>
+                <div className="p-6 bg-white border-2 border-black shadow-xl">
+                  <h3 className="text-lg font-bold mb-3">Subscription Billing</h3>
                   <ul className="space-y-3 text-gray-700">
                     <li className="flex items-start gap-2">
                       <span className="text-black font-bold">•</span>
@@ -119,8 +118,8 @@ export default function PaymentPolicyPage() {
                   </ul>
                 </div>
 
-                <div className="p-6 bg-green-50 border-4 border-black">
-                  <h3 className="text-lg font-bold uppercase mb-3">Currency & Pricing</h3>
+                <div className="p-6 bg-green-50 border-2 border-black">
+                  <h3 className="text-lg font-bold mb-3">Currency & Pricing</h3>
                   <p className="text-gray-700 leading-relaxed mb-3">
                     <span className="font-bold">Primary Currency:</span> United States Dollar (USD)
                   </p>
@@ -128,12 +127,12 @@ export default function PaymentPolicyPage() {
                     All prices are displayed in USD. If your bank or card is in a different currency, your financial institution will convert the charge at their current exchange rate.
                   </p>
                   <p className="text-gray-700 leading-relaxed">
-                    <span className="font-bold">Note:</span> Your bank may charge currency conversion fees. These fees are set by your bank, not by VoiceCraft.
+                    <span className="font-bold">Note:</span> Your bank may charge currency conversion fees. These fees are set by your bank, not by TutorBot Plus.
                   </p>
                 </div>
 
-                <div className="p-6 bg-black text-white border-4 border-black brutalist-shadow-yellow">
-                  <h3 className="text-lg font-bold uppercase mb-3 text-green-500">No Minimum or Maximum Transaction Amounts</h3>
+                <div className="p-6 bg-gradient-to-r from-blue-600 to-green-600 text-white border-2 border-black shadow-xl">
+                  <h3 className="text-lg font-bold mb-3">No Minimum or Maximum Transaction Amounts</h3>
                   <p className="leading-relaxed">
                     In compliance with Visa and Mastercard regulations, we do not impose minimum or maximum transaction amounts for card payments. All subscription tiers are available regardless of payment amount.
                   </p>
@@ -144,15 +143,15 @@ export default function PaymentPolicyPage() {
             {/* Security */}
             <div>
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 bg-black border-4 border-black flex items-center justify-center">
-                  <RiShieldCheckLine className="w-6 h-6 text-green-500" />
+                <div className="w-12 h-12 bg-blue-600 border-2 border-black flex items-center justify-center">
+                  <ShieldCheck className="w-6 h-6 text-white" />
                 </div>
-                <h2 className="text-3xl font-bold uppercase">3. Payment Security</h2>
+                <h2 className="text-3xl font-bold">3. Payment Security</h2>
               </div>
 
               <div className="space-y-4">
-                <div className="p-6 bg-white border-4 border-black brutalist-shadow">
-                  <h3 className="text-lg font-bold uppercase mb-3">PCI DSS Compliance</h3>
+                <div className="p-6 bg-white border-2 border-black shadow-xl">
+                  <h3 className="text-lg font-bold mb-3">PCI DSS Compliance</h3>
                   <ul className="space-y-3 text-gray-700">
                     <li className="flex items-start gap-2">
                       <span className="text-black font-bold">•</span>
@@ -177,8 +176,8 @@ export default function PaymentPolicyPage() {
                   </ul>
                 </div>
 
-                <div className="p-6 bg-green-50 border-4 border-black">
-                  <h3 className="text-lg font-bold uppercase mb-3">What We Store</h3>
+                <div className="p-6 bg-green-50 border-2 border-black">
+                  <h3 className="text-lg font-bold mb-3">What We Store</h3>
                   <p className="text-gray-700 leading-relaxed mb-3">
                     For your convenience, we store:
                   </p>
@@ -210,15 +209,15 @@ export default function PaymentPolicyPage() {
             {/* Failed Payments */}
             <div>
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 bg-black border-4 border-black flex items-center justify-center">
-                  <RiAlertLine className="w-6 h-6 text-green-500" />
+                <div className="w-12 h-12 bg-blue-600 border-2 border-black flex items-center justify-center">
+                  <AlertTriangle className="w-6 h-6 text-white" />
                 </div>
-                <h2 className="text-3xl font-bold uppercase">4. Failed Payments & Retries</h2>
+                <h2 className="text-3xl font-bold">4. Failed Payments & Retries</h2>
               </div>
 
               <div className="space-y-4">
-                <div className="p-6 bg-white border-4 border-black brutalist-shadow">
-                  <h3 className="text-lg font-bold uppercase mb-3">Automatic Retry</h3>
+                <div className="p-6 bg-white border-2 border-black shadow-xl">
+                  <h3 className="text-lg font-bold mb-3">Automatic Retry</h3>
                   <p className="text-gray-700 leading-relaxed mb-3">
                     If a payment fails, we will automatically retry up to 3 times over 7 days:
                   </p>
@@ -238,15 +237,15 @@ export default function PaymentPolicyPage() {
                   </ul>
                 </div>
 
-                <div className="p-6 bg-green-50 border-4 border-black">
-                  <h3 className="text-lg font-bold uppercase mb-3">Account Suspension</h3>
+                <div className="p-6 bg-green-50 border-2 border-black">
+                  <h3 className="text-lg font-bold mb-3">Account Suspension</h3>
                   <p className="text-gray-700 leading-relaxed">
                     If all retry attempts fail, your subscription will be suspended. You can reactivate by updating your payment method. No data is deleted during suspension.
                   </p>
                 </div>
 
-                <div className="p-6 bg-black text-white border-4 border-black brutalist-shadow-yellow">
-                  <h3 className="text-lg font-bold uppercase mb-3 text-green-500">Email Notifications</h3>
+                <div className="p-6 bg-gradient-to-r from-blue-600 to-green-600 text-white border-2 border-black shadow-xl">
+                  <h3 className="text-lg font-bold mb-3">Email Notifications</h3>
                   <p className="leading-relaxed">
                     We will email you immediately when a payment fails and before each retry attempt. Please update your payment information promptly to avoid service interruption.
                   </p>
@@ -256,8 +255,8 @@ export default function PaymentPolicyPage() {
 
             {/* Taxes */}
             <div>
-              <div className="p-8 bg-green-500 border-4 border-black brutalist-shadow">
-                <h2 className="text-2xl font-bold uppercase mb-4">TAXES & VAT</h2>
+              <div className="p-8 bg-green-500 border-2 border-black shadow-xl">
+                <h2 className="text-2xl font-bold mb-4">Taxes & VAT</h2>
                 <p className="text-gray-900 leading-relaxed mb-4">
                   <span className="font-bold">Prices are exclusive of taxes.</span> Depending on your location, applicable taxes (VAT, GST, sales tax) may be added to your invoice.
                 </p>
@@ -272,9 +271,9 @@ export default function PaymentPolicyPage() {
 
             {/* Disputes */}
             <div>
-              <div className="p-6 bg-black text-white border-4 border-black brutalist-shadow-yellow">
-                <h2 className="text-2xl font-bold uppercase mb-4 text-green-500">
-                  PAYMENT DISPUTES & CHARGEBACKS
+              <div className="p-6 bg-gradient-to-r from-blue-600 to-green-600 text-white border-2 border-black shadow-xl">
+                <h2 className="text-2xl font-bold mb-4">
+                  Payment Disputes & Chargebacks
                 </h2>
                 <p className="leading-relaxed mb-4">
                   <span className="font-bold">Contact us first:</span> If you see an unexpected charge, please contact us at support@tutorbot.plus before initiating a chargeback. We can often resolve issues quickly.
@@ -288,10 +287,10 @@ export default function PaymentPolicyPage() {
               </div>
             </div>
 
-            {/* Invoice */}
+            {/* Invoices */}
             <div>
-              <div className="p-6 bg-white border-4 border-black brutalist-shadow">
-                <h2 className="text-2xl font-bold uppercase mb-4">INVOICES & RECEIPTS</h2>
+              <div className="p-6 bg-white border-2 border-black shadow-xl">
+                <h2 className="text-2xl font-bold mb-4">Invoices & Receipts</h2>
                 <ul className="space-y-3 text-gray-700">
                   <li className="flex items-start gap-2">
                     <span className="text-black font-bold">•</span>
@@ -315,8 +314,8 @@ export default function PaymentPolicyPage() {
 
             {/* Contact */}
             <div>
-              <div className="p-8 bg-green-50 border-4 border-black text-center">
-                <h2 className="text-2xl font-bold uppercase mb-4">PAYMENT QUESTIONS?</h2>
+              <div className="p-8 bg-green-50 border-2 border-black text-center">
+                <h2 className="text-2xl font-bold mb-4">Payment Questions?</h2>
                 <p className="text-gray-700 mb-6">
                   Contact our billing team for payment-related inquiries
                 </p>

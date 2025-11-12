@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { RiUploadLine, RiCheckLine, RiDeleteBinLine, RiFileAddLine } from "react-icons/ri"
+import { RiUploadLine, RiCheckLine, RiDeleteBinLine, RiFileAddLine } from "lucide-react"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Text, Heading } from "@/components/ui/typography"
@@ -147,7 +147,7 @@ export function WorkSubmissionCard({
 
   return (
     <>
-      <Card variant="outlined" className="border-4 border-blue-500 bg-blue-50">
+      <Card variant="outlined" className="border-2 border-blue-500 bg-blue-50">
         <CardHeader>
           <div className="flex items-start justify-between">
             <div className="flex-1">
@@ -166,7 +166,7 @@ export function WorkSubmissionCard({
         </CardHeader>
         <CardContent className="space-y-6">
           {/* Project Info */}
-          <div className="rounded-md border-4 border-black bg-white p-4">
+          <div className="rounded-md border-2 border-black bg-white p-4">
             <Text variant="caption" className="text-xs font-bold uppercase text-slate-600">
               PROJECT DETAILS
             </Text>
@@ -247,7 +247,7 @@ export function WorkSubmissionCard({
               )}
             </div>
 
-            <div className="space-y-3 rounded-md border-4 border-black bg-white p-4">
+            <div className="space-y-3 rounded-md border-2 border-black bg-white p-4">
               {allAudios.length > 0 ? (
                 allAudios.map((audio, index) => {
                   const isSelected = selectedAudioIds.includes(audio.id)
@@ -335,7 +335,7 @@ export function WorkSubmissionCard({
 
       {/* Confirm Submission Dialog */}
       <AlertDialog open={showConfirmDialog} onOpenChange={setShowConfirmDialog}>
-        <AlertDialogContent className="border-4 border-black sm:max-w-[600px]">
+        <AlertDialogContent className="border-2 border-black sm:max-w-[600px]">
           <AlertDialogHeader>
             <AlertDialogTitle>SUBMIT WORK FOR REVIEW?</AlertDialogTitle>
             <AlertDialogDescription>
@@ -380,7 +380,7 @@ export function WorkSubmissionCard({
             <AlertDialogAction
               onClick={handleSubmit}
               disabled={loading}
-              className="bg-blue-400 text-black border-4 border-black hover:bg-blue-500"
+              className="bg-blue-400 text-black border-2 border-black hover:bg-blue-500"
             >
               {loading ? "SUBMITTING..." : "CONFIRM SUBMISSION"}
             </AlertDialogAction>

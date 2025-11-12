@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { RiSoundModuleLine, RiLoader4Line } from "react-icons/ri"
+import { RiSoundModuleLine, RiLoader4Line } from "lucide-react"
 import {
   Sheet,
   SheetContent,

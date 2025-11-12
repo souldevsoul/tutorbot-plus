@@ -3,8 +3,10 @@
  * Only checks actual color values, not utility classes
  */
 
+/* eslint-disable @typescript-eslint/no-require-imports */
 const fs = require('node:fs');
 const path = require('node:path');
+/* eslint-enable @typescript-eslint/no-require-imports */
 
 // List of Tailwind utility prefixes that are NOT colors
 const NON_COLOR_UTILITIES = [
@@ -727,6 +729,318 @@ module.exports = {
                 });
               }
             }
+          },
+        };
+      },
+    },
+
+    // ========================================
+    // PROJECT ADAPTATION RULES
+    // ========================================
+
+    'no-brutalist-styling': {
+      meta: {
+        type: 'problem',
+        docs: {
+          description: 'Ensure modern soft design style is used (no brutalist styling from VoiceCraft template)',
+          category: 'Design System Consistency',
+          recommended: true,
+        },
+        messages: {
+          brutalistClass: 'Brutalist class "{{className}}" detected. Use modern soft design: border-2 instead of border-4, rounded-2xl instead of sharp corners.',
+          brutalistShadow: 'brutalist-shadow class detected. Use Tailwind shadows: shadow-lg, shadow-xl, shadow-2xl.',
+          reactIcons: 'React Icons import detected. Use Lucide icons instead (import from "lucide-react").',
+          uppercaseText: 'UPPERCASE text detected: "{{text}}". Use Title Case for modern soft design.',
+          blackBg: 'Black background (bg-black) detected on card/container. Use gradient backgrounds: bg-gradient-to-br from-orange-50 via-amber-50 to-lime-50.',
+        },
+      },
+      create(context) {
+        const brutalistClasses = [
+          'border-4',
+          'border-8',
+          'brutalist-shadow',
+        ];
+
+        function shouldSkipFile() {
+          const filename = context.getFilename();
+          return filename.includes('CLAUDE.md') ||
+              filename.includes('README.md') ||
+              filename.includes('.git/') ||
+              filename.includes('node_modules/') ||
+              filename.includes('eslint-plugin-product-quality');
+        }
+
+        return {
+          // Check className attributes for brutalist classes
+          JSXAttribute(node) {
+            if (shouldSkipFile()) return;
+
+            if (node.name.name === 'className' && node.value?.value) {
+              const classes = node.value.value.split(' ');
+
+              classes.forEach((className) => {
+                // Check for brutalist classes
+                if (brutalistClasses.some(bc => className.includes(bc))) {
+                  context.report({
+                    node,
+                    messageId: className.includes('brutalist-shadow') ? 'brutalistShadow' : 'brutalistClass',
+                    data: { className },
+                  });
+                }
+
+                // Check for border-4 border-black combination
+                if (className === 'border-4' && classes.includes('border-black')) {
+                  context.report({
+                    node,
+                    messageId: 'brutalistClass',
+                    data: { className: 'border-4 border-black' },
+                  });
+                }
+
+                // Check for bg-black on containers (not buttons)
+                if (className === 'bg-black') {
+                  const parentIsContainer = node.parent.parent.openingElement?.name.name === 'div'
+                    || node.parent.parent.openingElement?.name.name === 'section'
+                    || node.parent.parent.openingElement?.name.name === 'article'
+                    || classes.some(c => c.includes('card') || c.includes('container'));
+
+                  if (parentIsContainer) {
+                    context.report({
+                      node,
+                      messageId: 'blackBg',
+                      data: { className },
+                    });
+                  }
+                }
+              });
+            }
+          },
+
+          // Check for React Icons imports
+          ImportDeclaration(node) {
+            if (shouldSkipFile()) return;
+
+            if (node.source.value.startsWith('react-icons/')) {
+              context.report({
+                node,
+                messageId: 'reactIcons',
+              });
+            }
+          },
+
+          // Check for UPPERCASE text in JSX
+          JSXText(node) {
+            if (shouldSkipFile()) return;
+
+            const text = node.value.trim();
+
+            // Skip hex colors, URLs, and other technical strings
+            if (text.startsWith('#') || text.startsWith('http') || text.startsWith('rgb') || text.startsWith('hsl')) {
+              return;
+            }
+
+            // Check if text is mostly uppercase (more than 50% uppercase letters)
+            const uppercaseCount = (text.match(/[A-Z]/g) || []).length;
+            const letterCount = (text.match(/[A-Za-z]/g) || []).length;
+
+            if (letterCount >= 4 && uppercaseCount / letterCount > 0.8 && !text.match(/^[A-Z]{1,4}$/)) {
+              context.report({
+                node,
+                messageId: 'uppercaseText',
+                data: { text: text.substring(0, 50) },
+              });
+            }
+          },
+
+          // Check for UPPERCASE text in string literals (headings, labels)
+          Literal(node) {
+            if (shouldSkipFile()) return;
+
+            if (typeof node.value === 'string') {
+              const text = node.value.trim();
+
+              // Skip hex colors, URLs, and other technical strings
+              if (text.startsWith('#') || text.startsWith('http') || text.startsWith('rgb') || text.startsWith('hsl')) {
+                return;
+              }
+
+              const uppercaseCount = (text.match(/[A-Z]/g) || []).length;
+              const letterCount = (text.match(/[A-Za-z]/g) || []).length;
+
+              // Check for heading-like UPPERCASE strings (long enough to be titles)
+              if (letterCount >= 6 && uppercaseCount / letterCount > 0.8 && !text.match(/^[A-Z]{1,4}$/)) {
+                // Check if this is likely a heading or label (in JSX context)
+                let parent = node.parent;
+                let isHeadingContext = false;
+
+                while (parent && !isHeadingContext) {
+                  if (parent.type === 'JSXElement') {
+                    const elementName = parent.openingElement?.name?.name || '';
+                    if (/^[Hh][1-6]$/.test(elementName) || elementName === 'label' || elementName === 'span') {
+                      isHeadingContext = true;
+                    }
+                  }
+                  parent = parent.parent;
+                }
+
+                if (isHeadingContext) {
+                  context.report({
+                    node,
+                    messageId: 'uppercaseText',
+                    data: { text: text.substring(0, 50) },
+                  });
+                }
+              }
+            }
+          },
+        };
+      },
+    },
+
+    'no-template-remnants': {
+      meta: {
+        type: 'problem',
+        docs: {
+          description: 'Ensure template project has been fully adapted (no VoiceCraft, ClipMaster, LogoSmith remnants)',
+          category: 'Project Adaptation',
+          recommended: true,
+        },
+        messages: {
+          templateRemnant: 'Template remnant found: "{{remnant}}". This suggests the project was not fully adapted from the template. Replace with actual project name/content.',
+          templateImportPath: 'Import path contains template name "{{path}}". Rename directory/file to match current project.',
+          forbiddenKeyword: 'Domain-specific keyword found: "{{keyword}}". For PetPortrait AI, replace voice/audio content with pet portrait content.',
+        },
+        schema: [
+          {
+            type: 'object',
+            properties: {
+              projectName: {
+                type: 'string',
+                description: 'Current project name (e.g., "PetPortrait AI")',
+              },
+              templateNames: {
+                type: 'array',
+                items: { type: 'string' },
+                description: 'List of template names to check for (e.g., ["VoiceCraft", "ClipMaster"])',
+              },
+              forbiddenKeywords: {
+                type: 'array',
+                items: { type: 'string' },
+                description: 'List of domain-specific keywords to check for (e.g., ["voice", "audio", "Kokoro"])',
+              },
+            },
+          },
+        ],
+      },
+      create(context) {
+        const options = context.options[0] || {};
+        const projectName = options.projectName || 'CurrentProject';
+        const templateNames = options.templateNames || ['VoiceCraft', 'ClipMaster', 'LogoSmith'];
+        const forbiddenKeywords = options.forbiddenKeywords || [];
+
+        // Create case-insensitive patterns for each template name
+        const patterns = templateNames.flatMap(name => [
+          new RegExp(`\\b${name}\\b`, 'i'),           // VoiceCraft
+          new RegExp(`\\b${name.toLowerCase()}\\b`, 'i'),  // voicecraft
+          new RegExp(`\\b${name.replace(/([A-Z])/g, '-$1').toLowerCase().slice(1)}\\b`, 'i'), // voice-craft
+        ]);
+
+        // Create patterns for forbidden keywords
+        const keywordPatterns = forbiddenKeywords.map(keyword =>
+          new RegExp(`\\b${keyword}\\b`, 'i')
+        );
+
+        function shouldSkipFile() {
+          const filename = context.getFilename();
+          return filename.includes('CLAUDE.md') ||
+              filename.includes('README.md') ||
+              filename.includes('ADAPTATION_GUIDE.md') ||
+              filename.includes('.git/') ||
+              filename.includes('node_modules/') ||
+              filename.includes('test-voice-cloning.ts') ||
+              filename.includes('eslint-plugin-product-quality');
+        }
+
+        function checkText(node, text) {
+          if (!text || typeof text !== 'string') return;
+          if (shouldSkipFile()) return;
+
+          patterns.forEach(pattern => {
+            if (pattern.test(text)) {
+              const match = text.match(pattern);
+              context.report({
+                node,
+                messageId: 'templateRemnant',
+                data: { remnant: match[0] },
+              });
+            }
+          });
+        }
+
+        function checkKeywords(node, text) {
+          if (!text || typeof text !== 'string') return;
+          if (shouldSkipFile()) return;
+          if (forbiddenKeywords.length === 0) return;
+
+          keywordPatterns.forEach((pattern, index) => {
+            if (pattern.test(text)) {
+              const match = text.match(pattern);
+              context.report({
+                node,
+                messageId: 'forbiddenKeyword',
+                data: { keyword: match[0] },
+              });
+            }
+          });
+        }
+
+        return {
+          // Check string literals
+          Literal(node) {
+            if (typeof node.value === 'string') {
+              checkText(node, node.value);
+              checkKeywords(node, node.value);
+            }
+          },
+
+          // Check template literals
+          TemplateLiteral(node) {
+            node.quasis.forEach(quasi => {
+              checkText(quasi, quasi.value.raw);
+              checkKeywords(quasi, quasi.value.raw);
+            });
+          },
+
+          // Check JSX text
+          JSXText(node) {
+            checkText(node, node.value);
+            checkKeywords(node, node.value);
+          },
+
+          // Check import/export paths
+          ImportDeclaration(node) {
+            const source = node.source.value;
+            templateNames.forEach(name => {
+              const kebabCase = name.replace(/([A-Z])/g, '-$1').toLowerCase().slice(1);
+              if (source.includes(name.toLowerCase()) || source.includes(kebabCase)) {
+                context.report({
+                  node: node.source,
+                  messageId: 'templateImportPath',
+                  data: { path: source },
+                });
+              }
+            });
+          },
+
+          // Check comments
+          Program(node) {
+            const sourceCode = context.getSourceCode();
+            const comments = sourceCode.getAllComments();
+
+            comments.forEach(comment => {
+              checkText(comment, comment.value);
+              checkKeywords(comment, comment.value);
+            });
           },
         };
       },

@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect, use } from "react"
-import { RiArrowLeftLine, RiUserLine, RiTimeLine, RiMoneyDollarCircleLine } from "react-icons/ri"
+import { ArrowLeft, User, Time, MoneyDollarCircle } from "lucide-react"
 import { Text, Heading } from "@/components/ui/typography"
 import { Button } from "@/components/ui/button"
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
@@ -10,9 +10,9 @@ import {
   ProjectStatusBadge,
   WorkSubmissionCard,
   type ProjectStatus,
-  type ProjectAudio,
+  type ProjectLesson,
 } from "@/components/project"
-import { AudioPlayer } from "@/components/voicecraft/audio-player"
+import { LessonPlayer } from "@/components/voicecraft/audio-player"
 
 type ProjectDetail = {
   id: string
@@ -28,7 +28,7 @@ type ProjectDetail = {
   submittedAt: string | null
   clientName: string
   clientEmail: string
-  projectAudios?: {
+  projectLessons?: {
     id: string
     audio: {
       id: string
@@ -124,7 +124,7 @@ export default function SpecialistProjectDetailPage({
     return (
       <div className="flex-1 space-y-4 p-8 pt-6">
         <div className="flex flex-col items-center justify-center h-96">
-          <Heading variant="h3" className="font-bold uppercase">PROJECT NOT FOUND</Heading>
+          <Heading variant="h3" className="font-bold uppercase">Project Not Found</Heading>
           <Text variant="body" className="mt-2 text-slate-600">
             This project does not exist or you don't have access to it.
           </Text>
@@ -133,16 +133,16 @@ export default function SpecialistProjectDetailPage({
             className="mt-4 border-2"
             onClick={() => window.location.href = "/specialist/projects"}
           >
-            <RiArrowLeftLine className="mr-2 h-4 w-4" />
-            BACK TO PROJECTS
+            <ArrowLeft className="mr-2 h-4 w-4" />
+            Back to Projects
           </Button>
         </div>
       </div>
     )
   }
 
-  const existingAudios: ProjectAudio[] = project.projectAudios
-    ? project.projectAudios.map(pa => ({
+  const existingLessons: ProjectLesson[] = project.projectLessons
+    ? project.projectLessons.map(pa => ({
         id: pa.audio.id,
         filename: pa.audio.filename,
         audioUrl: pa.audio.audioUrl,
@@ -161,8 +161,8 @@ export default function SpecialistProjectDetailPage({
             className="border-2"
             onClick={() => window.location.href = "/specialist/projects"}
           >
-            <RiArrowLeftLine className="mr-2 h-4 w-4" />
-            BACK
+            <ArrowLeft className="mr-2 h-4 w-4" />
+            Back
           </Button>
           <div>
             <Heading variant="h2" className="text-3xl font-bold uppercase tracking-tight">
@@ -179,11 +179,11 @@ export default function SpecialistProjectDetailPage({
       {/* Project Info Grid */}
       <div className="grid gap-4 md:grid-cols-3">
         {/* Client */}
-        <Card variant="outlined" className="border-4 border-black">
+        <Card variant="outlined" className="border-2 border-black">
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-sm">
-              <RiUserLine className="h-5 w-5" />
-              CLIENT
+              <User className="h-5 w-5" />
+              Client
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -194,11 +194,11 @@ export default function SpecialistProjectDetailPage({
 
         {/* Duration */}
         {project.estimatedDuration && (
-          <Card variant="outlined" className="border-4 border-black">
+          <Card variant="outlined" className="border-2 border-black">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-sm">
-                <RiTimeLine className="h-5 w-5" />
-                ESTIMATED DURATION
+                <Time className="h-5 w-5" />
+                Estimated Duration
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -212,11 +212,11 @@ export default function SpecialistProjectDetailPage({
 
         {/* Payment */}
         {project.estimatedCost && (
-          <Card variant="outlined" className="border-4 border-black">
+          <Card variant="outlined" className="border-2 border-black">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-sm">
-                <RiMoneyDollarCircleLine className="h-5 w-5" />
-                PAYMENT
+                <MoneyDollarCircle className="h-5 w-5" />
+                Payment
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -233,9 +233,9 @@ export default function SpecialistProjectDetailPage({
 
       {/* Client Request */}
       {project.request && (
-        <Card variant="outlined" className="border-4 border-black">
+        <Card variant="outlined" className="border-2 border-black">
           <CardHeader>
-            <CardTitle className="text-sm font-bold uppercase">CLIENT REQUEST</CardTitle>
+            <CardTitle className="text-sm font-bold uppercase">Client Request</CardTitle>
           </CardHeader>
           <CardContent>
             <Text variant="body" className="whitespace-pre-wrap">
@@ -253,7 +253,7 @@ export default function SpecialistProjectDetailPage({
           projectId={project.id}
           projectName={project.name}
           projectDescription={project.description || undefined}
-          existingAudios={existingAudios}
+          existingLessons={existingLessons}
           onSubmit={handleSubmitWork}
           loading={actionLoading}
         />
@@ -261,9 +261,9 @@ export default function SpecialistProjectDetailPage({
 
       {/* Submitted Work - For in_review and completed */}
       {(project.status === "in_review" || project.status === "completed") && project.submittedAt && (
-        <Card variant="outlined" className="border-4 border-cyan-500 bg-cyan-50">
+        <Card variant="outlined" className="border-2 border-cyan-500 bg-cyan-50">
           <CardHeader>
-            <CardTitle className="text-cyan-900">SUBMITTED WORK</CardTitle>
+            <CardTitle className="text-cyan-900">Submitted Work</CardTitle>
             <Text variant="caption" className="text-xs text-cyan-800">
               Submitted on {new Date(project.submittedAt).toLocaleDateString()}
             </Text>
@@ -273,7 +273,7 @@ export default function SpecialistProjectDetailPage({
             {project.estimationData?.submissionNotes && (
               <div className="rounded-md border-2 border-black bg-white p-4">
                 <Text variant="caption" className="text-xs font-bold uppercase text-slate-600">
-                  YOUR NOTES
+                  Your Notes
                 </Text>
                 <Text variant="body" className="mt-2 whitespace-pre-wrap">
                   {project.estimationData.submissionNotes}
@@ -281,19 +281,19 @@ export default function SpecialistProjectDetailPage({
               </div>
             )}
 
-            {/* Submitted Audios */}
+            {/* Submitted Lessons */}
             <div>
               <Text variant="caption" className="text-xs font-bold uppercase text-slate-600">
-                SUBMITTED FILES
+                Submitted Files
               </Text>
               <div className="mt-2 space-y-3 rounded-md border-2 border-black bg-white p-4">
-                {existingAudios.length > 0 ? (
-                  existingAudios.map((audio, index) => (
+                {existingLessons.length > 0 ? (
+                  existingLessons.map((audio, index) => (
                     <div key={audio.id} className="border-b border-slate-200 pb-3 last:border-0 last:pb-0">
                       <Text variant="body" className="mb-2 font-bold text-sm">
                         {index + 1}. {audio.filename}
                       </Text>
-                      <AudioPlayer audioUrl={audio.audioUrl} />
+                      <LessonPlayer audioUrl={audio.audioUrl} />
                     </div>
                   ))
                 ) : (
@@ -329,19 +329,19 @@ export default function SpecialistProjectDetailPage({
         </Card>
       )}
 
-      {/* Original Project Audios (Reference) */}
-      {project.status === "assigned" && existingAudios.length > 0 && (
+      {/* Original Project Lessons (Reference) */}
+      {project.status === "assigned" && existingLessons.length > 0 && (
         <div>
           <Heading variant="h3" className="mb-3 font-bold uppercase">
-            REFERENCE AUDIOS ({existingAudios.length})
+            Reference Audios ({existingLessons.length})
           </Heading>
-          <div className="space-y-3 rounded-md border-4 border-black bg-white p-4">
-            {existingAudios.map((audio, index) => (
+          <div className="space-y-3 rounded-md border-2 border-black bg-white p-4">
+            {existingLessons.map((audio, index) => (
               <div key={audio.id} className="border-b border-slate-200 pb-3 last:border-0 last:pb-0">
                 <Text variant="body" className="mb-2 font-bold text-sm">
                   {index + 1}. {audio.filename}
                 </Text>
-                <AudioPlayer audioUrl={audio.audioUrl} />
+                <LessonPlayer audioUrl={audio.audioUrl} />
               </div>
             ))}
           </div>

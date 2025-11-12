@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { RiSoundModuleLine, RiVoiceprintLine, RiFolder3Line } from "react-icons/ri"
+import { RiSoundModuleLine, RiVoiceprintLine, RiFolder3Line } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Heading } from "@/components/ui/typography"

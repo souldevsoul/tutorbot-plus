@@ -1,4 +1,4 @@
-// Core UI Components - VoiceCraft Design System
+// Core UI Components - TutorBot Plus Design System
 // Easily swappable by modifying these components
 
 export { Button, type ButtonProps } from "./button"

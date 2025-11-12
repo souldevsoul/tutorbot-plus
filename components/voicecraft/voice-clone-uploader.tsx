@@ -117,7 +117,7 @@ const VoiceCloneUploader = React.forwardRef<HTMLDivElement, VoiceCloneUploaderPr
           <Stack align="center" gap="md" p="xl">
             <div className="relative">
               <div className="absolute inset-0 bg-green-500/20 rounded-full blur-xl animate-pulse" />
-              <div className="relative inline-flex items-center justify-center w-20 h-20 bg-green-500 border-4 border-black shadow-lg">
+              <div className="relative inline-flex items-center justify-center w-20 h-20 bg-green-500 border-2 border-black shadow-lg">
                 <Music className="w-10 h-10 text-black" />
               </div>
             </div>

@@ -1,12 +1,12 @@
 import { Suspense } from "react"
 import Link from "next/link"
 import {
-  RiVoiceprintLine,
-  RiSoundModuleLine,
-  RiFolder3Line,
-  RiCoinLine,
-  RiArrowRightLine,
-} from "react-icons/ri"
+  BookOpen,
+  GraduationCap,
+  Folder,
+  Coins,
+  ArrowRight,
+} from "lucide-react"
 import { Card } from "@/components/ui/card"
 import { Text, Heading } from "@/components/ui/typography"
 import { Badge } from "@/components/ui/badge"
@@ -14,13 +14,13 @@ import { Button } from "@/components/ui/button"
 import { DashboardQuickActions } from "@/components/dashboard/dashboard-quick-actions"
 
 type DashboardStats = {
-  totalAudios: number
-  totalVoices: number
+  totalLessons: number
+  totalCourses: number
   totalProjects: number
   creditsRemaining: number
 }
 
-type RecentAudio = {
+type RecentLesson = {
   id: string
   filename: string
   voiceName: string | null
@@ -33,56 +33,56 @@ async function getDashboardStats(): Promise<DashboardStats> {
     const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'
 
     // Fetch all counts in parallel
-    const [audiosRes, voicesRes, projectsRes] = await Promise.all([
-      fetch(`${baseUrl}/api/audios?limit=1`, { cache: 'no-store' }),
-      fetch(`${baseUrl}/api/voices?limit=1`, { cache: 'no-store' }),
+    const [lessonsRes, coursesRes, projectsRes] = await Promise.all([
+      fetch(`${baseUrl}/api/lessons?limit=1`, { cache: 'no-store' }),
+      fetch(`${baseUrl}/api/courses?limit=1`, { cache: 'no-store' }),
       fetch(`${baseUrl}/api/projects?limit=1`, { cache: 'no-store' }),
     ])
 
-    const [audiosData, voicesData, projectsData] = await Promise.all([
-      audiosRes.ok ? audiosRes.json() : { pagination: { total: 0 } },
-      voicesRes.ok ? voicesRes.json() : { pagination: { total: 0 } },
+    const [lessonsData, coursesData, projectsData] = await Promise.all([
+      lessonsRes.ok ? lessonsRes.json() : { pagination: { total: 0 } },
+      coursesRes.ok ? coursesRes.json() : { pagination: { total: 0 } },
       projectsRes.ok ? projectsRes.json() : { pagination: { total: 0 } },
     ])
 
     return {
-      totalAudios: audiosData.pagination?.total || 0,
-      totalVoices: voicesData.pagination?.total || 0,
+      totalLessons: lessonsData.pagination?.total || 0,
+      totalCourses: coursesData.pagination?.total || 0,
       totalProjects: projectsData.pagination?.total || 0,
       creditsRemaining: 1250, // TODO: Get from user subscription
     }
   } catch (error) {
     console.error('Error fetching dashboard stats:', error)
     return {
-      totalAudios: 0,
-      totalVoices: 0,
+      totalLessons: 0,
+      totalCourses: 0,
       totalProjects: 0,
       creditsRemaining: 0,
     }
   }
 }
 
-async function getRecentAudios(): Promise<RecentAudio[]> {
+async function getRecentLessons(): Promise<RecentLesson[]> {
   try {
     const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'
-    const response = await fetch(`${baseUrl}/api/audios?limit=5&sortBy=createdAt&sortOrder=desc`, {
+    const response = await fetch(`${baseUrl}/api/lessons?limit=5&sortBy=createdAt&sortOrder=desc`, {
       cache: 'no-store',
     })
 
     if (!response.ok) {
-      console.error('Failed to fetch recent audios:', response.statusText)
+      console.error('Failed to fetch recent lessons:', response.statusText)
       return []
     }
 
     const data = await response.json()
 
-    if (!data.success || !data.audios) {
+    if (!data.success || !data.lessons) {
       console.error('Invalid API response:', data)
       return []
     }
 
-    // Map API response to RecentAudio type
-    return data.audios.map((audio: any) => ({
+    // Map API response to RecentLesson type
+    return data.lessons.map((audio: any) => ({
       id: audio.id,
       filename: audio.filename,
       voiceName: audio.voice?.name || null,
@@ -90,41 +90,41 @@ async function getRecentAudios(): Promise<RecentAudio[]> {
       status: audio.status,
     }))
   } catch (error) {
-    console.error('Error fetching recent audios:', error)
+    console.error('Error fetching recent lessons:', error)
     return []
   }
 }
 
 export default async function DashboardPage() {
   const stats = await getDashboardStats()
-  const recentAudios = await getRecentAudios()
+  const recentLessons = await getRecentLessons()
 
   const statCards = [
     {
-      title: "Total Audios",
-      value: stats.totalAudios,
-      icon: RiSoundModuleLine,
+      title: "Total Lessons",
+      value: stats.totalLessons,
+      icon: GraduationCap,
       color: "bg-blue-400",
-      link: "/dashboard/audios",
+      link: "/dashboard/lessons",
     },
     {
-      title: "Cloned Voices",
-      value: stats.totalVoices,
-      icon: RiVoiceprintLine,
+      title: "Cloned Courses",
+      value: stats.totalCourses,
+      icon: BookOpen,
       color: "bg-purple-400",
-      link: "/dashboard/voices",
+      link: "/dashboard/courses",
     },
     {
       title: "Active Projects",
       value: stats.totalProjects,
-      icon: RiFolder3Line,
+      icon: Folder,
       color: "bg-teal-400",
       link: "/dashboard/projects",
     },
     {
       title: "Credits",
       value: stats.creditsRemaining,
-      icon: RiCoinLine,
+      icon: Coins,
       color: "bg-green-500",
       link: "#",
     },
@@ -168,30 +168,30 @@ export default async function DashboardPage() {
           })}
         </div>
 
-        {/* Recent Audios */}
+        {/* Recent Lessons */}
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
           <Card variant="outlined" className="col-span-4 p-6">
             <div className="flex items-center justify-between">
               <Heading variant="h3" className="uppercase">
-                Recent Audios
+                Recent Lessons
               </Heading>
-              <Link href="/dashboard/audios">
+              <Link href="/dashboard/lessons">
                 <Button variant="ghost" size="sm">
                   View All
-                  <RiArrowRightLine className="ml-2 h-4 w-4" />
+                  <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
             </div>
 
             <div className="mt-4 space-y-3">
-              {recentAudios.map((audio) => (
+              {recentLessons.map((audio) => (
                 <div
                   key={audio.id}
                   className="flex items-center justify-between border-2 border-black p-4 hover:bg-green-50 transition-colors"
                 >
                   <div className="flex items-center space-x-4">
                     <div className="flex h-10 w-10 items-center justify-center border-2 border-black bg-white">
-                      <RiSoundModuleLine className="h-5 w-5" />
+                      <GraduationCap className="h-5 w-5" />
                     </div>
                     <div>
                       <Text variant="body" className="font-medium">
@@ -216,11 +216,11 @@ export default async function DashboardPage() {
                 </div>
               ))}
 
-              {recentAudios.length === 0 && (
+              {recentLessons.length === 0 && (
                 <div className="flex flex-col items-center justify-center rounded-lg border-2 border-dashed border-black p-8">
-                  <RiSoundModuleLine className="h-12 w-12 text-slate-400" />
+                  <GraduationCap className="h-12 w-12 text-slate-400" />
                   <Text variant="body" className="mt-2 text-slate-600">
-                    No recent audios
+                    No recent lessons
                   </Text>
                 </div>
               )}
@@ -240,7 +240,7 @@ export default async function DashboardPage() {
 
             <div className="mt-6 space-y-4">
               <div className="flex items-center justify-center">
-                <div className="flex h-32 w-32 items-center justify-center border-4 border-black bg-green-500">
+                <div className="flex h-32 w-32 items-center justify-center border-2 border-black bg-green-500">
                   <div className="text-center">
                     <Heading as="h2" className="text-4xl font-bold">
                       {stats.creditsRemaining}
@@ -255,7 +255,7 @@ export default async function DashboardPage() {
               <div className="space-y-2 border-t-2 border-black pt-4">
                 <div className="flex items-center justify-between text-sm">
                   <Text variant="caption" className="text-slate-600">
-                    Voice Generation
+                    Course Generation
                   </Text>
                   <Text variant="body" className="font-medium">
                     10 credits
@@ -263,7 +263,7 @@ export default async function DashboardPage() {
                 </div>
                 <div className="flex items-center justify-between text-sm">
                   <Text variant="caption" className="text-slate-600">
-                    Voice Cloning
+                    Course Cloning
                   </Text>
                   <Text variant="body" className="font-medium">
                     50 credits

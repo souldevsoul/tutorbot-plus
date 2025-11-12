@@ -34,41 +34,31 @@ import {
   Users,
   Award
 } from "lucide-react"
-// React Icons imports
+// Lucide icons only
 import {
-  RiRocketLine,
-  RiFlashlightLine,
-  RiSparklingLine,
-  RiSave3Line,
-  RiDeleteBin6Line,
-  RiExternalLinkLine,
-  RiArrowRightLine,
-  RiPlayCircleLine,
-  RiDownloadLine,
-  RiStarLine,
-  RiCheckLine,
-  RiSettings3Line
-} from "react-icons/ri"
-import {
-  TbBrandOpenai,
-  TbLayoutDashboard,
-  TbChartBar,
-  TbUsers,
-  TbWaveSine,
-  TbMicrophone
-} from "react-icons/tb"
-import {
-  HiOutlineSparkles,
-  HiOutlineCube,
-  HiOutlineBeaker,
-  HiOutlinePuzzlePiece
-} from "react-icons/hi2"
-import {
-  FiLayout,
-  FiCode,
-  FiPackage,
-  FiBox
-} from "react-icons/fi"
+  Rocket,
+  Zap,
+  Sparkles as SparklesIcon,
+  Save,
+  Trash2,
+  ExternalLink,
+  ArrowRight as ArrowRightIcon,
+  PlayCircle,
+  Download,
+  Star as StarIcon,
+  Check,
+  Settings as SettingsIcon,
+  Brain,
+  LayoutDashboard,
+  BarChart3,
+  Users as UsersIcon,
+  Activity,
+  Mic,
+  Box,
+  Code as CodeIcon,
+  Package,
+  Layers
+} from "lucide-react"
 
 export default function ComponentsPage() {
   const [selectedVoice, setSelectedVoice] = React.useState<string | undefined>()
@@ -82,7 +72,7 @@ export default function ComponentsPage() {
       name: "Emma Watson",
       language: "en-US",
       gender: "female",
-      description: "Professional, warm, and articulate voice perfect for narration",
+      description: "Professional, warm, and articulate tutor perfect for explanations",
       previewUrl: "/audio/sample1.mp3",
       isFavorite: true,
     },
@@ -91,24 +81,24 @@ export default function ComponentsPage() {
       name: "James Morgan",
       language: "en-GB",
       gender: "male",
-      description: "Deep, authoritative voice ideal for documentaries",
+      description: "Deep, authoritative voice ideal for lectures",
       previewUrl: "/audio/sample2.mp3",
     },
     {
       id: "3",
-      name: "My Custom Voice",
+      name: "My Custom Tutor",
       language: "en-US",
       gender: "neutral",
-      description: "Your cloned voice for personal projects",
+      description: "Your personalized tutor for learning sessions",
       isCloned: true,
       isFavorite: true,
     },
   ]
 
   const sampleGenerationSteps: GenerationStep[] = [
-    { id: "1", label: "Text Analysis", status: "completed", progress: 100 },
-    { id: "2", label: "Voice Synthesis", status: "processing", progress: 65 },
-    { id: "3", label: "Audio Rendering", status: "queued", progress: 0 },
+    { id: "1", label: "Content Analysis", status: "completed", progress: 100 },
+    { id: "2", label: "Lesson Generation", status: "processing", progress: 65 },
+    { id: "3", label: "Material Rendering", status: "queued", progress: 0 },
   ]
 
   const handleFilesUpload = (files: File[]) => {
@@ -137,21 +127,21 @@ export default function ComponentsPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Header - Bold Brutalist Style */}
-      <div className="border-b-4 border-black bg-white sticky top-0 z-50">
+      {/* Header - Modern Educational Style */}
+      <div className="border-b-4 border-blue-200 bg-white sticky top-0 z-50">
         <Container maxWidth="xl">
           <div className="py-8">
             <div className="flex items-center gap-4 mb-4">
-              <div className="w-16 h-16 bg-black flex items-center justify-center brutalist-shadow-yellow">
-                <FiPackage className="w-8 h-8 text-green-500" />
+              <div className="w-16 h-16 bg-blue-500 rounded-lg flex items-center justify-center shadow-lg">
+                <Package className="w-8 h-8 text-white" />
               </div>
-              <Heading variant="h1" className="text-black">
-                COMPONENT LIBRARY
+              <Heading variant="h1" className="text-gray-900">
+                Component Library
               </Heading>
             </div>
-            <div className="border-l-4 border-yellow-500 pl-4">
-              <Text variant="body-lg" className="text-gray-800 max-w-2xl font-semibold">
-                A BOLD BLACK & WHITE DESIGN SYSTEM WITH YELLOW HIGHLIGHTS
+            <div className="border-l-4 border-blue-500 pl-4">
+              <Text variant="body-lg" className="text-gray-700 max-w-2xl font-semibold">
+                A modern, clean design system for educational platforms
               </Text>
             </div>
           </div>
@@ -163,12 +153,12 @@ export default function ComponentsPage() {
         <section>
           <div className="mb-12">
             <div className="flex items-center gap-4 mb-4">
-              <div className="w-12 h-12 bg-green-500 flex items-center justify-center border-4 border-black">
-                <FiBox className="w-6 h-6 text-black" />
+              <div className="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center">
+                <Box className="w-6 h-6 text-white" />
               </div>
-              <Heading variant="h2" className="text-black uppercase">Core Components</Heading>
+              <Heading variant="h2" className="text-gray-900">Core Components</Heading>
             </div>
-            <div className="h-1 w-24 bg-green-500" />
+            <div className="h-1 w-24 bg-blue-500 rounded" />
           </div>
 
           {/* Buttons with Bold Design */}
@@ -179,78 +169,78 @@ export default function ComponentsPage() {
             </div>
             <div className="space-y-10">
               {/* Primary Actions - Black Background */}
-              <div className="p-10 bg-black border-4 border-black brutalist-shadow">
+              <div className="p-10 bg-black border-2 border-black shadow-xl">
                 <Text variant="body-sm" className="text-green-500 mb-6 font-bold uppercase tracking-wider flex items-center gap-2">
                   <div className="w-4 h-4 bg-green-500" />
                   Primary Actions
                 </Text>
                 <div className="flex flex-wrap gap-6">
-                  <Button variant="primary" className="gap-2 bg-green-500 text-black hover:bg-yellow-300 border-4 border-black font-bold uppercase">
-                    <RiRocketLine className="w-5 h-5" />
+                  <Button variant="primary" className="gap-2 bg-green-500 text-black hover:bg-yellow-300 border-2 border-black font-bold uppercase">
+                    <Rocket className="w-5 h-5" />
                     Launch
                   </Button>
-                  <Button variant="primary" className="gap-2 bg-green-500 text-black hover:bg-yellow-300 border-4 border-black font-bold uppercase">
-                    <RiSave3Line className="w-5 h-5" />
+                  <Button variant="primary" className="gap-2 bg-green-500 text-black hover:bg-yellow-300 border-2 border-black font-bold uppercase">
+                    <Save className="w-5 h-5" />
                     Save
                   </Button>
-                  <Button variant="primary" className="gap-2 bg-green-500 text-black hover:bg-yellow-300 border-4 border-black font-bold uppercase">
-                    <RiPlayCircleLine className="w-6 h-6" />
+                  <Button variant="primary" className="gap-2 bg-green-500 text-black hover:bg-yellow-300 border-2 border-black font-bold uppercase">
+                    <PlayCircle className="w-6 h-6" />
                     Start
                   </Button>
-                  <Button variant="primary" className="gap-2 bg-green-500 text-black hover:bg-yellow-300 border-4 border-black font-bold uppercase">
-                    <RiDownloadLine className="w-5 h-5" />
+                  <Button variant="primary" className="gap-2 bg-green-500 text-black hover:bg-yellow-300 border-2 border-black font-bold uppercase">
+                    <Download className="w-5 h-5" />
                     Download
                   </Button>
                 </div>
               </div>
 
               {/* Secondary Actions - White Background */}
-              <div className="p-10 bg-white border-4 border-black brutalist-shadow-yellow">
+              <div className="p-10 bg-white border-2 border-black shadow-xl-yellow">
                 <Text variant="body-sm" className="text-black mb-6 font-bold uppercase tracking-wider flex items-center gap-2">
                   <div className="w-4 h-4 bg-black" />
                   Secondary Actions
                 </Text>
                 <div className="flex flex-wrap gap-6">
-                  <Button variant="secondary" className="gap-2 bg-white text-black hover:bg-gray-100 border-4 border-black font-bold uppercase">
-                    <RiSettings3Line className="w-5 h-5" />
+                  <Button variant="secondary" className="gap-2 bg-white text-black hover:bg-gray-100 border-2 border-black font-bold uppercase">
+                    <SettingsIcon className="w-5 h-5" />
                     Settings
                   </Button>
-                  <Button variant="outline" className="gap-2 bg-white text-black border-4 border-black hover:bg-green-500 font-bold uppercase">
-                    <RiExternalLinkLine className="w-5 h-5" />
+                  <Button variant="outline" className="gap-2 bg-white text-black border-2 border-black hover:bg-green-500 font-bold uppercase">
+                    <ExternalLink className="w-5 h-5" />
                     View
                   </Button>
-                  <Button variant="ghost" className="gap-2 text-black hover:bg-green-500 border-4 border-transparent hover:border-black font-bold uppercase">
-                    <RiArrowRightLine className="w-5 h-5" />
+                  <Button variant="ghost" className="gap-2 text-black hover:bg-green-500 border-2 border-transparent hover:border-black font-bold uppercase">
+                    <ArrowRightIcon className="w-5 h-5" />
                     More
                   </Button>
-                  <Button variant="destructive" className="gap-2 bg-white text-black hover:bg-red-500 hover:text-white border-4 border-black font-bold uppercase">
-                    <RiDeleteBin6Line className="w-5 h-5" />
+                  <Button variant="destructive" className="gap-2 bg-white text-black hover:bg-red-500 hover:text-white border-2 border-black font-bold uppercase">
+                    <Trash2 className="w-5 h-5" />
                     Delete
                   </Button>
                 </div>
               </div>
 
               {/* Size Variations */}
-              <div className="p-10 bg-green-500 border-4 border-black">
+              <div className="p-10 bg-green-500 border-2 border-black">
                 <Text variant="body-sm" className="text-black mb-6 font-bold uppercase tracking-wider flex items-center gap-2">
                   <div className="w-4 h-4 bg-black" />
                   Button Sizes
                 </Text>
                 <div className="flex flex-wrap items-center gap-6">
-                  <Button size="sm" className="gap-2 bg-black text-green-500 border-4 border-black font-bold uppercase">
-                    <RiStarLine className="w-3.5 h-3.5" />
+                  <Button size="sm" className="gap-2 bg-black text-green-500 border-2 border-black font-bold uppercase">
+                    <StarIcon className="w-3.5 h-3.5" />
                     Small
                   </Button>
-                  <Button size="md" className="gap-2 bg-black text-green-500 border-4 border-black font-bold uppercase">
-                    <RiStarLine className="w-4 h-4" />
+                  <Button size="md" className="gap-2 bg-black text-green-500 border-2 border-black font-bold uppercase">
+                    <StarIcon className="w-4 h-4" />
                     Medium
                   </Button>
-                  <Button size="lg" className="gap-2 bg-black text-green-500 border-4 border-black font-bold uppercase">
-                    <RiStarLine className="w-5 h-5" />
+                  <Button size="lg" className="gap-2 bg-black text-green-500 border-2 border-black font-bold uppercase">
+                    <StarIcon className="w-5 h-5" />
                     Large
                   </Button>
-                  <Button size="xl" className="gap-2 bg-black text-green-500 border-4 border-black font-bold uppercase">
-                    <RiStarLine className="w-5 h-5" />
+                  <Button size="xl" className="gap-2 bg-black text-green-500 border-2 border-black font-bold uppercase">
+                    <StarIcon className="w-5 h-5" />
                     XL
                   </Button>
                 </div>
@@ -266,9 +256,9 @@ export default function ComponentsPage() {
             </div>
             <div className="grid md:grid-cols-3 gap-8">
               {/* Minimal Card */}
-              <Card variant="default" padding="lg" className="group bg-white border-4 border-black hover:brutalist-shadow-yellow transition-all duration-200">
+              <Card variant="default" padding="lg" className="group bg-white border-2 border-black hover:shadow-xl-yellow transition-all duration-200">
                 <div className="w-16 h-16 bg-black flex items-center justify-center mb-6 group-hover:bg-green-500 transition-colors">
-                  <TbBrandOpenai className="w-8 h-8 text-green-500 group-hover:text-black" />
+                  <Brain className="w-8 h-8 text-green-500 group-hover:text-black" />
                 </div>
                 <Heading variant="h4" className="mb-3 uppercase">White Card</Heading>
                 <Text variant="body-sm" className="text-gray-700 mb-6 font-semibold">
@@ -276,37 +266,37 @@ export default function ComponentsPage() {
                 </Text>
                 <Button variant="ghost" size="sm" className="gap-2 text-black hover:text-green-500 font-bold uppercase border-2 border-black">
                   Explore
-                  <RiArrowRightLine className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRightIcon className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Card>
 
               {/* Black Card */}
-              <Card variant="elevated" padding="lg" className="group bg-black border-4 border-black brutalist-shadow">
-                <div className="w-16 h-16 bg-green-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform border-4 border-black">
-                  <TbWaveSine className="w-8 h-8 text-black" />
+              <Card variant="elevated" padding="lg" className="group bg-black border-2 border-black shadow-xl">
+                <div className="w-16 h-16 bg-green-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform border-2 border-black">
+                  <Activity className="w-8 h-8 text-black" />
                 </div>
                 <Heading variant="h4" className="mb-3 text-green-500 uppercase">Black Card</Heading>
                 <Text variant="body-sm" className="text-gray-300 mb-6 font-semibold">
                   Bold black background with dramatic yellow accents
                 </Text>
-                <Button variant="secondary" size="sm" className="gap-2 bg-green-500 text-black border-4 border-yellow-400 font-bold uppercase">
+                <Button variant="secondary" size="sm" className="gap-2 bg-green-500 text-black border-2 border-yellow-400 font-bold uppercase">
                   Discover
-                  <RiArrowRightLine className="w-4 h-4" />
+                  <ArrowRightIcon className="w-4 h-4" />
                 </Button>
               </Card>
 
               {/* Yellow Card */}
-              <Card variant="gradient" padding="lg" className="group bg-green-500 border-4 border-black hover:brutalist-shadow transition-all">
-                <div className="w-16 h-16 bg-black flex items-center justify-center mb-6 group-hover:scale-110 transition-transform border-4 border-black">
-                  <HiOutlineSparkles className="w-8 h-8 text-green-500" />
+              <Card variant="gradient" padding="lg" className="group bg-green-500 border-2 border-black hover:shadow-xl transition-all">
+                <div className="w-16 h-16 bg-black flex items-center justify-center mb-6 group-hover:scale-110 transition-transform border-2 border-black">
+                  <SparklesIcon className="w-8 h-8 text-green-500" />
                 </div>
                 <Heading variant="h4" className="mb-3 text-black uppercase">Yellow Highlight</Heading>
                 <Text variant="body-sm" className="text-gray-900 mb-6 font-semibold">
                   Eye-catching yellow for important call-to-actions
                 </Text>
-                <Button variant="primary" size="sm" className="gap-2 bg-black text-green-500 border-4 border-black font-bold uppercase">
+                <Button variant="primary" size="sm" className="gap-2 bg-black text-green-500 border-2 border-black font-bold uppercase">
                   View More
-                  <RiArrowRightLine className="w-4 h-4" />
+                  <ArrowRightIcon className="w-4 h-4" />
                 </Button>
               </Card>
             </div>
@@ -319,37 +309,37 @@ export default function ComponentsPage() {
               <Heading variant="h3" className="text-black uppercase">Input Fields</Heading>
             </div>
             <div className="grid md:grid-cols-2 gap-8 max-w-4xl">
-              <div className="p-8 bg-white border-4 border-black">
+              <div className="p-8 bg-white border-2 border-black">
                 <label className="block text-sm font-bold text-black mb-4 uppercase tracking-wide flex items-center gap-2">
-                  <RiFlashlightLine className="w-5 h-5" />
+                  <Zap className="w-5 h-5" />
                   Default Input
                 </label>
-                <Input variant="default" placeholder="ENTER TEXT..." className="border-4 border-black font-semibold uppercase" />
+                <Input variant="default" placeholder="ENTER TEXT..." className="border-2 border-black font-semibold uppercase" />
               </div>
-              <div className="p-8 bg-green-500 border-4 border-black brutalist-shadow">
+              <div className="p-8 bg-green-500 border-2 border-black shadow-xl">
                 <label className="block text-sm font-bold text-black mb-4 uppercase tracking-wide flex items-center gap-2">
-                  <RiCheckLine className="w-5 h-5" />
+                  <Check className="w-5 h-5" />
                   Success State
                 </label>
-                <Input variant="success" placeholder="VALID INPUT..." className="border-4 border-black font-semibold uppercase" />
+                <Input variant="success" placeholder="VALID INPUT..." className="border-2 border-black font-semibold uppercase" />
               </div>
-              <div className="p-8 bg-white border-4 border-black">
+              <div className="p-8 bg-white border-2 border-black">
                 <label className="block text-sm font-bold text-black mb-4 uppercase tracking-wide">
                   Error State
                 </label>
-                <Input variant="error" placeholder="CHECK THIS FIELD..." className="border-4 border-red-500 font-semibold uppercase" />
+                <Input variant="error" placeholder="CHECK THIS FIELD..." className="border-2 border-red-500 font-semibold uppercase" />
               </div>
-              <div className="p-8 bg-black border-4 border-black">
+              <div className="p-8 bg-black border-2 border-black">
                 <label className="block text-sm font-bold text-green-500 mb-4 uppercase tracking-wide">
                   Large Input
                 </label>
-                <Input inputSize="lg" placeholder="LARGER TEXT..." className="border-4 border-yellow-400 bg-white font-semibold uppercase" />
+                <Input inputSize="lg" placeholder="LARGER TEXT..." className="border-2 border-yellow-400 bg-white font-semibold uppercase" />
               </div>
             </div>
           </div>
 
           {/* Typography Showcase */}
-          <div className="p-12 bg-white border-4 border-black brutalist-shadow-yellow">
+          <div className="p-12 bg-white border-2 border-black shadow-xl-yellow">
             <div className="flex items-center gap-3 mb-10">
               <div className="w-2 h-2 bg-green-500" />
               <Heading variant="h3" className="text-black uppercase">Typography Scale</Heading>
@@ -371,7 +361,7 @@ export default function ComponentsPage() {
                 <Heading variant="h4" className="text-black uppercase">TITLE LARGE</Heading>
                 <Text variant="caption" className="text-gray-600 mt-2 font-bold uppercase">Card headers</Text>
               </div>
-              <div className="p-6 bg-green-500 border-4 border-black">
+              <div className="p-6 bg-green-500 border-2 border-black">
                 <Heading variant="h2" className="text-black uppercase">
                   BOLD YELLOW HIGHLIGHT
                 </Heading>
@@ -385,8 +375,8 @@ export default function ComponentsPage() {
         <section>
           <div className="mb-12">
             <div className="flex items-center gap-4 mb-4">
-              <div className="w-12 h-12 bg-green-500 flex items-center justify-center border-4 border-black">
-                <TbChartBar className="w-6 h-6 text-black" />
+              <div className="w-12 h-12 bg-green-500 flex items-center justify-center border-2 border-black">
+                <BarChart3 className="w-6 h-6 text-black" />
               </div>
               <Heading variant="h2" className="text-black uppercase">Marketing Components</Heading>
             </div>
@@ -401,19 +391,19 @@ export default function ComponentsPage() {
                 icon={Sparkles}
                 iconColor="text-yellow-500"
                 title="AI-POWERED"
-                description="Generate natural-sounding voices using cutting-edge AI technology"
+                description="Generate personalized learning content using cutting-edge AI technology"
               />
               <FeatureCard
                 icon={Zap}
                 iconColor="text-black"
                 title="LIGHTNING FAST"
-                description="Generate voice audio in seconds, not minutes"
+                description="Generate learning materials in seconds, not minutes"
               />
               <FeatureCard
                 icon={Shield}
                 iconColor="text-yellow-500"
                 title="SECURE"
-                description="Your voice data is encrypted and never shared"
+                description="Your learning data is encrypted and never shared"
               />
             </div>
           </div>
@@ -424,7 +414,7 @@ export default function ComponentsPage() {
             <div className="grid md:grid-cols-4 gap-6">
               <StatCard
                 value="2M+"
-                label="VOICES GENERATED"
+                label="LESSONS GENERATED"
                 icon={TrendingUp}
                 trend={{ value: "+45%", direction: "up" }}
               />
@@ -447,39 +437,39 @@ export default function ComponentsPage() {
           </div>
         </section>
 
-        {/* VoiceCraft Components */}
+        {/* TutorBot Plus Components */}
         <section>
           <div className="mb-12">
             <div className="flex items-center gap-4 mb-4">
-              <div className="w-12 h-12 bg-black flex items-center justify-center border-4 border-black brutalist-shadow-yellow">
-                <TbMicrophone className="w-6 h-6 text-green-500" />
+              <div className="w-12 h-12 bg-black flex items-center justify-center border-2 border-black shadow-xl-yellow">
+                <Mic className="w-6 h-6 text-green-500" />
               </div>
-              <Heading variant="h2" className="text-black uppercase">Voice Components</Heading>
+              <Heading variant="h2" className="text-black uppercase">Tutoring Components</Heading>
             </div>
             <div className="h-1 w-24 bg-black" />
           </div>
 
           {/* Waveform */}
           <div className="mb-20">
-            <Heading variant="h3" className="mb-8 text-black uppercase">Audio Waveform</Heading>
+            <Heading variant="h3" className="mb-8 text-black uppercase">Visual Waveform</Heading>
             <div className="grid md:grid-cols-3 gap-8">
-              <Card variant="elevated" padding="lg" className="bg-white border-4 border-black">
+              <Card variant="elevated" padding="lg" className="bg-white border-2 border-black">
                 <Text variant="body-sm" className="text-black mb-4 font-bold uppercase tracking-wider flex items-center gap-2">
-                  <TbWaveSine className="w-5 h-5" />
+                  <Activity className="w-5 h-5" />
                   Small
                 </Text>
                 <Waveform size="sm" color="primary" />
               </Card>
-              <Card variant="elevated" padding="lg" className="bg-green-500 border-4 border-black brutalist-shadow">
+              <Card variant="elevated" padding="lg" className="bg-green-500 border-2 border-black shadow-xl">
                 <Text variant="body-sm" className="text-black mb-4 font-bold uppercase tracking-wider flex items-center gap-2">
-                  <TbWaveSine className="w-5 h-5" />
+                  <Activity className="w-5 h-5" />
                   Medium
                 </Text>
                 <Waveform size="md" color="secondary" />
               </Card>
-              <Card variant="elevated" padding="lg" className="bg-black border-4 border-black">
+              <Card variant="elevated" padding="lg" className="bg-black border-2 border-black">
                 <Text variant="body-sm" className="text-green-500 mb-4 font-bold uppercase tracking-wider flex items-center gap-2">
-                  <TbWaveSine className="w-5 h-5" />
+                  <Activity className="w-5 h-5" />
                   Large
                 </Text>
                 <Waveform size="lg" color="success" />
@@ -489,12 +479,12 @@ export default function ComponentsPage() {
 
           {/* Audio Player */}
           <div className="mb-20">
-            <Heading variant="h3" className="mb-8 text-black uppercase">Audio Player</Heading>
+            <Heading variant="h3" className="mb-8 text-black uppercase">Media Player</Heading>
             <div className="max-w-2xl">
-              <Card variant="elevated" padding="lg" className="bg-white border-4 border-black brutalist-shadow-yellow">
+              <Card variant="elevated" padding="lg" className="bg-white border-2 border-black shadow-xl-yellow">
                 <AudioPlayer
                   title="WELCOME MESSAGE"
-                  subtitle="Generated with VoiceCraft"
+                  subtitle="Generated with TutorBot Plus"
                   waveformColor="primary"
                 />
               </Card>
@@ -503,7 +493,7 @@ export default function ComponentsPage() {
 
           {/* Voice Selector */}
           <div className="mb-20">
-            <Heading variant="h3" className="mb-8 text-black uppercase">Voice Selection</Heading>
+            <Heading variant="h3" className="mb-8 text-black uppercase">Tutor Selection</Heading>
             <VoiceSelector
               voices={sampleVoices}
               selectedVoiceId={selectedVoice}
@@ -516,7 +506,7 @@ export default function ComponentsPage() {
           {/* <div className="mb-20">
             <Heading variant="h3" className="mb-8 text-black uppercase">Generation Progress</Heading>
             <div className="max-w-2xl space-y-4">
-              <Card variant="elevated" padding="lg" className="bg-white border-4 border-black brutalist-shadow-yellow">
+              <Card variant="elevated" padding="lg" className="bg-white border-2 border-black shadow-xl-yellow">
                 <GenerationProgress
                   status="processing"
                   progress={65}
@@ -525,7 +515,7 @@ export default function ComponentsPage() {
                   estimatedTime={30}
                 />
               </Card>
-              <Card variant="elevated" padding="lg" className="bg-black border-4 border-black brutalist-shadow">
+              <Card variant="elevated" padding="lg" className="bg-black border-2 border-black shadow-xl">
                 <GenerationProgress
                   status="completed"
                   progress={100}
@@ -535,11 +525,11 @@ export default function ComponentsPage() {
             </div>
           </div> */}
 
-          {/* Voice Clone Uploader */}
+          {/* Content Uploader */}
           <div className="mb-20">
-            <Heading variant="h3" className="mb-8 text-black uppercase">Voice Clone Uploader</Heading>
+            <Heading variant="h3" className="mb-8 text-black uppercase">Content Uploader</Heading>
             <div className="max-w-2xl">
-              <Card variant="elevated" padding="lg" className="bg-white border-4 border-black brutalist-shadow-yellow">
+              <Card variant="elevated" padding="lg" className="bg-white border-2 border-black shadow-xl-yellow">
                 <VoiceCloneUploader
                   onFilesUpload={(files) => setUploadedFiles(files.map((file, index) => ({
                     id: `file-${index}`,
@@ -560,8 +550,8 @@ export default function ComponentsPage() {
         <section>
           <div className="mb-12">
             <div className="flex items-center gap-4 mb-4">
-              <div className="w-12 h-12 bg-green-500 flex items-center justify-center border-4 border-black">
-                <TbLayoutDashboard className="w-6 h-6 text-black" />
+              <div className="w-12 h-12 bg-green-500 flex items-center justify-center border-2 border-black">
+                <LayoutDashboard className="w-6 h-6 text-black" />
               </div>
               <Heading variant="h2" className="text-black uppercase">Marketing Cards</Heading>
             </div>
@@ -576,12 +566,12 @@ export default function ComponentsPage() {
                 name="STARTER"
                 price={0}
                 period="month"
-                description="Perfect for trying out VoiceCraft"
+                description="Perfect for trying out TutorBot Plus"
                 features={[
                   { text: "10,000 characters/month", included: true },
-                  { text: "5 preset voices", included: true },
+                  { text: "5 tutor voices", included: true },
                   { text: "MP3 downloads", included: true },
-                  { text: "Voice cloning", included: false },
+                  { text: "Custom tutors", included: false },
                   { text: "Commercial use", included: false },
                 ]}
                 ctaText="GET STARTED FREE"
@@ -596,9 +586,9 @@ export default function ComponentsPage() {
                 variant="premium"
                 features={[
                   { text: "100,000 characters/month", included: true },
-                  { text: "50+ preset voices", included: true },
+                  { text: "50+ tutor voices", included: true },
                   { text: "WAV & MP3 downloads", included: true },
-                  { text: "3 voice clones", included: true },
+                  { text: "3 custom tutors", included: true },
                   { text: "Commercial use", included: true },
                 ]}
                 ctaText="START FREE TRIAL"
@@ -610,9 +600,9 @@ export default function ComponentsPage() {
                 description="For teams and organizations"
                 features={[
                   { text: "Unlimited characters", included: true },
-                  { text: "All preset voices", included: true },
-                  { text: "All audio formats", included: true },
-                  { text: "Unlimited voice clones", included: true },
+                  { text: "All tutor voices", included: true },
+                  { text: "All media formats", included: true },
+                  { text: "Unlimited custom tutors", included: true },
                   { text: "Full API access", included: true },
                 ]}
                 ctaText="CONTACT SALES"
@@ -626,18 +616,18 @@ export default function ComponentsPage() {
             <Heading variant="h3" className="mb-8 text-black uppercase">Testimonial Cards</Heading>
             <div className="grid md:grid-cols-2 gap-8">
               <TestimonialCard
-                quote="VoiceCraft has completely transformed our audiobook production pipeline. We've cut production time by 80% while maintaining incredible quality."
+                quote="TutorBot Plus has completely transformed our educational content creation. We've cut production time by 80% while maintaining incredible quality."
                 author="Sarah Johnson"
                 role="CEO"
-                company="Story Audio Publishing"
+                company="EduTech Publishing"
                 rating={5}
                 image="SJ"
               />
               <TestimonialCard
-                quote="The voice cloning feature is a game-changer. I can now create consistent voiceovers for all my YouTube videos in minutes instead of hours."
+                quote="The personalized tutoring feature is a game-changer. I can now create consistent learning content for all my courses in minutes instead of hours."
                 author="Mike Chen"
-                role="Content Creator"
-                company="TechReview Daily"
+                role="Course Creator"
+                company="TechLearn Daily"
                 rating={5}
                 image="MC"
               />
@@ -649,8 +639,8 @@ export default function ComponentsPage() {
             <Heading variant="h3" className="mb-8 text-black uppercase">Blog Cards</Heading>
             <div className="grid md:grid-cols-3 gap-8">
               <BlogCard
-                title="GETTING STARTED WITH AI VOICE SYNTHESIS"
-                excerpt="Learn how to create your first AI-generated voice in just 5 minutes with our comprehensive guide."
+                title="GETTING STARTED WITH AI TUTORING"
+                excerpt="Learn how to create your first AI-powered lesson in just 5 minutes with our comprehensive guide."
                 image="/images/waveform-visual-bw.jpg"
                 date="2024-01-15"
                 readTime="5 min read"
@@ -658,17 +648,17 @@ export default function ComponentsPage() {
                 href="/blog/getting-started"
               />
               <BlogCard
-                title="VOICE CLONING: THE COMPLETE GUIDE"
-                excerpt="Everything you need to know about cloning voices with AI, from basics to advanced techniques."
+                title="PERSONALIZED LEARNING: THE COMPLETE GUIDE"
+                excerpt="Everything you need to know about creating personalized lessons with AI, from basics to advanced techniques."
                 image="/images/ai-assistant-bw.jpg"
                 date="2024-01-10"
                 readTime="8 min read"
                 category="GUIDE"
-                href="/blog/voice-cloning-guide"
+                href="/blog/personalized-learning-guide"
               />
               <BlogCard
-                title="10 CREATIVE USES FOR AI VOICES"
-                excerpt="Discover innovative ways content creators are using AI voice technology to enhance their work."
+                title="10 CREATIVE USES FOR AI TUTORING"
+                excerpt="Discover innovative ways educators are using AI tutoring technology to enhance their teaching."
                 image="/images/headphones-bw.jpg"
                 date="2024-01-05"
                 readTime="6 min read"
@@ -683,8 +673,8 @@ export default function ComponentsPage() {
         <section>
           <div className="mb-12">
             <div className="flex items-center gap-4 mb-4">
-              <div className="w-12 h-12 bg-green-500 flex items-center justify-center border-4 border-black brutalist-shadow">
-                <TbUsers className="w-6 h-6 text-black" />
+              <div className="w-12 h-12 bg-green-500 flex items-center justify-center border-2 border-black shadow-xl">
+                <UsersIcon className="w-6 h-6 text-black" />
               </div>
               <Heading variant="h2" className="text-black uppercase">Design Tokens</Heading>
             </div>
@@ -695,20 +685,20 @@ export default function ComponentsPage() {
           <div className="mb-20">
             <Heading variant="h3" className="mb-8 text-black uppercase">Bold Color System</Heading>
             <div className="grid md:grid-cols-3 gap-8">
-              <div className="p-8 bg-black border-4 border-black brutalist-shadow-yellow">
+              <div className="p-8 bg-black border-2 border-black shadow-xl-yellow">
                 <Text variant="body-sm" className="text-green-500 mb-6 font-bold uppercase tracking-wide">
                   Monochrome Base
                 </Text>
                 <div className="space-y-4">
                   <div className="flex items-center gap-4">
-                    <div className="w-20 h-20 bg-black border-4 border-yellow-400" />
+                    <div className="w-20 h-20 bg-black border-2 border-yellow-400" />
                     <div>
                       <Text variant="body-sm" className="font-bold text-white uppercase">Black</Text>
                       <Text variant="body-sm" className="text-gray-400 font-mono">#000000</Text>
                     </div>
                   </div>
                   <div className="flex items-center gap-4">
-                    <div className="w-20 h-20 bg-white border-4 border-yellow-400" />
+                    <div className="w-20 h-20 bg-white border-2 border-yellow-400" />
                     <div>
                       <Text variant="body-sm" className="font-bold text-white uppercase">White</Text>
                       <Text variant="body-sm" className="text-gray-400 font-mono">#FFFFFF</Text>
@@ -716,20 +706,20 @@ export default function ComponentsPage() {
                   </div>
                 </div>
               </div>
-              <div className="p-8 bg-green-500 border-4 border-black brutalist-shadow">
+              <div className="p-8 bg-green-500 border-2 border-black shadow-xl">
                 <Text variant="body-sm" className="text-black mb-6 font-bold uppercase tracking-wide">
                   Yellow Highlight
                 </Text>
                 <div className="space-y-4">
                   <div className="flex items-center gap-4">
-                    <div className="w-20 h-20 bg-green-500 border-4 border-black" />
+                    <div className="w-20 h-20 bg-green-500 border-2 border-black" />
                     <div>
                       <Text variant="body-sm" className="font-bold uppercase">Yellow 500</Text>
                       <Text variant="body-sm" className="text-gray-800 font-mono">#EAB308</Text>
                     </div>
                   </div>
                   <div className="flex items-center gap-4">
-                    <div className="w-20 h-20 bg-green-500 border-4 border-black" />
+                    <div className="w-20 h-20 bg-green-500 border-2 border-black" />
                     <div>
                       <Text variant="body-sm" className="font-bold uppercase">Yellow 400</Text>
                       <Text variant="body-sm" className="text-gray-800 font-mono">#FACC15</Text>
@@ -737,14 +727,14 @@ export default function ComponentsPage() {
                   </div>
                 </div>
               </div>
-              <div className="p-8 bg-white border-4 border-black">
+              <div className="p-8 bg-white border-2 border-black">
                 <Text variant="body-sm" className="text-black mb-6 font-bold uppercase tracking-wide">
                   Bold Shadows
                 </Text>
                 <div className="space-y-4">
-                  <div className="w-20 h-20 bg-green-500 border-4 border-black brutalist-shadow" />
+                  <div className="w-20 h-20 bg-green-500 border-2 border-black shadow-xl" />
                   <Text variant="body-sm" className="font-bold uppercase">Brutalist Shadow</Text>
-                  <div className="w-20 h-20 bg-black border-4 border-black brutalist-shadow-yellow" />
+                  <div className="w-20 h-20 bg-black border-2 border-black shadow-xl-yellow" />
                   <Text variant="body-sm" className="font-bold uppercase">Yellow Shadow</Text>
                 </div>
               </div>
@@ -752,7 +742,7 @@ export default function ComponentsPage() {
           </div>
 
           {/* Spacing System */}
-          <div className="p-10 bg-white border-4 border-black brutalist-shadow-yellow">
+          <div className="p-10 bg-white border-2 border-black shadow-xl-yellow">
             <Heading variant="h3" className="mb-8 text-black uppercase">Spacing System (8pt Grid)</Heading>
             <div className="space-y-4">
               {[1, 2, 3, 4, 6, 8, 12, 16, 20].map(multiplier => (
@@ -761,7 +751,7 @@ export default function ComponentsPage() {
                     SPACE-{multiplier}
                   </div>
                   <div
-                    className="h-12 bg-black border-4 border-black"
+                    className="h-12 bg-black border-2 border-black"
                     style={{ width: `${multiplier * 0.25}rem` }}
                   />
                   <div className="text-sm text-gray-600 font-mono font-bold">
@@ -778,25 +768,25 @@ export default function ComponentsPage() {
       <div className="bg-black py-24 mt-28 border-t-8 border-yellow-400">
         <Container maxWidth="lg">
           <div className="text-center">
-            <div className="inline-flex items-center gap-3 px-6 py-3 bg-green-500 border-4 border-black mb-8">
-              <HiOutlineSparkles className="w-6 h-6 text-black" />
+            <div className="inline-flex items-center gap-3 px-6 py-3 bg-green-500 border-2 border-black mb-8">
+              <SparklesIcon className="w-6 h-6 text-black" />
               <Text variant="body-sm" className="text-black font-bold uppercase tracking-wider">Ready to Build?</Text>
             </div>
             <Heading variant="h1" className="mb-6 text-green-500 uppercase">START BUILDING NOW</Heading>
             <Text variant="body-lg" className="mb-12 text-gray-300 max-w-2xl mx-auto font-semibold uppercase">
-              Use these bold components to create powerful voice synthesis experiences
+              Use these bold components to create powerful learning experiences
             </Text>
             <div className="flex flex-wrap gap-6 justify-center">
-              <Button variant="primary" size="xl" className="gap-3 bg-green-500 text-black border-4 border-yellow-400 font-bold uppercase brutalist-shadow-yellow">
-                <FiCode className="w-6 h-6" />
+              <Button variant="primary" size="xl" className="gap-3 bg-green-500 text-black border-2 border-yellow-400 font-bold uppercase shadow-xl-yellow">
+                <CodeIcon className="w-6 h-6" />
                 View Documentation
               </Button>
               <Button
                 variant="outline"
                 size="xl"
-                className="gap-3 text-green-500 border-4 border-yellow-400 hover:bg-green-500 hover:text-black font-bold uppercase"
+                className="gap-3 text-green-500 border-2 border-yellow-400 hover:bg-green-500 hover:text-black font-bold uppercase"
               >
-                <RiDownloadLine className="w-6 h-6" />
+                <Download className="w-6 h-6" />
                 Download Kit
               </Button>
             </div>

@@ -7,7 +7,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { RiArrowRightLine, RiLockLine, RiMailLine } from "react-icons/ri"
+import { ArrowRight, Lock, Mail } from "lucide-react"
 
 function SignInForm() {
   const router = useRouter()
@@ -51,30 +51,31 @@ function SignInForm() {
         {/* Logo/Brand */}
         <div className="text-center mb-8">
           <Link href="/">
-            <h1 className="text-4xl font-black uppercase">
-              VOICE<span className="text-green-500">CRAFT</span>
+            <h1 className="text-4xl font-black">
+              TutorBot <span className="text-green-500">Plus</span>
             </h1>
           </Link>
-          <p className="text-gray-600 mt-2">Sign in to your account</p>
+          <p className="text-xl text-gray-700 mt-2 font-semibold">Welcome Back to TutorBot Plus</p>
+          <p className="text-gray-600 mt-1">Sign in to continue your learning journey</p>
         </div>
 
         {/* Sign In Form */}
-        <div className="bg-white border-4 border-black brutalist-shadow p-8">
+        <div className="bg-white border-2 border-black shadow-xl p-8">
           <form onSubmit={handleSubmit} className="space-y-6">
             {error && (
-              <div className="bg-red-100 border-4 border-red-500 p-4">
-                <p className="text-red-700 font-bold uppercase text-sm">
+              <div className="bg-red-100 border-2 border-red-500 p-4">
+                <p className="text-red-700 font-bold text-sm">
                   {error}
                 </p>
               </div>
             )}
 
             <div className="space-y-2">
-              <Label htmlFor="email" className="font-bold uppercase text-sm">
+              <Label htmlFor="email" className="font-bold text-sm">
                 Email Address
               </Label>
               <div className="relative">
-                <RiMailLine className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5" />
+                <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5" />
                 <Input
                   id="email"
                   type="email"
@@ -82,18 +83,18 @@ function SignInForm() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="pl-12 border-4 border-black h-14 text-lg"
+                  className="pl-12 border-2 border-black h-14 text-lg"
                   disabled={isLoading}
                 />
               </div>
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="password" className="font-bold uppercase text-sm">
+              <Label htmlFor="password" className="font-bold text-sm">
                 Password
               </Label>
               <div className="relative">
-                <RiLockLine className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5" />
+                <Lock className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5" />
                 <Input
                   id="password"
                   type="password"
@@ -101,7 +102,7 @@ function SignInForm() {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
-                  className="pl-12 border-4 border-black h-14 text-lg"
+                  className="pl-12 border-2 border-black h-14 text-lg"
                   disabled={isLoading}
                 />
               </div>
@@ -109,11 +110,11 @@ function SignInForm() {
 
             <Button
               type="submit"
-              className="w-full h-14 text-lg gap-3 bg-black text-green-500 hover:bg-gray-900 border-4 border-black font-bold uppercase brutalist-shadow"
+              className="w-full h-14 text-lg gap-3 bg-black text-green-500 hover:bg-gray-900 border-2 border-black font-bold shadow-xl"
               disabled={isLoading}
             >
               {isLoading ? "Signing In..." : "Sign In"}
-              <RiArrowRightLine className="w-5 h-5" />
+              <ArrowRight className="w-5 h-5" />
             </Button>
           </form>
 
@@ -123,7 +124,7 @@ function SignInForm() {
               <div className="w-full border-t-4 border-black"></div>
             </div>
             <div className="relative flex justify-center">
-              <span className="bg-white px-4 text-sm font-bold uppercase">
+              <span className="bg-white px-4 text-sm font-bold">
                 Or
               </span>
             </div>
@@ -161,9 +162,9 @@ export default function SignInPage() {
         <div className="min-h-screen bg-white flex items-center justify-center">
           <div className="text-center">
             <div className="w-16 h-16 bg-black flex items-center justify-center mx-auto mb-4 animate-pulse">
-              <RiLockLine className="w-10 h-10 text-green-500" />
+              <Lock className="w-10 h-10 text-green-500" />
             </div>
-            <p className="text-gray-600 font-bold uppercase">Loading...</p>
+            <p className="text-gray-600 font-bold">Loading...</p>
           </div>
         </div>
       }

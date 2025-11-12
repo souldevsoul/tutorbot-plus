@@ -4,13 +4,13 @@ import { Container } from "@/components/ui/container"
 import { Header } from "@/components/marketing/layout/header"
 import { Footer } from "@/components/marketing/layout/footer"
 import {
-  RiFileTextLine,
-  RiCheckLine,
-  RiCloseLine,
-  RiShieldLine,
-  RiScalesLine,
-  RiMailLine,
-} from "react-icons/ri"
+  FileText,
+  Check,
+  X,
+  Shield,
+  Scale,
+  Mail,
+} from "lucide-react"
 
 export default function TermsPage() {
   const lastUpdated = "November 8, 2025"
@@ -18,13 +18,13 @@ export default function TermsPage() {
   const sections = [
     {
       title: "1. Acceptance of Terms",
-      icon: RiCheckLine,
+      icon: Check,
       content: [
         {
-          text: "By accessing or using VoiceCraft ('Service', 'Platform', 'we', 'us', 'our'), you agree to be bound by these Terms of Service ('Terms'). If you do not agree to these Terms, you may not access or use the Service.",
+          text: "By accessing or using TutorBot Plus ('Service', 'Platform', 'we', 'us', 'our'), you agree to be bound by these Terms of Service ('Terms'). If you do not agree to these Terms, you may not access or use the Service.",
         },
         {
-          text: "These Terms constitute a legally binding agreement between you (whether personally or on behalf of an entity) and VoiceCraft, Inc. If you are using the Service on behalf of an organization, you represent and warrant that you have the authority to bind that organization to these Terms.",
+          text: "These Terms constitute a legally binding agreement between you (whether personally or on behalf of an entity) and TutorBot Plus, Inc. If you are using the Service on behalf of an organization, you represent and warrant that you have the authority to bind that organization to these Terms.",
         },
         {
           text: "We reserve the right to modify these Terms at any time. We will notify you of material changes via email or through the Service. Your continued use of the Service after such modifications constitutes your acceptance of the updated Terms.",
@@ -33,11 +33,11 @@ export default function TermsPage() {
     },
     {
       title: "2. Account Registration and Security",
-      icon: RiShieldLine,
+      icon: Shield,
       content: [
         {
           subtitle: "Account Creation",
-          text: "To use VoiceCraft, you must create an account by providing accurate, complete, and current information. You must be at least 13 years old (or 16 in the EU) to create an account. You are responsible for maintaining the confidentiality of your account credentials.",
+          text: "To use TutorBot Plus, you must create an account by providing accurate, complete, and current information. You must be at least 13 years old (or 16 in the EU) to create an account. You are responsible for maintaining the confidentiality of your account credentials.",
         },
         {
           subtitle: "Account Security",
@@ -51,7 +51,7 @@ export default function TermsPage() {
     },
     {
       title: "3. Use of Services",
-      icon: RiFileTextLine,
+      icon: FileText,
       content: [
         {
           subtitle: "License Grant",
@@ -63,7 +63,7 @@ export default function TermsPage() {
         },
         {
           subtitle: "Usage Limits",
-          text: "Your use of the Service is subject to the limits of your subscription plan (character limits, API rate limits, voice clones). Exceeding these limits may result in additional charges or temporary service restrictions. Enterprise customers can negotiate custom limits.",
+          text: "Your use of the Service is subject to the limits of your subscription plan (character limits, API rate limits, learning clones). Exceeding these limits may result in additional charges or temporary service restrictions. Enterprise customers can negotiate custom limits.",
         },
         {
           subtitle: "API Usage",
@@ -73,26 +73,26 @@ export default function TermsPage() {
     },
     {
       title: "4. Prohibited Uses",
-      icon: RiCloseLine,
+      icon: X,
       content: [
         {
           text: "You agree not to use the Service for any unlawful, harmful, or abusive purposes. Prohibited uses include, but are not limited to:",
         },
         {
           subtitle: "Illegal Activity",
-          text: "Creating voice content for illegal purposes, fraud, scams, or deception; impersonating others without consent; generating content that violates any laws or regulations.",
+          text: "Creating learning content for illegal purposes, fraud, scams, or deception; impersonating others without consent; generating content that violates any laws or regulations.",
         },
         {
           subtitle: "Harmful Content",
-          text: "Creating content that harasses, threatens, or harms others; generating hate speech, discriminatory, or violent content; creating deepfakes or misleading audio without disclosure; producing content that infringes on others' rights.",
+          text: "Creating content that harasses, threatens, or harms others; generating hate speech, discriminatory, or violent content; creating deepfakes or misleading educational content without disclosure; producing content that infringes on others' rights.",
         },
         {
           subtitle: "Service Abuse",
           text: "Attempting to reverse engineer, decompile, or hack the Service; circumventing usage limits or payment requirements; reselling or redistributing the Service without authorization; using the Service to compete with us or build a similar product.",
         },
         {
-          subtitle: "Voice Cloning Abuse",
-          text: "Cloning voices without explicit consent from the voice owner; using cloned voices for impersonation, fraud, or deception; violating publicity or privacy rights of individuals.",
+          subtitle: "Content Misuse",
+          text: "Creating educational content without explicit consent from content owners; using AI-generated content for impersonation, fraud, or deception; violating publicity or privacy rights of individuals.",
         },
         {
           text: "We reserve the right to investigate suspected violations and take appropriate action, including account suspension or termination, reporting to authorities, and pursuing legal remedies.",
@@ -101,33 +101,33 @@ export default function TermsPage() {
     },
     {
       title: "5. Intellectual Property",
-      icon: RiScalesLine,
+      icon: Scale,
       content: [
         {
           subtitle: "Our IP",
-          text: "VoiceCraft, including all software, algorithms, designs, trademarks, logos, and content, is owned by VoiceCraft, Inc. and protected by copyright, trademark, and other intellectual property laws. You may not copy, modify, distribute, or create derivative works without our written permission.",
+          text: "TutorBot Plus, including all software, algorithms, designs, trademarks, logos, and content, is owned by TutorBot Plus, Inc. and protected by copyright, trademark, and other intellectual property laws. You may not copy, modify, distribute, or create derivative works without our written permission.",
         },
         {
           subtitle: "Your Content",
-          text: "You retain ownership of the text inputs you provide and the audio files you upload for voice cloning. By using the Service, you grant us a limited license to process your content solely to provide the Service. We do not claim ownership of your content.",
+          text: "You retain ownership of the text inputs you provide and the educational content files you upload for learning cloning. By using the Service, you grant us a limited license to process your content solely to provide the Service. We do not claim ownership of your content.",
         },
         {
           subtitle: "Generated Content",
-          text: "You own the audio files generated by the Service using your inputs. However, you are responsible for ensuring your use of generated content complies with applicable laws and these Terms. You must not claim that generated content is a real human voice without disclosure.",
+          text: "You own the educational content files generated by the Service using your inputs. However, you are responsible for ensuring your use of generated content complies with applicable laws and these Terms. You must not claim that generated content is a real human learning without disclosure.",
         },
         {
           subtitle: "AI Model Providers",
-          text: "The underlying AI models (Kokoro-82M, Minimax, XTTS-v2) are owned by their respective creators and licensed through Replicate. Your use of generated content must comply with the terms of these model providers.",
+          text: "The underlying AI models are owned by their respective creators and licensed through various AI services. Your use of generated content must comply with the terms of these model providers.",
         },
       ],
     },
     {
       title: "6. User Content and Responsibilities",
-      icon: RiFileTextLine,
+      icon: FileText,
       content: [
         {
           subtitle: "Content Ownership",
-          text: "You are solely responsible for the content you create using our Service, including text inputs, voice clones, and generated audio. You represent and warrant that you have all necessary rights, licenses, and permissions to use such content.",
+          text: "You are solely responsible for the content you create using our Service, including text inputs, learning clones, and generated educational content. You represent and warrant that you have all necessary rights, licenses, and permissions to use such content.",
         },
         {
           subtitle: "Content Moderation",
@@ -135,17 +135,17 @@ export default function TermsPage() {
         },
         {
           subtitle: "Disclosure Requirements",
-          text: "If you publish or distribute AI-generated audio, you agree to clearly disclose that it was created using AI technology. This disclosure must be prominent and not misleading. Failure to disclose may result in account termination.",
+          text: "If you publish or distribute AI-generated educational content, you agree to clearly disclose that it was created using AI technology. This disclosure must be prominent and not misleading. Failure to disclose may result in account termination.",
         },
       ],
     },
     {
       title: "7. Payment Terms",
-      icon: RiScalesLine,
+      icon: Scale,
       content: [
         {
           subtitle: "Subscription Plans",
-          text: "VoiceCraft offers free and paid subscription plans. Paid plans are billed monthly or annually in advance. Prices are listed on our Pricing page and may change with 30 days' notice to existing subscribers.",
+          text: "TutorBot Plus offers free and paid subscription plans. Paid plans are billed monthly or annually in advance. Prices are listed on our Pricing page and may change with 30 days' notice to existing subscribers.",
         },
         {
           subtitle: "Payment Processing",
@@ -167,7 +167,7 @@ export default function TermsPage() {
     },
     {
       title: "8. Termination and Suspension",
-      icon: RiCloseLine,
+      icon: X,
       content: [
         {
           subtitle: "Termination by You",
@@ -193,7 +193,7 @@ export default function TermsPage() {
           text: 'THE SERVICE IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED. WE DISCLAIM ALL WARRANTIES, INCLUDING MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, AND TITLE.',
         },
         {
-          text: "We do not warrant that the Service will be uninterrupted, error-free, or secure. We do not warrant the accuracy, reliability, or quality of generated audio. We are not responsible for any damage caused by your use of the Service.",
+          text: "We do not warrant that the Service will be uninterrupted, error-free, or secure. We do not warrant the accuracy, reliability, or quality of generated educational content. We are not responsible for any damage caused by your use of the Service.",
         },
         {
           text: "AI-generated content may contain errors, biases, or inaccuracies. You are solely responsible for verifying and validating all generated content before use. We make no representations about the suitability of generated content for any purpose.",
@@ -204,7 +204,7 @@ export default function TermsPage() {
       title: "10. Limitation of Liability",
       content: [
         {
-          text: "TO THE MAXIMUM EXTENT PERMITTED BY LAW, VOICECRAFT SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS, REVENUE, DATA, OR USE, WHETHER IN CONTRACT, TORT, OR OTHERWISE, ARISING FROM YOUR USE OF THE SERVICE.",
+          text: "TO THE MAXIMUM EXTENT PERMITTED BY LAW, TUTORBOT PLUS SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS, REVENUE, DATA, OR USE, WHETHER IN CONTRACT, TORT, OR OTHERWISE, ARISING FROM YOUR USE OF THE SERVICE.",
         },
         {
           text: "OUR TOTAL LIABILITY TO YOU FOR ALL CLAIMS ARISING FROM OR RELATED TO THE SERVICE SHALL NOT EXCEED THE AMOUNT YOU PAID US IN THE 12 MONTHS PRECEDING THE CLAIM, OR $100 IF YOU HAVE NOT PAID US ANYTHING.",
@@ -218,10 +218,10 @@ export default function TermsPage() {
       title: "11. Indemnification",
       content: [
         {
-          text: "You agree to indemnify, defend, and hold harmless VoiceCraft, its affiliates, officers, directors, employees, and agents from any claims, liabilities, damages, losses, costs, or expenses (including reasonable attorneys' fees) arising from:",
+          text: "You agree to indemnify, defend, and hold harmless TutorBot Plus, its affiliates, officers, directors, employees, and agents from any claims, liabilities, damages, losses, costs, or expenses (including reasonable attorneys' fees) arising from:",
         },
         {
-          text: "Your use of the Service; your content or generated audio; your violation of these Terms; your violation of any rights of third parties; your violation of applicable laws or regulations.",
+          text: "Your use of the Service; your content or generated educational content; your violation of these Terms; your violation of any rights of third parties; your violation of applicable laws or regulations.",
         },
         {
           text: "This indemnification obligation survives termination of these Terms and your use of the Service.",
@@ -241,7 +241,7 @@ export default function TermsPage() {
         },
         {
           subtitle: "Class Action Waiver",
-          text: "You agree that any arbitration or court proceeding shall be limited to the dispute between you and VoiceCraft individually. You waive the right to participate in class actions, class arbitrations, or representative actions.",
+          text: "You agree that any arbitration or court proceeding shall be limited to the dispute between you and TutorBot Plus individually. You waive the right to participate in class actions, class arbitrations, or representative actions.",
         },
         {
           subtitle: "Exceptions",
@@ -255,7 +255,7 @@ export default function TermsPage() {
     <main className="min-h-screen bg-white">
       {/* Header */}
       <Header
-        logoText="VoiceCraft"
+        logoText="TutorBot Plus"
         navLinks={[
           { label: "Features", href: "/features" },
           { label: "Pricing", href: "/pricing" },
@@ -271,15 +271,15 @@ export default function TermsPage() {
       <section className="py-20 border-b-8 border-black">
         <Container maxWidth="xl">
           <div className="max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-3 px-6 py-3 bg-green-500 border-4 border-black mb-8">
-              <RiFileTextLine className="w-6 h-6" />
+            <div className="inline-flex items-center gap-3 px-6 py-3 bg-green-500 border-2 border-black mb-8">
+              <FileText className="w-6 h-6" />
               <span className="text-sm font-bold uppercase tracking-wider">Terms of Service</span>
             </div>
             <h1 className="text-6xl md:text-7xl font-bold uppercase mb-6 leading-tight">
               TERMS & CONDITIONS
             </h1>
             <p className="text-xl text-gray-700 mb-6">
-              These Terms of Service govern your use of VoiceCraft. Please read them carefully before using our platform.
+              These Terms of Service govern your use of TutorBot Plus. Please read them carefully before using our platform.
             </p>
             <p className="text-sm font-bold uppercase text-gray-900">
               Last Updated: {lastUpdated}
@@ -296,36 +296,36 @@ export default function TermsPage() {
               THE KEY POINTS
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="p-6 bg-white border-4 border-white">
+              <div className="p-6 bg-white border-2 border-white">
                 <div className="flex items-center gap-3 mb-3">
-                  <RiCheckLine className="w-6 h-6 flex-shrink-0" />
+                  <Check className="w-6 h-6 flex-shrink-0" />
                   <h3 className="text-lg font-bold uppercase">YOUR RIGHTS</h3>
                 </div>
                 <p className="text-gray-700 text-sm">
-                  You own your content and generated audio. Use the Service according to your plan limits. Cancel anytime.
+                  You own your content and generated educational content. Use the Service according to your plan limits. Cancel anytime.
                 </p>
               </div>
-              <div className="p-6 bg-white border-4 border-white">
+              <div className="p-6 bg-white border-2 border-white">
                 <div className="flex items-center gap-3 mb-3">
-                  <RiCloseLine className="w-6 h-6 flex-shrink-0" />
+                  <X className="w-6 h-6 flex-shrink-0" />
                   <h3 className="text-lg font-bold uppercase">PROHIBITED</h3>
                 </div>
                 <p className="text-gray-700 text-sm">
-                  No illegal activity, impersonation, harassment, or service abuse. Voice cloning requires consent.
+                  No illegal activity, impersonation, harassment, or service abuse. Using AI tutoring features requires appropriate permissions.
                 </p>
               </div>
-              <div className="p-6 bg-white border-4 border-white">
+              <div className="p-6 bg-white border-2 border-white">
                 <div className="flex items-center gap-3 mb-3">
-                  <RiScalesLine className="w-6 h-6 flex-shrink-0" />
+                  <Scale className="w-6 h-6 flex-shrink-0" />
                   <h3 className="text-lg font-bold uppercase">LIABILITY</h3>
                 </div>
                 <p className="text-gray-700 text-sm">
                   Service provided "as is." Our liability is limited. You're responsible for your use of generated content.
                 </p>
               </div>
-              <div className="p-6 bg-white border-4 border-white">
+              <div className="p-6 bg-white border-2 border-white">
                 <div className="flex items-center gap-3 mb-3">
-                  <RiShieldLine className="w-6 h-6 flex-shrink-0" />
+                  <Shield className="w-6 h-6 flex-shrink-0" />
                   <h3 className="text-lg font-bold uppercase">PAYMENT</h3>
                 </div>
                 <p className="text-gray-700 text-sm">
@@ -347,7 +347,7 @@ export default function TermsPage() {
                 <div key={sectionIndex} id={`section-${sectionIndex + 1}`}>
                   <div className="mb-8">
                     <div className="flex items-center gap-4 mb-4">
-                      <div className="w-12 h-12 bg-black border-4 border-black flex items-center justify-center">
+                      <div className="w-12 h-12 bg-black border-2 border-black flex items-center justify-center">
                         <Icon className="w-6 h-6 text-green-500" />
                       </div>
                       <h2 className="text-3xl font-bold uppercase">{section.title}</h2>
@@ -358,8 +358,8 @@ export default function TermsPage() {
                     {section.content.map((item, itemIndex) => (
                       <div
                         key={itemIndex}
-                        className={`p-6 border-4 border-black ${
-                          itemIndex % 2 === 0 ? "bg-white brutalist-shadow" : "bg-green-50"
+                        className={`p-6 border-2 border-black ${
+                          itemIndex % 2 === 0 ? "bg-white shadow-xl" : "bg-green-50"
                         }`}
                       >
                         {('subtitle' in item) && item.subtitle && (
@@ -378,8 +378,8 @@ export default function TermsPage() {
               <div key={sectionIndex + 8} id={`section-${sectionIndex + 9}`}>
                 <div className="mb-8">
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 bg-black border-4 border-black flex items-center justify-center">
-                      <RiScalesLine className="w-6 h-6 text-green-500" />
+                    <div className="w-12 h-12 bg-black border-2 border-black flex items-center justify-center">
+                      <Scale className="w-6 h-6 text-green-500" />
                     </div>
                     <h2 className="text-3xl font-bold uppercase">{section.title}</h2>
                   </div>
@@ -389,7 +389,7 @@ export default function TermsPage() {
                   {section.content.map((item, itemIndex) => (
                     <div
                       key={itemIndex}
-                      className="p-6 bg-green-50 border-4 border-black"
+                      className="p-6 bg-green-50 border-2 border-black"
                     >
                       {('subtitle' in item) && item.subtitle && (
                         <h3 className="text-lg font-bold uppercase mb-3">{item.subtitle}</h3>
@@ -405,43 +405,43 @@ export default function TermsPage() {
             <div id="section-13">
               <div className="mb-8">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 bg-black border-4 border-black flex items-center justify-center">
-                    <RiFileTextLine className="w-6 h-6 text-green-500" />
+                  <div className="w-12 h-12 bg-black border-2 border-black flex items-center justify-center">
+                    <FileText className="w-6 h-6 text-green-500" />
                   </div>
                   <h2 className="text-3xl font-bold uppercase">13. Miscellaneous</h2>
                 </div>
               </div>
 
               <div className="space-y-4">
-                <div className="p-6 bg-white border-4 border-black brutalist-shadow">
+                <div className="p-6 bg-white border-2 border-black shadow-xl">
                   <h3 className="text-lg font-bold uppercase mb-3">Entire Agreement</h3>
                   <p className="text-gray-700 leading-relaxed">
-                    These Terms, together with our Privacy Policy and any other agreements referenced herein, constitute the entire agreement between you and VoiceCraft regarding the Service. They supersede all prior agreements and understandings.
+                    These Terms, together with our Privacy Policy and any other agreements referenced herein, constitute the entire agreement between you and TutorBot Plus regarding the Service. They supersede all prior agreements and understandings.
                   </p>
                 </div>
 
-                <div className="p-6 bg-green-50 border-4 border-black">
+                <div className="p-6 bg-green-50 border-2 border-black">
                   <h3 className="text-lg font-bold uppercase mb-3">Severability</h3>
                   <p className="text-gray-700 leading-relaxed">
                     If any provision of these Terms is found to be invalid or unenforceable, that provision shall be enforced to the maximum extent possible, and the remaining provisions shall remain in full force and effect.
                   </p>
                 </div>
 
-                <div className="p-6 bg-white border-4 border-black brutalist-shadow">
+                <div className="p-6 bg-white border-2 border-black shadow-xl">
                   <h3 className="text-lg font-bold uppercase mb-3">Waiver</h3>
                   <p className="text-gray-700 leading-relaxed">
                     No waiver of any term or provision of these Terms shall be deemed a further or continuing waiver of such term or any other term. Our failure to assert any right or provision under these Terms shall not constitute a waiver of such right or provision.
                   </p>
                 </div>
 
-                <div className="p-6 bg-green-50 border-4 border-black">
+                <div className="p-6 bg-green-50 border-2 border-black">
                   <h3 className="text-lg font-bold uppercase mb-3">Assignment</h3>
                   <p className="text-gray-700 leading-relaxed">
                     You may not assign or transfer these Terms or your rights and obligations hereunder without our prior written consent. We may assign these Terms to any affiliate or in connection with a merger, acquisition, or sale of assets.
                   </p>
                 </div>
 
-                <div className="p-6 bg-white border-4 border-black brutalist-shadow">
+                <div className="p-6 bg-white border-2 border-black shadow-xl">
                   <h3 className="text-lg font-bold uppercase mb-3">Force Majeure</h3>
                   <p className="text-gray-700 leading-relaxed">
                     We shall not be liable for any failure or delay in performance due to circumstances beyond our reasonable control, including acts of God, war, terrorism, riots, embargoes, acts of civil or military authorities, fire, floods, accidents, pandemics, strikes, or shortages of transportation, facilities, fuel, energy, labor, or materials.
@@ -457,8 +457,8 @@ export default function TermsPage() {
       <section className="py-24 bg-black border-t-8 border-yellow-400">
         <Container maxWidth="xl">
           <div className="max-w-3xl mx-auto text-center">
-            <div className="w-20 h-20 bg-green-500 border-4 border-yellow-400 flex items-center justify-center mx-auto mb-6">
-              <RiMailLine className="w-10 h-10 text-black" />
+            <div className="w-20 h-20 bg-green-500 border-2 border-yellow-400 flex items-center justify-center mx-auto mb-6">
+              <Mail className="w-10 h-10 text-black" />
             </div>
             <h2 className="text-4xl font-bold uppercase mb-6 text-green-500">
               QUESTIONS ABOUT THESE TERMS?
@@ -467,17 +467,17 @@ export default function TermsPage() {
               If you have questions about these Terms of Service, please contact us.
             </p>
 
-            <div className="p-8 bg-white border-4 border-white brutalist-shadow-yellow">
+            <div className="p-8 bg-white border-2 border-white shadow-xl-yellow">
               <h3 className="text-2xl font-bold uppercase mb-4">CONTACT US</h3>
               <div className="space-y-3 text-left max-w-2xl mx-auto">
                 <div>
                   <span className="font-bold uppercase text-sm">Email:</span>
                   <br />
                   <a
-                    href="mailto:legal@voicecraft.ai"
+                    href="mailto:legal@learningcraft.ai"
                     className="text-lg font-bold text-black underline hover:no-underline"
                   >
-                    legal@voicecraft.ai
+                    legal@learningcraft.ai
                   </a>
                 </div>
                 <div>
@@ -494,9 +494,9 @@ export default function TermsPage() {
                   <span className="font-bold uppercase text-sm">Mailing Address:</span>
                   <br />
                   <address className="text-gray-700 not-italic">
-                    VoiceCraft, Inc.
+                    TutorBot Plus, Inc.
                     <br />
-                    123 Voice Street, Suite 100
+                    123 Learning Lane, Suite 100
                     <br />
                     San Francisco, CA 94105
                     <br />
@@ -507,7 +507,7 @@ export default function TermsPage() {
 
               <div className="mt-6 pt-6 border-t-4 border-black">
                 <p className="text-sm text-gray-600">
-                  By using VoiceCraft, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service.
+                  By using TutorBot Plus, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service.
                 </p>
               </div>
             </div>

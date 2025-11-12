@@ -7,8 +7,8 @@ import { prisma } from '@/lib/prisma';
 
 // Credit costs for different operations
 export const CREDIT_COSTS = {
-  VOICE_GENERATION: 10,
-  VOICE_CLONING: 50,
+  LESSON_GENERATION: 10,
+  COURSE_CREATION: 50,
   AI_ESTIMATION: 5,
 } as const;
 
@@ -16,8 +16,8 @@ export type CreditOperationType = keyof typeof CREDIT_COSTS;
 
 export const CREDIT_TRANSACTION_TYPES = {
   // Deductions
-  VOICE_GENERATION: 'VOICE_GENERATION',
-  VOICE_CLONING: 'VOICE_CLONING',
+  LESSON_GENERATION: 'LESSON_GENERATION',
+  COURSE_CREATION: 'COURSE_CREATION',
   AI_ESTIMATION: 'AI_ESTIMATION',
 
   // Additions
@@ -137,34 +137,34 @@ export async function addCredits(
 }
 
 /**
- * Deduct credits for voice generation
+ * Deduct credits for lesson generation
  */
-export async function deductVoiceGenerationCredits(
+export async function deductLessonGenerationCredits(
   userId: string,
   metadata?: any
 ): Promise<{ success: boolean; newBalance: number }> {
   return deductCredits(
     userId,
-    CREDIT_COSTS.VOICE_GENERATION,
-    CREDIT_TRANSACTION_TYPES.VOICE_GENERATION,
-    'Voice generation',
+    CREDIT_COSTS.LESSON_GENERATION,
+    CREDIT_TRANSACTION_TYPES.LESSON_GENERATION,
+    'Lesson generation',
     metadata
   );
 }
 
 /**
- * Deduct credits for voice cloning
+ * Deduct credits for course creation
  */
-export async function deductVoiceCloningCredits(
+export async function deductCourseCreationCredits(
   userId: string,
-  voiceName: string,
+  courseName: string,
   metadata?: any
 ): Promise<{ success: boolean; newBalance: number }> {
   return deductCredits(
     userId,
-    CREDIT_COSTS.VOICE_CLONING,
-    CREDIT_TRANSACTION_TYPES.VOICE_CLONING,
-    `Voice cloning: ${voiceName}`,
+    CREDIT_COSTS.COURSE_CREATION,
+    CREDIT_TRANSACTION_TYPES.COURSE_CREATION,
+    `Course creation: ${courseName}`,
     metadata
   );
 }

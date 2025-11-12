@@ -3,12 +3,12 @@
 import { useState, useEffect } from "react"
 import {
   RiFolder3Line,
-  RiUserLine,
-  RiTeamLine,
-  RiMoneyDollarCircleLine,
-  RiCheckboxCircleLine,
-  RiTimeLine,
-} from "react-icons/ri"
+  User,
+  Team,
+  MoneyDollarCircle,
+  CheckboxCircle,
+  Time,
+} from "lucide-react"
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 import { Text, Heading } from "@/components/ui/typography"
 import { Button } from "@/components/ui/button"
@@ -87,7 +87,7 @@ export default function AdminDashboard() {
       <div className="flex items-center justify-between space-y-2">
         <div>
           <Heading variant="h1" className="uppercase">
-            ADMIN DASHBOARD
+            Admin Dashboard
           </Heading>
           <Text variant="body" className="text-slate-600">
             Platform overview and management
@@ -98,10 +98,10 @@ export default function AdminDashboard() {
       {/* Stats Grid */}
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         {/* Total Projects */}
-        <Card variant="outlined" className="border-4 border-purple-500 bg-blue-50">
+        <Card variant="outlined" className="border-2 border-purple-500 bg-blue-50">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-bold uppercase text-blue-900">
-              TOTAL PROJECTS
+              Total Projects
             </CardTitle>
             <RiFolder3Line className="h-6 w-6 text-blue-600" />
           </CardHeader>
@@ -122,12 +122,12 @@ export default function AdminDashboard() {
         </Card>
 
         {/* Total Users */}
-        <Card variant="outlined" className="border-4 border-blue-500 bg-blue-50">
+        <Card variant="outlined" className="border-2 border-blue-500 bg-blue-50">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-bold uppercase text-blue-900">
-              TOTAL USERS
+              Total Users
             </CardTitle>
-            <RiUserLine className="h-6 w-6 text-blue-600" />
+            <User className="h-6 w-6 text-blue-600" />
           </CardHeader>
           <CardContent>
             <h2 className="text-3xl font-bold text-blue-900">
@@ -140,12 +140,12 @@ export default function AdminDashboard() {
         </Card>
 
         {/* Specialists */}
-        <Card variant="outlined" className="border-4 border-cyan-500 bg-cyan-50">
+        <Card variant="outlined" className="border-2 border-cyan-500 bg-cyan-50">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-bold uppercase text-cyan-900">
-              SPECIALISTS
+              Specialists
             </CardTitle>
-            <RiTeamLine className="h-6 w-6 text-cyan-600" />
+            <Team className="h-6 w-6 text-cyan-600" />
           </CardHeader>
           <CardContent>
             <h2 className="text-3xl font-bold text-cyan-900">
@@ -160,12 +160,12 @@ export default function AdminDashboard() {
         </Card>
 
         {/* Total Revenue */}
-        <Card variant="outlined" className="border-4 border-green-500 bg-green-50">
+        <Card variant="outlined" className="border-2 border-green-500 bg-green-50">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-bold uppercase text-green-900">
-              TOTAL REVENUE
+              Total Revenue
             </CardTitle>
-            <RiMoneyDollarCircleLine className="h-6 w-6 text-green-600" />
+            <MoneyDollarCircle className="h-6 w-6 text-green-600" />
           </CardHeader>
           <CardContent>
             <Heading as="h2" className="text-3xl font-bold text-green-900">
@@ -181,14 +181,14 @@ export default function AdminDashboard() {
       {/* Quick Actions */}
       <div className="space-y-4">
         <Heading variant="h3" className="uppercase">
-          QUICK ACTIONS
+          Quick Actions
         </Heading>
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-          <Card variant="outlined" className="border-4 border-black hover:shadow-[4px_4px_0_0_#000] transition-shadow cursor-pointer">
+          <Card variant="outlined" className="border-2 border-black hover:shadow-[4px_4px_0_0_#000] transition-shadow cursor-pointer">
             <CardContent className="flex flex-col items-center justify-center p-6 text-center">
               <RiFolder3Line className="h-12 w-12 text-blue-600" />
               <h3 className="mt-4 text-sm font-bold uppercase tracking-tight">
-                MANAGE PROJECTS
+                Manage Projects
               </h3>
               <Text variant="caption" className="mt-2 text-xs text-slate-600">
                 View and manage all projects
@@ -199,16 +199,16 @@ export default function AdminDashboard() {
                 className="mt-4 border-2"
                 onClick={() => window.location.href = "/admin/projects"}
               >
-                GO TO PROJECTS
+                Go to Projects
               </Button>
             </CardContent>
           </Card>
 
-          <Card variant="outlined" className="border-4 border-black hover:shadow-[4px_4px_0_0_#000] transition-shadow cursor-pointer">
+          <Card variant="outlined" className="border-2 border-black hover:shadow-[4px_4px_0_0_#000] transition-shadow cursor-pointer">
             <CardContent className="flex flex-col items-center justify-center p-6 text-center">
-              <RiUserLine className="h-12 w-12 text-blue-600" />
+              <User className="h-12 w-12 text-blue-600" />
               <h3 className="mt-4 text-sm font-bold uppercase tracking-tight">
-                MANAGE USERS
+                Manage Users
               </h3>
               <Text variant="caption" className="mt-2 text-xs text-slate-600">
                 View users and manage credits
@@ -219,16 +219,16 @@ export default function AdminDashboard() {
                 className="mt-4 border-2"
                 onClick={() => window.location.href = "/admin/users"}
               >
-                GO TO USERS
+                Go to Users
               </Button>
             </CardContent>
           </Card>
 
-          <Card variant="outlined" className="border-4 border-black hover:shadow-[4px_4px_0_0_#000] transition-shadow cursor-pointer">
+          <Card variant="outlined" className="border-2 border-black hover:shadow-[4px_4px_0_0_#000] transition-shadow cursor-pointer">
             <CardContent className="flex flex-col items-center justify-center p-6 text-center">
-              <RiTeamLine className="h-12 w-12 text-cyan-600" />
+              <Team className="h-12 w-12 text-cyan-600" />
               <h3 className="mt-4 text-sm font-bold uppercase tracking-tight">
-                MANAGE SPECIALISTS
+                Manage Specialists
               </h3>
               <Text variant="caption" className="mt-2 text-xs text-slate-600">
                 Approve and manage experts
@@ -239,16 +239,16 @@ export default function AdminDashboard() {
                 className="mt-4 border-2"
                 onClick={() => window.location.href = "/admin/specialists"}
               >
-                GO TO SPECIALISTS
+                Go to Specialists
               </Button>
             </CardContent>
           </Card>
 
-          <Card variant="outlined" className="border-4 border-black hover:shadow-[4px_4px_0_0_#000] transition-shadow cursor-pointer">
+          <Card variant="outlined" className="border-2 border-black hover:shadow-[4px_4px_0_0_#000] transition-shadow cursor-pointer">
             <CardContent className="flex flex-col items-center justify-center p-6 text-center">
-              <RiMoneyDollarCircleLine className="h-12 w-12 text-green-600" />
+              <MoneyDollarCircle className="h-12 w-12 text-green-600" />
               <h3 className="mt-4 text-sm font-bold uppercase tracking-tight">
-                FINANCIALS
+                Financials
               </h3>
               <Text variant="caption" className="mt-2 text-xs text-slate-600">
                 View revenue and transactions
@@ -259,7 +259,7 @@ export default function AdminDashboard() {
                 className="mt-4 border-2"
                 onClick={() => window.location.href = "/admin/financials"}
               >
-                GO TO FINANCIALS
+                Go to Financials
               </Button>
             </CardContent>
           </Card>

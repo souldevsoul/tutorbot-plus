@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { RiFilterLine, RiSearchLine } from "react-icons/ri"
+import { Filter, Search } from "lucide-react"
 import { Text, Heading } from "@/components/ui/typography"
 import { Button } from "@/components/ui/button"
 import { SpecialistProjectCard, ProjectStatusBadge, type ProjectStatus } from "@/components/project"
@@ -88,7 +88,7 @@ export default function SpecialistProjectsPage() {
       <div className="flex items-center justify-between space-y-2">
         <div>
           <Heading variant="h2" className="text-3xl font-bold uppercase tracking-tight">
-            MY PROJECTS
+            My Projects
           </Heading>
           <Text variant="body" className="text-slate-600">
             View and manage your assigned projects
@@ -105,7 +105,7 @@ export default function SpecialistProjectsPage() {
       {/* Filters */}
       <div className="flex items-center gap-3">
         <div className="relative flex-1 max-w-md">
-          <RiSearchLine className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-500" />
+          <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-500" />
           <Input
             placeholder="Search projects, clients..."
             value={searchQuery}
@@ -115,7 +115,7 @@ export default function SpecialistProjectsPage() {
         </div>
         <Select value={statusFilter} onValueChange={setStatusFilter}>
           <SelectTrigger className="w-[200px] border-2 border-black">
-            <RiFilterLine className="mr-2 h-4 w-4" />
+            <Filter className="mr-2 h-4 w-4" />
             <SelectValue placeholder="Filter by status" />
           </SelectTrigger>
           <SelectContent className="border-2 border-black">
@@ -135,7 +135,7 @@ export default function SpecialistProjectsPage() {
             <div>
               <div className="mb-4 flex items-center gap-3">
                 <Heading variant="h3" className="text-xl font-bold uppercase">
-                  ACTIVE PROJECTS
+                  Active Projects
                 </Heading>
                 <ProjectStatusBadge status="assigned" showTooltip={false} />
                 <Text variant="body" className="text-slate-600">
@@ -168,7 +168,7 @@ export default function SpecialistProjectsPage() {
             <div>
               <div className="mb-4 flex items-center gap-3">
                 <Heading variant="h3" className="text-xl font-bold uppercase">
-                  IN REVIEW
+                  In Review
                 </Heading>
                 <ProjectStatusBadge status="in_review" showTooltip={false} />
                 <Text variant="body" className="text-slate-600">
@@ -201,7 +201,7 @@ export default function SpecialistProjectsPage() {
             <div>
               <div className="mb-4 flex items-center gap-3">
                 <Heading variant="h3" className="text-xl font-bold uppercase">
-                  COMPLETED
+                  Completed
                 </Heading>
                 <ProjectStatusBadge status="completed" showTooltip={false} />
                 <Text variant="body" className="text-slate-600">
@@ -230,7 +230,7 @@ export default function SpecialistProjectsPage() {
           )}
         </div>
       ) : (
-        <div className="rounded-md border-4 border-dashed border-black bg-slate-50 p-12 text-center">
+        <div className="rounded-md border-2 border-dashed border-black bg-slate-50 p-12 text-center">
           <Text variant="body" className="text-slate-600">
             {searchQuery || statusFilter !== "all"
               ? "No projects match your filters"
@@ -246,7 +246,7 @@ export default function SpecialistProjectsPage() {
                 setStatusFilter("all")
               }}
             >
-              CLEAR FILTERS
+              Clear Filters
             </Button>
           )}
         </div>
