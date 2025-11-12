@@ -3,310 +3,300 @@
 import * as React from "react"
 import Image from "next/image"
 import { Button, Heading, Text } from "@/components/ui"
-import { Waveform, AudioPlayer } from "@/components/voicecraft"
 import { Footer } from "@/components/marketing/layout/footer"
 import { NewsletterPopup } from "@/components/marketing/NewsletterPopup"
 import {
   RiSparklingLine,
-  RiMicLine,
-  RiMic2Fill,
+  RiBookOpenLine,
+  RiGraduationCapLine,
   RiFlashlightLine,
   RiShieldCheckLine,
   RiGlobalLine,
-  RiHeadphoneLine,
   RiArrowRightLine,
   RiPlayCircleLine,
   RiCheckLine,
   RiCloseLine,
   RiStarFill,
-  RiLineChartLine,
-  RiUserLine,
-  RiAwardLine,
-  RiTimerLine,
+  RiLightbulbLine,
+  RiQuestionAnswerLine,
+  RiBrainLine,
+  RiCalculatorLine,
+  RiFlaskLine,
+  RiCodeSSlashLine,
 } from "react-icons/ri"
 
 export default function Home() {
   const [isVisible, setIsVisible] = React.useState(false)
-  const [currentTutorbotPlus, setCurrentTutorbotPlus] = React.useState(0)
+  const [currentSubject, setCurrentSubject] = React.useState(0)
 
   React.useEffect(() => {
     setIsVisible(true)
   }, [])
 
-  // tutorbot-plus examples carousel
-  const examples = [
-    { title: "AI Dashboard", image: "/images/examples/ai-dashboard-1762954613751.png" },
-    { title: "Tablet Learning", image: "/images/examples/kid-tablet-learning-1762954631985.png" },
-    { title: "Math Visualization", image: "/images/examples/math-visualization-1762954648939.png" },
-    { title: "Language Learning", image: "/images/examples/language-learning-1762954669164.png" },
-    { title: "Homework Help", image: "/images/examples/homework-help-1762954685662.png" },
+  // Subject examples
+  const subjects = [
+    { name: "Mathematics", icon: RiCalculatorLine, color: "from-blue-500 to-cyan-600", students: "50K+" },
+    { name: "Science", icon: RiFlaskLine, color: "from-green-500 to-emerald-600", students: "35K+" },
+    { name: "Programming", icon: RiCodeSSlashLine, color: "from-purple-500 to-pink-600", students: "40K+" },
+    { name: "Languages", icon: RiGlobalLine, color: "from-amber-500 to-orange-600", students: "30K+" },
   ]
 
   React.useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentTutorbotPlus((prev) => (prev + 1) % examples.length)
-    }, 4000)
+      setCurrentSubject((prev) => (prev + 1) % subjects.length)
+    }, 3000)
     return () => clearInterval(interval)
   }, [])
-
 
   // Features data
   const features = [
     {
-      icon: RiSparklingLine,
-      title: "POWERED BY KOKORO-82M",
-      description: "Most popular voice model with 56M+ runs. Battle-tested AI technology delivering natural-sounding speech at massive scale.",
+      icon: RiBrainLine,
+      title: "AI Personalized Learning",
+      description: "Adaptive AI creates custom learning paths tailored to your pace, style, and goals. Real-time adjustments as you progress.",
     },
     {
-      icon: RiMicLine,
-      title: "VOICE CLONING",
-      description: "Clone voices with Minimax technology. Quick training from 10 seconds to 5 minutes of audio. 300+ preset voices available.",
+      icon: RiQuestionAnswerLine,
+      title: "Interactive Lessons",
+      description: "Engage with AI tutors in real-time. Ask questions, get instant explanations, work through problems step-by-step.",
+    },
+    {
+      icon: RiLightbulbLine,
+      title: "Practice & Quizzes",
+      description: "Test your knowledge with AI-generated quizzes. Instant feedback, detailed explanations, and progress tracking.",
+    },
+    {
+      icon: RiGraduationCapLine,
+      title: "Expert Content",
+      description: "Curriculum designed by educators, powered by AI. Comprehensive coverage from basics to advanced concepts.",
     },
     {
       icon: RiFlashlightLine,
-      title: "LIGHTNING FAST",
-      description: "Real-time voice synthesis in seconds. Minimax 2.6 Turbo optimized for low latency. Generate hours of content instantly.",
+      title: "24/7 Availability",
+      description: "Learn whenever you want, wherever you are. Your AI tutor is always ready to help, no scheduling needed.",
     },
     {
       icon: RiShieldCheckLine,
-      title: "SECURE & PRIVATE",
-      description: "Your voice data is encrypted end-to-end and never shared. Full GDPR compliance. Enterprise-grade security.",
-    },
-    {
-      icon: RiGlobalLine,
-      title: "50+ LANGUAGES",
-      description: "Multilingual support powered by Minimax and XTTS-v2. Native accents, natural intonation, cross-language voice transfer.",
-    },
-    {
-      icon: RiHeadphoneLine,
-      title: "STUDIO QUALITY",
-      description: "Professional 48kHz audio output. Emotion control, pitch adjustment, speed control. MP3, WAV, FLAC formats supported.",
+      title: "Progress Tracking",
+      description: "Detailed analytics show your strengths, weaknesses, and improvement over time. Celebrate your achievements.",
     },
   ]
 
   // Pricing data
   const pricingPlans = [
     {
-      name: "STARTER",
-      price: "$0",
-      description: "Perfect for trying out VoiceCraft",
+      name: "Student",
+      price: "$19",
+      period: "/month",
+      description: "Perfect for individual learners",
       features: [
-        { text: "10,000 characters/month", included: true },
-        { text: "5 preset voices", included: true },
-        { text: "MP3 downloads", included: true },
-        { text: "Voice cloning", included: false },
-        { text: "Commercial use", included: false },
-        { text: "Priority support", included: false },
+        { text: "3 active courses", included: true },
+        { text: "Unlimited lessons", included: true },
+        { text: "Practice quizzes", included: true },
+        { text: "Progress tracking", included: true },
+        { text: "Video lessons", included: false },
+        { text: "1-on-1 sessions", included: false },
+        { text: "Certificates", included: false },
       ],
-      ctaText: "GET STARTED FREE",
+      ctaText: "Start Free Trial",
       popular: false,
     },
     {
-      name: "PRO",
-      price: "$29",
-      description: "For professionals and content creators",
+      name: "Premium",
+      price: "$49",
+      period: "/month",
+      description: "For serious learners and students",
       features: [
-        { text: "100,000 characters/month", included: true },
-        { text: "50+ preset voices", included: true },
-        { text: "WAV & MP3 downloads", included: true },
-        { text: "3 voice clones", included: true },
-        { text: "Commercial use", included: true },
-        { text: "Priority support", included: true },
-        { text: "API access", included: false },
+        { text: "Unlimited courses", included: true },
+        { text: "Unlimited lessons", included: true },
+        { text: "Advanced quizzes", included: true },
+        { text: "Detailed analytics", included: true },
+        { text: "HD video lessons", included: true },
+        { text: "4 live 1-on-1 sessions/mo", included: true },
+        { text: "Course certificates", included: true },
+        { text: "Download materials", included: true },
       ],
-      ctaText: "START FREE TRIAL",
+      ctaText: "Start Free Trial",
       popular: true,
     },
     {
-      name: "ENTERPRISE",
-      price: "CUSTOM",
-      description: "For teams and organizations",
+      name: "Enterprise",
+      price: "Custom",
+      period: "",
+      description: "For schools and organizations",
       features: [
-        { text: "Unlimited characters", included: true },
-        { text: "All preset voices", included: true },
-        { text: "All audio formats", included: true },
-        { text: "Unlimited voice clones", included: true },
-        { text: "Commercial use", included: true },
+        { text: "Unlimited users", included: true },
+        { text: "Custom curriculum", included: true },
+        { text: "White-label platform", included: true },
+        { text: "Advanced analytics", included: true },
         { text: "Dedicated support", included: true },
-        { text: "Full API access", included: true },
+        { text: "API access", included: true },
         { text: "Custom integrations", included: true },
-        { text: "SLA guarantee", included: true },
+        { text: "Onboarding & training", included: true },
       ],
-      ctaText: "CONTACT SALES",
+      ctaText: "Contact Sales",
       popular: false,
     },
   ]
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-cyan-50">
       {/* Header */}
-      <header className="sticky top-0 z-50 border-b-4 border-black bg-white">
+      <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-blue-200">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-12 h-12 bg-black border-4 border-black flex items-center justify-center brutalist-shadow-yellow">
-              <RiMic2Fill className="w-7 h-7 text-green-500" />
+            <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-2xl flex items-center justify-center shadow-lg">
+              <RiGraduationCapLine className="w-7 h-7 text-white" />
             </div>
-            <span className="text-xl font-bold uppercase tracking-tight">VOICECRAFT</span>
+            <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">TutorBot Plus</span>
           </div>
           <nav className="hidden md:flex items-center gap-8">
-            <a href="#features" className="text-sm font-bold uppercase tracking-wider hover:text-green-500 transition-colors">Features</a>
-            <a href="#pricing" className="text-sm font-bold uppercase tracking-wider hover:text-green-500 transition-colors">Pricing</a>
-            <a href="/about" className="text-sm font-bold uppercase tracking-wider hover:text-green-500 transition-colors">About</a>
-            <a href="/contact" className="text-sm font-bold uppercase tracking-wider hover:text-green-500 transition-colors">Contact</a>
+            <a href="#features" className="text-sm font-semibold text-slate-700 hover:text-blue-600 transition-colors">Features</a>
+            <a href="#subjects" className="text-sm font-semibold text-slate-700 hover:text-blue-600 transition-colors">Subjects</a>
+            <a href="#pricing" className="text-sm font-semibold text-slate-700 hover:text-blue-600 transition-colors">Pricing</a>
+            <a href="/about" className="text-sm font-semibold text-slate-700 hover:text-blue-600 transition-colors">About</a>
           </nav>
           <Button
             size="md"
-            className="bg-green-500 text-black hover:bg-yellow-300 border-4 border-black font-bold uppercase"
+            className="bg-gradient-to-r from-blue-500 to-cyan-600 text-white hover:from-blue-600 hover:to-cyan-700 shadow-lg hover:shadow-xl transition-all font-semibold"
             onClick={() => window.location.href = '/dashboard'}
           >
-            Get Started
+            Start Learning
           </Button>
         </div>
       </header>
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-white via-yellow-50 to-white border-b-8 border-black min-h-[90vh] flex items-center">
+      <section className="relative overflow-hidden min-h-[90vh] flex items-center">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-1/4 -left-24 w-96 h-96 bg-blue-300/20 rounded-full blur-3xl" />
+          <div className="absolute bottom-1/4 -right-24 w-96 h-96 bg-cyan-300/20 rounded-full blur-3xl" />
+        </div>
+
         <div className="max-w-7xl mx-auto px-6 py-24 relative z-10">
           <div className="text-center space-y-12">
-            {/* Badge */}
-            <div className={`inline-flex items-center gap-3 px-6 py-3 bg-green-500 border-4 border-black brutalist-shadow transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}`}>
-              <RiSparklingLine className="w-6 h-6" />
-              <Text variant="body-sm" className="font-bold uppercase tracking-wider">AI-POWERED VOICE SYNTHESIS</Text>
+            <div className={`inline-flex items-center gap-3 px-6 py-3 bg-white/80 backdrop-blur-sm rounded-full shadow-lg border border-blue-200 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}`}>
+              <RiSparklingLine className="w-5 h-5 text-blue-600" />
+              <Text variant="body-sm" className="font-semibold text-slate-700">AI-Powered Personal Tutoring</Text>
             </div>
 
-            {/* Big Revealing Text */}
             <div className="space-y-6">
-              <h1 className="text-6xl md:text-8xl lg:text-9xl font-black uppercase leading-none">
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight">
                 <span className={`block transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-                  <span className="text-black">YOUR</span>{" "}
-                  <span className="text-green-500 [-webkit-text-stroke:3px_black] [text-stroke:3px_black]">VOICE</span>
+                  <span className="text-slate-900">Your Personal</span>
                 </span>
                 <span className={`block transition-all duration-700 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-                  <span className="text-black">YOUR</span>{" "}
-                  <span className="text-green-500 [-webkit-text-stroke:3px_black] [text-stroke:3px_black]">STYLE</span>
+                  <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">AI Tutor</span>
                 </span>
                 <span className={`block transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-                  <span className="text-black">IN</span>{" "}
-                  <span className="text-green-500 [-webkit-text-stroke:3px_black] [text-stroke:3px_black]">SECONDS</span>
+                  <span className="text-slate-900">Master Anything</span>
                 </span>
               </h1>
             </div>
 
-            {/* Subtitle */}
             <div className={`transition-all duration-700 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-              <Text variant="lead" className="text-gray-900 max-w-3xl mx-auto text-xl md:text-2xl font-medium">
-                Clone voices, generate speech, create content. Professional AI voice synthesis powered by cutting-edge machine learning.
+              <Text variant="lead" className="text-slate-600 max-w-3xl mx-auto text-xl md:text-2xl">
+                Learn Math, Science, Languages, Programming, and more with AI-powered personalized tutoring. Available 24/7, adapts to your pace.
               </Text>
             </div>
 
-            {/* CTA Buttons */}
             <div className={`flex flex-wrap justify-center gap-6 pt-4 transition-all duration-700 delay-900 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
               <Button
                 size="xl"
-                className="gap-3 bg-black text-green-500 hover:bg-gray-900 border-4 border-black font-bold uppercase brutalist-shadow text-lg px-12 py-8"
+                className="gap-3 bg-gradient-to-r from-blue-500 to-cyan-600 text-white hover:from-blue-600 hover:to-cyan-700 shadow-xl hover:shadow-2xl transition-all font-semibold text-lg px-12 py-8 rounded-2xl"
                 onClick={() => window.location.href = '/dashboard'}
               >
                 <RiArrowRightLine className="w-6 h-6" />
-                Start Free Now
+                Start Learning Free
               </Button>
               <Button
                 size="xl"
-                variant="secondary"
-                className="gap-3 bg-white text-black hover:bg-gray-100 border-4 border-black font-bold uppercase text-lg px-12 py-8"
+                className="gap-3 bg-white text-slate-700 hover:bg-slate-50 shadow-lg hover:shadow-xl transition-all font-semibold text-lg px-12 py-8 rounded-2xl border border-slate-200"
                 onClick={() => window.location.href = '/demo'}
               >
-                <RiMic2Fill className="w-6 h-6" />
-                Try Demo
+                <RiPlayCircleLine className="w-6 h-6" />
+                Watch Demo
               </Button>
+            </div>
+
+            <div className={`flex flex-wrap justify-center items-center gap-8 pt-12 text-sm text-slate-600 transition-all duration-700 delay-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+              <div className="flex items-center gap-2">
+                <RiCheckLine className="w-5 h-5 text-emerald-500" />
+                <span>500,000+ Students</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <RiCheckLine className="w-5 h-5 text-emerald-500" />
+                <span>5 Million+ Lessons Completed</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <RiCheckLine className="w-5 h-5 text-emerald-500" />
+                <span>24/7 Available</span>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-            {/* Examples Carousel */}
-      <section className="relative bg-white py-20 border-b-8 border-black">
+      {/* Subjects Section */}
+      <section id="subjects" className="relative bg-white py-20 border-y border-slate-200">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-black uppercase mb-4">
-              See What's Possible
+            <h2 className="text-3xl md:text-5xl font-bold mb-4 text-slate-900">
+              What Do You Want to Learn?
             </h2>
-            <p className="text-gray-700 text-lg font-medium">Real examples created with our platform</p>
+            <p className="text-slate-600 text-lg">Comprehensive courses in every subject you need</p>
           </div>
 
-          <div className="relative h-96 rounded-2xl overflow-hidden border-4 border-black brutalist-shadow">
-            {examples.map((example, index) => (
-              <div
-                key={index}
-                className={`absolute inset-0 transition-opacity duration-1000 ${
-                  index === currentTutorbotPlus ? 'opacity-100' : 'opacity-0'
-                }`}
-              >
-                <Image
-                  src={example.image}
-                  alt={example.title}
-                  fill
-                  className="object-cover"
-                  priority={index === 0}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex items-center justify-center">
-                  <div className="text-center text-white space-y-4">
-                    <h3 className="text-5xl font-black uppercase">{example.title}</h3>
+          <div className="grid md:grid-cols-4 gap-6">
+            {subjects.map((subject, index) => {
+              const Icon = subject.icon
+              return (
+                <div
+                  key={index}
+                  className="group relative overflow-hidden rounded-3xl p-8 cursor-pointer transform hover:scale-105 transition-all shadow-lg hover:shadow-2xl bg-white border-2 border-slate-100 hover:border-blue-300"
+                >
+                  <div className={`absolute inset-0 bg-gradient-to-br ${subject.color} opacity-0 group-hover:opacity-10 transition-opacity`} />
+                  <div className="relative z-10 text-center">
+                    <div className={`w-16 h-16 mx-auto mb-4 bg-gradient-to-br ${subject.color} rounded-2xl flex items-center justify-center`}>
+                      <Icon className="w-8 h-8 text-white" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-slate-900 mb-2">{subject.name}</h3>
+                    <p className="text-slate-600 text-sm">{subject.students} Active Learners</p>
                   </div>
                 </div>
-              </div>
-            ))}
-
-            {/* Carousel indicators */}
-            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
-              {examples.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentTutorbotPlus(index)}
-                  className={`w-3 h-3 border-2 border-black transition-all ${
-                    index === currentTutorbotPlus ? 'w-8 bg-yellow-300' : 'bg-white'
-                  }`}
-                />
-              ))}
-            </div>
+              )
+            })}
           </div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section id="features" className="py-24 bg-white">
+      <section id="features" className="py-24 bg-gradient-to-br from-blue-50 to-cyan-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-3 px-6 py-3 bg-black border-4 border-black mb-6">
-              <RiSparklingLine className="w-6 h-6 text-green-500" />
-              <Text variant="body-sm" className="text-green-500 font-bold uppercase tracking-wider">Features</Text>
+            <div className="inline-flex items-center gap-3 px-6 py-3 bg-blue-100 rounded-full mb-6">
+              <RiSparklingLine className="w-5 h-5 text-blue-600" />
+              <Text variant="body-sm" className="text-blue-700 font-semibold">Features</Text>
             </div>
-            <Heading variant="h2" className="mb-4 uppercase text-4xl md:text-5xl lg:text-6xl">EVERYTHING YOU NEED</Heading>
-            <Text variant="body-lg" className="text-gray-600 max-w-3xl mx-auto">
-              Powerful features designed for creators, businesses, and developers
+            <Heading variant="h2" className="mb-4 text-4xl md:text-5xl text-slate-900">Everything You Need to Excel</Heading>
+            <Text variant="body-lg" className="text-slate-600 max-w-3xl mx-auto">
+              Comprehensive learning platform with AI-powered features designed for your success
             </Text>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {features.map((feature, index) => {
               const Icon = feature.icon
-              const bgColors = ["bg-white", "bg-black", "bg-green-500"]
-              const textColors = ["text-black", "text-green-500", "text-black"]
-              const borderColors = ["border-black", "border-black", "border-black"]
-              const shadowColors = ["brutalist-shadow", "brutalist-shadow-yellow", "brutalist-shadow"]
-
-              const colorIndex = index % 3
-
               return (
-                <div key={index} className={`p-8 ${bgColors[colorIndex]} border-4 ${borderColors[colorIndex]} ${shadowColors[colorIndex]}`}>
-                  <div className={`w-16 h-16 ${colorIndex === 1 ? "bg-green-500" : "bg-black"} flex items-center justify-center mb-6`}>
-                    <Icon className={`w-8 h-8 ${colorIndex === 1 ? "text-black" : "text-green-500"}`} />
+                <div
+                  key={index}
+                  className="group p-8 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-100 hover:border-blue-200"
+                >
+                  <div className="w-14 h-14 bg-gradient-to-br from-blue-400 to-cyan-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <Icon className="w-7 h-7 text-white" />
                   </div>
-                  <Heading variant="h4" className={`mb-4 ${textColors[colorIndex]} uppercase`}>
-                    {feature.title}
-                  </Heading>
-                  <Text variant="body" className={colorIndex === 1 ? "text-white" : "text-gray-600"}>
-                    {feature.description}
-                  </Text>
+                  <h3 className="text-xl font-bold text-slate-900 mb-3">{feature.title}</h3>
+                  <p className="text-slate-600 leading-relaxed">{feature.description}</p>
                 </div>
               )
             })}
@@ -318,75 +308,63 @@ export default function Home() {
       <section id="pricing" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-3 px-6 py-3 bg-green-500 border-4 border-black mb-6">
-              <Text variant="body-sm" className="text-black font-bold uppercase tracking-wider">Pricing</Text>
-            </div>
-            <Heading variant="h2" className="mb-4 uppercase text-4xl md:text-5xl lg:text-6xl">CHOOSE YOUR PLAN</Heading>
-            <Text variant="body-lg" className="text-gray-600 max-w-3xl mx-auto">
-              Start free, upgrade when you need more. All plans include our core features.
-            </Text>
+            <h2 className="text-3xl md:text-5xl font-bold mb-4 text-slate-900">
+              Choose Your Learning Path
+            </h2>
+            <p className="text-slate-600 text-lg max-w-2xl mx-auto">
+              Flexible pricing for every learner, from students to organizations
+            </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {pricingPlans.map((plan, index) => (
               <div
                 key={index}
-                className={`p-8 border-4 border-black ${
+                className={`relative p-8 rounded-3xl border-2 transition-all duration-300 ${
                   plan.popular
-                    ? "bg-black brutalist-shadow-yellow"
-                    : "bg-white brutalist-shadow"
+                    ? 'border-blue-500 bg-white shadow-2xl scale-105'
+                    : 'border-slate-200 bg-white shadow-lg hover:shadow-xl'
                 }`}
               >
                 {plan.popular && (
-                  <div className="inline-flex items-center px-4 py-2 bg-green-500 border-4 border-yellow-400 mb-6">
-                    <Text variant="caption" className="text-black font-bold uppercase tracking-wider">Most Popular</Text>
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-6 py-1 bg-gradient-to-r from-blue-500 to-cyan-600 text-white text-sm font-bold rounded-full">
+                    MOST POPULAR
                   </div>
                 )}
-                <Heading variant="h3" className={`mb-2 uppercase ${plan.popular ? "text-green-500" : "text-black"}`}>
-                  {plan.name}
-                </Heading>
-                <div className="mb-6">
-                  <span className={`text-5xl font-bold uppercase ${plan.popular ? "text-green-500" : "text-black"}`}>
-                    {plan.price}
-                  </span>
-                  {plan.price !== "CUSTOM" && (
-                    <span className={`text-lg font-bold uppercase ${plan.popular ? "text-white" : "text-gray-600"}`}>/mo</span>
-                  )}
+
+                <div className="text-center mb-8">
+                  <h3 className="text-2xl font-bold text-slate-900 mb-2">{plan.name}</h3>
+                  <div className="flex items-end justify-center gap-1 mb-2">
+                    <span className="text-5xl font-bold text-slate-900">{plan.price}</span>
+                    {plan.period && <span className="text-slate-600 text-lg mb-2">{plan.period}</span>}
+                  </div>
+                  <p className="text-slate-600 text-sm">{plan.description}</p>
                 </div>
-                <Text variant="body" className={`mb-8 ${plan.popular ? "text-white" : "text-gray-600"}`}>
-                  {plan.description}
-                </Text>
+
                 <ul className="space-y-4 mb-8">
-                  {plan.features.map((feature, i) => (
-                    <li key={i} className="flex items-start gap-3">
+                  {plan.features.map((feature, featureIndex) => (
+                    <li key={featureIndex} className="flex items-start gap-3">
                       {feature.included ? (
-                        <RiCheckLine className={`w-5 h-5 flex-shrink-0 ${plan.popular ? "text-green-500" : "text-black"}`} />
+                        <RiCheckLine className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
                       ) : (
-                        <RiCloseLine className={`w-5 h-5 flex-shrink-0 ${plan.popular ? "text-gray-600" : "text-gray-400"}`} />
+                        <RiCloseLine className="w-5 h-5 text-slate-300 flex-shrink-0 mt-0.5" />
                       )}
-                      <Text
-                        variant="body-sm"
-                        className={`${
-                          feature.included
-                            ? plan.popular ? "text-white" : "text-black"
-                            : plan.popular ? "text-gray-600" : "text-gray-400"
-                        } font-medium`}
-                      >
+                      <span className={feature.included ? 'text-slate-700' : 'text-slate-400'}>
                         {feature.text}
-                      </Text>
+                      </span>
                     </li>
                   ))}
                 </ul>
+
                 <Button
-                  size="lg"
-                  className={`w-full gap-3 border-4 border-black font-bold uppercase ${
+                  className={`w-full py-6 font-semibold rounded-xl transition-all ${
                     plan.popular
-                      ? "bg-green-500 text-black hover:bg-yellow-300"
-                      : "bg-black text-green-500 hover:bg-gray-900"
+                      ? 'bg-gradient-to-r from-blue-500 to-cyan-600 text-white hover:from-blue-600 hover:to-cyan-700 shadow-lg hover:shadow-xl'
+                      : 'bg-slate-900 text-white hover:bg-slate-800'
                   }`}
+                  onClick={() => window.location.href = plan.ctaText === 'Contact Sales' ? '/contact' : '/dashboard'}
                 >
                   {plan.ctaText}
-                  <RiArrowRightLine className="w-5 h-5" />
                 </Button>
               </div>
             ))}
@@ -394,43 +372,36 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="py-24 bg-black border-t-8 border-yellow-400">
+      {/* CTA Section */}
+      <section className="py-24 bg-gradient-to-br from-blue-600 to-cyan-700 text-white">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <div className="inline-flex items-center gap-3 px-6 py-3 bg-green-500 border-4 border-yellow-400 mb-8">
-            <RiSparklingLine className="w-6 h-6 text-black" />
-            <Text variant="body-sm" className="text-black font-bold uppercase tracking-wider">Ready to Start?</Text>
-          </div>
-          <Heading variant="h1" className="mb-6 text-green-500 uppercase text-5xl md:text-6xl lg:text-7xl">
-            TRANSFORM YOUR VOICE CONTENT
-          </Heading>
-          <Text variant="body-lg" className="text-white mb-12 max-w-2xl mx-auto">
-            Join thousands of creators and businesses using VoiceCraft to create professional voice content in seconds. Start your free trial today—no credit card required.
-          </Text>
-          <div className="flex flex-wrap justify-center gap-4">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            Ready to Start Your Learning Journey?
+          </h2>
+          <p className="text-xl text-blue-100 mb-12 max-w-2xl mx-auto">
+            Join 500,000+ students learning with AI-powered tutoring. Start free today, no credit card required.
+          </p>
+          <div className="flex flex-wrap justify-center gap-6">
             <Button
               size="xl"
-              className="gap-3 bg-green-500 text-black hover:bg-yellow-300 border-4 border-yellow-400 font-bold uppercase brutalist-shadow-yellow"
+              className="gap-3 bg-white text-blue-600 hover:bg-blue-50 shadow-2xl font-bold text-lg px-12 py-8 rounded-2xl"
               onClick={() => window.location.href = '/dashboard'}
             >
-              <RiArrowRightLine className="w-5 h-5" />
-              Start Free Trial
+              <RiGraduationCapLine className="w-6 h-6" />
+              Start Learning Free
             </Button>
             <Button
               size="xl"
-              variant="secondary"
-              className="gap-3 bg-white text-black hover:bg-gray-100 border-4 border-white font-bold uppercase"
+              className="gap-3 bg-blue-700/50 backdrop-blur text-white hover:bg-blue-700/70 border-2 border-white/30 font-semibold text-lg px-12 py-8 rounded-2xl"
               onClick={() => window.location.href = '/contact'}
             >
-              Schedule a Demo
+              Talk to Sales
             </Button>
           </div>
         </div>
       </section>
 
       <Footer />
-
-      {/* Newsletter Popup */}
       <NewsletterPopup />
     </div>
   )
