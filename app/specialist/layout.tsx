@@ -1,13 +1,13 @@
 import Link from "next/link"
-import { RiDashboardLine, RiFolder3Line, RiMoneyDollarCircleLine, RiUserSettingsLine, RiArrowLeftLine } from "react-icons/ri"
+import { LayoutDashboard, FolderOpen, DollarSign, UserCog, ArrowLeft } from "lucide-react"
 import { Text, Heading } from "@/components/ui/typography"
 import { Button } from "@/components/ui/button"
 
 const navigation = [
-  { name: "Dashboard", href: "/specialist", icon: RiDashboardLine },
-  { name: "Projects", href: "/specialist/projects", icon: RiFolder3Line },
-  { name: "Earnings", href: "/specialist/earnings", icon: RiMoneyDollarCircleLine },
-  { name: "Profile", href: "/specialist/profile", icon: RiUserSettingsLine },
+  { name: "Dashboard", href: "/specialist", icon: LayoutDashboard },
+  { name: "Projects", href: "/specialist/projects", icon: FolderOpen },
+  { name: "Earnings", href: "/specialist/earnings", icon: DollarSign },
+  { name: "Profile", href: "/specialist/profile", icon: UserCog },
 ]
 
 export default function SpecialistLayout({
@@ -21,7 +21,7 @@ export default function SpecialistLayout({
       <aside className="w-64 border-r-4 border-black bg-white">
         <div className="flex h-16 items-center justify-between border-b-4 border-black px-6">
           <Heading variant="h2" className="text-xl font-bold uppercase">
-            VoiceCraft
+            TutorBot Plus
           </Heading>
         </div>
 
@@ -53,7 +53,7 @@ export default function SpecialistLayout({
         <div className="absolute bottom-4 left-4 right-4">
           <Link href="/dashboard">
             <Button variant="outline" size="sm" className="w-full border-2">
-              <RiArrowLeftLine className="mr-2 h-4 w-4" />
+              <ArrowLeft className="mr-2 h-4 w-4" />
               SWITCH TO USER
             </Button>
           </Link>

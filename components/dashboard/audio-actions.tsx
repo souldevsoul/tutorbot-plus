@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { RiUploadLine, RiVoiceprintLine } from "lucide-react"
+import { Upload, Mic } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { GenerateAudioDrawer } from "@/components/voicecraft/generate-audio-drawer"
 
@@ -17,11 +17,11 @@ export function AudioActions() {
     <>
       <div className="flex items-center space-x-2">
         <Button variant="outline" onClick={handleUpload}>
-          <RiUploadLine className="mr-2 h-4 w-4" />
+          <Upload className="mr-2 h-4 w-4" />
           Upload Audio
         </Button>
         <Button variant="primary" onClick={() => setGenerateAudioOpen(true)}>
-          <RiVoiceprintLine className="mr-2 h-4 w-4" />
+          <Mic className="mr-2 h-4 w-4" />
           Generate Audio
         </Button>
       </div>

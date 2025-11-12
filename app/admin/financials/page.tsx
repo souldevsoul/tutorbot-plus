@@ -2,7 +2,7 @@
 
 import { Text, Heading } from "@/components/ui/typography"
 import { Card, CardContent } from "@/components/ui/card"
-import { MoneyDollarCircle } from "lucide-react"
+import { DollarSign } from "lucide-react"
 
 export default function AdminFinancialsPage() {
   return (
@@ -22,7 +22,7 @@ export default function AdminFinancialsPage() {
       {/* Placeholder */}
       <Card variant="outlined" className="border-2 border-dashed border-black">
         <CardContent className="flex flex-col items-center justify-center py-12">
-          <MoneyDollarCircle className="h-16 w-16 text-slate-400" />
+          <DollarSign className="h-16 w-16 text-slate-400" />
           <Heading variant="h3" className="mt-4 font-bold uppercase text-slate-900">
             Financial Management - Coming Soon
           </Heading>

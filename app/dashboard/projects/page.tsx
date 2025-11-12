@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { RiAddLine, RiDraggable } from "lucide-react"
+import { Plus, GripVertical } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Text, Heading } from "@/components/ui/typography"
@@ -23,7 +23,7 @@ import {
   type EstimateData,
   type SubmittedWork,
 } from "@/components/project"
-import { LessonPlayer } from "@/components/voicecraft/audio-player"
+import { AudioPlayer } from "@/components/voicecraft/audio-player"
 
 type Project = {
   id: string
@@ -338,7 +338,7 @@ export default function ProjectsPage() {
             💳 {userData.credits.toLocaleString()} Credits
           </Button>
           <Button variant="primary">
-            <RiAddLine className="mr-2 h-4 w-4" />
+            <Plus className="mr-2 h-4 w-4" />
             New Project
           </Button>
         </div>
@@ -354,7 +354,7 @@ export default function ProjectsPage() {
             <div key={column.status} className="flex flex-col space-y-4 min-w-[320px] w-[320px] flex-shrink-0">
               <div className="flex items-center justify-between rounded-md border-2 border-black bg-white p-3">
                 <div className="flex items-center space-x-2">
-                  <RiDraggable className="h-4 w-4 text-slate-600" />
+                  <GripVertical className="h-4 w-4 text-slate-600" />
                   <Heading as="h3" className="text-xs font-bold uppercase">
                     {column.label}
                   </Heading>
@@ -485,7 +485,7 @@ export default function ProjectsPage() {
                               {index + 1}. {pa.audio.filename}
                             </Text>
                           </div>
-                          <LessonPlayer audioUrl={pa.audio.audioUrl} />
+                          <AudioPlayer audioUrl={pa.audio.audioUrl} />
                         </div>
                       ))
                     ) : (

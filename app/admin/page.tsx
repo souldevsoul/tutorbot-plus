@@ -2,12 +2,12 @@
 
 import { useState, useEffect } from "react"
 import {
-  RiFolder3Line,
+  FolderOpen,
   User,
-  Team,
-  MoneyDollarCircle,
-  CheckboxCircle,
-  Time,
+  Users,
+  DollarSign,
+  CheckCircle,
+  Clock,
 } from "lucide-react"
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 import { Text, Heading } from "@/components/ui/typography"
@@ -103,7 +103,7 @@ export default function AdminDashboard() {
             <CardTitle className="text-sm font-bold uppercase text-blue-900">
               Total Projects
             </CardTitle>
-            <RiFolder3Line className="h-6 w-6 text-blue-600" />
+            <FolderOpen className="h-6 w-6 text-blue-600" />
           </CardHeader>
           <CardContent>
             <h2 className="text-3xl font-bold text-blue-900">
@@ -145,7 +145,7 @@ export default function AdminDashboard() {
             <CardTitle className="text-sm font-bold uppercase text-cyan-900">
               Specialists
             </CardTitle>
-            <Team className="h-6 w-6 text-cyan-600" />
+            <Users className="h-6 w-6 text-cyan-600" />
           </CardHeader>
           <CardContent>
             <h2 className="text-3xl font-bold text-cyan-900">
@@ -165,7 +165,7 @@ export default function AdminDashboard() {
             <CardTitle className="text-sm font-bold uppercase text-green-900">
               Total Revenue
             </CardTitle>
-            <MoneyDollarCircle className="h-6 w-6 text-green-600" />
+            <DollarSign className="h-6 w-6 text-green-600" />
           </CardHeader>
           <CardContent>
             <Heading as="h2" className="text-3xl font-bold text-green-900">
@@ -186,7 +186,7 @@ export default function AdminDashboard() {
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           <Card variant="outlined" className="border-2 border-black hover:shadow-[4px_4px_0_0_#000] transition-shadow cursor-pointer">
             <CardContent className="flex flex-col items-center justify-center p-6 text-center">
-              <RiFolder3Line className="h-12 w-12 text-blue-600" />
+              <FolderOpen className="h-12 w-12 text-blue-600" />
               <h3 className="mt-4 text-sm font-bold uppercase tracking-tight">
                 Manage Projects
               </h3>
@@ -226,7 +226,7 @@ export default function AdminDashboard() {
 
           <Card variant="outlined" className="border-2 border-black hover:shadow-[4px_4px_0_0_#000] transition-shadow cursor-pointer">
             <CardContent className="flex flex-col items-center justify-center p-6 text-center">
-              <Team className="h-12 w-12 text-cyan-600" />
+              <Users className="h-12 w-12 text-cyan-600" />
               <h3 className="mt-4 text-sm font-bold uppercase tracking-tight">
                 Manage Specialists
               </h3>
@@ -246,7 +246,7 @@ export default function AdminDashboard() {
 
           <Card variant="outlined" className="border-2 border-black hover:shadow-[4px_4px_0_0_#000] transition-shadow cursor-pointer">
             <CardContent className="flex flex-col items-center justify-center p-6 text-center">
-              <MoneyDollarCircle className="h-12 w-12 text-green-600" />
+              <DollarSign className="h-12 w-12 text-green-600" />
               <h3 className="mt-4 text-sm font-bold uppercase tracking-tight">
                 Financials
               </h3>

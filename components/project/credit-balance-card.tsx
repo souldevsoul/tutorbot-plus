@@ -1,6 +1,6 @@
 "use client"
 
-import { RiCoinsLine, RiAlertLine, RiArrowRightLine, RiHistoryLine } from "lucide-react"
+import { Coins, AlertTriangle, ArrowRight, History } from "lucide-react"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Text, Heading } from "@/components/ui/typography"
@@ -41,7 +41,7 @@ export function CreditBalanceCard({
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className={`rounded-md border-2 border-black p-2 ${isCritical ? "bg-red-100" : isLow ? "bg-orange-100" : "bg-yellow-100"}`}>
-                <RiCoinsLine className={`h-5 w-5 ${isCritical ? "text-red-600" : isLow ? "text-teal-600" : "text-green-600"}`} />
+                <Coins className={`h-5 w-5 ${isCritical ? "text-red-600" : isLow ? "text-teal-600" : "text-green-600"}`} />
               </div>
               <div>
                 <Text variant="caption" className="text-xs font-bold uppercase text-slate-600">
@@ -68,7 +68,7 @@ export function CreditBalanceCard({
               className="mt-3 w-full"
               onClick={onAddCredits}
             >
-              <RiCoinsLine className="mr-2 h-4 w-4" />
+              <Coins className="mr-2 h-4 w-4" />
               Add Credits
             </Button>
           )}
@@ -85,7 +85,7 @@ export function CreditBalanceCard({
     >
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
-          <RiCoinsLine className="h-6 w-6" />
+          <Coins className="h-6 w-6" />
           Credit Balance
         </CardTitle>
         <CardDescription className={isCritical ? "text-red-900" : isLow ? "text-orange-900" : "text-black/80"}>
@@ -110,7 +110,7 @@ export function CreditBalanceCard({
         {(isLow || isCritical) && (
           <div className={`rounded-md border-2 p-4 ${isCritical ? "border-red-500 bg-red-100" : "border-orange-500 bg-orange-100"}`}>
             <div className="flex items-start gap-3">
-              <RiAlertLine className={`h-5 w-5 flex-shrink-0 ${isCritical ? "text-red-600" : "text-teal-600"}`} />
+              <AlertTriangle className={`h-5 w-5 flex-shrink-0 ${isCritical ? "text-red-600" : "text-teal-600"}`} />
               <div className="flex-1">
                 <Heading variant="h3" className={`text-sm font-bold ${isCritical ? "text-red-900" : "text-orange-900"}`}>
                   {isCritical ? "Critical Balance" : "Low Balance"}
@@ -141,7 +141,7 @@ export function CreditBalanceCard({
                     onClick={onViewTransactions}
                   >
                     View All
-                    <RiArrowRightLine className="ml-2 h-3 w-3" />
+                    <ArrowRight className="ml-2 h-3 w-3" />
                   </Button>
                 )}
               </div>
@@ -173,13 +173,13 @@ export function CreditBalanceCard({
       <CardFooter className="flex gap-3">
         {onAddCredits && (
           <Button variant="primary" className="flex-1" onClick={onAddCredits}>
-            <RiCoinsLine className="mr-2 h-4 w-4" />
+            <Coins className="mr-2 h-4 w-4" />
             Add Credits
           </Button>
         )}
         {onViewTransactions && (
           <Button variant="outline" className="flex-1 border-2" onClick={onViewTransactions}>
-            <RiHistoryLine className="mr-2 h-4 w-4" />
+            <History className="mr-2 h-4 w-4" />
             View History
           </Button>
         )}

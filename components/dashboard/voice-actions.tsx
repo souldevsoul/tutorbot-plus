@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { RiAddLine } from "lucide-react"
+import { Plus } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { CloneVoiceDrawer } from "@/components/voicecraft/clone-voice-drawer"
 
@@ -23,7 +23,7 @@ export function VoiceActions({ onVoiceCloned }: VoiceActionsProps) {
   return (
     <>
       <Button variant="primary" onClick={() => setCloneVoiceOpen(true)}>
-        <RiAddLine className="mr-2 h-4 w-4" />
+        <Plus className="mr-2 h-4 w-4" />
         Clone New Voice
       </Button>
 

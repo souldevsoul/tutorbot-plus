@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { RiMoneyDollarCircleLine, RiTimeLine, RiCheckLine, RiCloseLine, RiAlertLine } from "lucide-react"
+import { DollarSign, Clock, Check, X, AlertTriangle } from "lucide-react"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Text, Heading } from "@/components/ui/typography"
@@ -89,7 +89,7 @@ export function EstimateCard({
         <Card variant="outlined" className="border-2 border-black">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <RiMoneyDollarCircleLine className="h-6 w-6 text-green-500" />
+              <DollarSign className="h-6 w-6 text-green-500" />
               AI Estimation
             </CardTitle>
             <CardDescription>
@@ -110,7 +110,7 @@ export function EstimateCard({
               onClick={() => setShowRequestDialog(true)}
               disabled={loading}
             >
-              <RiMoneyDollarCircleLine className="mr-2 h-4 w-4" />
+              <DollarSign className="mr-2 h-4 w-4" />
               Get Estimate
             </Button>
           </CardFooter>
@@ -162,7 +162,7 @@ export function EstimateCard({
         <Card variant="gradient" className="border-2 border-black">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <RiMoneyDollarCircleLine className="h-6 w-6" />
+              <DollarSign className="h-6 w-6" />
               Estimate Ready
             </CardTitle>
             <CardDescription className="text-black/80">
@@ -237,7 +237,7 @@ export function EstimateCard({
                   <ul className="space-y-2 rounded-md border-2 border-black bg-white p-4">
                     {estimate.assumptions.map((assumption, index) => (
                       <li key={index} className="flex items-start gap-2">
-                        <RiCheckLine className="h-4 w-4 flex-shrink-0 text-green-600" />
+                        <Check className="h-4 w-4 flex-shrink-0 text-green-600" />
                         <Text variant="body" className="text-sm">
                           {assumption}
                         </Text>
@@ -254,7 +254,7 @@ export function EstimateCard({
                 <Separator className="bg-black" />
                 <div className="rounded-md border-2 border-red-500 bg-red-50 p-4">
                   <div className="flex items-start gap-3">
-                    <RiAlertLine className="h-5 w-5 flex-shrink-0 text-red-600" />
+                    <AlertTriangle className="h-5 w-5 flex-shrink-0 text-red-600" />
                     <div className="flex-1">
                       <Heading variant="h3" className="text-sm font-bold text-red-900">
                         Insufficient Credits
@@ -281,7 +281,7 @@ export function EstimateCard({
               onClick={() => setShowRejectDialog(true)}
               disabled={loading}
             >
-              <RiCloseLine className="mr-2 h-4 w-4" />
+              <X className="mr-2 h-4 w-4" />
               Reject
             </Button>
             <Button
@@ -290,7 +290,7 @@ export function EstimateCard({
               onClick={onAcceptEstimate}
               disabled={!hasEnoughCredits || loading}
             >
-              <RiCheckLine className="mr-2 h-4 w-4" />
+              <Check className="mr-2 h-4 w-4" />
               {loading ? "Accepting..." : "Accept & Reserve Credits"}
             </Button>
           </CardFooter>
@@ -337,7 +337,7 @@ export function EstimateCard({
       <Card variant="outlined" className="border-2 border-green-500 bg-green-50">
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-green-900">
-            <RiCheckLine className="h-6 w-6 text-green-600" />
+            <Check className="h-6 w-6 text-green-600" />
             Estimate Accepted
           </CardTitle>
           <CardDescription className="text-green-800">

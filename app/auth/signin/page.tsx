@@ -110,7 +110,7 @@ function SignInForm() {
 
             <Button
               type="submit"
-              className="w-full h-14 text-lg gap-3 bg-black text-green-500 hover:bg-gray-900 border-2 border-black font-bold shadow-xl"
+              className="w-full h-14 text-lg gap-3 bg-gradient-to-br from-blue-50 to-green-50 text-green-500 hover:bg-gray-900 border-2 border-black font-bold shadow-xl"
               disabled={isLoading}
             >
               {isLoading ? "Signing In..." : "Sign In"}
@@ -161,7 +161,7 @@ export default function SignInPage() {
       fallback={
         <div className="min-h-screen bg-white flex items-center justify-center">
           <div className="text-center">
-            <div className="w-16 h-16 bg-black flex items-center justify-center mx-auto mb-4 animate-pulse">
+            <div className="w-16 h-16 bg-gradient-to-br from-blue-50 to-green-50 flex items-center justify-center mx-auto mb-4 animate-pulse">
               <Lock className="w-10 h-10 text-green-500" />
             </div>
             <p className="text-gray-600 font-bold">Loading...</p>

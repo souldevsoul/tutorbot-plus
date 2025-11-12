@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { RiRefund2Line, RiErrorWarningLine } from "lucide-react"
+import { RotateCcw, AlertTriangle } from "lucide-react"
 import {
   AlertDialog,
   AlertDialogAction,
@@ -59,7 +59,7 @@ export function RefundDialog({
       <AlertDialogTrigger asChild>
         {trigger || (
           <Button variant="outline" size="sm" className="border-2 border-red-500 text-red-600 hover:bg-red-50">
-            <RiRefund2Line className="mr-2 h-4 w-4" />
+            <RotateCcw className="mr-2 h-4 w-4" />
             Refund Project
           </Button>
         )}
@@ -68,7 +68,7 @@ export function RefundDialog({
         <AlertDialogHeader>
           <div className="flex items-center gap-3">
             <div className="rounded-md border-2 border-red-500 bg-red-100 p-2">
-              <RiRefund2Line className="h-6 w-6 text-red-600" />
+              <RotateCcw className="h-6 w-6 text-red-600" />
             </div>
             <div>
               <AlertDialogTitle className="text-red-900">Refund Project</AlertDialogTitle>
@@ -83,7 +83,7 @@ export function RefundDialog({
           {/* Warning */}
           <div className="rounded-md border-2 border-yellow-500 bg-green-50 p-4">
             <div className="flex items-start gap-3">
-              <RiErrorWarningLine className="h-5 w-5 flex-shrink-0 text-green-600" />
+              <AlertTriangle className="h-5 w-5 flex-shrink-0 text-green-600" />
               <div>
                 <Text variant="body" className="font-bold text-green-900">
                   WARNING: This action cannot be undone

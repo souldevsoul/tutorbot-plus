@@ -6,24 +6,24 @@ import { Button, Heading, Text } from "@/components/ui"
 import { Footer } from "@/components/marketing/layout/footer"
 import { NewsletterPopup } from "@/components/marketing/NewsletterPopup"
 import {
-  RiSparklingLine,
-  RiBookOpenLine,
-  RiGraduationCapLine,
-  RiFlashlightLine,
-  RiShieldCheckLine,
-  RiGlobalLine,
-  RiArrowRightLine,
-  RiPlayCircleLine,
-  RiCheckLine,
-  RiCloseLine,
-  RiStarFill,
-  RiLightbulbLine,
-  RiQuestionAnswerLine,
-  RiBrainLine,
-  RiCalculatorLine,
-  RiFlaskLine,
-  RiCodeSSlashLine,
-} from "react-icons/ri"
+  Sparkles,
+  BookOpen,
+  GraduationCap,
+  Zap,
+  ShieldCheck,
+  Globe,
+  ArrowRight,
+  PlayCircle,
+  Check,
+  X,
+  Star,
+  Lightbulb,
+  MessageCircleQuestion,
+  Brain,
+  Calculator,
+  FlaskConical,
+  Code,
+} from "lucide-react"
 
 export default function Home() {
   const [isVisible, setIsVisible] = React.useState(false)
@@ -35,10 +35,10 @@ export default function Home() {
 
   // Subject examples
   const subjects = [
-    { name: "Mathematics", icon: RiCalculatorLine, color: "from-blue-500 to-cyan-600", students: "50K+" },
-    { name: "Science", icon: RiFlaskLine, color: "from-green-500 to-emerald-600", students: "35K+" },
-    { name: "Programming", icon: RiCodeSSlashLine, color: "from-purple-500 to-pink-600", students: "40K+" },
-    { name: "Languages", icon: RiGlobalLine, color: "from-amber-500 to-orange-600", students: "30K+" },
+    { name: "Mathematics", icon: Calculator, color: "from-blue-500 to-cyan-600", students: "50K+" },
+    { name: "Science", icon: FlaskConical, color: "from-green-500 to-emerald-600", students: "35K+" },
+    { name: "Programming", icon: Code, color: "from-purple-500 to-pink-600", students: "40K+" },
+    { name: "Languages", icon: Globe, color: "from-amber-500 to-orange-600", students: "30K+" },
   ]
 
   React.useEffect(() => {
@@ -51,32 +51,32 @@ export default function Home() {
   // Features data
   const features = [
     {
-      icon: RiBrainLine,
+      icon: Brain,
       title: "AI Personalized Learning",
       description: "Adaptive AI creates custom learning paths tailored to your pace, style, and goals. Real-time adjustments as you progress.",
     },
     {
-      icon: RiQuestionAnswerLine,
+      icon: MessageCircleQuestion,
       title: "Interactive Lessons",
       description: "Engage with AI tutors in real-time. Ask questions, get instant explanations, work through problems step-by-step.",
     },
     {
-      icon: RiLightbulbLine,
+      icon: Lightbulb,
       title: "Practice & Quizzes",
       description: "Test your knowledge with AI-generated quizzes. Instant feedback, detailed explanations, and progress tracking.",
     },
     {
-      icon: RiGraduationCapLine,
+      icon: GraduationCap,
       title: "Expert Content",
       description: "Curriculum designed by educators, powered by AI. Comprehensive coverage from basics to advanced concepts.",
     },
     {
-      icon: RiFlashlightLine,
+      icon: Zap,
       title: "24/7 Availability",
       description: "Learn whenever you want, wherever you are. Your AI tutor is always ready to help, no scheduling needed.",
     },
     {
-      icon: RiShieldCheckLine,
+      icon: ShieldCheck,
       title: "Progress Tracking",
       description: "Detailed analytics show your strengths, weaknesses, and improvement over time. Celebrate your achievements.",
     },
@@ -146,7 +146,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-2xl flex items-center justify-center shadow-lg">
-              <RiGraduationCapLine className="w-7 h-7 text-white" />
+              <GraduationCap className="w-7 h-7 text-white" />
             </div>
             <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">TutorBot Plus</span>
           </div>
@@ -176,7 +176,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 py-24 relative z-10">
           <div className="text-center space-y-12">
             <div className={`inline-flex items-center gap-3 px-6 py-3 bg-white/80 backdrop-blur-sm rounded-full shadow-lg border border-blue-200 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}`}>
-              <RiSparklingLine className="w-5 h-5 text-blue-600" />
+              <Sparkles className="w-5 h-5 text-blue-600" />
               <Text variant="body-sm" className="font-semibold text-slate-700">AI-Powered Personal Tutoring</Text>
             </div>
 
@@ -206,7 +206,7 @@ export default function Home() {
                 className="gap-3 bg-gradient-to-r from-blue-500 to-cyan-600 text-white hover:from-blue-600 hover:to-cyan-700 shadow-xl hover:shadow-2xl transition-all font-semibold text-lg px-12 py-8 rounded-2xl"
                 onClick={() => window.location.href = '/dashboard'}
               >
-                <RiArrowRightLine className="w-6 h-6" />
+                <ArrowRight className="w-6 h-6" />
                 Start Learning Free
               </Button>
               <Button
@@ -214,22 +214,22 @@ export default function Home() {
                 className="gap-3 bg-white text-slate-700 hover:bg-slate-50 shadow-lg hover:shadow-xl transition-all font-semibold text-lg px-12 py-8 rounded-2xl border border-slate-200"
                 onClick={() => window.location.href = '/demo'}
               >
-                <RiPlayCircleLine className="w-6 h-6" />
+                <PlayCircle className="w-6 h-6" />
                 Watch Demo
               </Button>
             </div>
 
             <div className={`flex flex-wrap justify-center items-center gap-8 pt-12 text-sm text-slate-600 transition-all duration-700 delay-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
               <div className="flex items-center gap-2">
-                <RiCheckLine className="w-5 h-5 text-emerald-500" />
+                <Check className="w-5 h-5 text-emerald-500" />
                 <span>500,000+ Students</span>
               </div>
               <div className="flex items-center gap-2">
-                <RiCheckLine className="w-5 h-5 text-emerald-500" />
+                <Check className="w-5 h-5 text-emerald-500" />
                 <span>5 Million+ Lessons Completed</span>
               </div>
               <div className="flex items-center gap-2">
-                <RiCheckLine className="w-5 h-5 text-emerald-500" />
+                <Check className="w-5 h-5 text-emerald-500" />
                 <span>24/7 Available</span>
               </div>
             </div>
@@ -275,7 +275,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-3 px-6 py-3 bg-blue-100 rounded-full mb-6">
-              <RiSparklingLine className="w-5 h-5 text-blue-600" />
+              <Sparkles className="w-5 h-5 text-blue-600" />
               <Text variant="body-sm" className="text-blue-700 font-semibold">Features</Text>
             </div>
             <Heading variant="h2" className="mb-4 text-4xl md:text-5xl text-slate-900">Everything You Need to Excel</Heading>
@@ -328,7 +328,7 @@ export default function Home() {
               >
                 {plan.popular && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-6 py-1 bg-gradient-to-r from-blue-500 to-cyan-600 text-white text-sm font-bold rounded-full">
-                    MOST POPULAR
+                    Most Popular
                   </div>
                 )}
 
@@ -345,9 +345,9 @@ export default function Home() {
                   {plan.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-start gap-3">
                       {feature.included ? (
-                        <RiCheckLine className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
+                        <Check className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
                       ) : (
-                        <RiCloseLine className="w-5 h-5 text-slate-300 flex-shrink-0 mt-0.5" />
+                        <X className="w-5 h-5 text-slate-300 flex-shrink-0 mt-0.5" />
                       )}
                       <span className={feature.included ? 'text-slate-700' : 'text-slate-400'}>
                         {feature.text}
@@ -387,7 +387,7 @@ export default function Home() {
               className="gap-3 bg-white text-blue-600 hover:bg-blue-50 shadow-2xl font-bold text-lg px-12 py-8 rounded-2xl"
               onClick={() => window.location.href = '/dashboard'}
             >
-              <RiGraduationCapLine className="w-6 h-6" />
+              <GraduationCap className="w-6 h-6" />
               Start Learning Free
             </Button>
             <Button

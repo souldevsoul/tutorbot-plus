@@ -55,7 +55,7 @@ function ErrorContent() {
 
             <div className="space-y-4">
               <Button
-                className="w-full h-12 gap-3 bg-black text-green-500 hover:bg-gray-900 border-2 border-black font-bold"
+                className="w-full h-12 gap-3 bg-gradient-to-br from-blue-50 to-green-50 text-green-500 hover:bg-gray-900 border-2 border-black font-bold"
                 onClick={() => (window.location.href = "/auth/signin")}
               >
                 <ArrowLeft className="w-5 h-5" />
@@ -97,7 +97,7 @@ export default function AuthErrorPage() {
       fallback={
         <div className="min-h-screen bg-white flex items-center justify-center">
           <div className="text-center">
-            <div className="w-16 h-16 bg-black flex items-center justify-center mx-auto mb-4">
+            <div className="w-16 h-16 bg-gradient-to-br from-blue-50 to-green-50 flex items-center justify-center mx-auto mb-4">
               <AlertTriangle className="w-10 h-10 text-green-500 animate-pulse" />
             </div>
             <p className="text-gray-600 font-bold">Loading...</p>

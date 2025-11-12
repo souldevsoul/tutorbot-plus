@@ -152,7 +152,7 @@ export default function BlogPage() {
       </section>
 
       {/* Category Filter */}
-      <section className="py-8 bg-black border-b-8 border-yellow-400">
+      <section className="py-8 bg-gradient-to-br from-blue-50 to-green-50 border-b-8 border-yellow-400">
         <Container maxWidth="xl">
           <div className="flex flex-wrap justify-center gap-4">
             {categories.map((category, index) => (
@@ -180,7 +180,7 @@ export default function BlogPage() {
             <h2 className="text-2xl font-bold">Featured Post</h2>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 bg-black border-2 border-black shadow-xl-yellow p-8">
+          <div className="grid md:grid-cols-2 gap-8 bg-gradient-to-br from-blue-50 to-green-50 border-2 border-black shadow-xl-yellow p-8">
             <div className="bg-green-500 border-2 border-black aspect-video flex items-center justify-center">
               <GraduationCap className="w-24 h-24 text-black" />
             </div>
@@ -237,7 +237,7 @@ export default function BlogPage() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {blogPosts.map((post, index) => {
-              const bgColors = ["bg-white", "bg-black", "bg-green-500"]
+              const bgColors = ["bg-white", "bg-gradient-to-br from-blue-50 to-green-50", "bg-green-500"]
               const textColors = ["text-black", "text-green-500", "text-black"]
               const excerptColors = ["text-gray-700", "text-white", "text-gray-900"]
               const metaColors = ["text-gray-600", "text-gray-300", "text-gray-700"]
@@ -261,7 +261,7 @@ export default function BlogPage() {
                   {/* Image Placeholder */}
                   <div
                     className={`h-48 ${
-                      colorIndex === 1 ? "bg-green-500" : colorIndex === 2 ? "bg-black" : "bg-gray-200"
+                      colorIndex === 1 ? "bg-green-500" : colorIndex === 2 ? "bg-gradient-to-br from-blue-50 to-green-50" : "bg-gray-200"
                     } border-b-4 border-black flex items-center justify-center`}
                   >
                     <BookOpen
@@ -279,8 +279,8 @@ export default function BlogPage() {
                           colorIndex === 1
                             ? "bg-green-500 text-black"
                             : colorIndex === 2
-                            ? "bg-black text-green-500"
-                            : "bg-black text-green-500"
+                            ? "bg-gradient-to-br from-blue-50 to-green-50 text-green-500"
+                            : "bg-gradient-to-br from-blue-50 to-green-50 text-green-500"
                         }`}
                       >
                         {post.category}
@@ -329,8 +329,8 @@ export default function BlogPage() {
                         colorIndex === 1
                           ? "bg-green-500 text-black border-yellow-400 hover:bg-yellow-300"
                           : colorIndex === 2
-                          ? "bg-black text-green-500 border-black hover:bg-gray-900"
-                          : "bg-black text-green-500 border-black hover:bg-gray-900"
+                          ? "bg-gradient-to-br from-blue-50 to-green-50 text-green-500 border-black hover:bg-gray-900"
+                          : "bg-gradient-to-br from-blue-50 to-green-50 text-green-500 border-black hover:bg-gray-900"
                       } transition-all`}
                     >
                       Read More →
@@ -356,7 +356,7 @@ export default function BlogPage() {
       </section>
 
       {/* Newsletter CTA */}
-      <section className="py-24 bg-black border-y-8 border-yellow-400">
+      <section className="py-24 bg-gradient-to-br from-blue-50 to-green-50 border-y-8 border-yellow-400">
         <Container maxWidth="xl">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-green-500">

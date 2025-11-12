@@ -108,7 +108,7 @@ function SignUpForm() {
       <div className="min-h-screen bg-white flex items-center justify-center px-6 py-12">
         <div className="w-full max-w-md">
           <div className="bg-green-500 border-2 border-black shadow-xl p-8 text-center">
-            <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="w-16 h-16 bg-gradient-to-br from-blue-50 to-green-50 rounded-full flex items-center justify-center mx-auto mb-4">
               <CheckCircle className="w-10 h-10 text-green-500" />
             </div>
             <h2 className="text-3xl font-black mb-4">
@@ -251,7 +251,7 @@ function SignUpForm() {
 
             <Button
               type="submit"
-              className="w-full h-14 text-lg gap-3 bg-black text-green-500 hover:bg-gray-900 border-2 border-black font-bold shadow-xl"
+              className="w-full h-14 text-lg gap-3 bg-gradient-to-br from-blue-50 to-green-50 text-green-500 hover:bg-gray-900 border-2 border-black font-bold shadow-xl"
               disabled={isLoading}
             >
               {isLoading ? "Creating Account..." : "Create Account"}
@@ -316,7 +316,7 @@ export default function SignUpPage() {
       fallback={
         <div className="min-h-screen bg-white flex items-center justify-center">
           <div className="text-center">
-            <div className="w-16 h-16 bg-black flex items-center justify-center mx-auto mb-4 animate-pulse">
+            <div className="w-16 h-16 bg-gradient-to-br from-blue-50 to-green-50 flex items-center justify-center mx-auto mb-4 animate-pulse">
               <User className="w-10 h-10 text-green-500" />
             </div>
             <p className="text-gray-600 font-bold">Loading...</p>

@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { RiVoiceprintLine, RiLoader4Line, RiUploadLine } from "lucide-react"
+import { Mic, Loader2, Upload } from "lucide-react"
 import {
   Sheet,
   SheetContent,
@@ -153,7 +153,7 @@ export function CloneVoiceDrawer({ open, onOpenChange, onSuccess }: CloneVoiceDr
       <SheetContent className="w-[600px] sm:w-[600px] overflow-y-auto">
         <SheetHeader>
           <SheetTitle className="flex items-center gap-2">
-            <RiVoiceprintLine className="h-5 w-5" />
+            <Mic className="h-5 w-5" />
             Clone Voice
           </SheetTitle>
           <SheetDescription>
@@ -201,7 +201,7 @@ export function CloneVoiceDrawer({ open, onOpenChange, onSuccess }: CloneVoiceDr
                 htmlFor="audio"
                 className="flex flex-col items-center cursor-pointer"
               >
-                <RiUploadLine className="h-12 w-12 text-slate-400 mb-2" />
+                <Upload className="h-12 w-12 text-slate-400 mb-2" />
                 {audioFile ? (
                   <p className="text-sm font-medium text-slate-900">{audioFile.name}</p>
                 ) : (
@@ -288,12 +288,12 @@ export function CloneVoiceDrawer({ open, onOpenChange, onSuccess }: CloneVoiceDr
             >
               {loading || uploading ? (
                 <>
-                  <RiLoader4Line className="mr-2 h-4 w-4 animate-spin" />
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                   {uploading ? 'Uploading...' : 'Cloning Voice...'}
                 </>
               ) : (
                 <>
-                  <RiVoiceprintLine className="mr-2 h-4 w-4" />
+                  <Mic className="mr-2 h-4 w-4" />
                   Clone Voice
                 </>
               )}

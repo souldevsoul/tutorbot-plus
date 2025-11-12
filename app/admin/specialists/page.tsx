@@ -2,7 +2,7 @@
 
 import { Text, Heading } from "@/components/ui/typography"
 import { Card, CardContent } from "@/components/ui/card"
-import { Team } from "lucide-react"
+import { Users } from "lucide-react"
 
 export default function AdminSpecialistsPage() {
   return (
@@ -22,7 +22,7 @@ export default function AdminSpecialistsPage() {
       {/* Placeholder */}
       <Card variant="outlined" className="border-2 border-dashed border-black">
         <CardContent className="flex flex-col items-center justify-center py-12">
-          <Team className="h-16 w-16 text-slate-400" />
+          <Users className="h-16 w-16 text-slate-400" />
           <Heading variant="h3" className="mt-4 font-bold uppercase text-slate-900">
             Specialist Management - Coming Soon
           </Heading>

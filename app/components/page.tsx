@@ -24,16 +24,6 @@ import {
   type GenerationStep,
   type UploadedFile
 } from "@/components/voicecraft"
-import {
-  Sparkles,
-  Zap,
-  Shield,
-  Globe,
-  Star,
-  TrendingUp,
-  Users,
-  Award
-} from "lucide-react"
 // Lucide icons only
 import {
   Rocket,
@@ -48,6 +38,11 @@ import {
   Star as StarIcon,
   Check,
   Settings as SettingsIcon,
+  Shield,
+  Globe,
+  TrendingUp,
+  Users,
+  Award,
   Brain,
   LayoutDashboard,
   BarChart3,

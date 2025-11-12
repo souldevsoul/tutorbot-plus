@@ -3,7 +3,7 @@
 import * as React from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { RiMic2Fill, RiUserLine, RiLogoutBoxLine, RiCoinLine } from "lucide-react"
+import { Mic, User, LogOut, Coins } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
@@ -31,7 +31,7 @@ export function AppHeader({ user }: AppHeaderProps) {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
           <div className="w-12 h-12 bg-black border-2 border-black flex items-center justify-center shadow-xl-yellow">
-            <RiMic2Fill className="w-7 h-7 text-green-500" />
+            <Mic className="w-7 h-7 text-green-500" />
           </div>
           <span className="text-xl font-bold uppercase tracking-tight">VOICECRAFT</span>
         </Link>
@@ -48,7 +48,7 @@ export function AppHeader({ user }: AppHeaderProps) {
                 size="md"
                 className="border-2 border-black font-bold uppercase hover:bg-green-50"
               >
-                <RiUserLine className="mr-2 h-4 w-4" />
+                <User className="mr-2 h-4 w-4" />
                 {user.name || "User"}
               </Button>
             </DropdownMenuTrigger>
@@ -82,12 +82,12 @@ export function AppHeader({ user }: AppHeaderProps) {
               </DropdownMenuItem>
               <DropdownMenuSeparator className="bg-black" />
               <DropdownMenuItem disabled>
-                <RiCoinLine className="mr-2 h-4 w-4" />
+                <Coins className="mr-2 h-4 w-4" />
                 <span className="font-bold">{user.credits.toLocaleString()} Credits</span>
               </DropdownMenuItem>
               <DropdownMenuSeparator className="bg-black" />
               <DropdownMenuItem className="text-red-600 cursor-pointer">
-                <RiLogoutBoxLine className="mr-2 h-4 w-4" />
+                <LogOut className="mr-2 h-4 w-4" />
                 Logout
               </DropdownMenuItem>
             </DropdownMenuContent>

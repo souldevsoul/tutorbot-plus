@@ -155,4 +155,71 @@ export default [
       'product-quality/require-image-optimization': 'warn',
     },
   },
+  // ========================================
+  // PUBLIC PAGES - STRICTER RULES
+  // All user-facing pages must be fully adapted
+  // ========================================
+  {
+    files: [
+      'app/**/page.tsx',
+      'app/**/page.ts',
+    ],
+    ignores: [
+      // Non-public pages
+      'app/admin/**',
+      'app/dashboard/**',
+      'app/specialist/**',
+      'app/api/**',
+      // Component showcase (allowed to reference component libraries)
+      'app/components/page.tsx',
+    ],
+    rules: {
+      // ========================================
+      // CRITICAL: No template remnants in public pages
+      // ========================================
+      'product-quality/no-template-remnants': ['error', {
+        projectName: 'TutorBot Plus',
+        templateNames: ['VoiceCraft', 'ClipMaster', 'LogoSmith', 'PetPortrait AI'],
+        forbiddenKeywords: [
+          'voice',
+          'Voice',
+          'audio',
+          'Audio',
+          'synthesis',
+          'Synthesis',
+          'cloning',
+          'Cloning',
+          'Kokoro',
+          'Minimax',
+          'XTTS',
+          'microphone',
+          'Microphone',
+          'waveform',
+          'Waveform',
+          'vocal',
+          'Vocal',
+        ],
+      }],
+
+      // ========================================
+      // CRITICAL: No brutalist styling in public pages
+      // ========================================
+      'product-quality/no-brutalist-styling': 'error',
+
+      // ========================================
+      // CRITICAL: Consistent branding
+      // ========================================
+      'product-quality/consistent-company-info': ['error', {
+        companyName: 'TutorBot Plus',
+        email: 'support@tutorbot.plus',
+      }],
+
+      // ========================================
+      // PUBLIC PAGE QUALITY STANDARDS
+      // ========================================
+      'product-quality/no-missing-alt-text': 'error',
+      'product-quality/no-broken-internal-links': 'error',
+      'product-quality/require-image-optimization': 'error',
+    },
+  },
 ];

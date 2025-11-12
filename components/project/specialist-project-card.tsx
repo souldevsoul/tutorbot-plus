@@ -1,6 +1,6 @@
 "use client"
 
-import { RiUserLine, RiTimeLine, RiMoneyDollarCircleLine, RiArrowRightLine } from "lucide-react"
+import { User, Clock, DollarSign, ArrowRight } from "lucide-react"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Text, Heading } from "@/components/ui/typography"
@@ -39,28 +39,28 @@ export function SpecialistProjectCard({
       case "assigned":
         return (
           <Button variant="primary" size="sm" className="w-full" onClick={onClick}>
-            <RiArrowRightLine className="mr-2 h-4 w-4" />
+            <ArrowRight className="mr-2 h-4 w-4" />
             START WORK
           </Button>
         )
       case "in_review":
         return (
           <Button variant="outline" size="sm" className="w-full border-2" onClick={onClick}>
-            <RiArrowRightLine className="mr-2 h-4 w-4" />
+            <ArrowRight className="mr-2 h-4 w-4" />
             VIEW REVIEW
           </Button>
         )
       case "completed":
         return (
           <Button variant="ghost" size="sm" className="w-full" onClick={onClick}>
-            <RiArrowRightLine className="mr-2 h-4 w-4" />
+            <ArrowRight className="mr-2 h-4 w-4" />
             VIEW DETAILS
           </Button>
         )
       default:
         return (
           <Button variant="outline" size="sm" className="w-full border-2" onClick={onClick}>
-            <RiArrowRightLine className="mr-2 h-4 w-4" />
+            <ArrowRight className="mr-2 h-4 w-4" />
             VIEW
           </Button>
         )
@@ -95,7 +95,7 @@ export function SpecialistProjectCard({
 
         {/* Client Info */}
         <div className="flex items-center gap-2 rounded-md border-2 border-black bg-slate-50 p-2">
-          <RiUserLine className="h-4 w-4 text-slate-600" />
+          <User className="h-4 w-4 text-slate-600" />
           <Text variant="body" className="text-xs font-bold">
             CLIENT: {clientName}
           </Text>
@@ -107,7 +107,7 @@ export function SpecialistProjectCard({
           {estimatedDuration && (
             <div className="rounded-md border-2 border-black bg-white p-2">
               <div className="flex items-center gap-1">
-                <RiTimeLine className="h-3 w-3 text-slate-600" />
+                <Clock className="h-3 w-3 text-slate-600" />
                 <Text variant="caption" className="text-xs font-bold uppercase text-slate-600">
                   DURATION
                 </Text>
@@ -122,7 +122,7 @@ export function SpecialistProjectCard({
           {estimatedCost && (
             <div className="rounded-md border-2 border-black bg-white p-2">
               <div className="flex items-center gap-1">
-                <RiMoneyDollarCircleLine className="h-3 w-3 text-slate-600" />
+                <DollarSign className="h-3 w-3 text-slate-600" />
                 <Text variant="caption" className="text-xs font-bold uppercase text-slate-600">
                   PAYMENT
                 </Text>

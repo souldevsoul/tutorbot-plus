@@ -1,5 +1,5 @@
 import { Suspense } from "react"
-import { RiAddLine, BookOpen, RiDeleteBinLine, RiPlayLine } from "lucide-react"
+import { Plus, BookOpen, Trash2, Play } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -118,13 +118,13 @@ export default async function CoursesPage() {
                     </DropdownMenuItem>
                     <DropdownMenuSeparator />
                     <DropdownMenuItem>
-                      <RiPlayLine className="mr-2 h-4 w-4" />
+                      <Play className="mr-2 h-4 w-4" />
                       Play Preview
                     </DropdownMenuItem>
                     <DropdownMenuItem>Edit Course</DropdownMenuItem>
                     <DropdownMenuSeparator />
                     <DropdownMenuItem className="text-red-600">
-                      <RiDeleteBinLine className="mr-2 h-4 w-4" />
+                      <Trash2 className="mr-2 h-4 w-4" />
                       Delete Course
                     </DropdownMenuItem>
                   </DropdownMenuContent>
@@ -154,7 +154,7 @@ export default async function CoursesPage() {
                   className="mt-4 w-full"
                   onClick={() => voice.previewUrl && window.open(voice.previewUrl, '_blank')}
                 >
-                  <RiPlayLine className="mr-2 h-4 w-4" />
+                  <Play className="mr-2 h-4 w-4" />
                   Play Preview
                 </Button>
               )}

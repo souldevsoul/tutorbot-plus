@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { RiUploadLine, RiCheckLine, RiDeleteBinLine, RiFileAddLine } from "lucide-react"
+import { Upload, Check, Trash2, FilePlus } from "lucide-react"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Text, Heading } from "@/components/ui/typography"
@@ -152,7 +152,7 @@ export function WorkSubmissionCard({
           <div className="flex items-start justify-between">
             <div className="flex-1">
               <CardTitle className="flex items-center gap-2 text-blue-900">
-                <RiFileAddLine className="h-6 w-6 text-blue-600" />
+                <FilePlus className="h-6 w-6 text-blue-600" />
                 SUBMIT COMPLETED WORK
               </CardTitle>
               <CardDescription className="text-blue-800">
@@ -205,7 +205,7 @@ export function WorkSubmissionCard({
                   asChild
                 >
                   <span>
-                    <RiUploadLine className="mr-2 h-4 w-4" />
+                    <Upload className="mr-2 h-4 w-4" />
                     {uploading ? "UPLOADING..." : "UPLOAD FILES"}
                   </span>
                 </Button>
@@ -213,7 +213,7 @@ export function WorkSubmissionCard({
             </div>
 
             <div className="rounded-md border-2 border-dashed border-black bg-slate-50 p-4 text-center">
-              <RiUploadLine className="mx-auto h-8 w-8 text-slate-400" />
+              <Upload className="mx-auto h-8 w-8 text-slate-400" />
               <Text variant="body" className="mt-2 text-sm text-slate-600">
                 Click "Upload Files" to select audio files
               </Text>
@@ -283,7 +283,7 @@ export function WorkSubmissionCard({
                             onClick={() => handleRemoveUploadedAudio(audio.id)}
                             className="text-red-600 hover:text-red-700"
                           >
-                            <RiDeleteBinLine className="h-4 w-4" />
+                            <Trash2 className="h-4 w-4" />
                           </Button>
                         )}
                       </div>
@@ -327,7 +327,7 @@ export function WorkSubmissionCard({
             onClick={() => setShowConfirmDialog(true)}
             disabled={!canSubmit}
           >
-            <RiCheckLine className="mr-2 h-4 w-4" />
+            <Check className="mr-2 h-4 w-4" />
             SUBMIT FOR REVIEW ({selectedAudioIds.length} {selectedAudioIds.length === 1 ? "FILE" : "FILES"})
           </Button>
         </CardFooter>
@@ -354,7 +354,7 @@ export function WorkSubmissionCard({
                   .filter(audio => selectedAudioIds.includes(audio.id))
                   .map((audio, index) => (
                     <div key={audio.id} className="flex items-center gap-2">
-                      <RiCheckLine className="h-4 w-4 text-green-600" />
+                      <Check className="h-4 w-4 text-green-600" />
                       <Text variant="body" className="text-sm">
                         {index + 1}. {audio.filename}
                       </Text>

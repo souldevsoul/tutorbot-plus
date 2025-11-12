@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { RiSoundModuleLine, RiVoiceprintLine, RiFolder3Line } from "lucide-react"
+import { Volume2, Mic, FolderOpen } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Heading } from "@/components/ui/typography"
@@ -24,7 +24,7 @@ export function DashboardQuickActions() {
             className="w-full"
             onClick={() => setGenerateAudioOpen(true)}
           >
-            <RiSoundModuleLine className="mr-2 h-4 w-4" />
+            <Volume2 className="mr-2 h-4 w-4" />
             Generate Audio
           </Button>
           <Button
@@ -32,12 +32,12 @@ export function DashboardQuickActions() {
             className="w-full"
             onClick={() => setCloneVoiceOpen(true)}
           >
-            <RiVoiceprintLine className="mr-2 h-4 w-4" />
+            <Mic className="mr-2 h-4 w-4" />
             Clone Voice
           </Button>
           <Button variant="outline" className="w-full" asChild>
             <a href="/dashboard/projects">
-              <RiFolder3Line className="mr-2 h-4 w-4" />
+              <FolderOpen className="mr-2 h-4 w-4" />
               Create Project
             </a>
           </Button>

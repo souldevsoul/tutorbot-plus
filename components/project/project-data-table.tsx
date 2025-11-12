@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { RiSearchLine, RiFilterLine, RiEyeLine, RiMore2Line } from "lucide-react"
+import { Search, Filter, Eye, MoreVertical } from "lucide-react"
 import {
   Table,
   TableBody,
@@ -100,7 +100,7 @@ export function ProjectDataTable({
       {/* Filters */}
       <div className="flex items-center gap-3">
         <div className="relative flex-1 max-w-md">
-          <RiSearchLine className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-500" />
+          <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-500" />
           <Input
             placeholder="Search by project name, client, or expert..."
             value={searchQuery}
@@ -111,7 +111,7 @@ export function ProjectDataTable({
 
         <Select value={statusFilter} onValueChange={setStatusFilter}>
           <SelectTrigger className="w-[200px] border-2 border-black">
-            <RiFilterLine className="mr-2 h-4 w-4" />
+            <Filter className="mr-2 h-4 w-4" />
             <SelectValue placeholder="Status" />
           </SelectTrigger>
           <SelectContent className="border-2 border-black">
@@ -224,12 +224,12 @@ export function ProjectDataTable({
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
                         <Button variant="ghost" size="sm" className="h-8 w-8 p-0">
-                          <RiMore2Line className="h-4 w-4" />
+                          <MoreVertical className="h-4 w-4" />
                         </Button>
                       </DropdownMenuTrigger>
                       <DropdownMenuContent align="end" className="border-2 border-black">
                         <DropdownMenuItem onClick={() => onViewProject(project.id)}>
-                          <RiEyeLine className="mr-2 h-4 w-4" />
+                          <Eye className="mr-2 h-4 w-4" />
                           View Details
                         </DropdownMenuItem>
 

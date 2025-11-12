@@ -202,7 +202,7 @@ export default function PrivacyPage() {
               <span className="text-sm font-bold uppercase tracking-wider">Privacy Policy</span>
             </div>
             <h1 className="text-6xl md:text-7xl font-bold uppercase mb-6 leading-tight">
-              YOUR PRIVACY MATTERS
+              Your Privacy Matters
             </h1>
             <p className="text-xl text-gray-700 mb-6">
               We take your privacy seriously. This policy explains how we collect, use, protect, and share your information when you use TutorBot Plus.
@@ -215,33 +215,33 @@ export default function PrivacyPage() {
       </section>
 
       {/* Quick Summary */}
-      <section className="py-16 bg-black border-b-8 border-yellow-400">
+      <section className="py-16 bg-gradient-to-br from-blue-50 to-green-50 border-b-8 border-yellow-400">
         <Container maxWidth="xl">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold uppercase mb-8 text-green-500">
-              THE SHORT VERSION
+              The Short Version
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="p-6 bg-white border-2 border-white">
-                <h3 className="text-lg font-bold uppercase mb-3">✓ WHAT WE COLLECT</h3>
+                <h3 className="text-lg font-bold uppercase mb-3">✓ What We Collect</h3>
                 <p className="text-gray-700 text-sm">
                   Account info, course data you upload, text inputs, generated materials, usage analytics, and payment data (via Stripe).
                 </p>
               </div>
               <div className="p-6 bg-white border-2 border-white">
-                <h3 className="text-lg font-bold uppercase mb-3">✓ HOW WE USE IT</h3>
+                <h3 className="text-lg font-bold uppercase mb-3">✓ How We Use It</h3>
                 <p className="text-gray-700 text-sm">
                   To provide services, improve features, send updates, ensure security, and comply with legal requirements.
                 </p>
               </div>
               <div className="p-6 bg-white border-2 border-white">
-                <h3 className="text-lg font-bold uppercase mb-3">✓ WHO WE SHARE WITH</h3>
+                <h3 className="text-lg font-bold uppercase mb-3">✓ Who We Share With</h3>
                 <p className="text-gray-700 text-sm">
                   Service providers (Replicate, Stripe, AWS), legal authorities when required, and no one else without your consent.
                 </p>
               </div>
               <div className="p-6 bg-white border-2 border-white">
-                <h3 className="text-lg font-bold uppercase mb-3">✓ YOUR RIGHTS</h3>
+                <h3 className="text-lg font-bold uppercase mb-3">✓ Your Rights</h3>
                 <p className="text-gray-700 text-sm">
                   Access, correct, delete, or export your data anytime. GDPR and CCPA compliant. Full data control.
                 </p>
@@ -261,7 +261,7 @@ export default function PrivacyPage() {
                 <div key={sectionIndex} id={`section-${sectionIndex + 1}`}>
                   <div className="mb-8">
                     <div className="flex items-center gap-4 mb-4">
-                      <div className="w-12 h-12 bg-black border-2 border-black flex items-center justify-center">
+                      <div className="w-12 h-12 bg-gradient-to-br from-blue-50 to-green-50 border-2 border-black flex items-center justify-center">
                         <Icon className="w-6 h-6 text-green-500" />
                       </div>
                       <h2 className="text-3xl font-bold uppercase">{section.title}</h2>
@@ -289,7 +289,7 @@ export default function PrivacyPage() {
             <div id="section-8">
               <div className="mb-8">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 bg-black border-2 border-black flex items-center justify-center">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-50 to-green-50 border-2 border-black flex items-center justify-center">
                     <Globe className="w-6 h-6 text-green-500" />
                   </div>
                   <h2 className="text-3xl font-bold uppercase">8. International Data Transfers</h2>
@@ -312,7 +312,7 @@ export default function PrivacyPage() {
             <div id="section-9">
               <div className="mb-8">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 bg-black border-2 border-black flex items-center justify-center">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-50 to-green-50 border-2 border-black flex items-center justify-center">
                     <User className="w-6 h-6 text-green-500" />
                   </div>
                   <h2 className="text-3xl font-bold uppercase">9. Children's Privacy</h2>
@@ -332,7 +332,7 @@ export default function PrivacyPage() {
             <div id="section-10">
               <div className="mb-8">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 bg-black border-2 border-black flex items-center justify-center">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-50 to-green-50 border-2 border-black flex items-center justify-center">
                     <Lock className="w-6 h-6 text-green-500" />
                   </div>
                   <h2 className="text-3xl font-bold uppercase">10. Changes to This Policy</h2>
@@ -356,21 +356,21 @@ export default function PrivacyPage() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-24 bg-black border-t-8 border-yellow-400">
+      <section className="py-24 bg-gradient-to-br from-blue-50 to-green-50 border-t-8 border-yellow-400">
         <Container maxWidth="xl">
           <div className="max-w-3xl mx-auto text-center">
             <div className="w-20 h-20 bg-green-500 border-2 border-yellow-400 flex items-center justify-center mx-auto mb-6">
               <Mail className="w-10 h-10 text-black" />
             </div>
             <h2 className="text-4xl font-bold uppercase mb-6 text-green-500">
-              QUESTIONS ABOUT PRIVACY?
+              Questions About Privacy?
             </h2>
             <p className="text-xl text-white mb-8">
               If you have questions about this Privacy Policy or how we handle your data, we're here to help.
             </p>
 
             <div className="p-8 bg-white border-2 border-white shadow-xl-yellow">
-              <h3 className="text-2xl font-bold uppercase mb-4">CONTACT US</h3>
+              <h3 className="text-2xl font-bold mb-4">Contact Us</h3>
               <div className="space-y-3 text-left max-w-2xl mx-auto">
                 <div>
                   <span className="font-bold uppercase text-sm">Email:</span>
@@ -386,10 +386,10 @@ export default function PrivacyPage() {
                   <span className="font-bold uppercase text-sm">Data Protection Officer:</span>
                   <br />
                   <a
-                    href="mailto:dpo@tutorbot.plus"
+                    href="mailto:support@tutorbot.plus"
                     className="text-lg font-bold text-black underline hover:no-underline"
                   >
-                    dpo@tutorbot.plus
+                    support@tutorbot.plus
                   </a>
                 </div>
                 <div>

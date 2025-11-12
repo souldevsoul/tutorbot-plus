@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import { Text, Heading } from "@/components/ui/typography"
 import { Button } from "@/components/ui/button"
-import { Refresh, RiDownload2Line } from "lucide-react"
+import { RefreshCw, Download } from "lucide-react"
 import { ProjectDataTable, type ProjectTableRow } from "@/components/project"
 
 export default function AdminProjectsPage() {
@@ -155,7 +155,7 @@ export default function AdminProjectsPage() {
             onClick={fetchProjects}
             disabled={loading}
           >
-            <Refresh className="mr-2 h-4 w-4" />
+            <RefreshCw className="mr-2 h-4 w-4" />
             Refresh
           </Button>
           <Button
@@ -164,7 +164,7 @@ export default function AdminProjectsPage() {
             className="border-2"
             onClick={handleExportData}
           >
-            <RiDownload2Line className="mr-2 h-4 w-4" />
+            <Download className="mr-2 h-4 w-4" />
             Export CSV
           </Button>
         </div>

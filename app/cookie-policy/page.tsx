@@ -143,8 +143,8 @@ export default function CookiePolicyPage() {
                   If you have questions about our use of cookies, please contact us:
                 </p>
                 <div className="mt-4 p-6 border-2 border-black bg-white">
-                  <p><strong>Email:</strong> privacy@learningcraft.ai</p>
-                  <p><strong>Address:</strong> TutorBot Plus, Inc., 123 Voice Street, Suite 100, San Francisco, CA 94105, United States</p>
+                  <p><strong>Email:</strong> support@tutorbot.plus</p>
+                  <p><strong>Address:</strong> TutorBot Plus, Inc., 123 Education Avenue, Suite 100, San Francisco, CA 94105, United States</p>
                 </div>
               </section>
             </div>

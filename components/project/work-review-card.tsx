@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { RiStarLine, RiStarFill, RiCheckLine, RiErrorWarningLine } from "lucide-react"
+import { Star, Check, AlertTriangle } from "lucide-react"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Text, Heading } from "@/components/ui/typography"
@@ -84,7 +84,7 @@ export function WorkReviewCard({
           <div className="flex items-start justify-between">
             <div className="flex-1">
               <CardTitle className="flex items-center gap-2 text-cyan-900">
-                <RiCheckLine className="h-6 w-6 text-cyan-600" />
+                <Check className="h-6 w-6 text-cyan-600" />
                 WORK SUBMITTED FOR REVIEW
               </CardTitle>
               <CardDescription className="text-cyan-800">
@@ -149,7 +149,7 @@ export function WorkReviewCard({
           {/* Instructions */}
           <div className="rounded-md border-2 border-yellow-500 bg-green-50 p-4">
             <div className="flex items-start gap-3">
-              <RiErrorWarningLine className="h-5 w-5 flex-shrink-0 text-green-600" />
+              <AlertTriangle className="h-5 w-5 flex-shrink-0 text-green-600" />
               <div className="flex-1">
                 <Heading variant="h3" className="text-sm font-bold text-green-900">
                   REVIEW THE WORK
@@ -169,7 +169,7 @@ export function WorkReviewCard({
             onClick={() => setShowChangesDialog(true)}
             disabled={loading}
           >
-            <RiErrorWarningLine className="mr-2 h-4 w-4" />
+            <AlertTriangle className="mr-2 h-4 w-4" />
             REQUEST CHANGES
           </Button>
           <Button
@@ -178,7 +178,7 @@ export function WorkReviewCard({
             onClick={() => setShowApproveDialog(true)}
             disabled={loading}
           >
-            <RiCheckLine className="mr-2 h-4 w-4" />
+            <Check className="mr-2 h-4 w-4" />
             APPROVE WORK
           </Button>
         </CardFooter>
@@ -212,9 +212,9 @@ export function WorkReviewCard({
                       onMouseLeave={() => setHoveredRating(0)}
                     >
                       {isFilled ? (
-                        <RiStarFill className="h-10 w-10 text-green-500" />
+                        <Star className="h-10 w-10 text-green-500" />
                       ) : (
-                        <RiStarLine className="h-10 w-10 text-slate-300" />
+                        <Star className="h-10 w-10 text-slate-300" />
                       )}
                     </button>
                   )
@@ -256,7 +256,7 @@ export function WorkReviewCard({
                 </Text>
                 {expertRating && (
                   <div className="flex items-center gap-1">
-                    <RiStarFill className="h-4 w-4 text-green-500" />
+                    <Star className="h-4 w-4 text-green-500" />
                     <Text variant="caption" className="text-sm font-bold">
                       {expertRating.toFixed(1)}
                     </Text>

@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { RiRefreshLine, RiErrorWarningLine } from "lucide-react"
+import { RefreshCw, AlertTriangle } from "lucide-react"
 import {
   AlertDialog,
   AlertDialogAction,
@@ -60,7 +60,7 @@ export function ReEstimateDialog({
       <AlertDialogTrigger asChild>
         {trigger || (
           <Button variant="outline" size="sm" className="border-2 border-blue-500 text-blue-600 hover:bg-blue-50">
-            <RiRefreshLine className="mr-2 h-4 w-4" />
+            <RefreshCw className="mr-2 h-4 w-4" />
             Re-estimate
           </Button>
         )}
@@ -69,7 +69,7 @@ export function ReEstimateDialog({
         <AlertDialogHeader>
           <div className="flex items-center gap-3">
             <div className="rounded-md border-2 border-blue-500 bg-blue-100 p-2">
-              <RiRefreshLine className="h-6 w-6 text-blue-600" />
+              <RefreshCw className="h-6 w-6 text-blue-600" />
             </div>
             <div>
               <AlertDialogTitle className="text-blue-900">Re-estimate Project</AlertDialogTitle>
@@ -84,7 +84,7 @@ export function ReEstimateDialog({
           {/* Info */}
           <div className="rounded-md border-2 border-yellow-500 bg-green-50 p-4">
             <div className="flex items-start gap-3">
-              <RiErrorWarningLine className="h-5 w-5 flex-shrink-0 text-green-600" />
+              <AlertTriangle className="h-5 w-5 flex-shrink-0 text-green-600" />
               <div>
                 <Text variant="body" className="font-bold text-green-900">
                   This will generate a new estimate

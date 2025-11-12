@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from 'react'
-import { RiCloseLine, RiCheckLine, RiSettingsLine } from 'react-icons/ri'
+import { X, Check, Settings } from 'lucide-react'
 import { Button } from '@/components/ui'
 
 export function CookieConsent() {
@@ -103,7 +103,7 @@ export function CookieConsent() {
                     className="w-10 h-10 bg-black text-green-500 flex items-center justify-center hover:bg-gray-900 transition-colors"
                     aria-label="Close settings"
                   >
-                    <RiCloseLine className="w-6 h-6" />
+                    <X className="w-6 h-6" />
                   </button>
                 </div>
 
@@ -162,7 +162,7 @@ export function CookieConsent() {
                     onClick={handleSavePreferences}
                     className="gap-2 bg-black text-green-500 hover:bg-gray-900 border-2 border-black font-bold uppercase shadow-xl"
                   >
-                    <RiCheckLine className="w-5 h-5" />
+                    <Check className="w-5 h-5" />
                     Save Preferences
                   </Button>
                   <Button
@@ -206,7 +206,7 @@ export function CookieConsent() {
                       size="lg"
                       className="gap-2 bg-black text-green-500 hover:bg-gray-900 border-2 border-black font-bold uppercase shadow-xl whitespace-nowrap"
                     >
-                      <RiCheckLine className="w-5 h-5" />
+                      <Check className="w-5 h-5" />
                       Accept All
                     </Button>
                     <Button
@@ -215,7 +215,7 @@ export function CookieConsent() {
                       variant="outline"
                       className="gap-2 border-2 border-black font-bold uppercase whitespace-nowrap"
                     >
-                      <RiSettingsLine className="w-5 h-5" />
+                      <Settings className="w-5 h-5" />
                       Settings
                     </Button>
                     <Button

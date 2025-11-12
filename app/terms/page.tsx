@@ -109,7 +109,7 @@ export default function TermsPage() {
         },
         {
           subtitle: "Your Content",
-          text: "You retain ownership of the text inputs you provide and the educational content files you upload for learning cloning. By using the Service, you grant us a limited license to process your content solely to provide the Service. We do not claim ownership of your content.",
+          text: "You retain ownership of the text inputs you provide and the educational materials you upload. By using the Service, you grant us a limited license to process your content solely to provide the Service. We do not claim ownership of your content.",
         },
         {
           subtitle: "Generated Content",
@@ -276,7 +276,7 @@ export default function TermsPage() {
               <span className="text-sm font-bold uppercase tracking-wider">Terms of Service</span>
             </div>
             <h1 className="text-6xl md:text-7xl font-bold uppercase mb-6 leading-tight">
-              TERMS & CONDITIONS
+              Terms & Conditions
             </h1>
             <p className="text-xl text-gray-700 mb-6">
               These Terms of Service govern your use of TutorBot Plus. Please read them carefully before using our platform.
@@ -289,17 +289,17 @@ export default function TermsPage() {
       </section>
 
       {/* Quick Summary */}
-      <section className="py-16 bg-black border-b-8 border-yellow-400">
+      <section className="py-16 bg-gradient-to-br from-blue-50 to-green-50 border-b-8 border-yellow-400">
         <Container maxWidth="xl">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold uppercase mb-8 text-green-500">
-              THE KEY POINTS
+              The Key Points
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="p-6 bg-white border-2 border-white">
                 <div className="flex items-center gap-3 mb-3">
                   <Check className="w-6 h-6 flex-shrink-0" />
-                  <h3 className="text-lg font-bold uppercase">YOUR RIGHTS</h3>
+                  <h3 className="text-lg font-bold uppercase">Your Rights</h3>
                 </div>
                 <p className="text-gray-700 text-sm">
                   You own your content and generated educational content. Use the Service according to your plan limits. Cancel anytime.
@@ -308,7 +308,7 @@ export default function TermsPage() {
               <div className="p-6 bg-white border-2 border-white">
                 <div className="flex items-center gap-3 mb-3">
                   <X className="w-6 h-6 flex-shrink-0" />
-                  <h3 className="text-lg font-bold uppercase">PROHIBITED</h3>
+                  <h3 className="text-lg font-bold uppercase">Prohibited</h3>
                 </div>
                 <p className="text-gray-700 text-sm">
                   No illegal activity, impersonation, harassment, or service abuse. Using AI tutoring features requires appropriate permissions.
@@ -317,7 +317,7 @@ export default function TermsPage() {
               <div className="p-6 bg-white border-2 border-white">
                 <div className="flex items-center gap-3 mb-3">
                   <Scale className="w-6 h-6 flex-shrink-0" />
-                  <h3 className="text-lg font-bold uppercase">LIABILITY</h3>
+                  <h3 className="text-lg font-bold uppercase">Liability</h3>
                 </div>
                 <p className="text-gray-700 text-sm">
                   Service provided "as is." Our liability is limited. You're responsible for your use of generated content.
@@ -326,7 +326,7 @@ export default function TermsPage() {
               <div className="p-6 bg-white border-2 border-white">
                 <div className="flex items-center gap-3 mb-3">
                   <Shield className="w-6 h-6 flex-shrink-0" />
-                  <h3 className="text-lg font-bold uppercase">PAYMENT</h3>
+                  <h3 className="text-lg font-bold uppercase">Payment</h3>
                 </div>
                 <p className="text-gray-700 text-sm">
                   Subscriptions billed in advance. Non-refundable except as required by law. Cancel anytime.
@@ -347,7 +347,7 @@ export default function TermsPage() {
                 <div key={sectionIndex} id={`section-${sectionIndex + 1}`}>
                   <div className="mb-8">
                     <div className="flex items-center gap-4 mb-4">
-                      <div className="w-12 h-12 bg-black border-2 border-black flex items-center justify-center">
+                      <div className="w-12 h-12 bg-gradient-to-br from-blue-50 to-green-50 border-2 border-black flex items-center justify-center">
                         <Icon className="w-6 h-6 text-green-500" />
                       </div>
                       <h2 className="text-3xl font-bold uppercase">{section.title}</h2>
@@ -378,7 +378,7 @@ export default function TermsPage() {
               <div key={sectionIndex + 8} id={`section-${sectionIndex + 9}`}>
                 <div className="mb-8">
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 bg-black border-2 border-black flex items-center justify-center">
+                    <div className="w-12 h-12 bg-gradient-to-br from-blue-50 to-green-50 border-2 border-black flex items-center justify-center">
                       <Scale className="w-6 h-6 text-green-500" />
                     </div>
                     <h2 className="text-3xl font-bold uppercase">{section.title}</h2>
@@ -405,7 +405,7 @@ export default function TermsPage() {
             <div id="section-13">
               <div className="mb-8">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 bg-black border-2 border-black flex items-center justify-center">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-50 to-green-50 border-2 border-black flex items-center justify-center">
                     <FileText className="w-6 h-6 text-green-500" />
                   </div>
                   <h2 className="text-3xl font-bold uppercase">13. Miscellaneous</h2>
@@ -454,30 +454,30 @@ export default function TermsPage() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-24 bg-black border-t-8 border-yellow-400">
+      <section className="py-24 bg-gradient-to-br from-blue-50 to-green-50 border-t-8 border-yellow-400">
         <Container maxWidth="xl">
           <div className="max-w-3xl mx-auto text-center">
             <div className="w-20 h-20 bg-green-500 border-2 border-yellow-400 flex items-center justify-center mx-auto mb-6">
               <Mail className="w-10 h-10 text-black" />
             </div>
             <h2 className="text-4xl font-bold uppercase mb-6 text-green-500">
-              QUESTIONS ABOUT THESE TERMS?
+              Questions About These Terms?
             </h2>
             <p className="text-xl text-white mb-8">
               If you have questions about these Terms of Service, please contact us.
             </p>
 
             <div className="p-8 bg-white border-2 border-white shadow-xl-yellow">
-              <h3 className="text-2xl font-bold uppercase mb-4">CONTACT US</h3>
+              <h3 className="text-2xl font-bold uppercase mb-4">Contact Us</h3>
               <div className="space-y-3 text-left max-w-2xl mx-auto">
                 <div>
                   <span className="font-bold uppercase text-sm">Email:</span>
                   <br />
                   <a
-                    href="mailto:legal@learningcraft.ai"
+                    href="mailto:support@tutorbot.plus"
                     className="text-lg font-bold text-black underline hover:no-underline"
                   >
-                    legal@learningcraft.ai
+                    support@tutorbot.plus
                   </a>
                 </div>
                 <div>

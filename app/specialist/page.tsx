@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { RiFolder3Line, CheckboxCircle, MoneyDollarCircle, RiStarFill } from "lucide-react"
+import { FolderOpen, CheckCircle, DollarSign, Star } from "lucide-react"
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 import { Text, Heading } from "@/components/ui/typography"
 import { Button } from "@/components/ui/button"
@@ -101,7 +101,7 @@ export default function SpecialistDashboard() {
           </Text>
         </div>
         <Button variant="primary" onClick={() => window.location.href = "/specialist/projects"}>
-          <RiFolder3Line className="mr-2 h-4 w-4" />
+          <FolderOpen className="mr-2 h-4 w-4" />
           View All Projects
         </Button>
       </div>
@@ -114,7 +114,7 @@ export default function SpecialistDashboard() {
             <CardTitle className="text-sm font-bold uppercase text-blue-900">
               Active Projects
             </CardTitle>
-            <RiFolder3Line className="h-6 w-6 text-blue-600" />
+            <FolderOpen className="h-6 w-6 text-blue-600" />
           </CardHeader>
           <CardContent>
             <Heading as="h2" className="text-3xl font-bold text-blue-900">
@@ -132,7 +132,7 @@ export default function SpecialistDashboard() {
             <CardTitle className="text-sm font-bold uppercase text-green-900">
               Completed
             </CardTitle>
-            <CheckboxCircle className="h-6 w-6 text-green-600" />
+            <CheckCircle className="h-6 w-6 text-green-600" />
           </CardHeader>
           <CardContent>
             <Heading as="h2" className="text-3xl font-bold text-green-900">
@@ -150,7 +150,7 @@ export default function SpecialistDashboard() {
             <CardTitle className="text-sm font-bold uppercase text-green-900">
               Total Earnings
             </CardTitle>
-            <MoneyDollarCircle className="h-6 w-6 text-green-600" />
+            <DollarSign className="h-6 w-6 text-green-600" />
           </CardHeader>
           <CardContent>
             <Heading as="h2" className="text-3xl font-bold text-green-900">
@@ -168,7 +168,7 @@ export default function SpecialistDashboard() {
             <CardTitle className="text-sm font-bold uppercase text-blue-900">
               Rating
             </CardTitle>
-            <RiStarFill className="h-6 w-6 text-blue-600" />
+            <Star className="h-6 w-6 text-blue-600" />
           </CardHeader>
           <CardContent>
             <div className="flex items-baseline gap-2">
@@ -215,7 +215,7 @@ export default function SpecialistDashboard() {
         ) : (
           <Card variant="outlined" className="border-2 border-dashed border-black">
             <CardContent className="flex flex-col items-center justify-center py-12">
-              <RiFolder3Line className="h-16 w-16 text-slate-400" />
+              <FolderOpen className="h-16 w-16 text-slate-400" />
               <Heading as="h3" className="mt-4 text-xl font-bold uppercase text-slate-900">
                 No Active Projects
               </Heading>

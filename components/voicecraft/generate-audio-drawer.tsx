@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { RiSoundModuleLine, RiLoader4Line } from "lucide-react"
+import { Volume2, Loader2 } from "lucide-react"
 import {
   Sheet,
   SheetContent,
@@ -111,7 +111,7 @@ export function GenerateAudioDrawer({ open, onOpenChange }: GenerateAudioDrawerP
       <SheetContent className="w-[600px] sm:w-[600px] overflow-y-auto">
         <SheetHeader>
           <SheetTitle className="flex items-center gap-2">
-            <RiSoundModuleLine className="h-5 w-5" />
+            <Volume2 className="h-5 w-5" />
             Generate Audio
           </SheetTitle>
           <SheetDescription>
@@ -218,12 +218,12 @@ export function GenerateAudioDrawer({ open, onOpenChange }: GenerateAudioDrawerP
             >
               {loading ? (
                 <>
-                  <RiLoader4Line className="mr-2 h-4 w-4 animate-spin" />
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                   Generating...
                 </>
               ) : (
                 <>
-                  <RiSoundModuleLine className="mr-2 h-4 w-4" />
+                  <Volume2 className="mr-2 h-4 w-4" />
                   Generate Audio
                 </>
               )}

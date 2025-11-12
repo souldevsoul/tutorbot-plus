@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect, use } from "react"
-import { ArrowLeft, User, Time, MoneyDollarCircle } from "lucide-react"
+import { ArrowLeft, User, Clock, DollarSign } from "lucide-react"
 import { Text, Heading } from "@/components/ui/typography"
 import { Button } from "@/components/ui/button"
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
@@ -12,7 +12,7 @@ import {
   type ProjectStatus,
   type ProjectLesson,
 } from "@/components/project"
-import { LessonPlayer } from "@/components/voicecraft/audio-player"
+import { AudioPlayer } from "@/components/voicecraft/audio-player"
 
 type ProjectDetail = {
   id: string
@@ -197,7 +197,7 @@ export default function SpecialistProjectDetailPage({
           <Card variant="outlined" className="border-2 border-black">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-sm">
-                <Time className="h-5 w-5" />
+                <Clock className="h-5 w-5" />
                 Estimated Duration
               </CardTitle>
             </CardHeader>
@@ -215,7 +215,7 @@ export default function SpecialistProjectDetailPage({
           <Card variant="outlined" className="border-2 border-black">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-sm">
-                <MoneyDollarCircle className="h-5 w-5" />
+                <DollarSign className="h-5 w-5" />
                 Payment
               </CardTitle>
             </CardHeader>
@@ -293,7 +293,7 @@ export default function SpecialistProjectDetailPage({
                       <Text variant="body" className="mb-2 font-bold text-sm">
                         {index + 1}. {audio.filename}
                       </Text>
-                      <LessonPlayer audioUrl={audio.audioUrl} />
+                      <AudioPlayer audioUrl={audio.audioUrl} />
                     </div>
                   ))
                 ) : (
@@ -341,7 +341,7 @@ export default function SpecialistProjectDetailPage({
                 <Text variant="body" className="mb-2 font-bold text-sm">
                   {index + 1}. {audio.filename}
                 </Text>
-                <LessonPlayer audioUrl={audio.audioUrl} />
+                <AudioPlayer audioUrl={audio.audioUrl} />
               </div>
             ))}
           </div>
