@@ -41,7 +41,7 @@ export function CreditBalanceCard({
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className={`rounded-md border-4 border-black p-2 ${isCritical ? "bg-red-100" : isLow ? "bg-orange-100" : "bg-yellow-100"}`}>
-                <RiCoinsLine className={`h-5 w-5 ${isCritical ? "text-red-600" : isLow ? "text-orange-600" : "text-yellow-600"}`} />
+                <RiCoinsLine className={`h-5 w-5 ${isCritical ? "text-red-600" : isLow ? "text-teal-600" : "text-green-600"}`} />
               </div>
               <div>
                 <Text variant="caption" className="text-xs font-bold uppercase text-slate-600">
@@ -110,7 +110,7 @@ export function CreditBalanceCard({
         {(isLow || isCritical) && (
           <div className={`rounded-md border-4 p-4 ${isCritical ? "border-red-500 bg-red-100" : "border-orange-500 bg-orange-100"}`}>
             <div className="flex items-start gap-3">
-              <RiAlertLine className={`h-5 w-5 flex-shrink-0 ${isCritical ? "text-red-600" : "text-orange-600"}`} />
+              <RiAlertLine className={`h-5 w-5 flex-shrink-0 ${isCritical ? "text-red-600" : "text-teal-600"}`} />
               <div className="flex-1">
                 <Heading variant="h3" className={`text-sm font-bold ${isCritical ? "text-red-900" : "text-orange-900"}`}>
                   {isCritical ? "CRITICAL BALANCE" : "LOW BALANCE"}

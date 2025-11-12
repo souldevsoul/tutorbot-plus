@@ -43,7 +43,7 @@ const PricingCard = React.forwardRef<HTMLDivElement, PricingCardProps>(
       <div className="relative">
         {popular && (
           <div className="absolute -top-4 left-0 right-0 flex justify-center z-10">
-            <span className="bg-yellow-400 text-black text-sm font-bold px-4 py-1 border-2 border-black uppercase">
+            <span className="bg-green-500 text-black text-sm font-bold px-4 py-1 border-2 border-black uppercase">
               Most Popular
             </span>
           </div>

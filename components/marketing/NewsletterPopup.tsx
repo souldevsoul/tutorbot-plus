@@ -85,10 +85,10 @@ export function NewsletterPopup() {
           onClick={(e) => e.stopPropagation()}
         >
           {/* Header with Close Button */}
-          <div className="relative bg-yellow-400 border-b-8 border-black p-6">
+          <div className="relative bg-green-500 border-b-8 border-black p-6">
             <button
               onClick={handleClose}
-              className="absolute top-4 right-4 w-10 h-10 bg-black text-yellow-400 flex items-center justify-center hover:bg-gray-900 transition-colors"
+              className="absolute top-4 right-4 w-10 h-10 bg-black text-green-500 flex items-center justify-center hover:bg-gray-900 transition-colors"
               aria-label="Close"
             >
               <RiCloseLine className="w-6 h-6" />
@@ -107,8 +107,8 @@ export function NewsletterPopup() {
 
               <div>
                 <div className="inline-flex items-center gap-2 px-4 py-2 bg-black mb-3">
-                  <RiSparklingLine className="w-5 h-5 text-yellow-400" />
-                  <span className="text-xs font-bold uppercase tracking-wider text-yellow-400">
+                  <RiSparklingLine className="w-5 h-5 text-green-500" />
+                  <span className="text-xs font-bold uppercase tracking-wider text-green-500">
                     Special Offer
                   </span>
                 </div>
@@ -150,7 +150,7 @@ export function NewsletterPopup() {
                 type="submit"
                 size="lg"
                 disabled={isLoading}
-                className="w-full gap-3 bg-black text-yellow-400 hover:bg-gray-900 border-4 border-black font-bold uppercase brutalist-shadow disabled:opacity-50"
+                className="w-full gap-3 bg-black text-green-500 hover:bg-gray-900 border-4 border-black font-bold uppercase brutalist-shadow disabled:opacity-50"
               >
                 {isLoading ? (
                   <>
@@ -181,14 +181,14 @@ export function NewsletterPopup() {
 
             <p className="text-xs text-gray-500 mt-4 text-center">
               No spam, unsubscribe anytime. By subscribing, you agree to our{' '}
-              <a href="/privacy" className="underline hover:text-yellow-600">
+              <a href="/privacy" className="underline hover:text-green-600">
                 Privacy Policy
               </a>
             </p>
           </div>
 
           {/* Bottom Accent */}
-          <div className="h-4 bg-yellow-400 border-t-4 border-black" />
+          <div className="h-4 bg-green-500 border-t-4 border-black" />
         </div>
       </div>
     </>

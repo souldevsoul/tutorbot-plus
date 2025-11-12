@@ -137,7 +137,7 @@ const VoiceSelector = React.forwardRef<HTMLDivElement, VoiceSelectorProps>(
                           "text-xs px-2 py-0.5 border-2 border-black font-bold uppercase",
                           selectedVoiceId === voice.id
                             ? "bg-white/20 text-white"
-                            : "bg-yellow-400 text-black"
+                            : "bg-green-500 text-black"
                         )}
                       >
                         Clone

@@ -40,7 +40,7 @@ const BlogCard = React.forwardRef<HTMLDivElement, BlogCardProps>(
           {/* Category */}
           {category && (
             <div className="mb-3">
-              <span className="inline-block px-3 py-1 text-xs font-bold text-black bg-yellow-400 border-2 border-black uppercase">
+              <span className="inline-block px-3 py-1 text-xs font-bold text-black bg-green-500 border-2 border-black uppercase">
                 {category}
               </span>
             </div>

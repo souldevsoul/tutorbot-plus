@@ -21,7 +21,7 @@ export default function ContactPage() {
       icon: RiCustomerService2Line,
       title: "General Support",
       description: "Questions about your account, features, or how to use VoiceCraft",
-      email: "support@voicecraft.ai",
+      email: "support@tutorbot.plus",
       responseTime: "24 hours",
       color: "white",
     },
@@ -29,7 +29,7 @@ export default function ContactPage() {
       icon: RiRocketLine,
       title: "Sales & Enterprise",
       description: "Interested in Enterprise plan, custom pricing, or volume discounts",
-      email: "sales@voicecraft.ai",
+      email: "support@tutorbot.plus",
       responseTime: "4 hours",
       color: "black",
     },
@@ -37,7 +37,7 @@ export default function ContactPage() {
       icon: RiTeamLine,
       title: "Partnerships",
       description: "Integration partnerships, affiliate programs, or collaboration opportunities",
-      email: "partners@voicecraft.ai",
+      email: "support@tutorbot.plus",
       responseTime: "48 hours",
       color: "yellow",
     },
@@ -102,7 +102,7 @@ export default function ContactPage() {
       <section className="py-20 border-b-8 border-black">
         <Container maxWidth="xl">
           <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-3 px-6 py-3 bg-yellow-400 border-4 border-black mb-8">
+            <div className="inline-flex items-center gap-3 px-6 py-3 bg-green-500 border-4 border-black mb-8">
               <RiMailLine className="w-6 h-6" />
               <span className="text-sm font-bold uppercase tracking-wider">Contact Us</span>
             </div>
@@ -135,7 +135,7 @@ export default function ContactPage() {
                 method.color === "black"
                   ? "bg-black text-white"
                   : method.color === "yellow"
-                  ? "bg-yellow-400"
+                  ? "bg-green-500"
                   : "bg-white"
               const shadowClass =
                 method.color === "black" ? "brutalist-shadow-yellow" : "brutalist-shadow"
@@ -147,23 +147,23 @@ export default function ContactPage() {
                 >
                   <div
                     className={`w-16 h-16 ${
-                      method.color === "white" ? "bg-black" : method.color === "black" ? "bg-yellow-400" : "bg-black"
+                      method.color === "white" ? "bg-black" : method.color === "black" ? "bg-green-500" : "bg-black"
                     } flex items-center justify-center mb-6`}
                   >
                     <Icon
                       className={`w-8 h-8 ${
                         method.color === "white"
-                          ? "text-yellow-400"
+                          ? "text-green-500"
                           : method.color === "black"
                           ? "text-black"
-                          : "text-yellow-400"
+                          : "text-green-500"
                       }`}
                     />
                   </div>
 
                   <h3
                     className={`text-2xl font-bold uppercase mb-4 ${
-                      method.color === "black" ? "text-yellow-400" : "text-black"
+                      method.color === "black" ? "text-green-500" : "text-black"
                     }`}
                   >
                     {method.title}
@@ -185,7 +185,7 @@ export default function ContactPage() {
                     <a
                       href={`mailto:${method.email}`}
                       className={`text-lg font-bold underline ${
-                        method.color === "black" ? "text-yellow-400" : "text-black"
+                        method.color === "black" ? "text-green-500" : "text-black"
                       } hover:no-underline`}
                     >
                       {method.email}
@@ -225,7 +225,7 @@ export default function ContactPage() {
             </div>
 
             <div className="bg-white p-8 border-4 border-black brutalist-shadow">
-              <form className="space-y-6">
+              <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
                 {/* Name */}
                 <div>
                   <label htmlFor="name" className="block text-sm font-bold uppercase mb-2">
@@ -311,7 +311,7 @@ export default function ContactPage() {
                 <Button
                   type="submit"
                   size="lg"
-                  className="w-full bg-yellow-400 text-black border-4 border-black font-bold uppercase hover:bg-yellow-300"
+                  className="w-full bg-green-500 text-black border-4 border-black font-bold uppercase hover:bg-yellow-300"
                 >
                   <RiArrowRightLine className="w-5 h-5 mr-2" />
                   Send Message
@@ -348,7 +348,7 @@ export default function ContactPage() {
               >
                 <h3
                   className={`text-2xl font-bold uppercase mb-6 ${
-                    index % 2 === 0 ? "text-black" : "text-yellow-400"
+                    index % 2 === 0 ? "text-black" : "text-green-500"
                   }`}
                 >
                   {topic.title}
@@ -358,7 +358,7 @@ export default function ContactPage() {
                     <li key={i} className="flex items-start gap-3">
                       <RiCheckLine
                         className={`w-5 h-5 flex-shrink-0 mt-0.5 ${
-                          index % 2 === 0 ? "text-black" : "text-yellow-400"
+                          index % 2 === 0 ? "text-black" : "text-green-500"
                         }`}
                       />
                       <span className={index % 2 === 0 ? "text-gray-700" : "text-white"}>
@@ -374,7 +374,7 @@ export default function ContactPage() {
       </section>
 
       {/* Quick Links */}
-      <section className="py-24 bg-yellow-400 border-y-8 border-black">
+      <section className="py-24 bg-green-500 border-y-8 border-black">
         <Container maxWidth="xl">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold uppercase mb-4">
@@ -401,8 +401,8 @@ export default function ContactPage() {
               href="/demo"
               className="p-6 bg-black text-white border-4 border-black brutalist-shadow-yellow text-center hover:-translate-y-1 hover:shadow-[8px_8px_0px_0px_rgba(234,179,8,1)] transition-all"
             >
-              <RiRocketLine className="w-12 h-12 text-yellow-400 mx-auto mb-4" />
-              <h3 className="text-lg font-bold uppercase mb-2 text-yellow-400">Try Demo</h3>
+              <RiRocketLine className="w-12 h-12 text-green-500 mx-auto mb-4" />
+              <h3 className="text-lg font-bold uppercase mb-2 text-green-500">Try Demo</h3>
               <p className="text-sm text-white">
                 Test our voice generation before signing up
               </p>
@@ -426,7 +426,7 @@ export default function ContactPage() {
       <section className="py-24 bg-black border-t-8 border-yellow-400">
         <Container maxWidth="xl">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold uppercase mb-6 text-yellow-400">
+            <h2 className="text-4xl md:text-5xl font-bold uppercase mb-6 text-green-500">
               ENTERPRISE & URGENT SUPPORT
             </h2>
             <p className="text-xl text-white mb-8">
@@ -439,10 +439,10 @@ export default function ContactPage() {
               </p>
               <Button
                 size="lg"
-                className="bg-black text-yellow-400 border-4 border-black font-bold uppercase"
+                className="bg-black text-green-500 border-4 border-black font-bold uppercase"
                 asChild
               >
-                <a href="mailto:enterprise@voicecraft.ai">
+                <a href="mailto:support@tutorbot.plus">
                   Contact Enterprise Support
                   <RiArrowRightLine className="w-5 h-5 ml-2" />
                 </a>
