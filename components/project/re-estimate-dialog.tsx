@@ -59,7 +59,7 @@ export function ReEstimateDialog({
     <AlertDialog open={open} onOpenChange={setOpen}>
       <AlertDialogTrigger asChild>
         {trigger || (
-          <Button variant="outline" size="sm" className="border-2 border-blue-500 text-blue-600 hover:bg-blue-50">
+          <Button variant="outline" size="sm" className="border-2 border-blue-500 text-blue-600 hover:bg-blue-50" type="button">
             <RefreshCw className="mr-2 h-4 w-4" />
             Re-estimate
           </Button>

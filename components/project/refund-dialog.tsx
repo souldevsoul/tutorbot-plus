@@ -58,7 +58,7 @@ export function RefundDialog({
     <AlertDialog open={open} onOpenChange={setOpen}>
       <AlertDialogTrigger asChild>
         {trigger || (
-          <Button variant="outline" size="sm" className="border-2 border-red-500 text-red-600 hover:bg-red-50">
+          <Button variant="outline" size="sm" className="border-2 border-red-500 text-red-600 hover:bg-red-50" type="button">
             <RotateCcw className="mr-2 h-4 w-4" />
             Refund Project
           </Button>

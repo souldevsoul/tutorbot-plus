@@ -14,7 +14,7 @@ export default function AdminSpecialistsPage() {
             Specialist Management
           </Heading>
           <Text variant="body" className="text-slate-600">
-            Approve and manage audio experts
+            Approve and manage subject matter tutors
           </Text>
         </div>
       </div>

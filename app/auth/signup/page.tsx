@@ -128,7 +128,7 @@ function SignUpForm() {
   return (
     <div className="min-h-screen bg-white flex items-center justify-center px-6 py-12">
       <div className="w-full max-w-md">
-        {/* Logo/Brand */}
+        {/* Brand */}
         <div className="text-center mb-8">
           <Link href="/">
             <h1 className="text-4xl font-black">

@@ -126,7 +126,7 @@ export default function FeaturesPage() {
       icon: BookOpen,
       title: "Course Library",
       subtitle: "Organized Learning",
-      description: "Access thousands of pre-built courses. Create and organize your own custom courses. Save favorite lessons and build personalized curricula.",
+      description: "Access a comprehensive library of pre-built courses. Create and organize your own custom courses. Save favorite lessons and build personalized curricula.",
       features: [
         "Unlimited course access",
         "Custom course creation",
@@ -249,20 +249,20 @@ export default function FeaturesPage() {
         <Container maxWidth="xl">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-5xl font-bold text-white mb-2">10K+</div>
-              <div className="text-sm font-bold text-blue-200 tracking-wider">Active Students</div>
+              <div className="text-5xl font-bold text-white mb-2">24/7</div>
+              <div className="text-sm font-bold text-blue-200 tracking-wider">AI Tutoring</div>
             </div>
             <div>
               <div className="text-5xl font-bold text-white mb-2">50+</div>
-              <div className="text-sm font-bold text-blue-200 tracking-wider">Languages</div>
+              <div className="text-sm font-bold text-blue-200 tracking-wider">Subject Areas</div>
             </div>
             <div>
-              <div className="text-5xl font-bold text-white mb-2">1000+</div>
-              <div className="text-sm font-bold text-blue-200 tracking-wider">Courses</div>
+              <div className="text-5xl font-bold text-white mb-2">100%</div>
+              <div className="text-sm font-bold text-blue-200 tracking-wider">Personalized</div>
             </div>
             <div>
-              <div className="text-5xl font-bold text-white mb-2">4.9/5</div>
-              <div className="text-sm font-bold text-blue-200 tracking-wider">User Rating</div>
+              <div className="text-5xl font-bold text-white mb-2">Fast</div>
+              <div className="text-sm font-bold text-blue-200 tracking-wider">Response Time</div>
             </div>
           </div>
         </Container>
@@ -352,7 +352,7 @@ export default function FeaturesPage() {
               Ready to Start Learning?
             </h2>
             <p className="text-xl text-gray-300 mb-12">
-              Join thousands of students mastering new subjects with TutorBot Plus. Start your free trial today—no credit card required.
+              Join students worldwide who are mastering new subjects with TutorBot Plus. Start your free trial today—no credit card required.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button

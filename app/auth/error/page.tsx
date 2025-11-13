@@ -31,7 +31,7 @@ function ErrorContent() {
   return (
     <div className="min-h-screen bg-white flex items-center justify-center px-6 py-12">
       <div className="w-full max-w-md">
-        {/* Logo/Brand */}
+        {/* Brand */}
         <div className="text-center mb-8">
           <Link href="/">
             <h1 className="text-4xl font-black">
@@ -66,6 +66,7 @@ function ErrorContent() {
                 <Button
                   variant="secondary"
                   className="w-full h-12 gap-3 bg-white text-black hover:bg-gray-100 border-2 border-black font-bold"
+                  type="button"
                 >
                   Back to Home
                 </Button>

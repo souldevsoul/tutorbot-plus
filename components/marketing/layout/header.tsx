@@ -60,7 +60,7 @@ const Header = React.forwardRef<HTMLElement, HeaderProps>(
       >
         <Container maxWidth="xl">
           <nav className="flex items-center justify-between h-20">
-            {/* Logo */}
+            {/* Brand */}
             <a href="/" className="flex items-center gap-3">
               {logo || (
                 <>

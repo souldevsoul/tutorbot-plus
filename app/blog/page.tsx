@@ -24,7 +24,7 @@ export default function BlogPage() {
   ]
 
   const featuredPost = {
-    title: "How AI-Powered Tutoring Helped 10,000+ Students Improve Their Grades",
+    title: "How AI-Powered Tutoring Is Transforming Modern Education",
     excerpt: "Discover how personalized learning with AI tutors is transforming education and helping students achieve their academic goals faster.",
     category: "Success Stories",
     date: "Nov 8, 2025",

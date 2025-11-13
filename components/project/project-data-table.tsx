@@ -223,7 +223,7 @@ export function ProjectDataTable({
                   <TableCell onClick={(e) => e.stopPropagation()}>
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
-                        <Button variant="ghost" size="sm" className="h-8 w-8 p-0">
+                        <Button variant="ghost" size="sm" className="h-8 w-8 p-0" aria-label="Project actions">
                           <MoreVertical className="h-4 w-4" />
                         </Button>
                       </DropdownMenuTrigger>
@@ -264,7 +264,7 @@ export function ProjectDataTable({
                                   onReEstimate={(reason) => onReEstimate(project.id, reason)}
                                   loading={loading}
                                   trigger={
-                                    <button className="w-full text-left text-sm">
+                                    <button type="button" className="w-full text-left text-sm">
                                       Re-Estimate Project
                                     </button>
                                   }
@@ -281,7 +281,7 @@ export function ProjectDataTable({
                                   onRefund={(reason) => onRefund(project.id, reason)}
                                   loading={loading}
                                   trigger={
-                                    <button className="w-full text-left text-sm text-red-600">
+                                    <button type="button" className="w-full text-left text-sm text-red-600">
                                       Refund Project
                                     </button>
                                   }

@@ -6,11 +6,14 @@ import productQuality from './eslint-plugin-product-quality/index.js';
  * Product Quality ESLint Config for TutorBot Plus
  * Flat config format (ESLint 9+) with TypeScript support
  *
- * Enforces TutorBot Plus brand standards:
- * - blue/green/teal color palette (education/growth theme)
- * - Company name: TutorBot Plus
- * - Email: support@tutorbot.plus
+ * Enforces TutorBot Plus brand standards (see .claude/BRAND_GUIDE.md):
+ * - indigo/purple/blue color palette (educational/trust/intelligence theme)
+ * - Company name: TutorBot Plus (Title Case)
+ * - Email: support@tutorbot.plus (single contact point)
  * - Payment provider: stripe
+ * - Border radius: rounded-xl+ (soft, educational)
+ * - Shadows: soft professional (no brutalist)
+ * - Typography: Clear, educational (no ALL CAPS)
  */
 export default [
   {
@@ -75,17 +78,14 @@ export default [
           'slate-',
           'zinc-',
           'neutral-',
-          // TutorBot Plus brand colors (blue/green/teal - education/growth theme)
-          'blue-',       // Primary - Trust, education
-          'green-',      // Secondary - Growth, success
-          'teal-',       // Alternative
-          'emerald-',    // Alternative green
-          'cyan-',       // Accent
-          'sky-',        // Accent variant
-          'indigo-',     // Accent variant
-          'amber-',      // Energy, achievement
-          // Utility colors (always allowed)
-          'red-',        // For errors
+          // TutorBot Plus brand colors (indigo/purple/blue - educational/trust/intelligence theme)
+          'indigo-',     // Primary - Intelligence, trust
+          'purple-',     // Primary - Creativity, learning
+          'blue-',       // Secondary - Trust, education
+          // Semantic colors (always allowed)
+          'red-',        // Errors
+          'green-',      // Success states
+          'amber-',      // Warnings
         ],
       }],
 
@@ -124,6 +124,13 @@ export default [
           'Waveform',
           'vocal',
           'Vocal',
+          'logo',
+          'Logo',
+          'logosmith',
+          'LogoSmith',
+          'design studio',
+          'brand kit',
+          'SVG export',
         ],
       }],
 
@@ -198,6 +205,13 @@ export default [
           'Waveform',
           'vocal',
           'Vocal',
+          'logo',
+          'Logo',
+          'logosmith',
+          'LogoSmith',
+          'design studio',
+          'brand kit',
+          'SVG export',
         ],
       }],
 

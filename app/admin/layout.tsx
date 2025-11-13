@@ -64,7 +64,7 @@ export default function AdminLayout({
 
         <div className="absolute bottom-4 left-4 right-4">
           <Link href="/dashboard">
-            <Button variant="outline" size="sm" className="w-full">
+            <Button variant="outline" size="sm" className="w-full" type="button">
               <ArrowLeft className="mr-2 h-4 w-4" />
               Switch to User
             </Button>

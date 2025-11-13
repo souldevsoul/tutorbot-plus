@@ -4,14 +4,15 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run lint:product && next build",
+    "build:skip-lint": "next build",
     "prebuild": "npm run check-adaptation",
     "start": "next start",
     "lint": "eslint",
-    "lint:product": "eslint --config eslint.config.product.mjs",
-    "lint:product:fix": "eslint --config eslint.config.product.mjs --fix",
+    "lint:product": "eslint --config eslint.config.product.mjs .",
+    "lint:product:fix": "eslint --config eslint.config.product.mjs . --fix",
     "lint:public": "eslint --config eslint.config.product.mjs 'app/**/page.tsx' --ignore-pattern 'app/admin/**' --ignore-pattern 'app/dashboard/**' --ignore-pattern 'app/specialist/**' --ignore-pattern 'app/api/**' --ignore-pattern 'app/components/page.tsx'",
-    "lint:strict": "eslint --config eslint.config.product.mjs --max-warnings=0",
+    "lint:strict": "eslint --config eslint.config.product.mjs --max-warnings=0 .",
     "check-adaptation": "node scripts/check-adaptation.js && npm run lint:public"
   },
   "dependencies": {

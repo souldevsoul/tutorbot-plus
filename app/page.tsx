@@ -35,10 +35,10 @@ export default function Home() {
 
   // Subject examples
   const subjects = [
-    { name: "Mathematics", icon: Calculator, color: "from-blue-500 to-cyan-600", students: "50K+" },
-    { name: "Science", icon: FlaskConical, color: "from-green-500 to-emerald-600", students: "35K+" },
-    { name: "Programming", icon: Code, color: "from-purple-500 to-pink-600", students: "40K+" },
-    { name: "Languages", icon: Globe, color: "from-amber-500 to-orange-600", students: "30K+" },
+    { name: "Mathematics", icon: Calculator, color: "from-blue-500 to-indigo-600", students: "Popular" },
+    { name: "Science", icon: FlaskConical, color: "from-green-500 to-emerald-600", students: "Trending" },
+    { name: "Programming", icon: Code, color: "from-purple-500 to-pink-600", students: "In Demand" },
+    { name: "Languages", icon: Globe, color: "from-amber-500 to-orange-600", students: "Essential" },
   ]
 
   React.useEffect(() => {

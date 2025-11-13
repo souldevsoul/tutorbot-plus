@@ -265,7 +265,7 @@ export function EstimateCard({
                         <br />
                         Shortfall: {shortfall.toLocaleString()} credits (${(shortfall / 100).toFixed(2)})
                       </Text>
-                      <Button variant="primary" size="sm" className="mt-3">
+                      <Button variant="primary" size="sm" className="mt-3" type="button">
                         Add Credits
                       </Button>
                     </div>

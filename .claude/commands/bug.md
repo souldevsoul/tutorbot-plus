@@ -65,7 +65,7 @@ You are helping a developer fix a bug in the TutorBot Plus application. Follow t
 
    - If error is **real** (code violates design system):
      - Fix it now following TutorBot Plus design system
-     - Use coral/orange/lime/green colors only
+     - Use indigo/purple/blue colors only
      - Fix any accessibility issues
      - Fix any broken links
 

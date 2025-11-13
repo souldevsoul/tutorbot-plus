@@ -3,7 +3,7 @@
 import * as React from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Mic, User, LogOut, Coins } from "lucide-react"
+import { GraduationCap, User, LogOut, Coins } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
@@ -28,12 +28,12 @@ export function AppHeader({ user }: AppHeaderProps) {
   return (
     <header className="sticky top-0 z-50 border-b-4 border-black bg-white">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        {/* Logo */}
+        {/* Brand */}
         <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-          <div className="w-12 h-12 bg-black border-2 border-black flex items-center justify-center shadow-xl-yellow">
-            <Mic className="w-7 h-7 text-green-500" />
+          <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-green-600 rounded-xl flex items-center justify-center shadow-lg">
+            <GraduationCap className="w-7 h-7 text-white" />
           </div>
-          <span className="text-xl font-bold uppercase tracking-tight">VOICECRAFT</span>
+          <span className="text-xl font-bold tracking-tight text-blue-900">TutorBot Plus</span>
         </Link>
 
         {/* Empty space for balance - nav links removed as they're in dropdown */}
@@ -47,6 +47,7 @@ export function AppHeader({ user }: AppHeaderProps) {
                 variant="outline"
                 size="md"
                 className="border-2 border-black font-bold uppercase hover:bg-green-50"
+                type="button"
               >
                 <User className="mr-2 h-4 w-4" />
                 {user.name || "User"}
@@ -66,13 +67,13 @@ export function AppHeader({ user }: AppHeaderProps) {
                 </Link>
               </DropdownMenuItem>
               <DropdownMenuItem asChild>
-                <Link href="/dashboard/voices" className="cursor-pointer">
-                  Voices
+                <Link href="/dashboard/courses" className="cursor-pointer">
+                  Courses
                 </Link>
               </DropdownMenuItem>
               <DropdownMenuItem asChild>
-                <Link href="/dashboard/audios" className="cursor-pointer">
-                  Audios
+                <Link href="/dashboard/lessons" className="cursor-pointer">
+                  Lessons
                 </Link>
               </DropdownMenuItem>
               <DropdownMenuItem asChild>

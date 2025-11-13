@@ -1,4 +1,4 @@
-// Marketing Components - VoiceCraft Design System
+// Marketing Components - TutorBot Plus Design System
 // Complete suite of marketing page components
 
 // Cards

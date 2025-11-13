@@ -89,7 +89,7 @@ export default function AboutPage() {
     {
       year: "2025",
       title: "Public Launch",
-      description: "Opened to the public with free tier, serving thousands of learners worldwide.",
+      description: "Opened to the public with free tier, serving learners worldwide.",
     },
   ]
 
@@ -148,16 +148,16 @@ export default function AboutPage() {
             <div className="bg-gradient-to-br from-blue-50 via-green-50 to-teal-50 p-8 border-2 border-blue-200 rounded-2xl shadow-xl">
               <div className="space-y-8">
                 <div>
-                  <div className="text-6xl font-bold text-blue-600 mb-2">10K+</div>
-                  <div className="text-sm font-bold text-blue-900">Lessons Generated</div>
+                  <div className="text-6xl font-bold text-blue-600 mb-2">100+</div>
+                  <div className="text-sm font-bold text-blue-900">Lesson Topics</div>
                 </div>
                 <div>
                   <div className="text-6xl font-bold text-green-600 mb-2">50+</div>
                   <div className="text-sm font-bold text-green-900">Subjects Available</div>
                 </div>
                 <div>
-                  <div className="text-6xl font-bold text-teal-600 mb-2">1000+</div>
-                  <div className="text-sm font-bold text-teal-900">Active Learners</div>
+                  <div className="text-6xl font-bold text-indigo-600 mb-2">Active Learners</div>
+                  <div className="text-sm font-bold text-indigo-900">Growing Daily</div>
                 </div>
                 <div>
                   <div className="text-6xl font-bold text-amber-600 mb-2">99.9%</div>
@@ -217,13 +217,13 @@ export default function AboutPage() {
             {technology.map((tech, index) => {
               const Icon = tech.icon
               const gradients = [
-                "from-blue-50 to-cyan-50",
+                "from-blue-50 to-indigo-50",
                 "from-green-50 to-emerald-50",
-                "from-teal-50 to-blue-50",
-                "from-cyan-50 to-green-50"
+                "from-purple-50 to-blue-50",
+                "from-indigo-50 to-green-50"
               ]
-              const iconColors = ["text-blue-600", "text-green-600", "text-teal-600", "text-cyan-600"]
-              const badgeColors = ["bg-blue-600", "bg-green-600", "bg-teal-600", "bg-cyan-600"]
+              const iconColors = ["text-blue-600", "text-green-600", "text-purple-600", "text-indigo-600"]
+              const badgeColors = ["bg-blue-600", "bg-green-600", "bg-purple-600", "bg-indigo-600"]
 
               return (
                 <div
@@ -257,7 +257,7 @@ export default function AboutPage() {
               Our Journey
             </h2>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-              From idea to platform serving thousands of learners
+              From idea to platform serving learners worldwide
             </p>
           </div>
 
@@ -297,7 +297,7 @@ export default function AboutPage() {
                       Proven Effectiveness
                     </h3>
                     <p className="text-gray-700">
-                      Our AI tutors have helped thousands of students improve their understanding and grades. This isn't experimental—it's proven at scale.
+                      Our AI tutors help students improve their understanding and grades through personalized, adaptive learning experiences.
                     </p>
                   </div>
                 </div>
@@ -317,11 +317,11 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              <div className="p-6 bg-white border-2 border-teal-200 rounded-2xl shadow-xl">
+              <div className="p-6 bg-white border-2 border-purple-200 rounded-2xl shadow-xl">
                 <div className="flex items-start gap-4">
-                  <CheckCheck className="w-8 h-8 flex-shrink-0 text-teal-600" />
+                  <CheckCheck className="w-8 h-8 flex-shrink-0 text-purple-600" />
                   <div>
-                    <h3 className="text-xl font-bold mb-2 text-teal-900">
+                    <h3 className="text-xl font-bold mb-2 text-purple-900">
                       Enterprise Security
                     </h3>
                     <p className="text-gray-700">
@@ -331,11 +331,11 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              <div className="p-6 bg-gradient-to-br from-cyan-50 to-blue-50 border-2 border-cyan-200 rounded-2xl shadow-xl">
+              <div className="p-6 bg-gradient-to-br from-indigo-50 to-blue-50 border-2 border-indigo-200 rounded-2xl shadow-xl">
                 <div className="flex items-start gap-4">
-                  <CheckCheck className="w-8 h-8 flex-shrink-0 text-cyan-600" />
+                  <CheckCheck className="w-8 h-8 flex-shrink-0 text-indigo-600" />
                   <div>
-                    <h3 className="text-xl font-bold mb-2 text-cyan-900">
+                    <h3 className="text-xl font-bold mb-2 text-indigo-900">
                       Best-in-Class Support
                     </h3>
                     <p className="text-gray-700">
@@ -377,7 +377,7 @@ export default function AboutPage() {
 
           <div className="grid md:grid-cols-3 gap-8">
             <div className="p-6 bg-white border-2 border-blue-200 rounded-2xl shadow-xl text-center">
-              <div className="w-24 h-24 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl mx-auto mb-4 flex items-center justify-center">
+              <div className="w-24 h-24 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-xl mx-auto mb-4 flex items-center justify-center">
                 <Code className="w-12 h-12 text-white" />
               </div>
               <h3 className="text-xl font-bold mb-2 text-blue-900">AI Engineers</h3>
@@ -396,11 +396,11 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="p-6 bg-gradient-to-br from-teal-50 to-cyan-50 border-2 border-teal-200 rounded-2xl shadow-xl text-center">
-              <div className="w-24 h-24 bg-gradient-to-br from-teal-500 to-cyan-500 rounded-xl mx-auto mb-4 flex items-center justify-center">
+            <div className="p-6 bg-gradient-to-br from-purple-50 to-indigo-50 border-2 border-purple-200 rounded-2xl shadow-xl text-center">
+              <div className="w-24 h-24 bg-gradient-to-br from-purple-500 to-indigo-500 rounded-xl mx-auto mb-4 flex items-center justify-center">
                 <Users className="w-12 h-12 text-white" />
               </div>
-              <h3 className="text-xl font-bold mb-2 text-teal-900">Product Team</h3>
+              <h3 className="text-xl font-bold mb-2 text-purple-900">Product Team</h3>
               <p className="text-gray-700">
                 Focused on building intuitive tools that students actually want to use.
               </p>
@@ -414,7 +414,7 @@ export default function AboutPage() {
         <Container maxWidth="xl">
           <div className="text-center max-w-4xl mx-auto">
             <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">
-              Join Thousands of Learners
+              Join Learners Worldwide
             </h2>
             <p className="text-xl text-gray-700 mb-12">
               Start your personalized learning journey today. Free tier available—no credit card required.
@@ -441,7 +441,7 @@ export default function AboutPage() {
               <Button
                 size="xl"
                 variant="outline"
-                className="gap-3 bg-gradient-to-br from-teal-50 to-cyan-50 text-teal-600 border-2 border-teal-600 rounded-xl font-bold shadow-xl hover:shadow-2xl transition-all"
+                className="gap-3 bg-gradient-to-br from-purple-50 to-indigo-50 text-purple-600 border-2 border-purple-600 rounded-xl font-bold shadow-xl hover:shadow-2xl transition-all"
                 asChild
               >
                 <a href="/contact">Contact Us</a>
