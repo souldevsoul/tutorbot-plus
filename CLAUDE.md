@@ -286,8 +286,6 @@ const output = await replicate.run(
 7. **Testing** (2h): Course creation, lessons, quizzes
 8. **Deployment** (2h): GitHub repo, Vercel
 
-**Total:** 20-28 hours
-
 ---
 
 ## 📋 WORKFLOW - HOW TO GUIDE THE USER
