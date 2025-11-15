@@ -13,7 +13,6 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { MoreHorizontal } from "lucide-react"
-import { CourseActions } from "@/components/dashboard/voice-actions"
 
 type Course = {
   id: string
@@ -76,7 +75,6 @@ export default async function CoursesPage() {
             Manage your cloned courses
           </Text>
         </div>
-        <CourseActions />
       </div>
 
       <Suspense fallback={<div>Loading...</div>}>
@@ -172,7 +170,6 @@ export default async function CoursesPage() {
               Clone your first voice to get started
             </Text>
             <div className="mt-4">
-              <CourseActions />
             </div>
           </div>
         )}

@@ -11,5 +11,5 @@ export async function requireAuth() {
   if (!user) {
     throw new Error("Unauthorized")
   }
-  return user
+  return user.id || user.email || ""
 }

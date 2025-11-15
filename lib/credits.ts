@@ -4,6 +4,7 @@
  */
 
 import { prisma } from '@/lib/prisma';
+import type { Prisma } from '@prisma/client';
 
 // Credit costs for different operations
 export const CREDIT_COSTS = {
@@ -25,11 +26,6 @@ export const CREDIT_TRANSACTION_TYPES = {
   SUBSCRIPTION_GRANT: 'SUBSCRIPTION_GRANT',
   PROMOTIONAL_GRANT: 'PROMOTIONAL_GRANT',
   REFUND: 'REFUND',
-
-  // Project-related
-  PROJECT_RESERVATION: 'PROJECT_RESERVATION',
-  PROJECT_COMPLETION: 'PROJECT_COMPLETION',
-  PROJECT_REFUND: 'PROJECT_REFUND',
 } as const;
 
 /**
@@ -76,7 +72,7 @@ export async function deductCredits(
   }
 
   // Perform transaction
-  const result = await prisma.$transaction(async (tx) => {
+  const result = await prisma.$transaction(async (tx: Prisma.TransactionClient) => {
     // Deduct credits from user
     const updatedUser = await tx.user.update({
       where: { id: userId },
@@ -111,7 +107,7 @@ export async function addCredits(
   description: string,
   metadata?: any
 ): Promise<{ success: boolean; newBalance: number }> {
-  const result = await prisma.$transaction(async (tx) => {
+  const result = await prisma.$transaction(async (tx: Prisma.TransactionClient) => {
     // Add credits to user
     const updatedUser = await tx.user.update({
       where: { id: userId },
@@ -174,33 +170,15 @@ export async function deductCourseCreationCredits(
  */
 export async function deductAIEstimationCredits(
   userId: string,
-  projectId: string,
   metadata?: any
 ): Promise<{ success: boolean; newBalance: number }> {
-  const result = await prisma.$transaction(async (tx) => {
-    // Deduct credits from user
-    const updatedUser = await tx.user.update({
-      where: { id: userId },
-      data: { credits: { decrement: CREDIT_COSTS.AI_ESTIMATION } },
-      select: { credits: true },
-    });
-
-    // Record transaction in ledger with project reference
-    await tx.creditLedger.create({
-      data: {
-        userId,
-        projectId,
-        amount: -CREDIT_COSTS.AI_ESTIMATION,
-        type: CREDIT_TRANSACTION_TYPES.AI_ESTIMATION,
-        description: 'AI project estimation',
-        metadata: metadata || {},
-      },
-    });
-
-    return { success: true, newBalance: updatedUser.credits };
-  });
-
-  return result;
+  return deductCredits(
+    userId,
+    CREDIT_COSTS.AI_ESTIMATION,
+    CREDIT_TRANSACTION_TYPES.AI_ESTIMATION,
+    'AI lesson estimation',
+    metadata
+  );
 }
 
 /**
@@ -214,14 +192,6 @@ export async function getCreditHistory(
     where: { userId },
     orderBy: { createdAt: 'desc' },
     take: limit,
-    include: {
-      project: {
-        select: {
-          id: true,
-          name: true,
-        },
-      },
-    },
   });
 
   return transactions;

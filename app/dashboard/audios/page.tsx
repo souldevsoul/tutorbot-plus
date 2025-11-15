@@ -1,10 +1,9 @@
 import { Suspense } from "react"
 import { DataTable } from "@/components/ui/data-table"
-import { columns, type Lesson } from "./columns"
+import { columns, type Audio } from "./columns"
 import { Text, Heading } from "@/components/ui/typography"
-import { LessonActions } from "@/components/dashboard/audio-actions"
 
-async function getLessons(): Promise<Lesson[]> {
+async function getLessons(): Promise<Audio[]> {
   try {
     const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'
     const response = await fetch(`${baseUrl}/api/lessons`, {
@@ -56,7 +55,6 @@ export default async function LessonsPage() {
             Manage your generated and uploaded audio files
           </Text>
         </div>
-        <LessonActions />
       </div>
 
       <Suspense fallback={<div>Loading...</div>}>

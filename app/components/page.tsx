@@ -383,7 +383,7 @@ export default function ComponentsPage() {
             <Heading variant="h3" className="mb-8 text-black uppercase">Feature Showcase</Heading>
             <div className="grid md:grid-cols-3 gap-8">
               <FeatureCard
-                icon={Sparkles}
+                icon={SparklesIcon}
                 iconColor="text-yellow-500"
                 title="AI-POWERED"
                 description="Generate personalized learning content using cutting-edge AI technology"
@@ -421,7 +421,7 @@ export default function ComponentsPage() {
               <StatCard
                 value="4.9"
                 label="RATING"
-                icon={Star}
+                icon={StarIcon}
               />
               <StatCard
                 value="99.9%"

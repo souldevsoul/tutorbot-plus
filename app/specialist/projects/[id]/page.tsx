@@ -10,7 +10,7 @@ import {
   ProjectStatusBadge,
   WorkSubmissionCard,
   type ProjectStatus,
-  type ProjectLesson,
+  type ProjectAudio,
 } from "@/components/project"
 import { AudioPlayer } from "@/components/voicecraft/audio-player"
 
@@ -141,7 +141,7 @@ export default function SpecialistProjectDetailPage({
     )
   }
 
-  const existingLessons: ProjectLesson[] = project.projectLessons
+  const existingAudios: ProjectAudio[] = project.projectLessons
     ? project.projectLessons.map(pa => ({
         id: pa.audio.id,
         filename: pa.audio.filename,
@@ -253,7 +253,7 @@ export default function SpecialistProjectDetailPage({
           projectId={project.id}
           projectName={project.name}
           projectDescription={project.description || undefined}
-          existingLessons={existingLessons}
+          existingAudios={existingAudios}
           onSubmit={handleSubmitWork}
           loading={actionLoading}
         />
@@ -287,8 +287,8 @@ export default function SpecialistProjectDetailPage({
                 Submitted Files
               </Text>
               <div className="mt-2 space-y-3 rounded-md border-2 border-black bg-white p-4">
-                {existingLessons.length > 0 ? (
-                  existingLessons.map((audio, index) => (
+                {existingAudios.length > 0 ? (
+                  existingAudios.map((audio, index) => (
                     <div key={audio.id} className="border-b border-slate-200 pb-3 last:border-0 last:pb-0">
                       <Text variant="body" className="mb-2 font-bold text-sm">
                         {index + 1}. {audio.filename}
@@ -330,13 +330,13 @@ export default function SpecialistProjectDetailPage({
       )}
 
       {/* Original Project Lessons (Reference) */}
-      {project.status === "assigned" && existingLessons.length > 0 && (
+      {project.status === "assigned" && existingAudios.length > 0 && (
         <div>
           <Heading variant="h3" className="mb-3 font-bold uppercase">
-            Reference Audios ({existingLessons.length})
+            Reference Audios ({existingAudios.length})
           </Heading>
           <div className="space-y-3 rounded-md border-2 border-black bg-white p-4">
-            {existingLessons.map((audio, index) => (
+            {existingAudios.map((audio, index) => (
               <div key={audio.id} className="border-b border-slate-200 pb-3 last:border-0 last:pb-0">
                 <Text variant="body" className="mb-2 font-bold text-sm">
                   {index + 1}. {audio.filename}
